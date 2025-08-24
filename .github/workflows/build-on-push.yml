@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
+      - name: Install Cachix
+        uses: cachix/cachix-action@v16
       - name: Build cache for some packages
         run: |
           cachix watch-exec -m xz -l 5 thou-vow -- \
