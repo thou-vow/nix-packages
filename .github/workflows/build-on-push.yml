@@ -1,0 +1,25 @@
+name: Build cache after a commit
+on:
+  push:
+  workflow_dispatch:
+concurrency:
+  group: bump
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - name: Build cache for some packages
+        run: |
+          cachix watch-exec -m xz -l 5 thou-vow -- \
+            nix --accept-flake-config \
+            build -L --impure --expr \
+            'let
+              packages = (builtins.getFlake (builtins.toString ./.)).legacyPackages;
+            in
+              (with packages."x86_64-linux"; [
+                helix-steel
+              ])
+              ++ (builtins.attrValues packages."x86_64-linux".attunedPackages)'

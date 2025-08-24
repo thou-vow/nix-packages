@@ -1,0 +1,48 @@
+name: Periodically bump flake.lock (and build cache)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */8 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: bump
+  cancel-in-progress: true
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - name: Update flake.lock
+        run: |
+          nix --accept-flake-config flake update
+          if git diff --quiet -- flake.lock; then
+            echo "flake.lock unchanged"
+            exit 0
+          fi
+      - name: Build cache for some packages
+        run: |
+          cachix watch-exec -m xz -l 5 thou-vow -- \
+            nix --accept-flake-config \
+            build -L --impure --expr \
+            'let
+              packages = (builtins.getFlake (builtins.toString ./.)).legacyPackages;
+            in
+              (with packages."x86_64-linux"; [
+                helix-steel
+              ])
+              ++ (builtins.attrValues packages."x86_64-linux".attunedPackages)'
+      - name: Commit and push flake.lock
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add flake.lock
+          git commit -m "ci: bump packages to $(date +%Y%m%d)"
+          git push
