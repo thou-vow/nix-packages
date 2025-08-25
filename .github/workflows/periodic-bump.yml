@@ -16,10 +16,8 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Install Nix
-        uses: cachix/install-nix-action@v31
-        with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Lix
+        uses: canidae-solutions/lix-quick-install-action@v3
       - name: Update flake.lock
         run: |
           nix --accept-flake-config flake update
@@ -31,7 +29,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run nixpkgs#nix-fast-build -- \
+          nix run nixpkgs#lixPackageSets.latest.nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache --systems "aarch64-linux x86_64-linux"
       - name: Commit and push flake.lock
         env:
