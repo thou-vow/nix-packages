@@ -50,8 +50,7 @@
       attuned = final: prev: import ./attuned/attuned.nix final prev inputs;
     };
 
-    # Packages to cached on cachix
-    # nix-fast-build doesn't support --expr and neither recurses into attrs...
+    # Packages to cache.
     checks = {
       "x86_64-linux" =
         {
@@ -60,6 +59,8 @@
             helix-steel
             ;
         }
+        # nix-fast-build doesn't support a list of derivations and neither recurses into sets.
+        # That's why this set is flattened.
         // (lib.mapAttrs' (name: value: {
             name = "attunedPackages.${name}";
             inherit value;
