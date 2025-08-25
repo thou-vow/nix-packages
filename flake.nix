@@ -45,33 +45,39 @@
       });
 
     # Overlays based on the packages defined on this flake.
-    overlays = {
-      default = final: prev: import ./default/default.nix final prev inputs;
-      attuned = final: prev: import ./attuned/attuned.nix final prev inputs;
+    overlays = let
+      # Package sets of this flake aren't updated versions of previously defined sets
+      # Which means they aren't like `linuxPackages = prev.linuxPackages // { ... };`.
+      # So, we update the previously defined sets here.
+      recursivelyUpdatePackages = originalAttrs: newAttrs:
+        lib.mapAttrs (name: value:
+          if lib.isDerivation value
+          then value
+          else originalAttrs.${name} // recursivelyUpdatePackages originalAttrs.${name} value)
+        newAttrs;
+    in {
+      default = final: prev: recursivelyUpdatePackages prev (import ./default/default.nix final prev inputs);
+      attuned = final: prev: recursivelyUpdatePackages prev (import ./attuned/attuned.nix final prev inputs);
     };
 
     # Packages to cache.
-    checks = {
-      "x86_64-linux" =
-        {
-          inherit
-            (self.legacyPackages."x86_64-linux")
-            helix-steel
-            ;
-        }
-        # nix-fast-build doesn't support a list of derivations and neither recurses into sets.
-        # That's why this set is flattened.
-        // (lib.mapAttrs' (name: value: {
-            name = "attunedPackages.${name}";
-            inherit value;
+    checks = let
+      # Since nix-fast-build only support sets, we need this to repeat a package.
+      derivationListToAttrs = list:
+        builtins.listToAttrs (builtins.map (derivation: {
+            # The name should be unique (attempted with drvPath earlier but got an error)
+            name = builtins.hashString "sha256" (builtins.toJSON derivation);
+            value = derivation;
           })
-          self.legacyPackages."x86_64-linux".attunedPackages);
-    };
-    "aarch64-linux" = {
-      inherit
-        (self.legacyPackages."aarch64-linux")
+          list);
+    in {
+      "x86_64-linux" = derivationListToAttrs ((with self.legacyPackages."x86_64-linux"; [
+          helix-steel
+        ])
+        ++ builtins.attrValues self.legacyPackages."x86_64-linux".attunedPackages);
+      "aarch64-linux" = derivationListToAttrs (with self.legacyPackages."aarch64-linux"; [
         helix-steel
-        ;
+      ]);
     };
   };
 }

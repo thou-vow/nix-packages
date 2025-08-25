@@ -18,4 +18,4 @@ jobs:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
           nix run nixpkgs#lixPackageSets.latest.nix-fast-build -- \
-            --cachix-cache thou-vow --no-nom --systems "aarch64-linux x86_64-linux"
+            --cachix-cache thou-vow --no-nom --skip-cache --systems "aarch64-linux x86_64-linux"
