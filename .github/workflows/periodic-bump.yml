@@ -29,7 +29,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run github:Mic92/nix-fast-build -- \
+          nix run nixpkgs#nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache --systems "aarch64-linux x86_64-linux"
       - name: Commit and push flake.lock
         env:
