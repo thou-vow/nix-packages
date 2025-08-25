@@ -21,7 +21,7 @@
   } @ inputs: let
     inherit (nixpkgs) lib;
 
-    systems = ["x86_64-linux"];
+    systems = ["x86_64-linux" "aarch64-linux"];
 
     externalOverlays = [inputs.chaotic.overlays.default inputs.niri.overlays.niri];
 
@@ -34,30 +34,43 @@
       pkgsBaseOverlays = pkgs.appendOverlays baseOverlays;
     in
       # I use an overlay interface for convenience (I like it).
-      import ./default/default.nix inputs pkgsBaseOverlays pkgsExternalOverlays
+      import ./default/default.nix pkgsBaseOverlays pkgsExternalOverlays inputs
       // {
         # The other package sets are made upon the default packages.
         attunedPackages =
-          import ./attuned/attuned.nix inputs (
-            pkgsBaseOverlays.appendOverlays [self.overlays.attuned]
-          )
-          pkgsBaseOverlays;
+          import ./attuned/attuned.nix
+          (pkgsBaseOverlays.appendOverlays [self.overlays.attuned])
+          pkgsBaseOverlays
+          inputs;
       });
 
     # Overlays based on the packages defined on this flake.
-    overlays = let
-      # Package sets of this flake aren't updated versions of previously defined sets
-      # Which means they aren't like `linuxPackages = prev.linuxPackages // { ... };`.
-      # So, we update the previously defined sets here.
-      recursivelyUpdatePackages = originalAttrs: newAttrs:
-        lib.mapAttrs (name: value:
-          if lib.isDerivation value
-          then value
-          else originalAttrs.${name} // recursivelyUpdatePackages originalAttrs.${name} value)
-        newAttrs;
-    in {
-      default = final: prev: recursivelyUpdatePackages prev (import ./default/default.nix inputs final prev);
-      attuned = final: prev: recursivelyUpdatePackages prev (import ./attuned/attuned.nix inputs final prev);
+    overlays = {
+      default = final: prev: import ./default/default.nix final prev inputs;
+      attuned = final: prev: import ./attuned/attuned.nix final prev inputs;
+    };
+
+    # Packages to cached on cachix
+    # nix-fast-build doesn't support --expr and neither recurses into attrs...
+    checks = {
+      "x86_64-linux" =
+        {
+          inherit
+            (self.legacyPackages."x86_64-linux")
+            helix-steel
+            ;
+        }
+        // (lib.mapAttrs' (name: value: {
+            name = "attunedPackages.${name}";
+            inherit value;
+          })
+          self.legacyPackages."x86_64-linux".attunedPackages);
+    };
+    "aarch64-linux" = {
+      inherit
+        (self.legacyPackages."aarch64-linux")
+        helix-steel
+        ;
     };
   };
 }

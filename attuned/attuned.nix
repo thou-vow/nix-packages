@@ -1,4 +1,4 @@
-inputs: final: prev: {
+final: prev: inputs: {
   cemu = prev.cemu.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}

@@ -1,4 +1,4 @@
-inputs: final: prev: {
+final: prev: inputs: {
   # Oracle GraalVM (nixpkgs only has 17 and 23).
   graalvm-oracle_21 = let
     src = {
