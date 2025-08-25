@@ -1,12 +1,15 @@
 final: prev: inputs: {
-  cemu = prev.cemu.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
-        CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
-      };
-  });
+  cemu =
+    (prev.cemu.override {
+      stdenv = final.clangStdenv;
+    }).overrideAttrs (prevAttrs: {
+      env =
+        prevAttrs.env or {}
+        // {
+          CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
+          CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
+        };
+    });
 
   helix-steel = prev.helix.overrideAttrs (prevAttrs: {
     env =
@@ -56,14 +59,17 @@ final: prev: inputs: {
       ];
   });
 
-  nixd = prev.nixd.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
-        CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
-      };
-  });
+  nixd =
+    (prev.nixd.override {
+      stdenv = final.clangStdenv;
+    }).overrideAttrs (prevAttrs: {
+      env =
+        prevAttrs.env or {}
+        // {
+          CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
+          CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
+        };
+    });
 
   rust-analyzer-unwrapped = prev.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
