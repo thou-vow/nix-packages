@@ -1,23 +1,31 @@
-final: prev: inputs: {
-  cemu =
-    (prev.cemu.override {
-      stdenv = final.clangStdenv;
-    }).overrideAttrs (prevAttrs: {
-      env =
-        prevAttrs.env or {}
-        // {
-          CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
-          CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
-        };
-    });
+final: prev: inputs: let
+  lib = inputs.nixpkgs.lib;
+
+  concatOptionalString = optional: other:
+    lib.concatStringsSep " " (lib.optional (optional != "") optional ++ other);
+in {
+  cemu = (prev.cemu.override {stdenv = final.llvmPackages_latest.stdenv;}).overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") ["-O3" "-march=skylake"];
+        CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") ["-O3" "-march=skylake"];
+      };
+
+    nativeBuildInputs =
+      prevAttrs.nativeBuildInputs
+      ++ [
+        final.llvmPackages_latest.bintools
+      ];
+  });
 
   helix-steel = prev.helix.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
         RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS or ""
-          + " -C target-cpu=skylake -C opt-level=3 -C lto=fat";
+          concatOptionalString (prevAttrs.env.RUSTFLAGS or "")
+          ["-C target-cpu=skylake" "-C opt-level=3" "-C lto=fat"];
       };
   });
 
@@ -28,8 +36,12 @@ final: prev: inputs: {
     useO3 = true;
     mArch = "skylake";
     prependStructuredConfig =
-      (import ./kernel-localyesconfig.nix final.lib)
-      // (with final.lib.kernel; {
+      (import ./kernel-localyesconfig.nix lib)
+      // (with lib.kernel; {
+        # AutoFDO and Propeller
+        "AUTOFDO_CLANG" = yes;
+        "PROPELLER_CLANG" = yes;
+
         # Unnecessary stuff not caught by localyesconfig
         "DRM_XE" = no;
         "KVM_AMD" = no;
@@ -59,25 +71,23 @@ final: prev: inputs: {
       ];
   });
 
-  nixd =
-    (prev.nixd.override {
-      stdenv = final.clangStdenv;
-    }).overrideAttrs (prevAttrs: {
-      env =
-        prevAttrs.env or {}
-        // {
-          CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
-          CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
-        };
-    });
+  nixd = (prev.nixd.override {inherit (final.llvmPackages_latest) stdenv;}).overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") ["-O3" "-march=skylake"];
+        CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") ["-O3" "-march=skylake"];
+      };
+  });
 
   rust-analyzer-unwrapped = prev.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
-        RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS or ""
-          + " -C target-cpu=skylake -C opt-level=3";
+        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+          "-C target-cpu=skylake"
+          "-C opt-level=3"
+        ];
       };
   });
 
