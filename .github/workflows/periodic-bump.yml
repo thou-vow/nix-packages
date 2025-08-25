@@ -16,8 +16,10 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Install Lix
-        uses: canidae-solutions/lix-quick-install-action@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update flake.lock
         run: |
           nix --accept-flake-config flake update
@@ -25,7 +27,7 @@ jobs:
             echo "flake.lock unchanged"
             exit 0
           fi
-      - name: Build cache for some packages
+      - name: Build cache
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
