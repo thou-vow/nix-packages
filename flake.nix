@@ -75,9 +75,6 @@
           helix-steel
         ])
         ++ builtins.attrValues self.legacyPackages."x86_64-linux".attunedPackages);
-      "aarch64-linux" = derivationListToAttrs (with self.legacyPackages."aarch64-linux"; [
-        helix-steel
-      ]);
     };
   };
 }
