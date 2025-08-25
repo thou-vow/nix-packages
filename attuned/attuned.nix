@@ -56,6 +56,15 @@ final: prev: inputs: {
       ];
   });
 
+  nixd = prev.nixd.overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        CFLAGS = prevAttrs.env.CFLAGS or "" + " -O3 -march=skylake";
+        CXXFLAGS = prevAttrs.env.CXXFLAGS or "" + " -O3 -march=skylake";
+      };
+  });
+
   rust-analyzer-unwrapped = prev.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}

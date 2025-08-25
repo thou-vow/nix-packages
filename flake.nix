@@ -65,8 +65,10 @@
       # Since nix-fast-build only support sets, we need this to repeat a package.
       derivationListToAttrs = list:
         builtins.listToAttrs (builtins.map (derivation: {
-            # The name should be unique (attempted with drvPath earlier but got an error)
-            name = builtins.hashString "sha256" (builtins.toJSON derivation);
+            # The name should be unique (I attempted drvPath before but got an error)
+            name =
+              builtins.hashString "sha256" (builtins.toJSON derivation)
+              + "-${derivation.name}";
             value = derivation;
           })
           list);
