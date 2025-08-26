@@ -1,8 +1,8 @@
 final: prev: inputs: let
   lib = inputs.nixpkgs.lib;
 
-  concatOptionalString = optional: other:
-    lib.concatStringsSep " " (lib.optional (optional != "") optional ++ other);
+  concatOptionalString = optional: others:
+    lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
   cemu = (prev.cemu.override {inherit (final.llvmPackages_latest) stdenv;}).overrideAttrs (prevAttrs: {
     env =
@@ -38,6 +38,8 @@ in {
     prependStructuredConfig =
       (import ./kernel-localyesconfig.nix lib)
       // (with lib.kernel; {
+        "AUTOFDO_CLANG" = yes;
+
         # Unnecessary stuff not caught by localyesconfig
         "DRM_XE" = no;
         "KVM_AMD" = no;
@@ -49,7 +51,7 @@ in {
         "NTSYNC" = yes;
       });
     withLTO = "full";
-    disableDebug = true;
+    disableDebug = false; # Keep debug for AutoFDO
     features = {
       efiBootStub = true;
       ia32Emulation = true;

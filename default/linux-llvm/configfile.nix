@@ -88,8 +88,6 @@ in
       prevAttrs.passthru or {}
       // {
         edit = configfile.overrideAttrs (prevAttrs': {
-          name = prevAttrs'.name + "-edit";
-
           depsBuildBuild =
             prevAttrs'.depsBuildBuild or []
             ++ (with pkgsBuildBuild; [
@@ -100,7 +98,7 @@ in
           postPatch =
             prevAttrs'.postPatch or ""
             + ''
-              cp "${linux.configfile}" ".config.old"
+              cp "${linux.configfile}" ".config"
             '';
         });
       };
