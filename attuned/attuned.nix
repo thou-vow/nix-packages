@@ -4,7 +4,7 @@ final: prev: inputs: let
   concatOptionalString = optional: other:
     lib.concatStringsSep " " (lib.optional (optional != "") optional ++ other);
 in {
-  cemu = (prev.cemu.override {stdenv = final.llvmPackages_latest.stdenv;}).overrideAttrs (prevAttrs: {
+  cemu = (prev.cemu.override {inherit (final.llvmPackages_latest) stdenv;}).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
@@ -38,10 +38,6 @@ in {
     prependStructuredConfig =
       (import ./kernel-localyesconfig.nix lib)
       // (with lib.kernel; {
-        # AutoFDO and Propeller
-        "AUTOFDO_CLANG" = yes;
-        "PROPELLER_CLANG" = yes;
-
         # Unnecessary stuff not caught by localyesconfig
         "DRM_XE" = no;
         "KVM_AMD" = no;

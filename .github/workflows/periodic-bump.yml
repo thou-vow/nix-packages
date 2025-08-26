@@ -7,7 +7,6 @@ permissions:
   contents: write
 concurrency:
   group: bump
-  cancel-in-progress: true
 jobs:
   bump:
     runs-on: ubuntu-latest
