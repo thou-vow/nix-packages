@@ -52,11 +52,7 @@ in {
       });
     withLTO = "full";
     disableDebug = false; # Keep debug for AutoFDO
-    features = {
-      efiBootStub = true;
-      ia32Emulation = true;
-      netfilterRPFilter = true;
-    };
+    inherit (final.linux_cachyos) features;
   };
 
   niri-unstable = prev.niri-unstable.overrideAttrs (prevAttrs: {

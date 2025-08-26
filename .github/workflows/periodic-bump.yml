@@ -18,19 +18,24 @@ jobs:
       - name: Install Lix
         uses: canidae-solutions/lix-quick-install-action@v3
       - name: Update flake.lock
+        id: update
         run: |
           nix --accept-flake-config flake update
           if git diff --quiet -- flake.lock; then
             echo "flake.lock unchanged"
-            exit 0
+            echo "updated=false" >> $GITHUB_OUTPUT
+          else
+            echo "updated=true" >> $GITHUB_OUTPUT
           fi
       - name: Build cache
+        if: steps.update.outputs.updated == 'true'
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
           nix run nixpkgs#lixPackageSets.latest.nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache --systems "aarch64-linux x86_64-linux"
       - name: Commit and push flake.lock
+        if: steps.update.outputs.updated == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
