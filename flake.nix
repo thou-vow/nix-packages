@@ -11,11 +11,9 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://chaotic-nyx.cachix.org/"
       "https://thou-vow.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "thou-vow.cachix.org-1:n6zUvWYOI7kh0jgd+ghWhxeMd9tVdYF2KdOvufJ/Qy4="
     ];
   };
@@ -27,11 +25,21 @@
   } @ inputs: let
     inherit (nixpkgs) lib;
 
-    systems = ["x86_64-linux" "aarch64-linux"];
+    systems = [
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
 
-    externalOverlays = [inputs.chaotic.overlays.default inputs.niri.overlays.niri];
+    externalOverlays = [
+      inputs.chaotic.overlays.default
+      inputs.niri.overlays.niri
+    ];
 
-    baseOverlays = externalOverlays ++ [self.overlays.default];
+    baseOverlays =
+      externalOverlays
+      ++ [
+        self.overlays.default
+      ];
   in {
     # Packages defined on this flake. Use with `nix build`, `nix run`, `nix shell`.
     legacyPackages = lib.genAttrs systems (system: let
@@ -64,35 +72,6 @@
     in {
       default = final: prev: recursivelyUpdatePackages prev (import ./default/default.nix final prev inputs);
       attuned = final: prev: recursivelyUpdatePackages prev (import ./attuned/attuned.nix final prev inputs);
-    };
-
-    # Packages to cache.
-    checks = let
-      derivationsToCache."x86_64-linux" =
-        (with self.legacyPackages."x86_64-linux"; [
-          helix-steel
-        ])
-        ++ (with self.legacyPackages."x86_64-linux".attunedPackages; [
-          helix-steel
-          linux-llvm
-          niri-unstable
-          nixd
-          rust-analyzer-unwrapped
-          xwayland-satellite-unstable
-        ]);
-
-      # Since nix-fast-build only support sets, we need this to repeat a package.
-      derivationListToAttrs = list:
-        builtins.listToAttrs (builtins.map (derivation: {
-            # The name should be unique (I attempted drvPath before but got an error)
-            name =
-              builtins.hashString "sha256" (builtins.toJSON derivation)
-              + "-${derivation.name}";
-            value = derivation;
-          })
-          list);
-    in {
-      "x86_64-linux" = derivationListToAttrs derivationsToCache."x86_64-linux";
     };
   };
 }
