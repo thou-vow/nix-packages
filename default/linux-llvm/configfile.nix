@@ -1,7 +1,6 @@
 {
   lib,
   linux,
-  pkgsBuildBuild,
   stdenv,
   suffix,
   patches,
@@ -62,8 +61,8 @@
     ++ ltoArgs
     ++ disableDebugArgs
     ++ (lib.mapAttrsToList convertStructuredToArg appendStructuredConfig);
-
-  configfile = stdenv.mkDerivation {
+in
+  stdenv.mkDerivation {
     inherit (linux) src;
     name = "linux-${lib.optionalString (suffix != "") "${suffix}-"}config";
 
@@ -81,26 +80,4 @@
     installPhase = ''
       cp .config $out
     '';
-  };
-in
-  configfile.overrideAttrs (prevAttrs: {
-    passthru =
-      prevAttrs.passthru or {}
-      // {
-        edit = configfile.overrideAttrs (prevAttrs': {
-          depsBuildBuild =
-            prevAttrs'.depsBuildBuild or []
-            ++ (with pkgsBuildBuild; [
-              pkg-config
-              ncurses
-            ]);
-
-          postPatch =
-            prevAttrs'.postPatch or ""
-            + ''
-              cp "${linux.configfile}" ".config"
-            '';
-        });
-      };
-  })
-
+  }

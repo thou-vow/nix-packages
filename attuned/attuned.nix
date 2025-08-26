@@ -24,7 +24,6 @@ in {
       (import ./kernel-localyesconfig.nix lib)
       // (with lib.kernel; {
         "AUTOFDO_CLANG" = yes;
-        "PROPELLER_CLANG" = yes;
 
         # Unnecessary stuff not caught by localyesconfig
         "DRM_XE" = no;

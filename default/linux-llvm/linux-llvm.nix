@@ -1,11 +1,14 @@
 {
+  bash,
   callPackage,
   lib,
   linux,
   linuxManualConfig,
   llvmPackages,
   patchelf,
+  pkgsBuildBuild,
   overrideCC,
+  writeShellScript,
   suffix ? "",
   patches ? [],
   useO3 ? false,
@@ -102,6 +105,45 @@
       broken = !stdenvLLVM.isx86_64;
     };
   };
+
+  configEnv = let
+    diff-to-nix = writeShellScript "diff-to-nix" ''
+      #!${bash}
+      exec > "kernel-config.nix"
+
+      echo "lib: with lib.kernel; {"
+      while IFS= read -r line; do
+        if [[ $line == \#* ]] && [[ $line =~ CONFIG_([A-Za-z0-9_]+) ]]; then
+          name=$${BASH_REMATCH[1]}
+          echo "  \"$name\" = no;"
+        elif [[ $line == *"=y" ]]; then
+          name=$${line#CONFIG_}
+          name=$${name%=y}
+          echo "  \"$name\" = yes;"
+        elif [[ $line == *"=m" ]]; then
+          name=$${line#CONFIG_}
+          name=$${name%=m}
+          echo "  \"$name\" = module;"
+        fi
+      done
+      echo "}"
+    '';
+  in
+    configfile.overrideAttrs (prevAttrs: {
+      depsBuildBuild =
+        prevAttrs.depsBuildBuild or []
+        ++ (with pkgsBuildBuild; [
+          diff-to-nix
+          pkg-config
+          ncurses
+        ]);
+
+      postPatch =
+        prevAttrs.postPatch or ""
+        + ''
+          cp "${linux.configfile}" ".config"
+        '';
+    });
 in
   kernel.overrideAttrs (prevAttrs: {
     postPatch =
@@ -113,7 +155,6 @@ in
     passthru =
       prevAttrs.passthru or {}
       // {
-        inherit features;
+        inherit configEnv features;
       };
   })
-
