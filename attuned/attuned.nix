@@ -4,21 +4,6 @@ final: prev: inputs: let
   concatOptionalString = optional: others:
     lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
-  cemu = (prev.cemu.override {inherit (final.llvmPackages_latest) stdenv;}).overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") ["-O3" "-march=skylake"];
-        CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") ["-O3" "-march=skylake"];
-      };
-
-    nativeBuildInputs =
-      prevAttrs.nativeBuildInputs
-      ++ [
-        final.llvmPackages_latest.bintools
-      ];
-  });
-
   helix-steel = prev.helix.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
