@@ -73,5 +73,34 @@
       default = final: prev: recursivelyUpdatePackages prev (import ./default/default.nix final prev inputs);
       attuned = final: prev: recursivelyUpdatePackages prev (import ./attuned/attuned.nix final prev inputs);
     };
+
+    # Packages to cache.
+    checks = let
+      derivationsToCache."x86_64-linux" =
+        (with self.legacyPackages."x86_64-linux"; [
+          helix-steel
+        ])
+        ++ (with self.legacyPackages."x86_64-linux".attunedPackages; [
+          helix-steel
+          linux-llvm
+          niri-unstable
+          nixd
+          rust-analyzer-unwrapped
+          xwayland-satellite-unstable
+        ]);
+
+      # Since nix-fast-build only support sets, we need this to repeat a package.
+      derivationListToAttrs = list:
+        builtins.listToAttrs (builtins.map (derivation: {
+            # The name should be unique (I attempted drvPath before but got an error)
+            name =
+              builtins.hashString "sha256" (builtins.toJSON derivation)
+              + "-${derivation.name}";
+            value = derivation;
+          })
+          list);
+    in {
+      "x86_64-linux" = derivationListToAttrs derivationsToCache."x86_64-linux";
+    };
   };
 }

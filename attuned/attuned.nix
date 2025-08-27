@@ -23,7 +23,8 @@ in {
     prependStructuredConfig = import ./kernel-localyesconfig.nix lib;
     withLTO = "full";
     appendStructuredConfig = with lib.kernel; {
-      "AUTOFDO_CLANG" = yes;
+      # "AUTOFDO_CLANG" = yes;
+      # "PROPELLER_CLANG" = yes;
 
       # Unnecessary stuff not caught by localyesconfig
       "DRM_XE" = no;
