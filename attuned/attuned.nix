@@ -20,23 +20,31 @@ in {
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
-    prependStructuredConfig =
-      (import ./kernel-localyesconfig.nix lib)
-      // (with lib.kernel; {
-        "AUTOFDO_CLANG" = yes;
-
-        # Unnecessary stuff not caught by localyesconfig
-        "DRM_XE" = no;
-        "KVM_AMD" = no;
-
-        # For containers
-        "VETH" = yes;
-
-        # Good for gaming
-        "NTSYNC" = yes;
-      });
+    prependStructuredConfig = import ./kernel-localyesconfig.nix lib;
     withLTO = "full";
-    disableDebug = false; # Keep debug for AutoFDO
+    appendStructuredConfig = with lib.kernel; {
+      "AUTOFDO_CLANG" = yes;
+
+      # Unnecessary stuff not caught by localyesconfig
+      "DRM_XE" = no;
+      "CPU_SUP_AMD" = no;
+      "EXT4_FS" = no;
+      "CRYPTO_LZO" = no;
+      "LDM_PARTITION" = no;
+      "KARMA_PARTITION" = no;
+      "WATCHDOG" = no;
+
+      # For containers
+      "VETH" = yes;
+
+      # Good for gaming
+      "NTSYNC" = yes;
+
+      "SLUB_DEBUG" = no;
+      "PM_DEBUG" = no;
+      "CPU_MITIGATIONS" = no;
+      "FORTIFY_SOURCE" = no;
+    };
     inherit (final.linux_cachyos) features;
   };
 

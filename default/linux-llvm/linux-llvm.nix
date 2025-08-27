@@ -8,14 +8,13 @@
   patchelf,
   pkgsBuildBuild,
   overrideCC,
-  writeShellScript,
+  writeShellScriptBin,
   suffix ? "",
   patches ? [],
   useO3 ? false,
   mArch ? "",
   prependStructuredConfig ? {},
   withLTO ? "",
-  disableDebug ? false,
   appendStructuredConfig ? {},
   features ? {},
   verbose ? false,
@@ -79,7 +78,7 @@
     });
 
   configfile = callPackage ./configfile.nix {
-    inherit linux suffix patches prependStructuredConfig withLTO disableDebug appendStructuredConfig;
+    inherit linux suffix patches prependStructuredConfig withLTO appendStructuredConfig;
     stdenv = stdenvLLVM;
   };
 
@@ -106,8 +105,17 @@
     };
   };
 
+  # You can generate a config to pass to prependConfig following these steps:
+  # ```
+  # nix develop /etc/nixos#nixosConfigurations.nixos.boot.kernelPackages.kernel.configEnv
+  # unpackPhase
+  # cd $sourceRoot
+  # patchPhase
+  # make LLVM=1 LLVM_IAS=1 localyesconfig
+  # scripts/diffconfig -m | diff-to-nix
+  # ```
   configEnv = let
-    diff-to-nix = writeShellScript "diff-to-nix" ''
+    diff-to-nix = writeShellScriptBin "diff-to-nix" ''
       #!${bash}
       exec > "kernel-config.nix"
 
@@ -132,8 +140,8 @@
     configfile.overrideAttrs (prevAttrs: {
       depsBuildBuild =
         prevAttrs.depsBuildBuild or []
+        ++ [diff-to-nix]
         ++ (with pkgsBuildBuild; [
-          diff-to-nix
           pkg-config
           ncurses
         ]);
