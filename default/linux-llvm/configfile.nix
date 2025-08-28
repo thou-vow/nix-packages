@@ -2,48 +2,48 @@
   lib,
   linux,
   stdenv,
+  writeText,
   suffix,
   patches,
-  prependStructuredConfig,
+  prependConfigValues,
   withLTO,
-  appendStructuredConfig,
+  appendConfigValues,
 }: let
-  convertStructuredToArg = name: value:
-    if value == lib.kernel.yes
-    then "-e ${name}"
-    else if value == lib.kernel.no
-    then "-d ${name}"
-    else if value == lib.kernel.module
-    then "-m ${name}"
-    else if builtins.hasAttr "freeform" value
-    then "--set-val ${name} ${value.freeform}"
-    else throw "Unexpected value on convertStructuredToArg: ${builtins.toString value}";
+  transformConfigValue = raw: let
+    split = lib.splitString " " raw;
+    name = lib.elemAt split 0;
+    value = lib.elemAt split 1;
+  in "CONFIG_${name}=${value}";
 
   ltoArgs =
     if withLTO == "thin"
     then [
-      "-d LTO_NONE"
-      "-d LTO_CLANG_FULL"
-      "-e LTO_CLANG_THIN"
+      "LTO_NONE n"
+      "LTO_CLANG_FULL n"
+      "LTO_CLANG_THIN y"
     ]
     else if withLTO == "full"
     then [
-      "-d LTO_NONE"
-      "-e LTO_CLANG_FULL"
-      "-d LTO_CLANG_THIN"
+      "LTO_NONE n"
+      "LTO_CLANG_FULL y"
+      "LTO_CLANG_THIN n"
     ]
     else if withLTO == ""
     then [
-      "-e LTO_NONE"
-      "-d LTO_CLANG_FULL"
-      "-d LTO_CLANG_THIN"
+      "LTO_NONE y"
+      "LTO_CLANG_FULL n"
+      "LTO_CLANG_THIN n"
     ]
-    else throw "Unsupported withLTO value";
+    else throw "Unsupported withLTO value (should be \"full\", \"thin\" or \"\")";
 
-  configScriptArgs =
-    (lib.mapAttrsToList convertStructuredToArg prependStructuredConfig)
+  valuesToMerge = lib.map transformConfigValue (
+    prependConfigValues
     ++ ltoArgs
-    ++ (lib.mapAttrsToList convertStructuredToArg appendStructuredConfig);
+    ++ appendConfigValues
+  );
+
+  customConfigFragment =
+    writeText "linux-custom-config-fragment" (lib.concatStringsSep "\n" valuesToMerge);
 in
   stdenv.mkDerivation {
     inherit (linux) src;
@@ -55,9 +55,8 @@ in
 
     buildPhase = ''
       cp "${linux.configfile}" ".config"
-      patchShebangs scripts/config
-      scripts/config ${lib.concatStringsSep " " configScriptArgs}
-      make LLVM=1 LLVM_IAS=1 olddefconfig
+      patchShebangs scripts/kconfig/merge_config.sh
+      LLVM=1 LLVM_IAS=1 scripts/kconfig/merge_config.sh -n .config ${customConfigFragment}
     '';
 
     installPhase = ''

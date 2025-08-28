@@ -20,32 +20,39 @@ in {
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
-    prependStructuredConfig = import ./kernel-localyesconfig.nix lib;
+    prependConfigValues = import ./kernel-localyesconfig.nix;
     withLTO = "full";
-    appendStructuredConfig = with lib.kernel; {
-      # "AUTOFDO_CLANG" = yes;
-      # "PROPELLER_CLANG" = yes;
+    appendConfigValues = [
+      "AUTOFDO_CLANG y"
+      # "PROPELLER_CLANG y"
 
-      # Unnecessary stuff not caught by localyesconfig
-      "DRM_XE" = no;
-      "CPU_SUP_AMD" = no;
-      "EXT4_FS" = no;
-      "CRYPTO_LZO" = no;
-      "LDM_PARTITION" = no;
-      "KARMA_PARTITION" = no;
-      "WATCHDOG" = no;
+      # Unnecessary stuff uncaught by localyesconfig
+      "DRM_XE n"
+      "EXT4_FS n"
+      "CRYPTO_LZO n"
+      "LDM_PARTITION n"
+      "KARMA_PARTITION n"
+      "USB_UHCI_HCD n"
+      "USB_OHCI_HCD n"
+      "USB_EHCI_HCD n"
+      "PROCESSOR_SELECT y"
+      "CPU_SUP_AMD n"
+      "CPU_SUP_HYGON n"
+      "CPU_SUP_CENTAUR n"
+      "CPU_SUP_ZHAOXIN n"
 
       # For containers
-      "VETH" = yes;
+      "VETH y"
 
       # Good for gaming
-      "NTSYNC" = yes;
+      "NTSYNC y"
 
-      "SLUB_DEBUG" = no;
-      "PM_DEBUG" = no;
-      "CPU_MITIGATIONS" = no;
-      "FORTIFY_SOURCE" = no;
-    };
+      "SLUB_DEBUG n"
+      "PM_DEBUG n"
+      "WATCHDOG n"
+      "CPU_MITIGATIONS n"
+      "FORTIFY_SOURCE n"
+    ];
     inherit (final.linux_cachyos) features;
   };
 

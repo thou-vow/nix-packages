@@ -1,3327 +1,3326 @@
-lib:
-with lib.kernel; {
-  "60XX_WDT" = no;
-  "6LOWPAN" = no;
-  "8139CP" = no;
-  "8139TOO" = no;
-  "ACENIC" = no;
-  "ACERHDF" = no;
-  "ACER_WIRELESS" = no;
-  "ACER_WMI" = no;
-  "ACPI_APEI_EINJ" = no;
-  "ACPI_APEI_ERST_DEBUG" = no;
-  "ACPI_CMPC" = no;
-  "ACPI_CONFIGFS" = no;
-  "ACPI_EC_DEBUGFS" = no;
-  "ACPI_EXTLOG" = no;
-  "ACPI_MDIO" = yes;
-  "ACPI_NFIT" = no;
-  "ACPI_PFRUT" = no;
-  "ACPI_PROCESSOR_AGGREGATOR" = yes;
-  "ACPI_QUICKSTART" = no;
-  "ACPI_SBS" = no;
-  "ACPI_TAD" = no;
-  "ACPI_VIDEO" = yes;
-  "ACPI_WMI" = yes;
-  "ACQUIRE_WDT" = no;
-  "ACRN_HSM" = no;
-  "AD525X_DPOT" = no;
-  "ADAPTEC_STARFIRE" = no;
-  "ADIN1100_PHY" = no;
-  "ADIN1110" = no;
-  "ADIN_PHY" = no;
-  "ADM8211" = no;
-  "ADVANTECH_EC_WDT" = no;
-  "ADVANTECH_WDT" = no;
-  "ADV_SWBUTTON" = no;
-  "AFFS_FS" = no;
-  "AFS_FS" = no;
-  "AF_KCM" = no;
-  "AF_RXRPC" = no;
-  "AGP_AMD64" = no;
-  "AGP_INTEL" = no;
-  "AGP_SIS" = no;
-  "AGP_VIA" = no;
-  "AHCI_DWC" = no;
-  "AIR_EN8811H_PHY" = no;
-  "ALIENWARE_WMI" = no;
-  "ALIM1535_WDT" = no;
-  "ALIM7101_WDT" = no;
-  "ALTERA_MBOX" = no;
-  "ALTERA_MSGDMA" = no;
-  "ALTERA_STAPL" = no;
-  "ALTERA_TSE" = no;
-  "ALX" = no;
-  "AMD8111_ETH" = no;
-  "AMD_ATL" = no;
-  "AMD_HSMP_ACPI" = no;
-  "AMD_HSMP_PLAT" = no;
-  "AMD_ISP_PLATFORM" = no;
-  "AMD_PHY" = no;
-  "AMD_PMC" = no;
-  "AMD_PTDMA" = no;
-  "AMD_QDMA" = no;
-  "AMD_SBRMI_I2C" = no;
-  "AMD_SFH_HID" = no;
-  "AMD_XGBE" = no;
-  "AMILO_RFKILL" = no;
-  "AMT" = no;
-  "APDS9802ALS" = no;
-  "APPLE_BCE" = no;
-  "APPLE_GMUX" = no;
-  "APPLE_MFI_FASTCHARGE" = no;
-  "APPLICOM" = no;
-  "AQTION" = no;
-  "AQUANTIA_PHY" = no;
-  "AR5523" = no;
-  "AS21XXX_PHY" = no;
-  "ASUS_LAPTOP" = no;
-  "ASUS_TF103C_DOCK" = no;
-  "ASUS_WIRELESS" = no;
-  "ASUS_WMI" = no;
-  "AT76C50X_USB" = no;
-  "AT803X_PHY" = no;
-  "ATALK" = no;
-  "ATA_GENERIC" = no;
-  "ATA_OVER_ETH" = no;
-  "ATA_PIIX" = no;
-  "ATH10K" = no;
-  "ATH11K" = no;
-  "ATH12K" = no;
-  "ATH5K" = no;
-  "ATH6KL" = no;
-  "ATH9K" = yes;
-  "ATH9K_COMMON" = yes;
-  "ATH9K_HTC" = no;
-  "ATH9K_HW" = yes;
-  "ATH9K_PCI_NO_EEPROM" = no;
-  "ATH_COMMON" = yes;
-  "ATL1" = no;
-  "ATL1C" = no;
-  "ATL1E" = no;
-  "ATL2" = no;
-  "ATM" = no;
-  "AX25" = no;
-  "AX88796B_PHY" = no;
-  "B43" = no;
-  "B43LEGACY" = no;
-  "B44" = no;
-  "BACKLIGHT_88PM860X" = no;
-  "BACKLIGHT_AAT2870" = no;
-  "BACKLIGHT_ADP5520" = no;
-  "BACKLIGHT_ADP8860" = no;
-  "BACKLIGHT_ADP8870" = no;
-  "BACKLIGHT_APPLE" = no;
-  "BACKLIGHT_ARCXCNN" = no;
-  "BACKLIGHT_AS3711" = no;
-  "BACKLIGHT_BD6107" = no;
-  "BACKLIGHT_DA903X" = no;
-  "BACKLIGHT_DA9052" = no;
-  "BACKLIGHT_GPIO" = no;
-  "BACKLIGHT_KTD253" = no;
-  "BACKLIGHT_KTD2801" = no;
-  "BACKLIGHT_KTZ8866" = no;
-  "BACKLIGHT_LM3509" = no;
-  "BACKLIGHT_LM3630A" = no;
-  "BACKLIGHT_LM3639" = no;
-  "BACKLIGHT_LP855X" = no;
-  "BACKLIGHT_LP8788" = no;
-  "BACKLIGHT_LV5207LP" = no;
-  "BACKLIGHT_MAX8925" = no;
-  "BACKLIGHT_MP3309C" = no;
-  "BACKLIGHT_PANDORA" = no;
-  "BACKLIGHT_PWM" = no;
-  "BACKLIGHT_QCOM_WLED" = no;
-  "BACKLIGHT_SAHARA" = no;
-  "BACKLIGHT_WM831X" = no;
-  "BARCO_P50_GPIO" = no;
-  "BAREUDP" = no;
-  "BATMAN_ADV" = no;
-  "BATTERY_88PM860X" = no;
-  "BATTERY_BQ27XXX" = no;
-  "BATTERY_CHAGALL" = no;
-  "BATTERY_CW2015" = no;
-  "BATTERY_DA9030" = no;
-  "BATTERY_DA9052" = no;
-  "BATTERY_DS2780" = no;
-  "BATTERY_DS2781" = no;
-  "BATTERY_DS2782" = no;
-  "BATTERY_GAUGE_LTC2941" = no;
-  "BATTERY_GOLDFISH" = no;
-  "BATTERY_MAX17042" = no;
-  "BATTERY_MAX1720X" = no;
-  "BATTERY_RT5033" = no;
-  "BATTERY_SBS" = no;
-  "BATTERY_UG3105" = no;
-  "BCACHE" = no;
-  "BCACHEFS_FS" = no;
-  "BCM54140_PHY" = no;
-  "BCM7XXX_PHY" = no;
-  "BCM84881_PHY" = no;
-  "BCM87XX_PHY" = no;
-  "BCMA" = no;
-  "BCMGENET" = no;
-  "BCM_KONA_USB2_PHY" = no;
-  "BCM_VK" = no;
-  "BE2ISCSI" = no;
-  "BE2NET" = no;
-  "BEFS_FS" = no;
-  "BLK_DEV_3W_XXXX_RAID" = no;
-  "BLK_DEV_DM" = no;
-  "BLK_DEV_DRBD" = no;
-  "BLK_DEV_FD" = no;
-  "BLK_DEV_LOOP" = yes;
-  "BLK_DEV_MD" = no;
-  "BLK_DEV_NBD" = no;
-  "BLK_DEV_NULL_BLK" = no;
-  "BLK_DEV_NVME" = no;
-  "BLK_DEV_PCIESSD_MTIP32XX" = no;
-  "BLK_DEV_RAM" = no;
-  "BLK_DEV_RBD" = no;
-  "BLK_DEV_SR" = no;
-  "BLK_DEV_UBLK" = no;
-  "BLK_DEV_ZONED_LOOP" = no;
-  "BNA" = no;
-  "BNX2" = no;
-  "BNX2X" = no;
-  "BNXT" = no;
-  "BONDING" = no;
-  "BRCMFMAC" = no;
-  "BRCMSMAC" = no;
-  "BRIDGE" = yes;
-  "BRIDGE_NETFILTER" = no;
-  "BRIDGE_NF_EBTABLES" = no;
-  "BRIDGE_NF_EBTABLES_LEGACY" = no;
-  "BROADCOM_PHY" = no;
-  "BT" = yes;
-  "BT_ATH3K" = yes;
-  "BT_BCM" = yes;
-  "BT_BNEP" = no;
-  "BT_HCIBCM203X" = no;
-  "BT_HCIBCM4377" = no;
-  "BT_HCIBFUSB" = no;
-  "BT_HCIBPA10X" = no;
-  "BT_HCIBTSDIO" = no;
-  "BT_HCIBTUSB" = yes;
-  "BT_HCIUART" = no;
-  "BT_HCIVHCI" = no;
-  "BT_HIDP" = no;
-  "BT_INTEL" = yes;
-  "BT_INTEL_PCIE" = yes;
-  "BT_MRVL" = no;
-  "BT_MTK" = yes;
-  "BT_MTKSDIO" = no;
-  "BT_MTKUART" = no;
-  "BT_NXPUART" = no;
-  "BT_RFCOMM" = no;
-  "BT_RTL" = yes;
-  "BT_VIRTIO" = no;
-  "C2PORT" = no;
-  "CADENCE_WATCHDOG" = no;
-  "CAN" = no;
-  "CARL9170" = no;
-  "CASSINI" = no;
-  "CB710_CORE" = no;
-  "CDROM_PKTCDVD" = no;
-  "CEC_CH7322" = no;
-  "CEC_CORE" = yes;
-  "CEC_GPIO" = no;
-  "CEC_NXP_TDA9950" = no;
-  "CEC_SECO" = no;
-  "CEPH_FS" = no;
-  "CEPH_LIB" = no;
-  "CFG80211" = yes;
-  "CHARGER_ADP5061" = no;
-  "CHARGER_BD99954" = no;
-  "CHARGER_BQ2415X" = no;
-  "CHARGER_BQ24190" = no;
-  "CHARGER_BQ24257" = no;
-  "CHARGER_BQ24735" = no;
-  "CHARGER_BQ2515X" = no;
-  "CHARGER_BQ256XX" = no;
-  "CHARGER_BQ25890" = no;
-  "CHARGER_BQ25980" = no;
-  "CHARGER_GPIO" = no;
-  "CHARGER_LP8727" = no;
-  "CHARGER_LT3651" = no;
-  "CHARGER_LTC4162L" = no;
-  "CHARGER_MANAGER" = no;
-  "CHARGER_MAX77976" = no;
-  "CHARGER_MAX8903" = no;
-  "CHARGER_MAX8971" = no;
-  "CHARGER_RT9455" = no;
-  "CHARGER_RT9467" = no;
-  "CHARGER_RT9471" = no;
-  "CHARGER_SBS" = no;
-  "CHARGER_SMB347" = no;
-  "CHARGER_TPS65090" = no;
-  "CHELSIO_T1" = no;
-  "CHELSIO_T3" = no;
-  "CHELSIO_T4" = no;
-  "CHELSIO_T4VF" = no;
-  "CHROMEOS_ACPI" = no;
-  "CHROMEOS_LAPTOP" = no;
-  "CHROMEOS_PRIVACY_SCREEN" = no;
-  "CHROMEOS_PSTORE" = no;
-  "CHROMEOS_TBMC" = no;
-  "CHR_DEV_SCH" = no;
-  "CHR_DEV_SG" = no;
-  "CHR_DEV_ST" = no;
-  "CICADA_PHY" = no;
-  "CIFS" = no;
-  "CLK_TWL" = no;
-  "CLK_TWL6040" = no;
-  "CNIC" = no;
-  "CODA_FS" = no;
-  "COMMON_CLK_CDCE706" = no;
-  "COMMON_CLK_CS2000_CP" = no;
-  "COMMON_CLK_MAX9485" = no;
-  "COMMON_CLK_PWM" = no;
-  "COMMON_CLK_SI5341" = no;
-  "COMMON_CLK_SI5351" = no;
-  "COMMON_CLK_SI544" = no;
-  "COMMON_CLK_WM831X" = no;
-  "COMPAL_LAPTOP" = no;
-  "CORDIC" = no;
-  "CORTINA_PHY" = no;
-  "COUNTER" = no;
-  "CRAMFS" = no;
-  "CROS_EC" = no;
-  "CROS_HPS_I2C" = no;
-  "CROS_KBD_LED_BACKLIGHT" = no;
-  "CRYPTO_842" = no;
-  "CRYPTO_ADIANTUM" = no;
-  "CRYPTO_AEAD" = yes;
-  "CRYPTO_AEGIS128" = no;
-  "CRYPTO_AEGIS128_AESNI_SSE2" = no;
-  "CRYPTO_AES_NI_INTEL" = yes;
-  "CRYPTO_AES_TI" = no;
-  "CRYPTO_ANSI_CPRNG" = no;
-  "CRYPTO_ARIA" = no;
-  "CRYPTO_ARIA_AESNI_AVX2_X86_64" = no;
-  "CRYPTO_ARIA_AESNI_AVX_X86_64" = no;
-  "CRYPTO_ARIA_GFNI_AVX512_X86_64" = no;
-  "CRYPTO_AUTHENC" = no;
-  "CRYPTO_BLOWFISH" = no;
-  "CRYPTO_BLOWFISH_X86_64" = no;
-  "CRYPTO_CAMELLIA" = no;
-  "CRYPTO_CAMELLIA_AESNI_AVX2_X86_64" = no;
-  "CRYPTO_CAMELLIA_AESNI_AVX_X86_64" = no;
-  "CRYPTO_CAMELLIA_X86_64" = no;
-  "CRYPTO_CAST5" = no;
-  "CRYPTO_CAST5_AVX_X86_64" = no;
-  "CRYPTO_CAST6" = no;
-  "CRYPTO_CAST6_AVX_X86_64" = no;
-  "CRYPTO_CCM" = yes;
-  "CRYPTO_CHACHA20" = no;
-  "CRYPTO_CHACHA20POLY1305" = no;
-  "CRYPTO_CMAC" = yes;
-  "CRYPTO_CRC32" = no;
-  "CRYPTO_CRYPTD" = yes;
-  "CRYPTO_CURVE25519" = no;
-  "CRYPTO_DEFLATE" = no;
-  "CRYPTO_DES" = no;
-  "CRYPTO_DES3_EDE_X86_64" = no;
-  "CRYPTO_DEV_AMLOGIC_GXL" = no;
-  "CRYPTO_DEV_ATMEL_ECC" = no;
-  "CRYPTO_DEV_ATMEL_SHA204A" = no;
-  "CRYPTO_DEV_CCP_DD" = no;
-  "CRYPTO_DEV_NITROX_CNN55XX" = no;
-  "CRYPTO_DEV_PADLOCK" = no;
-  "CRYPTO_DEV_QAT_420XX" = no;
-  "CRYPTO_DEV_QAT_4XXX" = no;
-  "CRYPTO_DEV_QAT_6XXX" = no;
-  "CRYPTO_DEV_QAT_C3XXX" = no;
-  "CRYPTO_DEV_QAT_C3XXXVF" = no;
-  "CRYPTO_DEV_QAT_C62X" = no;
-  "CRYPTO_DEV_QAT_C62XVF" = no;
-  "CRYPTO_DEV_QAT_DH895xCC" = no;
-  "CRYPTO_DEV_QAT_DH895xCCVF" = no;
-  "CRYPTO_DEV_SAFEXCEL" = no;
-  "CRYPTO_DEV_VIRTIO" = no;
-  "CRYPTO_ECHAINIV" = no;
-  "CRYPTO_ECRDSA" = no;
-  "CRYPTO_ESSIV" = no;
-  "CRYPTO_FCRYPT" = no;
-  "CRYPTO_GCM" = yes;
-  "CRYPTO_GHASH" = yes;
-  "CRYPTO_GHASH_CLMUL_NI_INTEL" = yes;
-  "CRYPTO_HCTR2" = no;
-  "CRYPTO_KRB5" = no;
-  "CRYPTO_KRB5ENC" = no;
-  "CRYPTO_LIB_ARC4" = yes;
-  "CRYPTO_LRW" = no;
-  "CRYPTO_LZ4" = no;
-  "CRYPTO_LZ4HC" = no;
-  "CRYPTO_MD4" = no;
-  "CRYPTO_MICHAEL_MIC" = no;
-  "CRYPTO_NHPOLY1305_AVX2" = no;
-  "CRYPTO_NHPOLY1305_SSE2" = no;
-  "CRYPTO_NULL" = no;
-  "CRYPTO_PCBC" = no;
-  "CRYPTO_PCRYPT" = no;
-  "CRYPTO_POLYVAL" = yes;
-  "CRYPTO_POLYVAL_CLMUL_NI" = yes;
-  "CRYPTO_RMD160" = no;
-  "CRYPTO_SEQIV" = no;
-  "CRYPTO_SERPENT" = no;
-  "CRYPTO_SERPENT_AVX2_X86_64" = no;
-  "CRYPTO_SERPENT_AVX_X86_64" = no;
-  "CRYPTO_SERPENT_SSE2_X86_64" = no;
-  "CRYPTO_SHA1_SSSE3" = yes;
-  "CRYPTO_SHA512_SSSE3" = yes;
-  "CRYPTO_SM3_AVX_X86_64" = no;
-  "CRYPTO_SM3_GENERIC" = no;
-  "CRYPTO_SM4_AESNI_AVX2_X86_64" = no;
-  "CRYPTO_SM4_AESNI_AVX_X86_64" = no;
-  "CRYPTO_SM4_GENERIC" = no;
-  "CRYPTO_STREEBOG" = no;
-  "CRYPTO_TWOFISH" = no;
-  "CRYPTO_TWOFISH_AVX_X86_64" = no;
-  "CRYPTO_TWOFISH_X86_64" = no;
-  "CRYPTO_TWOFISH_X86_64_3WAY" = no;
-  "CRYPTO_USER" = no;
-  "CRYPTO_USER_API_AEAD" = no;
-  "CRYPTO_USER_API_HASH" = no;
-  "CRYPTO_USER_API_RNG" = no;
-  "CRYPTO_USER_API_SKCIPHER" = no;
-  "CRYPTO_WP512" = no;
-  "CRYPTO_XCBC" = no;
-  "CUSE" = no;
-  "CW1200" = no;
-  "CXD2880_SPI_DRV" = no;
-  "CXL_BUS" = no;
-  "CX_ECAT" = no;
-  "DA9052_WATCHDOG" = no;
-  "DA9055_WATCHDOG" = no;
-  "DASHARO_ACPI" = no;
-  "DAVICOM_PHY" = no;
-  "DCDBAS" = yes;
-  "DE2104X" = no;
-  "DELL_LAPTOP" = yes;
-  "DELL_PC" = no;
-  "DELL_RBTN" = yes;
-  "DELL_SMBIOS" = yes;
-  "DELL_SMO8800" = no;
-  "DELL_UART_BACKLIGHT" = no;
-  "DELL_WMI" = yes;
-  "DELL_WMI_AIO" = no;
-  "DELL_WMI_DDV" = no;
-  "DELL_WMI_DESCRIPTOR" = yes;
-  "DELL_WMI_LED" = no;
-  "DELL_WMI_SYSMAN" = no;
-  "DEVFREQ_GOV_PASSIVE" = no;
-  "DEVFREQ_GOV_PERFORMANCE" = no;
-  "DEVFREQ_GOV_POWERSAVE" = no;
-  "DEVFREQ_GOV_SIMPLE_ONDEMAND" = no;
-  "DEVFREQ_GOV_USERSPACE" = no;
-  "DEV_DAX" = no;
-  "DEV_DAX_HMEM" = no;
-  "DL2K" = no;
-  "DLM" = no;
-  "DM9051" = no;
-  "DM9102" = no;
-  "DNET" = no;
-  "DNS_RESOLVER" = no;
-  "DP83822_PHY" = no;
-  "DP83848_PHY" = no;
-  "DP83867_PHY" = no;
-  "DP83869_PHY" = no;
-  "DP83TC811_PHY" = no;
-  "DP83TD510_PHY" = no;
-  "DP83TG720_PHY" = no;
-  "DPTF_PCH_FIVR" = no;
-  "DPTF_POWER" = no;
-  "DRM_ACCEL_AMDXDNA" = no;
-  "DRM_ACCEL_HABANALABS" = no;
-  "DRM_ACCEL_IVPU" = no;
-  "DRM_AMDGPU" = no;
-  "DRM_ANALOGIX_ANX78XX" = no;
-  "DRM_APPLETBDRM" = no;
-  "DRM_AST" = no;
-  "DRM_BOCHS" = no;
-  "DRM_BUDDY" = yes;
-  "DRM_CIRRUS_QEMU" = no;
-  "DRM_DISPLAY_HELPER" = yes;
-  "DRM_EXEC" = yes;
-  "DRM_GM12U320" = no;
-  "DRM_GMA500" = no;
-  "DRM_GPUSVM" = yes;
-  "DRM_GPUVM" = yes;
-  "DRM_GUD" = no;
-  "DRM_HISI_HIBMC" = no;
-  "DRM_I2C_NXP_TDA998X" = no;
-  "DRM_I915" = yes;
-  "DRM_MGAG200" = no;
-  "DRM_NOUVEAU" = no;
-  "DRM_PANEL_AUO_A030JTN01" = no;
-  "DRM_PANEL_ILITEK_ILI9341" = no;
-  "DRM_PANEL_MIPI_DBI" = no;
-  "DRM_PANEL_ORISETECH_OTA5601A" = no;
-  "DRM_PANEL_RASPBERRYPI_TOUCHSCREEN" = no;
-  "DRM_PANEL_WIDECHIPS_WS2401" = no;
-  "DRM_QXL" = no;
-  "DRM_RADEON" = no;
-  "DRM_SCHED" = yes;
-  "DRM_SSD130X" = no;
-  "DRM_ST7571_I2C" = no;
-  "DRM_ST7586" = no;
-  "DRM_ST7735R" = no;
-  "DRM_SUBALLOC_HELPER" = yes;
-  "DRM_TTM" = yes;
-  "DRM_TTM_HELPER" = yes;
-  "DRM_UDL" = no;
-  "DRM_VBOXVIDEO" = no;
-  "DRM_VGEM" = no;
-  "DRM_VIRTIO_GPU" = no;
-  "DRM_VKMS" = no;
-  "DRM_VMWGFX" = no;
-  "DRM_XE" = yes;
-  "DRM_XEN_FRONTEND" = no;
-  "DS1682" = no;
-  "DUMMY" = no;
-  "DVB_AS102" = no;
-  "DVB_AV7110" = no;
-  "DVB_B2C2_FLEXCOP_PCI" = no;
-  "DVB_B2C2_FLEXCOP_USB" = no;
-  "DVB_BUDGET_CORE" = no;
-  "DVB_CORE" = yes;
-  "DVB_DDBRIDGE" = no;
-  "DVB_DM1105" = no;
-  "DVB_DUMMY_FE" = no;
-  "DVB_NETUP_UNIDVB" = no;
-  "DVB_NGENE" = no;
-  "DVB_PLUTO2" = no;
-  "DVB_PT1" = no;
-  "DVB_PT3" = no;
-  "DVB_SMIPCIE" = no;
-  "DVB_TTUSB_BUDGET" = no;
-  "DVB_TTUSB_DEC" = no;
-  "DVB_USB" = no;
-  "DVB_USB_V2" = no;
-  "DVB_VIDTV" = no;
-  "DWC_PCIE_PMU" = no;
-  "DWC_XLGMAC" = no;
-  "DW_DMAC" = no;
-  "DW_EDMA" = no;
-  "DW_WATCHDOG" = no;
-  "DW_XDATA_PCIE" = no;
-  "E100" = no;
-  "E1000" = no;
-  "E1000E" = no;
-  "EBC_C384_WDT" = no;
-  "ECRYPT_FS" = no;
-  "EDAC_AMD64" = no;
-  "EDAC_E752X" = no;
-  "EDAC_I10NM" = no;
-  "EDAC_I3000" = no;
-  "EDAC_I3200" = no;
-  "EDAC_I5100" = no;
-  "EDAC_I5400" = no;
-  "EDAC_I7300" = no;
-  "EDAC_I7CORE" = no;
-  "EDAC_I82975X" = no;
-  "EDAC_IE31200" = no;
-  "EDAC_IGEN6" = no;
-  "EDAC_PND2" = no;
-  "EDAC_SBRIDGE" = no;
-  "EDAC_SKX" = no;
-  "EDAC_X38" = no;
-  "EDD" = no;
-  "EEEPC_LAPTOP" = no;
-  "EEPROM_93CX6" = no;
-  "EEPROM_AT24" = no;
-  "EEPROM_EE1004" = yes;
-  "EEPROM_IDT_89HPESX" = no;
-  "EEPROM_MAX6875" = no;
-  "EFI_BOOTLOADER_CONTROL" = no;
-  "EFI_CAPSULE_LOADER" = no;
-  "EFI_SECRET" = no;
-  "ENA_ETHERNET" = no;
-  "ENC28J60" = no;
-  "ENCLOSURE_SERVICES" = no;
-  "ENCRYPTED_KEYS" = no;
-  "ENCX24J600" = no;
-  "ENIC" = no;
-  "EPIC100" = no;
-  "EQUALIZER" = no;
-  "EROFS_FS" = no;
-  "ET131X" = no;
-  "ETHOC" = no;
-  "EUROTECH_WDT" = no;
-  "EXAR_WDT" = no;
-  "EXFAT_FS" = no;
-  "EXTCON_FSA9480" = no;
-  "EXTCON_GPIO" = no;
-  "EXTCON_INTEL_CHT_WC" = no;
-  "EXTCON_INTEL_INT3496" = no;
-  "EXTCON_LC824206XA" = no;
-  "EXTCON_MAX3355" = no;
-  "EXTCON_MAX77843" = no;
-  "EXTCON_MAX8997" = no;
-  "EXTCON_PTN5150" = no;
-  "EXTCON_RT8973A" = no;
-  "EXTCON_SM5502" = no;
-  "EXTCON_USB_GPIO" = no;
-  "F2FS_FS" = no;
-  "F71808E_WDT" = no;
-  "FAILOVER" = no;
-  "FAT_FS" = yes;
-  "FBNIC" = no;
-  "FDDI" = no;
-  "FEALNX" = no;
-  "FIREWIRE" = no;
-  "FIREWIRE_NOSY" = no;
-  "FIXED_PHY" = yes;
-  "FM10K" = no;
-  "FORCEDETH" = no;
-  "FPGA" = no;
-  "FUEL_GAUGE_MM8013" = no;
-  "FUJITSU_ES" = no;
-  "FUJITSU_LAPTOP" = no;
-  "FUJITSU_TABLET" = no;
-  "FUN_ETH" = no;
-  "FUSION_SAS" = no;
-  "FUSION_SPI" = no;
-  "FWCTL" = no;
-  "FWNODE_MDIO" = yes;
-  "FW_CFG_SYSFS" = no;
-  "GAMEPORT" = no;
-  "GENEVE" = no;
-  "GENWQE" = no;
-  "GFS2_FS" = no;
-  "GIGABYTE_WMI" = no;
-  "GNSS" = no;
-  "GOOGLE_COREBOOT_TABLE" = no;
-  "GPD_POCKET_FAN" = no;
-  "GPIB" = no;
-  "GPIO_74X164" = no;
-  "GPIO_ADP5520" = no;
-  "GPIO_AGGREGATOR" = no;
-  "GPIO_ALTERA" = no;
-  "GPIO_AMD8111" = no;
-  "GPIO_AMDPT" = no;
-  "GPIO_AMD_FCH" = no;
-  "GPIO_DA9052" = no;
-  "GPIO_DA9055" = no;
-  "GPIO_DS4520" = no;
-  "GPIO_DWAPB" = no;
-  "GPIO_ELKHARTLAKE" = no;
-  "GPIO_F7188X" = no;
-  "GPIO_FXL6408" = no;
-  "GPIO_GENERIC_PLATFORM" = no;
-  "GPIO_GRANITERAPIDS" = no;
-  "GPIO_ICH" = no;
-  "GPIO_IT87" = no;
-  "GPIO_LATCH" = no;
-  "GPIO_MAX3191X" = no;
-  "GPIO_MAX7300" = no;
-  "GPIO_MAX7301" = no;
-  "GPIO_MAX732X" = no;
-  "GPIO_MB86S7X" = no;
-  "GPIO_MC33880" = no;
-  "GPIO_ML_IOH" = no;
-  "GPIO_MOCKUP" = no;
-  "GPIO_MPSSE" = no;
-  "GPIO_PCA953X" = no;
-  "GPIO_PCA9570" = no;
-  "GPIO_PCF857X" = no;
-  "GPIO_PCIE_IDIO_24" = no;
-  "GPIO_PCI_IDIO_16" = no;
-  "GPIO_PISOSR" = no;
-  "GPIO_RDC321X" = no;
-  "GPIO_SCH311X" = no;
-  "GPIO_SIM" = no;
-  "GPIO_TPIC2810" = no;
-  "GPIO_TWL4030" = no;
-  "GPIO_TWL6040" = no;
-  "GPIO_VIRTIO" = no;
-  "GPIO_VX855" = no;
-  "GPIO_WINBOND" = no;
-  "GPIO_WM831X" = no;
-  "GPIO_WM8350" = no;
-  "GPIO_WS16C48" = no;
-  "GPIO_XILINX" = no;
-  "GPIO_XRA1403" = no;
-  "GP_PCI1XXXX" = no;
-  "GTP" = no;
-  "GVE" = no;
-  "HALTPOLL_CPUIDLE" = no;
-  "HAMACHI" = no;
-  "HANGCHECK_TIMER" = no;
-  "HAPPYMEAL" = no;
-  "HAVE_KVM_IRQ_BYPASS" = yes;
-  "HDMI_LPE_AUDIO" = no;
-  "HFSPLUS_FS" = no;
-  "HFS_FS" = no;
-  "HIBMCGE" = no;
-  "HID_A4TECH" = no;
-  "HID_ACCUTOUCH" = no;
-  "HID_ACRUX" = no;
-  "HID_ALPS" = no;
-  "HID_APPLE" = no;
-  "HID_APPLEIR" = no;
-  "HID_APPLETB_BL" = no;
-  "HID_APPLETB_KBD" = no;
-  "HID_AUREAL" = no;
-  "HID_BELKIN" = no;
-  "HID_BETOP_FF" = no;
-  "HID_BIGBEN_FF" = no;
-  "HID_CHERRY" = no;
-  "HID_CHICONY" = no;
-  "HID_CMEDIA" = no;
-  "HID_CORSAIR" = no;
-  "HID_COUGAR" = no;
-  "HID_CP2112" = no;
-  "HID_CREATIVE_SB0540" = no;
-  "HID_CYPRESS" = no;
-  "HID_DRAGONRISE" = no;
-  "HID_ELAN" = no;
-  "HID_ELECOM" = no;
-  "HID_ELO" = no;
-  "HID_EMS_FF" = no;
-  "HID_EVISION" = no;
-  "HID_EZKEY" = no;
-  "HID_FT260" = no;
-  "HID_GEMBIRD" = no;
-  "HID_GFRM" = no;
-  "HID_GLORIOUS" = no;
-  "HID_GOODIX_SPI" = no;
-  "HID_GOOGLE_STADIA_FF" = no;
-  "HID_GREENASIA" = no;
-  "HID_GT683R" = no;
-  "HID_GYRATION" = no;
-  "HID_HOLTEK" = no;
-  "HID_ICADE" = no;
-  "HID_ITE" = no;
-  "HID_JABRA" = no;
-  "HID_KENSINGTON" = no;
-  "HID_KEYTOUCH" = no;
-  "HID_KYE" = no;
-  "HID_KYSONA" = no;
-  "HID_LCPOWER" = no;
-  "HID_LED" = no;
-  "HID_LENOVO" = no;
-  "HID_LETSKETCH" = no;
-  "HID_MACALLY" = no;
-  "HID_MAGICMOUSE" = no;
-  "HID_MALTRON" = no;
-  "HID_MAYFLASH" = no;
-  "HID_MCP2200" = no;
-  "HID_MCP2221" = no;
-  "HID_MEGAWORLD_FF" = no;
-  "HID_MICROSOFT" = no;
-  "HID_MONTEREY" = no;
-  "HID_MULTITOUCH" = yes;
-  "HID_NINTENDO" = no;
-  "HID_NTI" = no;
-  "HID_NTRIG" = no;
-  "HID_ORTEK" = no;
-  "HID_PANTHERLORD" = no;
-  "HID_PENMOUNT" = no;
-  "HID_PETALYNX" = no;
-  "HID_PICOLCD" = no;
-  "HID_PLANTRONICS" = no;
-  "HID_PRIMAX" = no;
-  "HID_PRODIKEYS" = no;
-  "HID_PXRC" = no;
-  "HID_RAZER" = no;
-  "HID_REDRAGON" = no;
-  "HID_RETRODE" = no;
-  "HID_RMI" = no;
-  "HID_ROCCAT" = no;
-  "HID_SAITEK" = no;
-  "HID_SAMSUNG" = no;
-  "HID_SEMITEK" = no;
-  "HID_SENSOR_HUB" = no;
-  "HID_SIGMAMICRO" = no;
-  "HID_SMARTJOYPLUS" = no;
-  "HID_SONY" = no;
-  "HID_SPEEDLINK" = no;
-  "HID_STEAM" = no;
-  "HID_STEELSERIES" = no;
-  "HID_SUNPLUS" = no;
-  "HID_THINGM" = no;
-  "HID_THRUSTMASTER" = no;
-  "HID_TIVO" = no;
-  "HID_TOPRE" = no;
-  "HID_TOPSEED" = no;
-  "HID_TWINHAN" = no;
-  "HID_U2FZERO" = no;
-  "HID_UCLOGIC" = no;
-  "HID_UDRAW_PS3" = no;
-  "HID_UNIVERSAL_PIDFF" = no;
-  "HID_VIEWSONIC" = no;
-  "HID_VIVALDI" = no;
-  "HID_VRC2" = no;
-  "HID_WACOM" = no;
-  "HID_WALTOP" = no;
-  "HID_WIIMOTE" = no;
-  "HID_WINWING" = no;
-  "HID_XIAOMI" = no;
-  "HID_XINMO" = no;
-  "HID_ZEROPLUS" = no;
-  "HID_ZYDACRON" = no;
-  "HINIC" = no;
-  "HINIC3" = no;
-  "HMC6352" = no;
-  "HOTPLUG_PCI_ACPI_IBM" = no;
-  "HOTPLUG_PCI_CPCI_GENERIC" = no;
-  "HOTPLUG_PCI_CPCI_ZT5550" = no;
-  "HP_ACCEL" = no;
-  "HP_BIOSCFG" = no;
-  "HP_ILO" = no;
-  "HP_WATCHDOG" = no;
-  "HP_WMI" = no;
-  "HSR" = no;
-  "HUAWEI_WMI" = no;
-  "HWPOISON_INJECT" = no;
-  "HW_RANDOM_AMD" = no;
-  "HW_RANDOM_BA431" = no;
-  "HW_RANDOM_INTEL" = no;
-  "HW_RANDOM_TIMERIOMEM" = no;
-  "HW_RANDOM_VIA" = no;
-  "HW_RANDOM_VIRTIO" = no;
-  "HW_RANDOM_XIPHERA" = no;
-  "HYPERV" = no;
-  "I2C_ALGOBIT" = yes;
-  "I2C_ALI1535" = no;
-  "I2C_ALI1563" = no;
-  "I2C_ALI15X3" = no;
-  "I2C_AMD756" = no;
-  "I2C_AMD8111" = no;
-  "I2C_AMD_MP2" = no;
-  "I2C_CBUS_GPIO" = no;
-  "I2C_CHARDEV" = no;
-  "I2C_CHT_WC" = no;
-  "I2C_CP2615" = no;
-  "I2C_DIOLAN_U2C" = no;
-  "I2C_EMEV2" = no;
-  "I2C_GPIO" = no;
-  "I2C_HID" = yes;
-  "I2C_HID_ACPI" = yes;
-  "I2C_HID_CORE" = yes;
-  "I2C_HID_OF" = no;
-  "I2C_I801" = yes;
-  "I2C_ISCH" = no;
-  "I2C_ISMT" = no;
-  "I2C_MLXCPLD" = no;
-  "I2C_MUX" = yes;
-  "I2C_MUX_GPIO" = no;
-  "I2C_MUX_LTC4306" = no;
-  "I2C_MUX_MLXCPLD" = no;
-  "I2C_MUX_PCA9541" = no;
-  "I2C_MUX_PCA954x" = no;
-  "I2C_MUX_REG" = no;
-  "I2C_NFORCE2" = no;
-  "I2C_NVIDIA_GPU" = no;
-  "I2C_OCORES" = no;
-  "I2C_PCA_PLATFORM" = no;
-  "I2C_PCI1XXXX" = no;
-  "I2C_PIIX4" = no;
-  "I2C_ROBOTFUZZ_OSIF" = no;
-  "I2C_SCMI" = no;
-  "I2C_SIMTEC" = no;
-  "I2C_SIS5595" = no;
-  "I2C_SIS630" = no;
-  "I2C_SIS96X" = no;
-  "I2C_SLAVE_EEPROM" = no;
-  "I2C_SLAVE_TESTUNIT" = no;
-  "I2C_SMBUS" = yes;
-  "I2C_STUB" = no;
-  "I2C_TAOS_EVM" = no;
-  "I2C_TINY_USB" = no;
-  "I2C_VIA" = no;
-  "I2C_VIAPRO" = no;
-  "I2C_VIRTIO" = no;
-  "I2C_XILINX" = no;
-  "I2C_ZHAOXIN" = no;
-  "I40E" = no;
-  "I40EVF" = no;
-  "I6300ESB_WDT" = no;
-  "IB700_WDT" = no;
-  "IBMASR" = no;
-  "IBM_ASM" = no;
-  "IBM_RTL" = no;
-  "ICE" = no;
-  "ICPLUS_PHY" = no;
-  "ICS932S401" = no;
-  "IDEAPAD_LAPTOP" = no;
-  "IDPF" = no;
-  "IE6XX_WDT" = no;
-  "IEEE802154" = no;
-  "IGB" = no;
-  "IGBVF" = no;
-  "IGC" = no;
-  "IIO" = no;
-  "IKHEADERS" = no;
-  "INET6_AH" = no;
-  "INET6_ESP" = no;
-  "INET6_IPCOMP" = no;
-  "INET_AH" = no;
-  "INET_DIAG" = no;
-  "INET_ESP" = no;
-  "INET_IPCOMP" = no;
-  "INFINIBAND" = no;
-  "INPUT_88PM860X_ONKEY" = no;
-  "INPUT_AD714X" = no;
-  "INPUT_ADXL34X" = no;
-  "INPUT_APANEL" = no;
-  "INPUT_ATI_REMOTE2" = no;
-  "INPUT_ATLAS_BTNS" = no;
-  "INPUT_BMA150" = no;
-  "INPUT_CM109" = no;
-  "INPUT_CMA3000" = no;
-  "INPUT_DA7280_HAPTICS" = no;
-  "INPUT_DA9052_ONKEY" = no;
-  "INPUT_DA9055_ONKEY" = no;
-  "INPUT_DRV260X_HAPTICS" = no;
-  "INPUT_DRV2665_HAPTICS" = no;
-  "INPUT_DRV2667_HAPTICS" = no;
-  "INPUT_E3X0_BUTTON" = no;
-  "INPUT_FF_MEMLESS" = no;
-  "INPUT_GPIO_BEEPER" = no;
-  "INPUT_GPIO_DECODER" = no;
-  "INPUT_GPIO_ROTARY_ENCODER" = no;
-  "INPUT_GPIO_VIBRA" = no;
-  "INPUT_IBM_PANEL" = no;
-  "INPUT_IDEAPAD_SLIDEBAR" = no;
-  "INPUT_IMS_PCU" = no;
-  "INPUT_IQS269A" = no;
-  "INPUT_IQS626A" = no;
-  "INPUT_IQS7222" = no;
-  "INPUT_JOYDEV" = yes;
-  "INPUT_KEYSPAN_REMOTE" = no;
-  "INPUT_KXTJ9" = no;
-  "INPUT_MATRIXKMAP" = no;
-  "INPUT_MAX77693_HAPTIC" = no;
-  "INPUT_MAX8925_ONKEY" = no;
-  "INPUT_MAX8997_HAPTIC" = no;
-  "INPUT_MMA8450" = no;
-  "INPUT_MOUSEDEV" = yes;
-  "INPUT_PCAP" = no;
-  "INPUT_PCF8574" = no;
-  "INPUT_PCSPKR" = no;
-  "INPUT_POWERMATE" = no;
-  "INPUT_PWM_BEEPER" = no;
-  "INPUT_PWM_VIBRA" = no;
-  "INPUT_REGULATOR_HAPTIC" = no;
-  "INPUT_SPARSEKMAP" = yes;
-  "INPUT_TWL4030_PWRBUTTON" = no;
-  "INPUT_TWL4030_VIBRA" = no;
-  "INPUT_TWL6040_VIBRA" = no;
-  "INPUT_UINPUT" = no;
-  "INPUT_WM831X_ON" = no;
-  "INPUT_XEN_KBDDEV_FRONTEND" = no;
-  "INPUT_YEALINK" = no;
-  "INSPUR_PLATFORM_PROFILE" = no;
-  "INT340X_THERMAL" = no;
-  "INTEL_ATOMISP2_PM" = no;
-  "INTEL_BYTCRC_PWRSRC" = no;
-  "INTEL_GTT" = yes;
-  "INTEL_HID_EVENT" = no;
-  "INTEL_IDMA64" = yes;
-  "INTEL_IDXD" = no;
-  "INTEL_IFS" = no;
-  "INTEL_INT0002_VGPIO" = no;
-  "INTEL_IOATDMA" = no;
-  "INTEL_IPS" = no;
-  "INTEL_ISH_HID" = no;
-  "INTEL_MEI" = yes;
-  "INTEL_MEI_GSC" = no;
-  "INTEL_MEI_GSC_PROXY" = no;
-  "INTEL_MEI_HDCP" = yes;
-  "INTEL_MEI_ME" = yes;
-  "INTEL_MEI_PXP" = yes;
-  "INTEL_MEI_TXE" = no;
-  "INTEL_MEI_VSC_HW" = no;
-  "INTEL_MEI_WDT" = no;
-  "INTEL_OAKTRAIL" = no;
-  "INTEL_OC_WATCHDOG" = yes;
-  "INTEL_PCH_THERMAL" = yes;
-  "INTEL_PMC_CORE" = yes;
-  "INTEL_PMC_SSRAM_TELEMETRY" = yes;
-  "INTEL_PMT_CLASS" = yes;
-  "INTEL_PMT_CRASHLOG" = no;
-  "INTEL_PMT_TELEMETRY" = yes;
-  "INTEL_POWERCLAMP" = yes;
-  "INTEL_PUNIT_IPC" = no;
-  "INTEL_RAPL" = yes;
-  "INTEL_RAPL_CORE" = yes;
-  "INTEL_RST" = no;
-  "INTEL_SAR_INT1092" = no;
-  "INTEL_SCU_IPC_UTIL" = no;
-  "INTEL_SCU_PLATFORM" = no;
-  "INTEL_SDSI" = no;
-  "INTEL_SKL_INT3472" = no;
-  "INTEL_SMARTCONNECT" = no;
-  "INTEL_SOC_DTS_THERMAL" = no;
-  "INTEL_SOC_PMIC_BXTWC" = no;
-  "INTEL_SOC_PMIC_CHTDC_TI" = no;
-  "INTEL_SOC_PMIC_MRFLD" = no;
-  "INTEL_SPEED_SELECT_INTERFACE" = no;
-  "INTEL_TCC_COOLING" = yes;
-  "INTEL_TH" = no;
-  "INTEL_THC_HID" = no;
-  "INTEL_TPMI" = no;
-  "INTEL_UNCORE_FREQ_CONTROL" = no;
-  "INTEL_VBTN" = no;
-  "INTEL_VSC" = no;
-  "INTEL_VSEC" = yes;
-  "INTEL_WMI_SBL_FW_UPDATE" = no;
-  "INTEL_WMI_THUNDERBOLT" = no;
-  "INTEL_XWAY_PHY" = no;
-  "IOMMUFD" = no;
-  "IONIC" = no;
-  "IP5XXX_POWER" = no;
-  "IP6_NF_FILTER" = no;
-  "IP6_NF_IPTABLES" = yes;
-  "IP6_NF_IPTABLES_LEGACY" = yes;
-  "IP6_NF_MANGLE" = yes;
-  "IP6_NF_MATCH_AH" = no;
-  "IP6_NF_MATCH_EUI64" = no;
-  "IP6_NF_MATCH_FRAG" = no;
-  "IP6_NF_MATCH_HL" = no;
-  "IP6_NF_MATCH_IPV6HEADER" = no;
-  "IP6_NF_MATCH_MH" = no;
-  "IP6_NF_MATCH_OPTS" = no;
-  "IP6_NF_MATCH_RPFILTER" = yes;
-  "IP6_NF_MATCH_RT" = no;
-  "IP6_NF_MATCH_SRH" = no;
-  "IP6_NF_NAT" = no;
-  "IP6_NF_RAW" = yes;
-  "IP6_NF_SECURITY" = no;
-  "IP6_NF_TARGET_HL" = no;
-  "IP6_NF_TARGET_NPT" = no;
-  "IP6_NF_TARGET_REJECT" = no;
-  "IP6_NF_TARGET_SYNPROXY" = no;
-  "IPACK_BUS" = no;
-  "IPMB_DEVICE_INTERFACE" = no;
-  "IPMI_HANDLER" = no;
-  "IPU_BRIDGE" = no;
-  "IPV6_ILA" = no;
-  "IPV6_MIP6" = no;
-  "IPV6_SIT" = no;
-  "IPV6_TUNNEL" = no;
-  "IPV6_VTI" = no;
-  "IPVLAN" = no;
-  "IPW2100" = no;
-  "IPW2200" = no;
-  "IP_NF_ARPFILTER" = no;
-  "IP_NF_ARPTABLES" = no;
-  "IP_NF_ARP_MANGLE" = no;
-  "IP_NF_FILTER" = no;
-  "IP_NF_IPTABLES" = yes;
-  "IP_NF_IPTABLES_LEGACY" = yes;
-  "IP_NF_MANGLE" = yes;
-  "IP_NF_MATCH_AH" = no;
-  "IP_NF_MATCH_ECN" = no;
-  "IP_NF_MATCH_RPFILTER" = yes;
-  "IP_NF_MATCH_TTL" = no;
-  "IP_NF_NAT" = no;
-  "IP_NF_RAW" = yes;
-  "IP_NF_SECURITY" = no;
-  "IP_NF_TARGET_ECN" = no;
-  "IP_NF_TARGET_REJECT" = no;
-  "IP_NF_TARGET_SYNPROXY" = no;
-  "IP_NF_TARGET_TTL" = no;
-  "IP_SCTP" = no;
-  "IP_SET" = no;
-  "IP_VS" = no;
-  "IRQ_BYPASS_MANAGER" = yes;
-  "IR_ENE" = no;
-  "IR_FINTEK" = no;
-  "IR_IGORPLUGUSB" = no;
-  "IR_IGUANA" = no;
-  "IR_IMON" = no;
-  "IR_IMON_DECODER" = no;
-  "IR_IMON_RAW" = no;
-  "IR_ITE_CIR" = no;
-  "IR_JVC_DECODER" = no;
-  "IR_MCEUSB" = no;
-  "IR_MCE_KBD_DECODER" = no;
-  "IR_NEC_DECODER" = no;
-  "IR_NUVOTON" = no;
-  "IR_RC5_DECODER" = no;
-  "IR_RC6_DECODER" = no;
-  "IR_RCMM_DECODER" = no;
-  "IR_REDRAT3" = no;
-  "IR_SANYO_DECODER" = no;
-  "IR_SERIAL" = no;
-  "IR_SHARP_DECODER" = no;
-  "IR_SONY_DECODER" = no;
-  "IR_STREAMZAP" = no;
-  "IR_TOY" = no;
-  "IR_TTUSBIR" = no;
-  "IR_WINBOND_CIR" = no;
-  "IR_XMP_DECODER" = no;
-  "ISCSI_BOOT_SYSFS" = no;
-  "ISCSI_IBFT" = no;
-  "ISCSI_TCP" = no;
-  "ISL29003" = no;
-  "ISL29020" = no;
-  "ISO9660_FS" = no;
-  "IT8712F_WDT" = no;
-  "IT87_WDT" = no;
-  "ITCO_WDT" = yes;
-  "IWL3945" = no;
-  "IWL4965" = no;
-  "IWLWIFI" = no;
-  "IXGBE" = no;
-  "IXGBEVF" = no;
-  "JFS_FS" = no;
-  "JME" = no;
-  "JOYSTICK_A3D" = no;
-  "JOYSTICK_ADI" = no;
-  "JOYSTICK_ANALOG" = no;
-  "JOYSTICK_AS5011" = no;
-  "JOYSTICK_COBRA" = no;
-  "JOYSTICK_FSIA6B" = no;
-  "JOYSTICK_GF2K" = no;
-  "JOYSTICK_GRIP" = no;
-  "JOYSTICK_GRIP_MP" = no;
-  "JOYSTICK_GUILLEMOT" = no;
-  "JOYSTICK_IFORCE" = no;
-  "JOYSTICK_INTERACT" = no;
-  "JOYSTICK_JOYDUMP" = no;
-  "JOYSTICK_MAGELLAN" = no;
-  "JOYSTICK_PSXPAD_SPI" = no;
-  "JOYSTICK_PXRC" = no;
-  "JOYSTICK_QWIIC" = no;
-  "JOYSTICK_SEESAW" = no;
-  "JOYSTICK_SENSEHAT" = no;
-  "JOYSTICK_SIDEWINDER" = no;
-  "JOYSTICK_SPACEBALL" = no;
-  "JOYSTICK_SPACEORB" = no;
-  "JOYSTICK_STINGER" = no;
-  "JOYSTICK_TMDC" = no;
-  "JOYSTICK_TWIDJOY" = no;
-  "JOYSTICK_WARRIOR" = no;
-  "JOYSTICK_XPAD" = no;
-  "JOYSTICK_ZHENHUA" = no;
-  "KEBA_CP500" = no;
-  "KEYBOARD_ADP5520" = no;
-  "KEYBOARD_ADP5588" = no;
-  "KEYBOARD_ADP5589" = no;
-  "KEYBOARD_APPLESPI" = no;
-  "KEYBOARD_CYPRESS_SF" = no;
-  "KEYBOARD_DLINK_DIR685" = no;
-  "KEYBOARD_GPIO" = no;
-  "KEYBOARD_GPIO_POLLED" = no;
-  "KEYBOARD_LKKBD" = no;
-  "KEYBOARD_LM8323" = no;
-  "KEYBOARD_LM8333" = no;
-  "KEYBOARD_MATRIX" = no;
-  "KEYBOARD_MAX7359" = no;
-  "KEYBOARD_MPR121" = no;
-  "KEYBOARD_NEWTON" = no;
-  "KEYBOARD_OPENCORES" = no;
-  "KEYBOARD_PINEPHONE" = no;
-  "KEYBOARD_QT1050" = no;
-  "KEYBOARD_QT1070" = no;
-  "KEYBOARD_QT2160" = no;
-  "KEYBOARD_SAMSUNG" = no;
-  "KEYBOARD_STOWAWAY" = no;
-  "KEYBOARD_SUNKBD" = no;
-  "KEYBOARD_TCA6416" = no;
-  "KEYBOARD_TCA8418" = no;
-  "KEYBOARD_TM2_TOUCHKEY" = no;
-  "KEYBOARD_TWL4030" = no;
-  "KEYBOARD_XTKBD" = no;
-  "KS8842" = no;
-  "KS8851" = no;
-  "KS8851_MLL" = no;
-  "KSZ884X_PCI" = no;
-  "KVM" = yes;
-  "KVM_AMD" = yes;
-  "KVM_INTEL" = yes;
-  "KVM_X86" = yes;
-  "L2TP" = no;
-  "LAN743X" = no;
-  "LAN865X" = no;
-  "LATTICE_ECP3_CONFIG" = no;
-  "LCD_CLASS_DEVICE" = no;
-  "LEDS_88PM860X" = no;
-  "LEDS_ADP5520" = no;
-  "LEDS_APU" = no;
-  "LEDS_AW200XX" = no;
-  "LEDS_BD2606MVV" = no;
-  "LEDS_BD2802" = no;
-  "LEDS_BLINKM" = no;
-  "LEDS_CHT_WCOVE" = no;
-  "LEDS_CLASS_FLASH" = no;
-  "LEDS_CLASS_MULTICOLOR" = no;
-  "LEDS_DA903X" = no;
-  "LEDS_DA9052" = no;
-  "LEDS_DAC124S085" = no;
-  "LEDS_GPIO" = no;
-  "LEDS_INTEL_SS4200" = no;
-  "LEDS_IS31FL319X" = no;
-  "LEDS_LM3530" = no;
-  "LEDS_LM3532" = no;
-  "LEDS_LM355x" = no;
-  "LEDS_LM3642" = no;
-  "LEDS_LP3944" = no;
-  "LEDS_LP3952" = no;
-  "LEDS_LP8788" = no;
-  "LEDS_LT3593" = no;
-  "LEDS_MAX8997" = no;
-  "LEDS_MLXCPLD" = no;
-  "LEDS_MLXREG" = no;
-  "LEDS_NIC78BX" = no;
-  "LEDS_PCA9532" = no;
-  "LEDS_PCA955X" = no;
-  "LEDS_PCA963X" = no;
-  "LEDS_PCA995X" = no;
-  "LEDS_PWM" = no;
-  "LEDS_REGULATOR" = no;
-  "LEDS_SPI_BYTE" = no;
-  "LEDS_TCA6507" = no;
-  "LEDS_TLC591XX" = no;
-  "LEDS_TRIGGER_ACTIVITY" = no;
-  "LEDS_TRIGGER_BACKLIGHT" = no;
-  "LEDS_TRIGGER_CAMERA" = no;
-  "LEDS_TRIGGER_DEFAULT_ON" = no;
-  "LEDS_TRIGGER_GPIO" = no;
-  "LEDS_TRIGGER_HEARTBEAT" = no;
-  "LEDS_TRIGGER_INPUT_EVENTS" = no;
-  "LEDS_TRIGGER_NETDEV" = no;
-  "LEDS_TRIGGER_ONESHOT" = no;
-  "LEDS_TRIGGER_PATTERN" = no;
-  "LEDS_TRIGGER_TIMER" = no;
-  "LEDS_TRIGGER_TRANSIENT" = no;
-  "LEDS_TRIGGER_TTY" = no;
-  "LEDS_USER" = no;
-  "LEDS_WM831X_STATUS" = no;
-  "LEDS_WM8350" = no;
-  "LENOVO_SE10_WDT" = no;
-  "LENOVO_SE30_WDT" = no;
-  "LENOVO_WMI_CAMERA" = no;
-  "LENOVO_WMI_HOTKEY_UTILITIES" = no;
-  "LG_LAPTOP" = no;
-  "LIBERTAS" = no;
-  "LIBERTAS_THINFIRM" = no;
-  "LIBNVDIMM" = no;
-  "LIQUIDIO" = no;
-  "LIQUIDIO_VF" = no;
-  "LLC" = yes;
-  "LLC2" = no;
-  "LMK04832" = no;
-  "LPC_ICH" = yes;
-  "LPC_SCH" = no;
-  "LSI_ET1011C_PHY" = no;
-  "LXT_PHY" = no;
-  "MAC80211" = yes;
-  "MAC80211_HWSIM" = no;
-  "MACB" = no;
-  "MACHZ_WDT" = no;
-  "MACSEC" = no;
-  "MACVLAN" = yes;
-  "MACVTAP" = yes;
-  "MAC_EMUMOUSEBTN" = yes;
-  "MANAGER_SBS" = no;
-  "MANTIS_CORE" = no;
-  "MARVELL_10G_PHY" = no;
-  "MARVELL_88Q2XXX_PHY" = no;
-  "MARVELL_88X2222_PHY" = no;
-  "MARVELL_PHY" = no;
-  "MAX31827" = no;
-  "MAX63XX_WATCHDOG" = no;
-  "MAX8925_POWER" = no;
-  "MAXLINEAR_86110_PHY" = no;
-  "MAXLINEAR_GPHY" = no;
-  "MCB" = no;
-  "MCTP_SERIAL" = no;
-  "MCTP_TRANSPORT_I2C" = no;
-  "MCTP_TRANSPORT_USB" = no;
-  "MDIO_BCM_UNIMAC" = no;
-  "MDIO_BITBANG" = no;
-  "MDIO_BUS" = yes;
-  "MDIO_MSCC_MIIM" = no;
-  "MDIO_MVUSB" = no;
-  "MDIO_THUNDER" = no;
-  "MEDIATEK_GE_PHY" = no;
-  "MEDIA_SUPPORT" = yes;
-  "MEDIA_TUNER" = yes;
-  "MEDIA_TUNER_MC44S803" = yes;
-  "MEDIA_TUNER_MT20XX" = yes;
-  "MEDIA_TUNER_SIMPLE" = yes;
-  "MEDIA_TUNER_TDA18271" = yes;
-  "MEDIA_TUNER_TDA827X" = yes;
-  "MEDIA_TUNER_TDA8290" = yes;
-  "MEDIA_TUNER_TDA9887" = yes;
-  "MEDIA_TUNER_TEA5761" = yes;
-  "MEDIA_TUNER_TEA5767" = yes;
-  "MEDIA_TUNER_XC2028" = yes;
-  "MEDIA_TUNER_XC4000" = yes;
-  "MEDIA_TUNER_XC5000" = yes;
-  "MEEGOPAD_ANX7428" = no;
-  "MEGARAID_LEGACY" = no;
-  "MEGARAID_MM" = no;
-  "MEGARAID_SAS" = no;
-  "MEMSTICK" = yes;
-  "MEMSTICK_JMICRON_38X" = no;
-  "MEMSTICK_R592" = no;
-  "MEMSTICK_REALTEK_USB" = yes;
-  "MEMSTICK_TIFM_MS" = no;
-  "MEN_A21_WDT" = no;
-  "MFD_88PM800" = no;
-  "MFD_88PM805" = no;
-  "MFD_ARIZONA_I2C" = no;
-  "MFD_ARIZONA_SPI" = no;
-  "MFD_ATC260X_I2C" = no;
-  "MFD_AXP20X_I2C" = no;
-  "MFD_BCM590XX" = no;
-  "MFD_BD9571MWV" = no;
-  "MFD_CGBC" = no;
-  "MFD_CS40L50_I2C" = no;
-  "MFD_CS40L50_SPI" = no;
-  "MFD_CS42L43_I2C" = no;
-  "MFD_DA9062" = no;
-  "MFD_DA9063" = no;
-  "MFD_DA9150" = no;
-  "MFD_DLN2" = no;
-  "MFD_INTEL_LPSS" = yes;
-  "MFD_INTEL_LPSS_ACPI" = no;
-  "MFD_INTEL_LPSS_PCI" = yes;
-  "MFD_INTEL_M10_BMC_SPI" = no;
-  "MFD_INTEL_PMC_BXT" = yes;
-  "MFD_INTEL_QUARK_I2C_GPIO" = no;
-  "MFD_IQS62X" = no;
-  "MFD_JANZ_CMODIO" = no;
-  "MFD_KEMPLD" = no;
-  "MFD_LM3533" = no;
-  "MFD_LP3943" = no;
-  "MFD_MADERA" = no;
-  "MFD_MAX14577" = no;
-  "MFD_MAX77541" = no;
-  "MFD_MAX77693" = no;
-  "MFD_MAX77705" = no;
-  "MFD_MAX8907" = no;
-  "MFD_MC13XXX_I2C" = no;
-  "MFD_MC13XXX_SPI" = no;
-  "MFD_MENF21BMC" = no;
-  "MFD_MP2629" = no;
-  "MFD_MT6360" = no;
-  "MFD_MT6370" = no;
-  "MFD_MT6397" = no;
-  "MFD_OCELOT" = no;
-  "MFD_PALMAS" = no;
-  "MFD_QNAP_MCU" = no;
-  "MFD_RDC321X" = no;
-  "MFD_RETU" = no;
-  "MFD_RT4831" = no;
-  "MFD_RT5033" = no;
-  "MFD_RT5120" = no;
-  "MFD_SI476X_CORE" = no;
-  "MFD_SKY81452" = no;
-  "MFD_SM501" = no;
-  "MFD_SMPRO" = no;
-  "MFD_SY7636A" = no;
-  "MFD_TI_LMU" = no;
-  "MFD_TI_LP873X" = no;
-  "MFD_TPS65086" = no;
-  "MFD_TPS65912_I2C" = no;
-  "MFD_TPS65912_SPI" = no;
-  "MFD_TPS6594_I2C" = no;
-  "MFD_TPS6594_SPI" = no;
-  "MFD_TQMX86" = no;
-  "MFD_UPBOARD_FPGA" = no;
-  "MFD_VIPERBOARD" = no;
-  "MFD_VX855" = no;
-  "MFD_WL1273_CORE" = no;
-  "MFD_WM8994" = no;
-  "MHI_BUS" = no;
-  "MHI_BUS_EP" = no;
-  "MICREL_KS8995MA" = no;
-  "MICREL_PHY" = no;
-  "MICROCHIP_PHY" = no;
-  "MICROCHIP_T1S_PHY" = no;
-  "MICROCHIP_T1_PHY" = no;
-  "MICROSEMI_PHY" = no;
-  "MINIX_FS" = no;
-  "MISC_ALCOR_PCI" = no;
-  "MISC_RTSX" = yes;
-  "MISC_RTSX_PCI" = no;
-  "MISC_RTSX_USB" = yes;
-  "MISDN" = no;
-  "MLX4_EN" = no;
-  "MLX5_CORE" = no;
-  "MLXFW" = no;
-  "MLXREG_DPU" = no;
-  "MLXREG_HOTPLUG" = no;
-  "MLXREG_IO" = no;
-  "MLXREG_LC" = no;
-  "MLXSW_CORE" = no;
-  "MLX_PLATFORM" = no;
-  "MLX_WDT" = no;
-  "MMC" = yes;
-  "MMC_BLOCK" = no;
-  "MMC_CB710" = no;
-  "MMC_CQHCI" = no;
-  "MMC_HSQ" = no;
-  "MMC_MTK" = no;
-  "MMC_REALTEK_USB" = yes;
-  "MMC_SDHCI" = no;
-  "MMC_SPI" = no;
-  "MMC_TEST" = no;
-  "MMC_TIFM_SD" = no;
-  "MMC_TOSHIBA_PCI" = no;
-  "MMC_USDHI6ROL0" = no;
-  "MMC_USHC" = no;
-  "MMC_VIA_SDMMC" = no;
-  "MMC_VUB300" = no;
-  "MMC_WBSD" = no;
-  "MOST" = no;
-  "MOTORCOMM_PHY" = no;
-  "MOUSE_APPLETOUCH" = no;
-  "MOUSE_BCM5974" = no;
-  "MOUSE_CYAPA" = no;
-  "MOUSE_ELAN_I2C" = no;
-  "MOUSE_GPIO" = no;
-  "MOUSE_PS2" = yes;
-  "MOUSE_SERIAL" = no;
-  "MOUSE_SYNAPTICS_I2C" = no;
-  "MOUSE_SYNAPTICS_USB" = no;
-  "MOUSE_VSXXXAA" = no;
-  "MOXA_INTELLIO" = no;
-  "MOXA_SMARTIO" = no;
-  "MPLS_ROUTING" = no;
-  "MSDOS_FS" = no;
-  "MSE102X" = no;
-  "MSI_EC" = no;
-  "MSI_LAPTOP" = no;
-  "MSI_WMI" = no;
-  "MSI_WMI_PLATFORM" = no;
-  "MSPRO_BLOCK" = no;
-  "MS_BLOCK" = no;
-  "MT7601U" = no;
-  "MT7603E" = no;
-  "MT7615E" = no;
-  "MT7663S" = no;
-  "MT7663U" = no;
-  "MT76x0E" = no;
-  "MT76x0U" = no;
-  "MT76x2E" = no;
-  "MT76x2U" = no;
-  "MT7915E" = no;
-  "MT7921E" = no;
-  "MT7921S" = no;
-  "MT7921U" = no;
-  "MT7925E" = no;
-  "MT7925U" = no;
-  "MT7996E" = no;
-  "MTD" = no;
-  "MVMDIO" = no;
-  "MWAVE" = no;
-  "MWIFIEX" = no;
-  "MWL8K" = no;
-  "MXM_WMI" = no;
-  "MYRI10GE" = no;
-  "NATIONAL_PHY" = no;
-  "NATSEMI" = no;
-  "NCN26000_PHY" = no;
-  "NE2K_PCI" = no;
-  "NETCONSOLE" = no;
-  "NETDEVSIM" = no;
-  "NETFILTER_NETLINK" = yes;
-  "NETFILTER_NETLINK_ACCT" = no;
-  "NETFILTER_NETLINK_HOOK" = no;
-  "NETFILTER_NETLINK_LOG" = no;
-  "NETFILTER_NETLINK_OSF" = no;
-  "NETFILTER_NETLINK_QUEUE" = no;
-  "NETFILTER_XTABLES" = yes;
-  "NETFILTER_XT_CONNMARK" = no;
-  "NETFILTER_XT_MARK" = no;
-  "NETFILTER_XT_MATCH_ADDRTYPE" = no;
-  "NETFILTER_XT_MATCH_BPF" = no;
-  "NETFILTER_XT_MATCH_CGROUP" = no;
-  "NETFILTER_XT_MATCH_CLUSTER" = no;
-  "NETFILTER_XT_MATCH_COMMENT" = no;
-  "NETFILTER_XT_MATCH_CONNBYTES" = no;
-  "NETFILTER_XT_MATCH_CONNLABEL" = no;
-  "NETFILTER_XT_MATCH_CONNLIMIT" = no;
-  "NETFILTER_XT_MATCH_CONNMARK" = no;
-  "NETFILTER_XT_MATCH_CONNTRACK" = yes;
-  "NETFILTER_XT_MATCH_CPU" = no;
-  "NETFILTER_XT_MATCH_DCCP" = no;
-  "NETFILTER_XT_MATCH_DEVGROUP" = no;
-  "NETFILTER_XT_MATCH_DSCP" = no;
-  "NETFILTER_XT_MATCH_ECN" = no;
-  "NETFILTER_XT_MATCH_ESP" = no;
-  "NETFILTER_XT_MATCH_HASHLIMIT" = no;
-  "NETFILTER_XT_MATCH_HELPER" = no;
-  "NETFILTER_XT_MATCH_HL" = no;
-  "NETFILTER_XT_MATCH_IPCOMP" = no;
-  "NETFILTER_XT_MATCH_IPRANGE" = no;
-  "NETFILTER_XT_MATCH_L2TP" = no;
-  "NETFILTER_XT_MATCH_LENGTH" = no;
-  "NETFILTER_XT_MATCH_LIMIT" = no;
-  "NETFILTER_XT_MATCH_MAC" = no;
-  "NETFILTER_XT_MATCH_MARK" = no;
-  "NETFILTER_XT_MATCH_MULTIPORT" = no;
-  "NETFILTER_XT_MATCH_NFACCT" = no;
-  "NETFILTER_XT_MATCH_OSF" = no;
-  "NETFILTER_XT_MATCH_OWNER" = no;
-  "NETFILTER_XT_MATCH_PKTTYPE" = yes;
-  "NETFILTER_XT_MATCH_QUOTA" = no;
-  "NETFILTER_XT_MATCH_RATEEST" = no;
-  "NETFILTER_XT_MATCH_REALM" = no;
-  "NETFILTER_XT_MATCH_RECENT" = no;
-  "NETFILTER_XT_MATCH_SCTP" = no;
-  "NETFILTER_XT_MATCH_SOCKET" = no;
-  "NETFILTER_XT_MATCH_STATE" = no;
-  "NETFILTER_XT_MATCH_STATISTIC" = no;
-  "NETFILTER_XT_MATCH_STRING" = no;
-  "NETFILTER_XT_MATCH_TCPMSS" = no;
-  "NETFILTER_XT_MATCH_TIME" = no;
-  "NETFILTER_XT_MATCH_U32" = no;
-  "NETFILTER_XT_TARGET_AUDIT" = no;
-  "NETFILTER_XT_TARGET_CHECKSUM" = no;
-  "NETFILTER_XT_TARGET_CLASSIFY" = no;
-  "NETFILTER_XT_TARGET_CONNMARK" = no;
-  "NETFILTER_XT_TARGET_CONNSECMARK" = no;
-  "NETFILTER_XT_TARGET_CT" = no;
-  "NETFILTER_XT_TARGET_DSCP" = no;
-  "NETFILTER_XT_TARGET_HL" = no;
-  "NETFILTER_XT_TARGET_HMARK" = no;
-  "NETFILTER_XT_TARGET_IDLETIMER" = no;
-  "NETFILTER_XT_TARGET_LED" = no;
-  "NETFILTER_XT_TARGET_LOG" = yes;
-  "NETFILTER_XT_TARGET_MARK" = no;
-  "NETFILTER_XT_TARGET_NFLOG" = no;
-  "NETFILTER_XT_TARGET_NFQUEUE" = no;
-  "NETFILTER_XT_TARGET_NOTRACK" = no;
-  "NETFILTER_XT_TARGET_RATEEST" = no;
-  "NETFILTER_XT_TARGET_SECMARK" = no;
-  "NETFILTER_XT_TARGET_TCPMSS" = no;
-  "NETFILTER_XT_TARGET_TCPOPTSTRIP" = no;
-  "NETFILTER_XT_TARGET_TEE" = no;
-  "NETFILTER_XT_TARGET_TPROXY" = no;
-  "NETFILTER_XT_TARGET_TRACE" = no;
-  "NETLINK_DIAG" = no;
-  "NETXEN_NIC" = no;
-  "NET_9P" = no;
-  "NET_ACT_BPF" = no;
-  "NET_ACT_CONNMARK" = no;
-  "NET_ACT_CSUM" = no;
-  "NET_ACT_CTINFO" = no;
-  "NET_ACT_GACT" = no;
-  "NET_ACT_GATE" = no;
-  "NET_ACT_IFE" = no;
-  "NET_ACT_MIRRED" = no;
-  "NET_ACT_MPLS" = no;
-  "NET_ACT_NAT" = no;
-  "NET_ACT_PEDIT" = no;
-  "NET_ACT_POLICE" = no;
-  "NET_ACT_SAMPLE" = no;
-  "NET_ACT_SIMP" = no;
-  "NET_ACT_SKBEDIT" = no;
-  "NET_ACT_SKBMOD" = no;
-  "NET_ACT_TUNNEL_KEY" = no;
-  "NET_ACT_VLAN" = no;
-  "NET_CLS_BASIC" = no;
-  "NET_CLS_BPF" = no;
-  "NET_CLS_CGROUP" = no;
-  "NET_CLS_FLOW" = no;
-  "NET_CLS_FLOWER" = no;
-  "NET_CLS_FW" = no;
-  "NET_CLS_MATCHALL" = no;
-  "NET_CLS_ROUTE4" = no;
-  "NET_CLS_U32" = no;
-  "NET_DSA" = no;
-  "NET_EMATCH_CMP" = no;
-  "NET_EMATCH_IPT" = no;
-  "NET_EMATCH_META" = no;
-  "NET_EMATCH_NBYTE" = no;
-  "NET_EMATCH_TEXT" = no;
-  "NET_EMATCH_U32" = no;
-  "NET_FAILOVER" = no;
-  "NET_FOU" = no;
-  "NET_IFE" = no;
-  "NET_IPGRE_DEMUX" = no;
-  "NET_IPIP" = no;
-  "NET_IPVTI" = no;
-  "NET_KEY" = no;
-  "NET_MPLS_GSO" = no;
-  "NET_NSH" = no;
-  "NET_PKTGEN" = no;
-  "NET_SCH_CAKE" = no;
-  "NET_SCH_CBS" = no;
-  "NET_SCH_CHOKE" = no;
-  "NET_SCH_CODEL" = no;
-  "NET_SCH_DRR" = no;
-  "NET_SCH_ETF" = no;
-  "NET_SCH_ETS" = no;
-  "NET_SCH_FQ_CODEL" = yes;
-  "NET_SCH_GRED" = no;
-  "NET_SCH_HFSC" = no;
-  "NET_SCH_HHF" = no;
-  "NET_SCH_HTB" = no;
-  "NET_SCH_INGRESS" = no;
-  "NET_SCH_MQPRIO" = no;
-  "NET_SCH_MULTIQ" = no;
-  "NET_SCH_NETEM" = no;
-  "NET_SCH_PIE" = no;
-  "NET_SCH_PLUG" = no;
-  "NET_SCH_PRIO" = no;
-  "NET_SCH_QFQ" = no;
-  "NET_SCH_RED" = no;
-  "NET_SCH_SFB" = no;
-  "NET_SCH_SFQ" = no;
-  "NET_SCH_SKBPRIO" = no;
-  "NET_SCH_TAPRIO" = no;
-  "NET_SCH_TBF" = no;
-  "NET_SCH_TEQL" = no;
-  "NET_SELFTESTS" = yes;
-  "NET_TEAM" = no;
-  "NET_VRF" = no;
-  "NFC" = no;
-  "NFP" = no;
-  "NFSD" = no;
-  "NFS_FS" = no;
-  "NFT_COMPAT" = yes;
-  "NFT_COMPAT_ARP" = yes;
-  "NFT_CONNLIMIT" = no;
-  "NFT_CT" = no;
-  "NFT_DUP_IPV4" = no;
-  "NFT_DUP_IPV6" = no;
-  "NFT_DUP_NETDEV" = no;
-  "NFT_FIB_IPV4" = no;
-  "NFT_FIB_IPV6" = no;
-  "NFT_FWD_NETDEV" = no;
-  "NFT_HASH" = no;
-  "NFT_LIMIT" = no;
-  "NFT_LOG" = no;
-  "NFT_NAT" = no;
-  "NFT_NUMGEN" = no;
-  "NFT_OSF" = no;
-  "NFT_QUOTA" = no;
-  "NFT_REJECT" = no;
-  "NFT_SOCKET" = no;
-  "NFT_SYNPROXY" = no;
-  "NFT_TPROXY" = no;
-  "NFT_TUNNEL" = no;
-  "NF_CONNTRACK" = yes;
-  "NF_CONNTRACK_AMANDA" = no;
-  "NF_CONNTRACK_BRIDGE" = no;
-  "NF_CONNTRACK_FTP" = no;
-  "NF_CONNTRACK_H323" = no;
-  "NF_CONNTRACK_IRC" = no;
-  "NF_CONNTRACK_NETBIOS_NS" = no;
-  "NF_CONNTRACK_PPTP" = no;
-  "NF_CONNTRACK_SANE" = no;
-  "NF_CONNTRACK_SIP" = no;
-  "NF_CONNTRACK_SNMP" = no;
-  "NF_CONNTRACK_TFTP" = no;
-  "NF_CT_NETLINK" = no;
-  "NF_CT_NETLINK_TIMEOUT" = no;
-  "NF_DEFRAG_IPV4" = yes;
-  "NF_DEFRAG_IPV6" = yes;
-  "NF_DUP_IPV4" = no;
-  "NF_DUP_IPV6" = no;
-  "NF_DUP_NETDEV" = no;
-  "NF_FLOW_TABLE" = no;
-  "NF_LOG_ARP" = no;
-  "NF_LOG_IPV4" = no;
-  "NF_LOG_IPV6" = yes;
-  "NF_LOG_SYSLOG" = yes;
-  "NF_NAT" = no;
-  "NF_REJECT_IPV4" = no;
-  "NF_REJECT_IPV6" = no;
-  "NF_SOCKET_IPV4" = no;
-  "NF_SOCKET_IPV6" = no;
-  "NF_TABLES" = yes;
-  "NF_TABLES_BRIDGE" = no;
-  "NF_TPROXY_IPV4" = no;
-  "NF_TPROXY_IPV6" = no;
-  "NGBE" = no;
-  "NI903X_WDT" = no;
-  "NIC7018_WDT" = no;
-  "NILFS2_FS" = no;
-  "NITRO_ENCLAVES" = no;
-  "NIU" = no;
-  "NI_XGE_MANAGEMENT_ENET" = no;
-  "NLMON" = no;
-  "NLS_CODEPAGE_1250" = no;
-  "NLS_CODEPAGE_1251" = no;
-  "NLS_CODEPAGE_737" = no;
-  "NLS_CODEPAGE_775" = no;
-  "NLS_CODEPAGE_850" = no;
-  "NLS_CODEPAGE_852" = no;
-  "NLS_CODEPAGE_855" = no;
-  "NLS_CODEPAGE_857" = no;
-  "NLS_CODEPAGE_860" = no;
-  "NLS_CODEPAGE_861" = no;
-  "NLS_CODEPAGE_862" = no;
-  "NLS_CODEPAGE_863" = no;
-  "NLS_CODEPAGE_864" = no;
-  "NLS_CODEPAGE_865" = no;
-  "NLS_CODEPAGE_866" = no;
-  "NLS_CODEPAGE_869" = no;
-  "NLS_CODEPAGE_874" = no;
-  "NLS_CODEPAGE_932" = no;
-  "NLS_CODEPAGE_936" = no;
-  "NLS_CODEPAGE_949" = no;
-  "NLS_CODEPAGE_950" = no;
-  "NLS_ISO8859_1" = no;
-  "NLS_ISO8859_13" = no;
-  "NLS_ISO8859_14" = no;
-  "NLS_ISO8859_15" = no;
-  "NLS_ISO8859_2" = no;
-  "NLS_ISO8859_3" = no;
-  "NLS_ISO8859_4" = no;
-  "NLS_ISO8859_5" = no;
-  "NLS_ISO8859_6" = no;
-  "NLS_ISO8859_7" = no;
-  "NLS_ISO8859_8" = no;
-  "NLS_ISO8859_9" = no;
-  "NLS_KOI8_R" = no;
-  "NLS_KOI8_U" = no;
-  "NLS_MAC_CELTIC" = no;
-  "NLS_MAC_CENTEURO" = no;
-  "NLS_MAC_CROATIAN" = no;
-  "NLS_MAC_CYRILLIC" = no;
-  "NLS_MAC_GAELIC" = no;
-  "NLS_MAC_GREEK" = no;
-  "NLS_MAC_ICELAND" = no;
-  "NLS_MAC_INUIT" = no;
-  "NLS_MAC_ROMAN" = no;
-  "NLS_MAC_ROMANIAN" = no;
-  "NLS_MAC_TURKISH" = no;
-  "NLS_UTF8" = no;
-  "NOP_USB_XCEIV" = no;
-  "NOZOMI" = no;
-  "NS83820" = no;
-  "NSM" = no;
-  "NTB" = no;
-  "NTFS3_FS" = no;
-  "NTFS_FS" = no;
-  "NTSYNC" = no;
-  "NULL_TTY" = no;
-  "NVIDIA_WMI_EC_BACKLIGHT" = no;
-  "NVMEM_RMEM" = no;
-  "NVME_FC" = no;
-  "NVME_TARGET" = no;
-  "NVME_TCP" = no;
-  "NVSW_SN2201" = no;
-  "NV_TCO" = no;
-  "NXP_C45_TJA11XX_PHY" = no;
-  "NXP_CBTX_PHY" = no;
-  "NXP_TJA11XX_PHY" = no;
-  "N_HDLC" = no;
-  "OCFS2_FS" = no;
-  "OCTEON_EP" = no;
-  "OCTEON_EP_VF" = no;
-  "OMFS_FS" = no;
-  "OPENVSWITCH" = no;
-  "ORANGEFS_FS" = no;
-  "OVERLAY_FS" = no;
-  "OVPN" = no;
-  "OXP_EC" = no;
-  "P54_COMMON" = no;
-  "PACKET_DIAG" = no;
-  "PANASONIC_LAPTOP" = no;
-  "PARPORT" = no;
-  "PATA_ACPI" = no;
-  "PATA_ALI" = no;
-  "PATA_AMD" = no;
-  "PATA_ARTOP" = no;
-  "PATA_ATIIXP" = no;
-  "PATA_ATP867X" = no;
-  "PATA_CMD640_PCI" = no;
-  "PATA_CMD64X" = no;
-  "PATA_CYPRESS" = no;
-  "PATA_EFAR" = no;
-  "PATA_HPT366" = no;
-  "PATA_HPT37X" = no;
-  "PATA_HPT3X2N" = no;
-  "PATA_HPT3X3" = no;
-  "PATA_IT8213" = no;
-  "PATA_IT821X" = no;
-  "PATA_JMICRON" = no;
-  "PATA_LEGACY" = no;
-  "PATA_MARVELL" = no;
-  "PATA_MPIIX" = no;
-  "PATA_NETCELL" = no;
-  "PATA_NINJA32" = no;
-  "PATA_NS87410" = no;
-  "PATA_NS87415" = no;
-  "PATA_OLDPIIX" = no;
-  "PATA_OPTI" = no;
-  "PATA_OPTIDMA" = no;
-  "PATA_PDC2027X" = no;
-  "PATA_PDC_OLD" = no;
-  "PATA_RADISYS" = no;
-  "PATA_RDC" = no;
-  "PATA_RZ1000" = no;
-  "PATA_SCH" = no;
-  "PATA_SERVERWORKS" = no;
-  "PATA_SIL680" = no;
-  "PATA_SIS" = no;
-  "PATA_TOSHIBA" = no;
-  "PATA_TRIFLEX" = no;
-  "PATA_VIA" = no;
-  "PATA_WINBOND" = no;
-  "PC87413_WDT" = no;
-  "PCCARD" = no;
-  "PCENGINES_APU2" = no;
-  "PCIEAER_INJECT" = no;
-  "PCIPCWATCHDOG" = no;
-  "PCI_ENDPOINT_TEST" = no;
-  "PCI_MESON" = no;
-  "PCI_PF_STUB" = no;
-  "PCI_PWRCTRL_SLOT" = no;
-  "PCI_SW_SWITCHTEC" = no;
-  "PCNET32" = no;
-  "PCS_XPCS" = no;
-  "PDC_ADMA" = no;
-  "PDS_CORE" = no;
-  "PERF_EVENTS_AMD_POWER" = no;
-  "PERF_EVENTS_AMD_UNCORE" = no;
-  "PERF_EVENTS_INTEL_CSTATE" = yes;
-  "PERF_EVENTS_INTEL_RAPL" = yes;
-  "PERF_EVENTS_INTEL_UNCORE" = yes;
-  "PFCP" = no;
-  "PHANTOM" = no;
-  "PHONET" = no;
-  "PHYLIB" = yes;
-  "PHY_CAN_TRANSCEIVER" = no;
-  "PHY_INTEL_LGM_EMMC" = no;
-  "PHY_PXA_28NM_HSIC" = no;
-  "PHY_PXA_28NM_USB2" = no;
-  "PINCTRL_ALDERLAKE" = no;
-  "PINCTRL_BROXTON" = no;
-  "PINCTRL_CANNONLAKE" = no;
-  "PINCTRL_CEDARFORK" = no;
-  "PINCTRL_CY8C95X0" = no;
-  "PINCTRL_DENVERTON" = no;
-  "PINCTRL_ELKHARTLAKE" = no;
-  "PINCTRL_EMMITSBURG" = no;
-  "PINCTRL_GEMINILAKE" = no;
-  "PINCTRL_ICELAKE" = no;
-  "PINCTRL_INTEL_PLATFORM" = no;
-  "PINCTRL_JASPERLAKE" = no;
-  "PINCTRL_LAKEFIELD" = no;
-  "PINCTRL_LEWISBURG" = no;
-  "PINCTRL_LYNXPOINT" = no;
-  "PINCTRL_MCP23S08" = no;
-  "PINCTRL_METEORLAKE" = no;
-  "PINCTRL_METEORPOINT" = no;
-  "PINCTRL_SUNRISEPOINT" = yes;
-  "PINCTRL_TIGERLAKE" = no;
-  "PKCS8_PRIVATE_KEY_PARSER" = no;
-  "PLFXLC" = no;
-  "PLX_DMA" = no;
-  "PMBUS" = no;
-  "PORTWELL_EC" = no;
-  "POWER_SEQUENCING" = no;
-  "PPP" = no;
-  "PPS" = no;
-  "PSAMPLE" = no;
-  "PSE_PD692X0" = no;
-  "PSE_REGULATOR" = no;
-  "PSE_TPS23881" = no;
-  "PSTORE_BLK" = no;
-  "PSTORE_RAM" = no;
-  "PTP_1588_CLOCK" = no;
-  "PTP_1588_CLOCK_OPTIONAL" = yes;
-  "PVPANIC_MMIO" = no;
-  "PVPANIC_PCI" = no;
-  "PWM_CLK" = no;
-  "PWM_DWC" = no;
-  "PWM_GPIO" = no;
-  "PWM_LPSS_PCI" = no;
-  "PWM_LPSS_PLATFORM" = no;
-  "PWM_PCA9685" = no;
-  "PWM_TWL" = no;
-  "PWM_TWL_LED" = no;
-  "QCA808X_PHY" = no;
-  "QCA83XX_PHY" = no;
-  "QCOM_EMAC" = no;
-  "QCOM_HIDMA" = no;
-  "QCOM_HIDMA_MGMT" = no;
-  "QED" = no;
-  "QFMT_V1" = no;
-  "QFMT_V2" = no;
-  "QLA3XXX" = no;
-  "QLCNIC" = no;
-  "QRTR" = no;
-  "QSEMI_PHY" = no;
-  "QTNFMAC_PCIE" = no;
-  "R6040" = no;
-  "R8169" = yes;
-  "RADIO_ADAPTERS" = no;
-  "RAID_ATTRS" = no;
-  "RAVE_SP_CORE" = no;
-  "RC_ATI_REMOTE" = no;
-  "RC_LOOPBACK" = no;
-  "RC_MAP" = no;
-  "RC_XBOX_DVD" = no;
-  "RDS" = no;
-  "REALTEK_PHY" = yes;
-  "REGULATOR_88PG86X" = no;
-  "REGULATOR_88PM8607" = no;
-  "REGULATOR_AAT2870" = no;
-  "REGULATOR_ACT8865" = no;
-  "REGULATOR_AD5398" = no;
-  "REGULATOR_ADP5055" = no;
-  "REGULATOR_AS3711" = no;
-  "REGULATOR_AW37503" = no;
-  "REGULATOR_DA9052" = no;
-  "REGULATOR_DA9055" = no;
-  "REGULATOR_DA9210" = no;
-  "REGULATOR_DA9211" = no;
-  "REGULATOR_FAN53555" = no;
-  "REGULATOR_FIXED_VOLTAGE" = no;
-  "REGULATOR_GPIO" = no;
-  "REGULATOR_ISL6271A" = no;
-  "REGULATOR_ISL9305" = no;
-  "REGULATOR_LP3971" = no;
-  "REGULATOR_LP3972" = no;
-  "REGULATOR_LP872X" = no;
-  "REGULATOR_LP8755" = no;
-  "REGULATOR_LP8788" = no;
-  "REGULATOR_LTC3589" = no;
-  "REGULATOR_LTC3676" = no;
-  "REGULATOR_MAX1586" = no;
-  "REGULATOR_MAX20086" = no;
-  "REGULATOR_MAX20411" = no;
-  "REGULATOR_MAX77503" = no;
-  "REGULATOR_MAX77693" = no;
-  "REGULATOR_MAX77826" = no;
-  "REGULATOR_MAX77857" = no;
-  "REGULATOR_MAX8649" = no;
-  "REGULATOR_MAX8660" = no;
-  "REGULATOR_MAX8893" = no;
-  "REGULATOR_MAX8925" = no;
-  "REGULATOR_MAX8952" = no;
-  "REGULATOR_MAX8997" = no;
-  "REGULATOR_MAX8998" = no;
-  "REGULATOR_MP8859" = no;
-  "REGULATOR_MT6311" = no;
-  "REGULATOR_PCA9450" = no;
-  "REGULATOR_PCAP" = no;
-  "REGULATOR_PF9453" = no;
-  "REGULATOR_PV88060" = no;
-  "REGULATOR_PV88080" = no;
-  "REGULATOR_PV88090" = no;
-  "REGULATOR_PWM" = no;
-  "REGULATOR_RAA215300" = no;
-  "REGULATOR_RC5T583" = no;
-  "REGULATOR_RT4801" = no;
-  "REGULATOR_RT4803" = no;
-  "REGULATOR_RT5190A" = no;
-  "REGULATOR_RT5739" = no;
-  "REGULATOR_RT5759" = no;
-  "REGULATOR_RT6160" = no;
-  "REGULATOR_RT6190" = no;
-  "REGULATOR_RT6245" = no;
-  "REGULATOR_RTMV20" = no;
-  "REGULATOR_RTQ2134" = no;
-  "REGULATOR_RTQ2208" = no;
-  "REGULATOR_RTQ6752" = no;
-  "REGULATOR_SLG51000" = no;
-  "REGULATOR_TPS51632" = no;
-  "REGULATOR_TPS62360" = no;
-  "REGULATOR_TPS65023" = no;
-  "REGULATOR_TPS6507X" = no;
-  "REGULATOR_TPS65090" = no;
-  "REGULATOR_TPS65132" = no;
-  "REGULATOR_TPS6524X" = no;
-  "REGULATOR_TPS6586X" = no;
-  "REGULATOR_TPS65910" = no;
-  "REGULATOR_TWL4030" = no;
-  "REGULATOR_USERSPACE_CONSUMER" = no;
-  "REGULATOR_VIRTUAL_CONSUMER" = no;
-  "REGULATOR_WM831X" = no;
-  "REGULATOR_WM8350" = no;
-  "REGULATOR_WM8400" = no;
-  "RENESAS_PHY" = no;
-  "RESET_GPIO" = no;
-  "RESET_TI_SYSCON" = no;
-  "RESET_TI_TPS380X" = no;
-  "RFKILL" = yes;
-  "RFKILL_GPIO" = no;
-  "RMI4_CORE" = no;
-  "RMNET" = no;
-  "ROCKER" = no;
-  "ROMFS_FS" = no;
-  "RPMB" = no;
-  "RPMSG_QCOM_GLINK_RPM" = no;
-  "RPMSG_VIRTIO" = no;
-  "RSI_91X" = no;
-  "RT2X00" = no;
-  "RTASE" = no;
-  "RTC_DRV_88PM860X" = no;
-  "RTC_DRV_ABB5ZES3" = no;
-  "RTC_DRV_ABEOZ9" = no;
-  "RTC_DRV_ABX80X" = no;
-  "RTC_DRV_BQ32K" = no;
-  "RTC_DRV_DA9052" = no;
-  "RTC_DRV_DA9055" = no;
-  "RTC_DRV_DS1286" = no;
-  "RTC_DRV_DS1302" = no;
-  "RTC_DRV_DS1305" = no;
-  "RTC_DRV_DS1307" = no;
-  "RTC_DRV_DS1343" = no;
-  "RTC_DRV_DS1347" = no;
-  "RTC_DRV_DS1374" = no;
-  "RTC_DRV_DS1390" = no;
-  "RTC_DRV_DS1511" = no;
-  "RTC_DRV_DS1553" = no;
-  "RTC_DRV_DS1672" = no;
-  "RTC_DRV_DS1685_FAMILY" = no;
-  "RTC_DRV_DS1742" = no;
-  "RTC_DRV_DS2404" = no;
-  "RTC_DRV_DS3232" = no;
-  "RTC_DRV_EM3027" = no;
-  "RTC_DRV_FM3130" = no;
-  "RTC_DRV_FTRTC010" = no;
-  "RTC_DRV_GOLDFISH" = no;
-  "RTC_DRV_ISL12022" = no;
-  "RTC_DRV_ISL1208" = no;
-  "RTC_DRV_LP8788" = no;
-  "RTC_DRV_M41T80" = no;
-  "RTC_DRV_M41T93" = no;
-  "RTC_DRV_M41T94" = no;
-  "RTC_DRV_M48T35" = no;
-  "RTC_DRV_M48T59" = no;
-  "RTC_DRV_M48T86" = no;
-  "RTC_DRV_MAX31335" = no;
-  "RTC_DRV_MAX6900" = no;
-  "RTC_DRV_MAX6902" = no;
-  "RTC_DRV_MAX6916" = no;
-  "RTC_DRV_MAX8925" = no;
-  "RTC_DRV_MAX8997" = no;
-  "RTC_DRV_MAX8998" = no;
-  "RTC_DRV_MCP795" = no;
-  "RTC_DRV_MSM6242" = no;
-  "RTC_DRV_PCAP" = no;
-  "RTC_DRV_PCF2123" = no;
-  "RTC_DRV_PCF2127" = no;
-  "RTC_DRV_PCF85063" = no;
-  "RTC_DRV_PCF8523" = no;
-  "RTC_DRV_PCF85363" = no;
-  "RTC_DRV_PCF8563" = no;
-  "RTC_DRV_PCF8583" = no;
-  "RTC_DRV_R9701" = no;
-  "RTC_DRV_RC5T583" = no;
-  "RTC_DRV_RP5C01" = no;
-  "RTC_DRV_RS5C348" = no;
-  "RTC_DRV_RS5C372" = no;
-  "RTC_DRV_RV3028" = no;
-  "RTC_DRV_RV3029C2" = no;
-  "RTC_DRV_RV3032" = no;
-  "RTC_DRV_RV8803" = no;
-  "RTC_DRV_RX4581" = no;
-  "RTC_DRV_RX6110" = no;
-  "RTC_DRV_RX8010" = no;
-  "RTC_DRV_RX8025" = no;
-  "RTC_DRV_RX8111" = no;
-  "RTC_DRV_RX8581" = no;
-  "RTC_DRV_S35390A" = no;
-  "RTC_DRV_SD2405AL" = no;
-  "RTC_DRV_SD3078" = no;
-  "RTC_DRV_STK17TA8" = no;
-  "RTC_DRV_TPS6586X" = no;
-  "RTC_DRV_TPS65910" = no;
-  "RTC_DRV_WM831X" = no;
-  "RTC_DRV_WM8350" = no;
-  "RTC_DRV_X1205" = no;
-  "RTL8180" = no;
-  "RTL8187" = no;
-  "RTL8723BS" = no;
-  "RTL8XXXU" = no;
-  "RTL_CARDS" = no;
-  "RTW88" = no;
-  "RTW89" = no;
-  "S2IO" = no;
-  "SAMSUNG_GALAXYBOOK" = no;
-  "SAMSUNG_LAPTOP" = no;
-  "SAMSUNG_Q10" = no;
-  "SATA_ACARD_AHCI" = no;
-  "SATA_AHCI_PLATFORM" = no;
-  "SATA_DWC" = no;
-  "SATA_INIC162X" = no;
-  "SATA_MV" = no;
-  "SATA_NV" = no;
-  "SATA_PROMISE" = no;
-  "SATA_QSTOR" = no;
-  "SATA_SIL" = no;
-  "SATA_SIL24" = no;
-  "SATA_SIS" = no;
-  "SATA_SVW" = no;
-  "SATA_SX4" = no;
-  "SATA_ULI" = no;
-  "SATA_VIA" = no;
-  "SATA_VITESSE" = no;
-  "SBC_EPX_C3_WATCHDOG" = no;
-  "SBC_FITPC2_WATCHDOG" = no;
-  "SC1200_WDT" = no;
-  "SC92031" = no;
-  "SCSI_3W_9XXX" = no;
-  "SCSI_3W_SAS" = no;
-  "SCSI_AACRAID" = no;
-  "SCSI_ACARD" = no;
-  "SCSI_ADVANSYS" = no;
-  "SCSI_AIC79XX" = no;
-  "SCSI_AIC7XXX" = no;
-  "SCSI_AIC94XX" = no;
-  "SCSI_AM53C974" = no;
-  "SCSI_ARCMSR" = no;
-  "SCSI_BNX2_ISCSI" = no;
-  "SCSI_BUSLOGIC" = no;
-  "SCSI_CXGB3_ISCSI" = no;
-  "SCSI_CXGB4_ISCSI" = no;
-  "SCSI_DC395x" = no;
-  "SCSI_DEBUG" = no;
-  "SCSI_DH_ALUA" = no;
-  "SCSI_DH_EMC" = no;
-  "SCSI_DH_HP_SW" = no;
-  "SCSI_DH_RDAC" = no;
-  "SCSI_DMX3191D" = no;
-  "SCSI_ESAS2R" = no;
-  "SCSI_FC_ATTRS" = no;
-  "SCSI_FDOMAIN_PCI" = no;
-  "SCSI_HPSA" = no;
-  "SCSI_HPTIOP" = no;
-  "SCSI_INIA100" = no;
-  "SCSI_INITIO" = no;
-  "SCSI_IPR" = no;
-  "SCSI_IPS" = no;
-  "SCSI_ISCI" = no;
-  "SCSI_ISCSI_ATTRS" = no;
-  "SCSI_MPI3MR" = no;
-  "SCSI_MPT2SAS" = no;
-  "SCSI_MPT3SAS" = no;
-  "SCSI_MVSAS" = no;
-  "SCSI_MVUMI" = no;
-  "SCSI_MYRB" = no;
-  "SCSI_MYRS" = no;
-  "SCSI_PM8001" = no;
-  "SCSI_PMCRAID" = no;
-  "SCSI_QLA_ISCSI" = no;
-  "SCSI_QLOGIC_1280" = no;
-  "SCSI_SAS_ATTRS" = no;
-  "SCSI_SAS_LIBSAS" = no;
-  "SCSI_SMARTPQI" = no;
-  "SCSI_SNIC" = no;
-  "SCSI_SPI_ATTRS" = no;
-  "SCSI_SRP_ATTRS" = no;
-  "SCSI_STEX" = no;
-  "SCSI_SYM53C8XX_2" = no;
-  "SCSI_UFSHCD" = no;
-  "SCSI_VIRTIO" = no;
-  "SCSI_WD719X" = no;
-  "SDIO_UART" = no;
-  "SENSORS_ABITUGURU" = no;
-  "SENSORS_ABITUGURU3" = no;
-  "SENSORS_ACPI_POWER" = no;
-  "SENSORS_AD7314" = no;
-  "SENSORS_AD7414" = no;
-  "SENSORS_AD7418" = no;
-  "SENSORS_ADC128D818" = no;
-  "SENSORS_ADCXX" = no;
-  "SENSORS_ADM1025" = no;
-  "SENSORS_ADM1026" = no;
-  "SENSORS_ADM1029" = no;
-  "SENSORS_ADM1031" = no;
-  "SENSORS_ADM1177" = no;
-  "SENSORS_ADM9240" = no;
-  "SENSORS_ADS7828" = no;
-  "SENSORS_ADS7871" = no;
-  "SENSORS_ADT7310" = no;
-  "SENSORS_ADT7410" = no;
-  "SENSORS_ADT7411" = no;
-  "SENSORS_ADT7462" = no;
-  "SENSORS_ADT7470" = no;
-  "SENSORS_ADT7475" = no;
-  "SENSORS_AHT10" = no;
-  "SENSORS_AMC6821" = no;
-  "SENSORS_APDS990X" = no;
-  "SENSORS_APPLESMC" = no;
-  "SENSORS_AQUACOMPUTER_D5NEXT" = no;
-  "SENSORS_AS370" = no;
-  "SENSORS_ASB100" = no;
-  "SENSORS_ASC7621" = no;
-  "SENSORS_ASUS_EC" = no;
-  "SENSORS_ASUS_ROG_RYUJIN" = no;
-  "SENSORS_ASUS_WMI" = no;
-  "SENSORS_ATK0110" = no;
-  "SENSORS_ATXP1" = no;
-  "SENSORS_AXI_FAN_CONTROL" = no;
-  "SENSORS_BH1770" = no;
-  "SENSORS_CHIPCAP2" = no;
-  "SENSORS_CORETEMP" = yes;
-  "SENSORS_CORSAIR_CPRO" = no;
-  "SENSORS_CORSAIR_PSU" = no;
-  "SENSORS_DA9052_ADC" = no;
-  "SENSORS_DA9055" = no;
-  "SENSORS_DELL_SMM" = yes;
-  "SENSORS_DME1737" = no;
-  "SENSORS_DRIVETEMP" = no;
-  "SENSORS_DS1621" = no;
-  "SENSORS_DS620" = no;
-  "SENSORS_EMC1403" = no;
-  "SENSORS_EMC2103" = no;
-  "SENSORS_EMC2305" = no;
-  "SENSORS_EMC6W201" = no;
-  "SENSORS_F71805F" = no;
-  "SENSORS_F71882FG" = no;
-  "SENSORS_F75375S" = no;
-  "SENSORS_FAM15H_POWER" = no;
-  "SENSORS_FSCHMD" = no;
-  "SENSORS_FTSTEUTATES" = no;
-  "SENSORS_G760A" = no;
-  "SENSORS_G762" = no;
-  "SENSORS_GIGABYTE_WATERFORCE" = no;
-  "SENSORS_GL518SM" = no;
-  "SENSORS_GL520SM" = no;
-  "SENSORS_HDAPS" = no;
-  "SENSORS_HIH6130" = no;
-  "SENSORS_HP_WMI" = no;
-  "SENSORS_HS3001" = no;
-  "SENSORS_HTU31" = no;
-  "SENSORS_I5500" = no;
-  "SENSORS_I5K_AMB" = no;
-  "SENSORS_INA209" = no;
-  "SENSORS_INA238" = no;
-  "SENSORS_INA2XX" = no;
-  "SENSORS_INA3221" = no;
-  "SENSORS_ISL28022" = no;
-  "SENSORS_IT87" = no;
-  "SENSORS_JC42" = no;
-  "SENSORS_K10TEMP" = no;
-  "SENSORS_K8TEMP" = no;
-  "SENSORS_LENOVO_EC" = no;
-  "SENSORS_LINEAGE" = no;
-  "SENSORS_LIS3_I2C" = no;
-  "SENSORS_LM63" = no;
-  "SENSORS_LM70" = no;
-  "SENSORS_LM73" = no;
-  "SENSORS_LM75" = no;
-  "SENSORS_LM77" = no;
-  "SENSORS_LM78" = no;
-  "SENSORS_LM80" = no;
-  "SENSORS_LM83" = no;
-  "SENSORS_LM85" = no;
-  "SENSORS_LM87" = no;
-  "SENSORS_LM90" = no;
-  "SENSORS_LM92" = no;
-  "SENSORS_LM93" = no;
-  "SENSORS_LM95234" = no;
-  "SENSORS_LM95241" = no;
-  "SENSORS_LM95245" = no;
-  "SENSORS_LTC2945" = no;
-  "SENSORS_LTC2947_I2C" = no;
-  "SENSORS_LTC2947_SPI" = no;
-  "SENSORS_LTC2990" = no;
-  "SENSORS_LTC2991" = no;
-  "SENSORS_LTC2992" = no;
-  "SENSORS_LTC4151" = no;
-  "SENSORS_LTC4215" = no;
-  "SENSORS_LTC4222" = no;
-  "SENSORS_LTC4245" = no;
-  "SENSORS_LTC4260" = no;
-  "SENSORS_LTC4261" = no;
-  "SENSORS_LTC4282" = no;
-  "SENSORS_MAX1111" = no;
-  "SENSORS_MAX127" = no;
-  "SENSORS_MAX16065" = no;
-  "SENSORS_MAX1619" = no;
-  "SENSORS_MAX1668" = no;
-  "SENSORS_MAX197" = no;
-  "SENSORS_MAX31722" = no;
-  "SENSORS_MAX31730" = no;
-  "SENSORS_MAX31760" = no;
-  "SENSORS_MAX31790" = no;
-  "SENSORS_MAX6620" = no;
-  "SENSORS_MAX6621" = no;
-  "SENSORS_MAX6639" = no;
-  "SENSORS_MAX6650" = no;
-  "SENSORS_MAX6697" = no;
-  "SENSORS_MC34VR500" = no;
-  "SENSORS_MCP3021" = no;
-  "SENSORS_MLXREG_FAN" = no;
-  "SENSORS_MR75203" = no;
-  "SENSORS_NCT6683" = no;
-  "SENSORS_NCT6775" = no;
-  "SENSORS_NCT6775_I2C" = no;
-  "SENSORS_NCT7363" = no;
-  "SENSORS_NCT7802" = no;
-  "SENSORS_NCT7904" = no;
-  "SENSORS_NPCM7XX" = no;
-  "SENSORS_NZXT_KRAKEN2" = no;
-  "SENSORS_NZXT_KRAKEN3" = no;
-  "SENSORS_NZXT_SMART2" = no;
-  "SENSORS_OCC_P8_I2C" = no;
-  "SENSORS_PC87360" = no;
-  "SENSORS_PC87427" = no;
-  "SENSORS_PCF8591" = no;
-  "SENSORS_POWERZ" = no;
-  "SENSORS_POWR1220" = no;
-  "SENSORS_PT5161L" = no;
-  "SENSORS_PWM_FAN" = no;
-  "SENSORS_SBTSI" = no;
-  "SENSORS_SCH5627" = no;
-  "SENSORS_SCH5636" = no;
-  "SENSORS_SHT15" = no;
-  "SENSORS_SHT21" = no;
-  "SENSORS_SHT3x" = no;
-  "SENSORS_SHT4x" = no;
-  "SENSORS_SHTC1" = no;
-  "SENSORS_SIS5595" = no;
-  "SENSORS_SMSC47B397" = no;
-  "SENSORS_SMSC47M1" = no;
-  "SENSORS_SMSC47M192" = no;
-  "SENSORS_SPD5118" = no;
-  "SENSORS_STTS751" = no;
-  "SENSORS_TC654" = no;
-  "SENSORS_TC74" = no;
-  "SENSORS_THMC50" = no;
-  "SENSORS_TMP102" = no;
-  "SENSORS_TMP103" = no;
-  "SENSORS_TMP108" = no;
-  "SENSORS_TMP401" = no;
-  "SENSORS_TMP421" = no;
-  "SENSORS_TMP464" = no;
-  "SENSORS_TMP513" = no;
-  "SENSORS_TPS23861" = no;
-  "SENSORS_TSL2550" = no;
-  "SENSORS_VIA686A" = no;
-  "SENSORS_VIA_CPUTEMP" = no;
-  "SENSORS_VT1211" = no;
-  "SENSORS_VT8231" = no;
-  "SENSORS_W83627EHF" = no;
-  "SENSORS_W83627HF" = no;
-  "SENSORS_W83773G" = no;
-  "SENSORS_W83781D" = no;
-  "SENSORS_W83791D" = no;
-  "SENSORS_W83792D" = no;
-  "SENSORS_W83793" = no;
-  "SENSORS_W83795" = no;
-  "SENSORS_W83L785TS" = no;
-  "SENSORS_W83L786NG" = no;
-  "SENSORS_WM831X" = no;
-  "SENSORS_WM8350" = no;
-  "SENSORS_XGENE" = no;
-  "SERIAL_8250_DW" = no;
-  "SERIAL_8250_EXAR" = no;
-  "SERIAL_8250_LPSS" = no;
-  "SERIAL_8250_MID" = no;
-  "SERIAL_8250_NI" = no;
-  "SERIAL_8250_PCI1XXXX" = no;
-  "SERIAL_8250_PERICOM" = no;
-  "SERIAL_ALTERA_JTAGUART" = no;
-  "SERIAL_ALTERA_UART" = no;
-  "SERIAL_ARC" = no;
-  "SERIAL_FSL_LINFLEXUART" = no;
-  "SERIAL_FSL_LPUART" = no;
-  "SERIAL_JSM" = no;
-  "SERIAL_MAX3100" = no;
-  "SERIAL_MAX310X" = no;
-  "SERIAL_MULTI_INSTANTIATE" = no;
-  "SERIAL_RP2" = no;
-  "SERIAL_SC16IS7XX" = no;
-  "SERIAL_SCCNXP" = no;
-  "SERIAL_SPRD" = no;
-  "SERIAL_UARTLITE" = no;
-  "SERIO_ALTERA_PS2" = no;
-  "SERIO_ARC_PS2" = no;
-  "SERIO_CT82C710" = no;
-  "SERIO_GPIO_PS2" = no;
-  "SERIO_PCIPS2" = no;
-  "SERIO_PS2MULT" = no;
-  "SERIO_RAW" = yes;
-  "SERIO_SERPORT" = no;
-  "SEV_GUEST" = no;
-  "SFC" = no;
-  "SFC_FALCON" = no;
-  "SF_PDMA" = no;
-  "SIEMENS_SIMATIC_IPC" = no;
-  "SIOX" = no;
-  "SIS190" = no;
-  "SIS900" = no;
-  "SKGE" = no;
-  "SKY2" = no;
-  "SLICOSS" = no;
-  "SLIMBUS" = no;
-  "SLIP" = no;
-  "SMB_SERVER" = no;
-  "SMSC37B787_WDT" = no;
-  "SMSC911X" = no;
-  "SMSC9420" = no;
-  "SMSC_PHY" = no;
-  "SMSC_SCH311X_WDT" = no;
-  "SMS_SDIO_DRV" = no;
-  "SMS_USB_DRV" = no;
-  "SND" = yes;
-  "SND_AD1889" = no;
-  "SND_ALI5451" = no;
-  "SND_ALOOP" = no;
-  "SND_ALS300" = no;
-  "SND_ALS4000" = no;
-  "SND_AMD_ACP_CONFIG" = no;
-  "SND_ASIHPI" = no;
-  "SND_ATIIXP" = no;
-  "SND_ATIIXP_MODEM" = no;
-  "SND_ATMEL_SOC" = no;
-  "SND_AU8810" = no;
-  "SND_AU8820" = no;
-  "SND_AU8830" = no;
-  "SND_AW2" = no;
-  "SND_AZT3328" = no;
-  "SND_BCD2000" = no;
-  "SND_BT87X" = no;
-  "SND_CA0106" = no;
-  "SND_CMIPCI" = no;
-  "SND_COMPRESS_OFFLOAD" = yes;
-  "SND_CS4281" = no;
-  "SND_CS46XX" = no;
-  "SND_CTL_LED" = yes;
-  "SND_CTXFI" = no;
-  "SND_DARLA20" = no;
-  "SND_DARLA24" = no;
-  "SND_DESIGNWARE_I2S" = no;
-  "SND_DUMMY" = no;
-  "SND_ECHO3G" = no;
-  "SND_EMU10K1" = no;
-  "SND_EMU10K1X" = no;
-  "SND_ENS1370" = no;
-  "SND_ENS1371" = no;
-  "SND_ES1938" = no;
-  "SND_ES1968" = no;
-  "SND_FM801" = no;
-  "SND_GINA20" = no;
-  "SND_GINA24" = no;
-  "SND_HDA" = yes;
-  "SND_HDA_ACPI" = no;
-  "SND_HDA_CODEC_ANALOG" = no;
-  "SND_HDA_CODEC_CA0110" = no;
-  "SND_HDA_CODEC_CA0132" = no;
-  "SND_HDA_CODEC_CIRRUS" = no;
-  "SND_HDA_CODEC_CMEDIA" = no;
-  "SND_HDA_CODEC_CONEXANT" = no;
-  "SND_HDA_CODEC_CS8409" = no;
-  "SND_HDA_CODEC_HDMI" = yes;
-  "SND_HDA_CODEC_REALTEK" = yes;
-  "SND_HDA_CODEC_SENARYTECH" = no;
-  "SND_HDA_CODEC_SI3054" = no;
-  "SND_HDA_CODEC_SIGMATEL" = no;
-  "SND_HDA_CODEC_VIA" = no;
-  "SND_HDA_CORE" = yes;
-  "SND_HDA_EXT_CORE" = yes;
-  "SND_HDA_GENERIC" = yes;
-  "SND_HDA_INTEL" = yes;
-  "SND_HDA_SCODEC_COMPONENT" = yes;
-  "SND_HDA_SCODEC_CS35L41_I2C" = no;
-  "SND_HDA_SCODEC_CS35L41_SPI" = no;
-  "SND_HDA_SCODEC_CS35L56_I2C" = no;
-  "SND_HDA_SCODEC_CS35L56_SPI" = no;
-  "SND_HDA_SCODEC_TAS2781_I2C" = no;
-  "SND_HDA_SCODEC_TAS2781_SPI" = no;
-  "SND_HDSP" = no;
-  "SND_HDSPM" = no;
-  "SND_HRTIMER" = yes;
-  "SND_HWDEP" = yes;
-  "SND_I2S_HI6210_I2S" = no;
-  "SND_ICE1712" = no;
-  "SND_ICE1724" = no;
-  "SND_INDIGO" = no;
-  "SND_INDIGODJ" = no;
-  "SND_INDIGODJX" = no;
-  "SND_INDIGOIO" = no;
-  "SND_INDIGOIOX" = no;
-  "SND_INTEL8X0" = no;
-  "SND_INTEL8X0M" = no;
-  "SND_INTEL_DSP_CONFIG" = yes;
-  "SND_INTEL_SOUNDWIRE_ACPI" = yes;
-  "SND_KORG1212" = no;
-  "SND_LAYLA20" = no;
-  "SND_LAYLA24" = no;
-  "SND_LOLA" = no;
-  "SND_LX6464ES" = no;
-  "SND_MAESTRO3" = no;
-  "SND_MIA" = no;
-  "SND_MIXART" = no;
-  "SND_MIXER_OSS" = no;
-  "SND_MONA" = no;
-  "SND_MPU401" = no;
-  "SND_MTPAV" = no;
-  "SND_NM256" = no;
-  "SND_OXYGEN" = no;
-  "SND_PCM" = yes;
-  "SND_PCMTEST" = no;
-  "SND_PCM_OSS" = no;
-  "SND_PCXHR" = no;
-  "SND_RIPTIDE" = no;
-  "SND_RME32" = no;
-  "SND_RME96" = no;
-  "SND_RME9652" = no;
-  "SND_SEQUENCER" = yes;
-  "SND_SEQUENCER_OSS" = no;
-  "SND_SEQ_DEVICE" = yes;
-  "SND_SEQ_DUMMY" = yes;
-  "SND_SERIAL_U16550" = no;
-  "SND_SIMPLE_CARD" = no;
-  "SND_SOC" = yes;
-  "SND_SOC_AC97_CODEC" = no;
-  "SND_SOC_ACPI" = yes;
-  "SND_SOC_ADAU1372_I2C" = no;
-  "SND_SOC_ADAU1372_SPI" = no;
-  "SND_SOC_ADAU1373" = no;
-  "SND_SOC_ADAU1701" = no;
-  "SND_SOC_ADAU1761_I2C" = no;
-  "SND_SOC_ADAU1761_SPI" = no;
-  "SND_SOC_ADAU7002" = no;
-  "SND_SOC_ADAU7118_HW" = no;
-  "SND_SOC_ADAU7118_I2C" = no;
-  "SND_SOC_ADI" = no;
-  "SND_SOC_AK4104" = no;
-  "SND_SOC_AK4118" = no;
-  "SND_SOC_AK4375" = no;
-  "SND_SOC_AK4458" = no;
-  "SND_SOC_AK4554" = no;
-  "SND_SOC_AK4613" = no;
-  "SND_SOC_AK4619" = no;
-  "SND_SOC_AK4642" = no;
-  "SND_SOC_AK5386" = no;
-  "SND_SOC_AK5558" = no;
-  "SND_SOC_ALC5623" = no;
-  "SND_SOC_AMD_ACP" = no;
-  "SND_SOC_AMD_ACP3x" = no;
-  "SND_SOC_AMD_ACP5x" = no;
-  "SND_SOC_AMD_ACP6x" = no;
-  "SND_SOC_AMD_ACP_COMMON" = no;
-  "SND_SOC_AMD_RENOIR" = no;
-  "SND_SOC_AMD_RPL_ACP6x" = no;
-  "SND_SOC_AW8738" = no;
-  "SND_SOC_AW87390" = no;
-  "SND_SOC_AW88081" = no;
-  "SND_SOC_AW88166" = no;
-  "SND_SOC_AW88261" = no;
-  "SND_SOC_AW88395" = no;
-  "SND_SOC_AW88399" = no;
-  "SND_SOC_BD28623" = no;
-  "SND_SOC_CHV3_CODEC" = no;
-  "SND_SOC_CHV3_I2S" = no;
-  "SND_SOC_CS35L32" = no;
-  "SND_SOC_CS35L33" = no;
-  "SND_SOC_CS35L34" = no;
-  "SND_SOC_CS35L35" = no;
-  "SND_SOC_CS35L36" = no;
-  "SND_SOC_CS35L41_I2C" = no;
-  "SND_SOC_CS35L41_SPI" = no;
-  "SND_SOC_CS35L45_I2C" = no;
-  "SND_SOC_CS35L45_SPI" = no;
-  "SND_SOC_CS35L56_I2C" = no;
-  "SND_SOC_CS35L56_SPI" = no;
-  "SND_SOC_CS4234" = no;
-  "SND_SOC_CS4265" = no;
-  "SND_SOC_CS4270" = no;
-  "SND_SOC_CS4271_I2C" = no;
-  "SND_SOC_CS4271_SPI" = no;
-  "SND_SOC_CS42L42" = no;
-  "SND_SOC_CS42L51_I2C" = no;
-  "SND_SOC_CS42L52" = no;
-  "SND_SOC_CS42L56" = no;
-  "SND_SOC_CS42L73" = no;
-  "SND_SOC_CS42L83" = no;
-  "SND_SOC_CS42L84" = no;
-  "SND_SOC_CS42XX8_I2C" = no;
-  "SND_SOC_CS43130" = no;
-  "SND_SOC_CS4341" = no;
-  "SND_SOC_CS4349" = no;
-  "SND_SOC_CS48L32" = no;
-  "SND_SOC_CS530X_I2C" = no;
-  "SND_SOC_CS53L30" = no;
-  "SND_SOC_CX2072X" = no;
-  "SND_SOC_DA7213" = no;
-  "SND_SOC_DMIC" = no;
-  "SND_SOC_ES7134" = no;
-  "SND_SOC_ES7241" = no;
-  "SND_SOC_ES8311" = no;
-  "SND_SOC_ES8316" = no;
-  "SND_SOC_ES8323" = no;
-  "SND_SOC_ES8326" = no;
-  "SND_SOC_ES8328_I2C" = no;
-  "SND_SOC_ES8328_SPI" = no;
-  "SND_SOC_ES8375" = no;
-  "SND_SOC_ES8389" = no;
-  "SND_SOC_FSL_XCVR" = no;
-  "SND_SOC_GTM601" = no;
-  "SND_SOC_HDA" = yes;
-  "SND_SOC_I2C_AND_SPI" = yes;
-  "SND_SOC_ICS43432" = no;
-  "SND_SOC_IDT821034" = no;
-  "SND_SOC_IMG_I2S_IN" = no;
-  "SND_SOC_IMG_I2S_OUT" = no;
-  "SND_SOC_IMG_PARALLEL_OUT" = no;
-  "SND_SOC_IMG_PISTACHIO_INTERNAL_DAC" = no;
-  "SND_SOC_IMG_SPDIF_IN" = no;
-  "SND_SOC_IMG_SPDIF_OUT" = no;
-  "SND_SOC_INTEL_AVS" = yes;
-  "SND_SOC_INTEL_AVS_MACH_DA7219" = no;
-  "SND_SOC_INTEL_AVS_MACH_DMIC" = no;
-  "SND_SOC_INTEL_AVS_MACH_ES8336" = no;
-  "SND_SOC_INTEL_AVS_MACH_HDAUDIO" = no;
-  "SND_SOC_INTEL_AVS_MACH_I2S_TEST" = no;
-  "SND_SOC_INTEL_AVS_MACH_MAX98357A" = no;
-  "SND_SOC_INTEL_AVS_MACH_MAX98373" = no;
-  "SND_SOC_INTEL_AVS_MACH_MAX98927" = no;
-  "SND_SOC_INTEL_AVS_MACH_NAU8825" = no;
-  "SND_SOC_INTEL_AVS_MACH_PCM3168A" = no;
-  "SND_SOC_INTEL_AVS_MACH_PROBE" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT274" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT286" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT298" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT5514" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT5663" = no;
-  "SND_SOC_INTEL_AVS_MACH_RT5682" = no;
-  "SND_SOC_INTEL_AVS_MACH_SSM4567" = no;
-  "SND_SOC_INTEL_CATPT" = no;
-  "SND_SOC_LPASS_RX_MACRO" = no;
-  "SND_SOC_LPASS_TX_MACRO" = no;
-  "SND_SOC_LPASS_VA_MACRO" = no;
-  "SND_SOC_LPASS_WSA_MACRO" = no;
-  "SND_SOC_MAX9759" = no;
-  "SND_SOC_MAX98088" = no;
-  "SND_SOC_MAX98090" = no;
-  "SND_SOC_MAX98357A" = no;
-  "SND_SOC_MAX98373_I2C" = no;
-  "SND_SOC_MAX98388" = no;
-  "SND_SOC_MAX98390" = no;
-  "SND_SOC_MAX98396" = no;
-  "SND_SOC_MAX98504" = no;
-  "SND_SOC_MAX98520" = no;
-  "SND_SOC_MAX9860" = no;
-  "SND_SOC_MAX9867" = no;
-  "SND_SOC_MAX98927" = no;
-  "SND_SOC_MSM8916_WCD_DIGITAL" = no;
-  "SND_SOC_MT6351" = no;
-  "SND_SOC_MT6357" = no;
-  "SND_SOC_MT6358" = no;
-  "SND_SOC_MT6660" = no;
-  "SND_SOC_MTK_BTCVSD" = no;
-  "SND_SOC_NAU8315" = no;
-  "SND_SOC_NAU8540" = no;
-  "SND_SOC_NAU8810" = no;
-  "SND_SOC_NAU8821" = no;
-  "SND_SOC_NAU8822" = no;
-  "SND_SOC_NAU8824" = no;
-  "SND_SOC_NTP8835" = no;
-  "SND_SOC_NTP8918" = no;
-  "SND_SOC_PCM1681" = no;
-  "SND_SOC_PCM1789_I2C" = no;
-  "SND_SOC_PCM179X_I2C" = no;
-  "SND_SOC_PCM179X_SPI" = no;
-  "SND_SOC_PCM186X_I2C" = no;
-  "SND_SOC_PCM186X_SPI" = no;
-  "SND_SOC_PCM3060_I2C" = no;
-  "SND_SOC_PCM3060_SPI" = no;
-  "SND_SOC_PCM3168A_I2C" = no;
-  "SND_SOC_PCM3168A_SPI" = no;
-  "SND_SOC_PCM5102A" = no;
-  "SND_SOC_PCM512x_I2C" = no;
-  "SND_SOC_PCM512x_SPI" = no;
-  "SND_SOC_PCM6240" = no;
-  "SND_SOC_PEB2466" = no;
-  "SND_SOC_RT5616" = no;
-  "SND_SOC_RT5631" = no;
-  "SND_SOC_RT5640" = no;
-  "SND_SOC_RT5659" = no;
-  "SND_SOC_RT9120" = no;
-  "SND_SOC_RT9123" = no;
-  "SND_SOC_RT9123P" = no;
-  "SND_SOC_RTQ9128" = no;
-  "SND_SOC_SDCA_OPTIONAL" = yes;
-  "SND_SOC_SGTL5000" = no;
-  "SND_SOC_SIMPLE_AMPLIFIER" = no;
-  "SND_SOC_SIMPLE_MUX" = no;
-  "SND_SOC_SMA1303" = no;
-  "SND_SOC_SMA1307" = no;
-  "SND_SOC_SOF_ACPI" = no;
-  "SND_SOC_SOF_AMD_TOPLEVEL" = no;
-  "SND_SOC_SOF_PCI" = no;
-  "SND_SOC_SPDIF" = no;
-  "SND_SOC_SRC4XXX_I2C" = no;
-  "SND_SOC_SSM2305" = no;
-  "SND_SOC_SSM2518" = no;
-  "SND_SOC_SSM2602_I2C" = no;
-  "SND_SOC_SSM2602_SPI" = no;
-  "SND_SOC_SSM4567" = no;
-  "SND_SOC_STA32X" = no;
-  "SND_SOC_STA350" = no;
-  "SND_SOC_STI_SAS" = no;
-  "SND_SOC_TAS2552" = no;
-  "SND_SOC_TAS2562" = no;
-  "SND_SOC_TAS2764" = no;
-  "SND_SOC_TAS2770" = no;
-  "SND_SOC_TAS2780" = no;
-  "SND_SOC_TAS2781_I2C" = no;
-  "SND_SOC_TAS5086" = no;
-  "SND_SOC_TAS571X" = no;
-  "SND_SOC_TAS5720" = no;
-  "SND_SOC_TAS5805M" = no;
-  "SND_SOC_TAS6424" = no;
-  "SND_SOC_TDA7419" = no;
-  "SND_SOC_TFA9879" = no;
-  "SND_SOC_TFA989X" = no;
-  "SND_SOC_TLV320ADC3XXX" = no;
-  "SND_SOC_TLV320ADCX140" = no;
-  "SND_SOC_TLV320AIC23_I2C" = no;
-  "SND_SOC_TLV320AIC23_SPI" = no;
-  "SND_SOC_TLV320AIC31XX" = no;
-  "SND_SOC_TLV320AIC32X4_I2C" = no;
-  "SND_SOC_TLV320AIC32X4_SPI" = no;
-  "SND_SOC_TLV320AIC3X_I2C" = no;
-  "SND_SOC_TLV320AIC3X_SPI" = no;
-  "SND_SOC_TPA6130A2" = no;
-  "SND_SOC_TS3A227E" = no;
-  "SND_SOC_TSCS42XX" = no;
-  "SND_SOC_TSCS454" = no;
-  "SND_SOC_UDA1334" = no;
-  "SND_SOC_UDA1342" = no;
-  "SND_SOC_WM8510" = no;
-  "SND_SOC_WM8523" = no;
-  "SND_SOC_WM8524" = no;
-  "SND_SOC_WM8580" = no;
-  "SND_SOC_WM8711" = no;
-  "SND_SOC_WM8728" = no;
-  "SND_SOC_WM8731_I2C" = no;
-  "SND_SOC_WM8731_SPI" = no;
-  "SND_SOC_WM8737" = no;
-  "SND_SOC_WM8741" = no;
-  "SND_SOC_WM8750" = no;
-  "SND_SOC_WM8753" = no;
-  "SND_SOC_WM8770" = no;
-  "SND_SOC_WM8776" = no;
-  "SND_SOC_WM8782" = no;
-  "SND_SOC_WM8804_I2C" = no;
-  "SND_SOC_WM8804_SPI" = no;
-  "SND_SOC_WM8903" = no;
-  "SND_SOC_WM8904" = no;
-  "SND_SOC_WM8940" = no;
-  "SND_SOC_WM8960" = no;
-  "SND_SOC_WM8961" = no;
-  "SND_SOC_WM8962" = no;
-  "SND_SOC_WM8974" = no;
-  "SND_SOC_WM8978" = no;
-  "SND_SOC_WM8985" = no;
-  "SND_SOC_XILINX_AUDIO_FORMATTER" = no;
-  "SND_SOC_XILINX_I2S" = no;
-  "SND_SOC_XILINX_SPDIF" = no;
-  "SND_SOC_XTFPGA_I2S" = no;
-  "SND_SOC_ZL38060" = no;
-  "SND_SONICVIBES" = no;
-  "SND_SST_ATOM_HIFI2_PLATFORM_ACPI" = no;
-  "SND_SST_ATOM_HIFI2_PLATFORM_PCI" = no;
-  "SND_TIMER" = yes;
-  "SND_TRIDENT" = no;
-  "SND_USB_6FIRE" = no;
-  "SND_USB_AUDIO" = no;
-  "SND_USB_CAIAQ" = no;
-  "SND_USB_HIFACE" = no;
-  "SND_USB_POD" = no;
-  "SND_USB_PODHD" = no;
-  "SND_USB_TONEPORT" = no;
-  "SND_USB_UA101" = no;
-  "SND_USB_US122L" = no;
-  "SND_USB_USX2Y" = no;
-  "SND_USB_VARIAX" = no;
-  "SND_VIA82XX" = no;
-  "SND_VIA82XX_MODEM" = no;
-  "SND_VIRMIDI" = no;
-  "SND_VIRTIO" = no;
-  "SND_VIRTUOSO" = no;
-  "SND_VX222" = no;
-  "SND_XEN_FRONTEND" = no;
-  "SND_YMFPCI" = no;
-  "SOFT_WATCHDOG" = no;
-  "SONY_LAPTOP" = no;
-  "SOUND" = yes;
-  "SOUNDWIRE" = no;
-  "SP5100_TCO" = no;
-  "SPEAKUP" = no;
-  "SPI_ALTERA" = no;
-  "SPI_AMD" = no;
-  "SPI_AX88796C" = no;
-  "SPI_AXI_SPI_ENGINE" = no;
-  "SPI_BITBANG" = no;
-  "SPI_CADENCE" = no;
-  "SPI_CH341" = no;
-  "SPI_DESIGNWARE" = no;
-  "SPI_GPIO" = no;
-  "SPI_INTEL_PCI" = no;
-  "SPI_INTEL_PLATFORM" = no;
-  "SPI_LOOPBACK_TEST" = no;
-  "SPI_MICROCHIP_CORE" = no;
-  "SPI_MICROCHIP_CORE_QSPI" = no;
-  "SPI_MUX" = no;
-  "SPI_MXIC" = no;
-  "SPI_OC_TINY" = no;
-  "SPI_PCI1XXXX" = no;
-  "SPI_PXA2XX" = no;
-  "SPI_SC18IS602" = no;
-  "SPI_SIFIVE" = no;
-  "SPI_SLAVE_SYSTEM_CONTROL" = no;
-  "SPI_SLAVE_TIME" = no;
-  "SPI_SPIDEV" = no;
-  "SPI_TLE62X0" = no;
-  "SPI_XCOMM" = no;
-  "SPI_XILINX" = no;
-  "SPI_ZYNQMP_GQSPI" = no;
-  "SQUASHFS" = no;
-  "SSB" = no;
-  "SSIF_IPMI_BMC" = no;
-  "STE10XP" = no;
-  "STM" = no;
-  "STMMAC_ETH" = no;
-  "STP" = yes;
-  "SUNGEM" = no;
-  "SURFACE3_WMI" = no;
-  "SURFACE_3_POWER_OPREGION" = no;
-  "SURFACE_AGGREGATOR" = no;
-  "SURFACE_GPE" = no;
-  "SURFACE_HOTPLUG" = no;
-  "SURFACE_PRO3_BUTTON" = no;
-  "SXGBE_ETH" = no;
-  "SYSTEM76_ACPI" = no;
-  "SYSTEMPORT" = no;
-  "TABLET_SERIAL_WACOM4" = no;
-  "TABLET_USB_ACECAD" = no;
-  "TABLET_USB_AIPTEK" = no;
-  "TABLET_USB_HANWANG" = no;
-  "TABLET_USB_KBTAB" = no;
-  "TABLET_USB_PEGASUS" = no;
-  "TAP" = yes;
-  "TARGET_CORE" = no;
-  "TCG_ATMEL" = no;
-  "TCG_INFINEON" = no;
-  "TCG_NSC" = no;
-  "TCG_SVSM" = no;
-  "TCG_TIS_I2C" = no;
-  "TCG_TIS_I2C_ATMEL" = no;
-  "TCG_TIS_I2C_CR50" = no;
-  "TCG_TIS_I2C_INFINEON" = no;
-  "TCG_TIS_I2C_NUVOTON" = no;
-  "TCG_TIS_SPI" = no;
-  "TCG_TIS_ST33ZP24_I2C" = no;
-  "TCG_TIS_ST33ZP24_SPI" = no;
-  "TCG_VTPM_PROXY" = no;
-  "TCG_XEN" = no;
-  "TCP_CONG_BIC" = no;
-  "TCP_CONG_CDG" = no;
-  "TCP_CONG_CUBIC" = no;
-  "TCP_CONG_DCTCP" = no;
-  "TCP_CONG_HSTCP" = no;
-  "TCP_CONG_HTCP" = no;
-  "TCP_CONG_HYBLA" = no;
-  "TCP_CONG_ILLINOIS" = no;
-  "TCP_CONG_LP" = no;
-  "TCP_CONG_NV" = no;
-  "TCP_CONG_SCALABLE" = no;
-  "TCP_CONG_VEGAS" = no;
-  "TCP_CONG_VENO" = no;
-  "TCP_CONG_WESTWOOD" = no;
-  "TCP_CONG_YEAH" = no;
-  "TDX_GUEST_DRIVER" = no;
-  "TEE" = no;
-  "TEHUTI" = no;
-  "TEHUTI_TN40" = no;
-  "TELCLOCK" = no;
-  "TERANETICS_PHY" = no;
-  "TEST_POWER" = no;
-  "THERMAL_CORE_TESTING" = no;
-  "THINKPAD_ACPI" = no;
-  "THINKPAD_LMI" = no;
-  "THUNDER_NIC_BGX" = no;
-  "THUNDER_NIC_PF" = no;
-  "THUNDER_NIC_RGX" = no;
-  "THUNDER_NIC_VF" = no;
-  "TIFM_CORE" = no;
-  "TIGON3" = no;
-  "TINYDRM_HX8357D" = no;
-  "TINYDRM_ILI9163" = no;
-  "TINYDRM_ILI9225" = no;
-  "TINYDRM_ILI9341" = no;
-  "TINYDRM_ILI9486" = no;
-  "TINYDRM_MI0283QT" = no;
-  "TINYDRM_REPAPER" = no;
-  "TINYDRM_SHARP_MEMORY" = no;
-  "TIPC" = no;
-  "TI_FPC202" = no;
-  "TLAN" = no;
-  "TLS" = no;
-  "TOPSTAR_LAPTOP" = no;
-  "TOSHIBA_BT_RFKILL" = no;
-  "TOSHIBA_HAPS" = no;
-  "TOSHIBA_WMI" = no;
-  "TOUCHSCREEN_88PM860X" = no;
-  "TOUCHSCREEN_AD7877" = no;
-  "TOUCHSCREEN_AD7879" = no;
-  "TOUCHSCREEN_ADS7846" = no;
-  "TOUCHSCREEN_ATMEL_MXT" = no;
-  "TOUCHSCREEN_AUO_PIXCIR" = no;
-  "TOUCHSCREEN_BU21013" = no;
-  "TOUCHSCREEN_BU21029" = no;
-  "TOUCHSCREEN_CHIPONE_ICN8505" = no;
-  "TOUCHSCREEN_CY8CTMA140" = no;
-  "TOUCHSCREEN_CY8CTMG110" = no;
-  "TOUCHSCREEN_CYTTSP5" = no;
-  "TOUCHSCREEN_CYTTSP_CORE" = no;
-  "TOUCHSCREEN_DA9034" = no;
-  "TOUCHSCREEN_DA9052" = no;
-  "TOUCHSCREEN_DYNAPRO" = no;
-  "TOUCHSCREEN_EDT_FT5X06" = no;
-  "TOUCHSCREEN_EETI" = no;
-  "TOUCHSCREEN_EGALAX_SERIAL" = no;
-  "TOUCHSCREEN_EKTF2127" = no;
-  "TOUCHSCREEN_ELAN" = no;
-  "TOUCHSCREEN_ELO" = no;
-  "TOUCHSCREEN_EXC3000" = no;
-  "TOUCHSCREEN_FUJITSU" = no;
-  "TOUCHSCREEN_GOODIX" = no;
-  "TOUCHSCREEN_GOODIX_BERLIN_I2C" = no;
-  "TOUCHSCREEN_GOODIX_BERLIN_SPI" = no;
-  "TOUCHSCREEN_GUNZE" = no;
-  "TOUCHSCREEN_HAMPSHIRE" = no;
-  "TOUCHSCREEN_HIDEEP" = no;
-  "TOUCHSCREEN_HIMAX_HX83112B" = no;
-  "TOUCHSCREEN_HYCON_HY46XX" = no;
-  "TOUCHSCREEN_HYNITRON_CSTXXX" = no;
-  "TOUCHSCREEN_ILI210X" = no;
-  "TOUCHSCREEN_ILITEK" = no;
-  "TOUCHSCREEN_IMAGIS" = no;
-  "TOUCHSCREEN_INEXIO" = no;
-  "TOUCHSCREEN_IQS5XX" = no;
-  "TOUCHSCREEN_IQS7211" = no;
-  "TOUCHSCREEN_MAX11801" = no;
-  "TOUCHSCREEN_MELFAS_MIP4" = no;
-  "TOUCHSCREEN_MMS114" = no;
-  "TOUCHSCREEN_MSG2638" = no;
-  "TOUCHSCREEN_MTOUCH" = no;
-  "TOUCHSCREEN_NOVATEK_NVT_TS" = no;
-  "TOUCHSCREEN_PCAP" = no;
-  "TOUCHSCREEN_PENMOUNT" = no;
-  "TOUCHSCREEN_PIXCIR" = no;
-  "TOUCHSCREEN_RM_TS" = no;
-  "TOUCHSCREEN_ROHM_BU21023" = no;
-  "TOUCHSCREEN_S6SY761" = no;
-  "TOUCHSCREEN_SILEAD" = no;
-  "TOUCHSCREEN_SIS_I2C" = no;
-  "TOUCHSCREEN_ST1232" = no;
-  "TOUCHSCREEN_STMFTS" = no;
-  "TOUCHSCREEN_SUR40" = no;
-  "TOUCHSCREEN_SURFACE3_SPI" = no;
-  "TOUCHSCREEN_SX8654" = no;
-  "TOUCHSCREEN_TOUCHIT213" = no;
-  "TOUCHSCREEN_TOUCHRIGHT" = no;
-  "TOUCHSCREEN_TOUCHWIN" = no;
-  "TOUCHSCREEN_TPS6507X" = no;
-  "TOUCHSCREEN_TSC2004" = no;
-  "TOUCHSCREEN_TSC2005" = no;
-  "TOUCHSCREEN_TSC2007" = no;
-  "TOUCHSCREEN_TSC_SERIO" = no;
-  "TOUCHSCREEN_USB_COMPOSITE" = no;
-  "TOUCHSCREEN_WACOM_I2C" = no;
-  "TOUCHSCREEN_WACOM_W8001" = no;
-  "TOUCHSCREEN_WDT87XX_I2C" = no;
-  "TOUCHSCREEN_WM831X" = no;
-  "TOUCHSCREEN_ZET6223" = no;
-  "TOUCHSCREEN_ZFORCE" = no;
-  "TOUCHSCREEN_ZINITIX" = no;
-  "TPS6105X" = no;
-  "TPS65010" = no;
-  "TPS6507X" = no;
-  "TQMX86_WDT" = no;
-  "TRUSTED_KEYS" = no;
-  "TSNEP" = no;
-  "TULIP" = no;
-  "TUN" = yes;
-  "TUXEDO_NB04_WMI_AB" = no;
-  "TWL4030_WATCHDOG" = no;
-  "TXGBE" = no;
-  "TYPEC" = no;
-  "TYPHOON" = no;
-  "UACCE" = no;
-  "UDF_FS" = no;
-  "UFS_FS" = no;
-  "UHID" = no;
-  "UIO" = no;
-  "ULI526X" = no;
-  "UNIX_DIAG" = no;
-  "USB4" = no;
-  "USBIP_CORE" = no;
-  "USBPCWATCHDOG" = no;
-  "USB_ACM" = no;
-  "USB_ADUTUX" = no;
-  "USB_APPLEDISPLAY" = no;
-  "USB_C67X00_HCD" = no;
-  "USB_CDNS_SUPPORT" = no;
-  "USB_CHAOSKEY" = no;
-  "USB_CHIPIDEA" = no;
-  "USB_CONN_GPIO" = no;
-  "USB_CYPRESS_CY7C63" = no;
-  "USB_CYTHERM" = no;
-  "USB_DWC2" = no;
-  "USB_DWC3" = no;
-  "USB_EHCI_FSL" = no;
-  "USB_EHCI_HCD_PLATFORM" = no;
-  "USB_EHSET_TEST_FIXTURE" = no;
-  "USB_EMI26" = no;
-  "USB_EMI62" = no;
-  "USB_EZUSB_FX2" = no;
-  "USB_GADGET" = no;
-  "USB_GPIO_VBUS" = no;
-  "USB_GSPCA" = no;
-  "USB_HSIC_USB3503" = no;
-  "USB_HSIC_USB4604" = no;
-  "USB_HUB_USB251XB" = no;
-  "USB_IDMOUSE" = no;
-  "USB_IOWARRIOR" = no;
-  "USB_ISIGHTFW" = no;
-  "USB_ISP116X_HCD" = no;
-  "USB_ISP1301" = no;
-  "USB_ISP1760" = no;
-  "USB_LCD" = no;
-  "USB_LD" = no;
-  "USB_LEDS_TRIGGER_USBPORT" = no;
-  "USB_LEGOTOWER" = no;
-  "USB_LGM_PHY" = no;
-  "USB_LINK_LAYER_TEST" = no;
-  "USB_LJCA" = no;
-  "USB_MAX3421_HCD" = no;
-  "USB_MDC800" = no;
-  "USB_MICROTEK" = no;
-  "USB_MON" = no;
-  "USB_MUSB_HDRC" = no;
-  "USB_NET_DRIVERS" = no;
-  "USB_OHCI_HCD_PLATFORM" = no;
-  "USB_OXU210HP_HCD" = no;
-  "USB_PRINTER" = no;
-  "USB_PULSE8_CEC" = no;
-  "USB_PWC" = no;
-  "USB_R8A66597_HCD" = no;
-  "USB_RAINSHADOW_CEC" = no;
-  "USB_ROLES_INTEL_XHCI" = yes;
-  "USB_ROLE_SWITCH" = yes;
-  "USB_S2255" = no;
-  "USB_SERIAL_AIRCABLE" = no;
-  "USB_SERIAL_ARK3116" = no;
-  "USB_SERIAL_BELKIN" = no;
-  "USB_SERIAL_CH341" = no;
-  "USB_SERIAL_CP210X" = no;
-  "USB_SERIAL_CYBERJACK" = no;
-  "USB_SERIAL_CYPRESS_M8" = no;
-  "USB_SERIAL_DEBUG" = no;
-  "USB_SERIAL_DIGI_ACCELEPORT" = no;
-  "USB_SERIAL_EDGEPORT" = no;
-  "USB_SERIAL_EDGEPORT_TI" = no;
-  "USB_SERIAL_EMPEG" = no;
-  "USB_SERIAL_F81232" = no;
-  "USB_SERIAL_F8153X" = no;
-  "USB_SERIAL_FTDI_SIO" = no;
-  "USB_SERIAL_GARMIN" = no;
-  "USB_SERIAL_IPAQ" = no;
-  "USB_SERIAL_IPW" = no;
-  "USB_SERIAL_IR" = no;
-  "USB_SERIAL_IUU" = no;
-  "USB_SERIAL_KEYSPAN" = no;
-  "USB_SERIAL_KEYSPAN_PDA" = no;
-  "USB_SERIAL_KLSI" = no;
-  "USB_SERIAL_KOBIL_SCT" = no;
-  "USB_SERIAL_MCT_U232" = no;
-  "USB_SERIAL_METRO" = no;
-  "USB_SERIAL_MOS7720" = no;
-  "USB_SERIAL_MOS7840" = no;
-  "USB_SERIAL_MXUPORT" = no;
-  "USB_SERIAL_NAVMAN" = no;
-  "USB_SERIAL_OMNINET" = no;
-  "USB_SERIAL_OPTICON" = no;
-  "USB_SERIAL_OPTION" = no;
-  "USB_SERIAL_OTI6858" = no;
-  "USB_SERIAL_PL2303" = no;
-  "USB_SERIAL_QCAUX" = no;
-  "USB_SERIAL_QT2" = no;
-  "USB_SERIAL_QUALCOMM" = no;
-  "USB_SERIAL_SAFE" = no;
-  "USB_SERIAL_SIERRAWIRELESS" = no;
-  "USB_SERIAL_SIMPLE" = no;
-  "USB_SERIAL_SPCP8X5" = no;
-  "USB_SERIAL_SSU100" = no;
-  "USB_SERIAL_SYMBOL" = no;
-  "USB_SERIAL_TI" = no;
-  "USB_SERIAL_UPD78F0730" = no;
-  "USB_SERIAL_VISOR" = no;
-  "USB_SERIAL_WHITEHEAT" = no;
-  "USB_SERIAL_WISHBONE" = no;
-  "USB_SERIAL_XR" = no;
-  "USB_SERIAL_XSENS_MT" = no;
-  "USB_SEVSEG" = no;
-  "USB_SISUSBVGA" = no;
-  "USB_SL811_HCD" = no;
-  "USB_STORAGE" = yes;
-  "USB_STORAGE_ALAUDA" = no;
-  "USB_STORAGE_CYPRESS_ATACB" = no;
-  "USB_STORAGE_DATAFAB" = no;
-  "USB_STORAGE_ENE_UB6250" = no;
-  "USB_STORAGE_FREECOM" = no;
-  "USB_STORAGE_ISD200" = no;
-  "USB_STORAGE_JUMPSHOT" = no;
-  "USB_STORAGE_KARMA" = no;
-  "USB_STORAGE_ONETOUCH" = no;
-  "USB_STORAGE_REALTEK" = no;
-  "USB_STORAGE_SDDR09" = no;
-  "USB_STORAGE_SDDR55" = no;
-  "USB_STORAGE_USBAT" = no;
-  "USB_TEST" = no;
-  "USB_TMC" = no;
-  "USB_TRANCEVIBRATOR" = no;
-  "USB_UAS" = yes;
-  "USB_ULPI_BUS" = no;
-  "USB_VIDEO_CLASS" = yes;
-  "USB_WDM" = no;
-  "USB_XEN_HCD" = no;
-  "USB_XHCI_PCI_RENESAS" = no;
-  "USB_XHCI_PLATFORM" = no;
-  "USB_YUREX" = no;
-  "USERIO" = no;
-  "UVC_COMMON" = yes;
-  "V4L2_ASYNC" = yes;
-  "V4L2_FWNODE" = yes;
-  "V4L2_LOOPBACK" = no;
-  "VBOXGUEST" = no;
-  "VDPA" = no;
-  "VETH" = no;
-  "VFAT_FS" = yes;
-  "VFIO" = no;
-  "VHBA" = no;
-  "VHOST_NET" = no;
-  "VIA_RHINE" = no;
-  "VIA_VELOCITY" = no;
-  "VIA_WDT" = no;
-  "VIDEOBUF2_CORE" = yes;
-  "VIDEOBUF2_MEMOPS" = yes;
-  "VIDEOBUF2_V4L2" = yes;
-  "VIDEOBUF2_VMALLOC" = yes;
-  "VIDEO_AD5820" = no;
-  "VIDEO_ADP1653" = no;
-  "VIDEO_AK7375" = no;
-  "VIDEO_ALVIUM_CSI2" = no;
-  "VIDEO_AR0521" = no;
-  "VIDEO_AU0828" = no;
-  "VIDEO_BT848" = no;
-  "VIDEO_CADENCE_CSI2RX" = no;
-  "VIDEO_CADENCE_CSI2TX" = no;
-  "VIDEO_CAFE_CCIC" = no;
-  "VIDEO_CCS" = no;
-  "VIDEO_CX18" = no;
-  "VIDEO_CX231XX" = no;
-  "VIDEO_CX23885" = no;
-  "VIDEO_CX25821" = no;
-  "VIDEO_CX88" = no;
-  "VIDEO_DEV" = yes;
-  "VIDEO_DT3155" = no;
-  "VIDEO_DW9714" = no;
-  "VIDEO_DW9719" = no;
-  "VIDEO_DW9768" = no;
-  "VIDEO_DW9807_VCM" = no;
-  "VIDEO_EM28XX" = no;
-  "VIDEO_ET8EK8" = no;
-  "VIDEO_GC0308" = no;
-  "VIDEO_GC05A2" = no;
-  "VIDEO_GC08A3" = no;
-  "VIDEO_GC2145" = no;
-  "VIDEO_GO7007" = no;
-  "VIDEO_GS1662" = no;
-  "VIDEO_HDPVR" = no;
-  "VIDEO_HEXIUM_GEMINI" = no;
-  "VIDEO_HEXIUM_ORION" = no;
-  "VIDEO_HI556" = no;
-  "VIDEO_HI846" = no;
-  "VIDEO_HI847" = no;
-  "VIDEO_IMX208" = no;
-  "VIDEO_IMX214" = no;
-  "VIDEO_IMX219" = no;
-  "VIDEO_IMX258" = no;
-  "VIDEO_IMX274" = no;
-  "VIDEO_IMX283" = no;
-  "VIDEO_IMX290" = no;
-  "VIDEO_IMX296" = no;
-  "VIDEO_IMX319" = no;
-  "VIDEO_IMX355" = no;
-  "VIDEO_INTEL_IPU6" = no;
-  "VIDEO_IPU3_CIO2" = no;
-  "VIDEO_IPU3_IMGU" = no;
-  "VIDEO_IR_I2C" = yes;
-  "VIDEO_IVTV" = no;
-  "VIDEO_LM3560" = no;
-  "VIDEO_LM3646" = no;
-  "VIDEO_MEM2MEM_DEINTERLACE" = no;
-  "VIDEO_MT9M001" = no;
-  "VIDEO_MT9M111" = no;
-  "VIDEO_MT9M114" = no;
-  "VIDEO_MT9P031" = no;
-  "VIDEO_MT9T112" = no;
-  "VIDEO_MT9V011" = no;
-  "VIDEO_MT9V032" = no;
-  "VIDEO_MT9V111" = no;
-  "VIDEO_MXB" = no;
-  "VIDEO_OG01A1B" = no;
-  "VIDEO_OV01A10" = no;
-  "VIDEO_OV02A10" = no;
-  "VIDEO_OV02C10" = no;
-  "VIDEO_OV02E10" = no;
-  "VIDEO_OV08D10" = no;
-  "VIDEO_OV08X40" = no;
-  "VIDEO_OV13858" = no;
-  "VIDEO_OV13B10" = no;
-  "VIDEO_OV2640" = no;
-  "VIDEO_OV2659" = no;
-  "VIDEO_OV2680" = no;
-  "VIDEO_OV2685" = no;
-  "VIDEO_OV2740" = no;
-  "VIDEO_OV4689" = no;
-  "VIDEO_OV5647" = no;
-  "VIDEO_OV5648" = no;
-  "VIDEO_OV5670" = no;
-  "VIDEO_OV5675" = no;
-  "VIDEO_OV5693" = no;
-  "VIDEO_OV5695" = no;
-  "VIDEO_OV64A40" = no;
-  "VIDEO_OV6650" = no;
-  "VIDEO_OV7251" = no;
-  "VIDEO_OV7640" = no;
-  "VIDEO_OV7670" = no;
-  "VIDEO_OV772X" = no;
-  "VIDEO_OV7740" = no;
-  "VIDEO_OV8856" = no;
-  "VIDEO_OV8858" = no;
-  "VIDEO_OV8865" = no;
-  "VIDEO_OV9640" = no;
-  "VIDEO_OV9650" = no;
-  "VIDEO_OV9734" = no;
-  "VIDEO_PVRUSB2" = no;
-  "VIDEO_RDACM20" = no;
-  "VIDEO_RDACM21" = no;
-  "VIDEO_RJ54N1" = no;
-  "VIDEO_RP1_CFE" = no;
-  "VIDEO_S5C73M3" = no;
-  "VIDEO_S5K5BAF" = no;
-  "VIDEO_S5K6A3" = no;
-  "VIDEO_SAA7134" = no;
-  "VIDEO_SAA7164" = no;
-  "VIDEO_SOLO6X10" = no;
-  "VIDEO_STK1160" = no;
-  "VIDEO_THP7312" = no;
-  "VIDEO_TW5864" = no;
-  "VIDEO_TW68" = no;
-  "VIDEO_TW686X" = no;
-  "VIDEO_USBTV" = no;
-  "VIDEO_VD55G1" = no;
-  "VIDEO_VD56G3" = no;
-  "VIDEO_VICODEC" = no;
-  "VIDEO_VIM2M" = no;
-  "VIDEO_VIMC" = no;
-  "VIDEO_VISL" = no;
-  "VIDEO_VIVID" = no;
-  "VIRTIO_BALLOON" = no;
-  "VIRTIO_INPUT" = no;
-  "VIRTIO_IOMMU" = no;
-  "VIRTIO_MEM" = no;
-  "VIRTIO_MMIO" = no;
-  "VIRTIO_NET" = no;
-  "VIRTIO_RTC" = no;
-  "VIRT_WIFI" = no;
-  "VITESSE_PHY" = no;
-  "VLAN_8021Q" = no;
-  "VMD" = no;
-  "VMWARE_PVSCSI" = no;
-  "VMWARE_VMCI" = no;
-  "VMXNET3" = no;
-  "VORTEX" = no;
-  "VSOCKETS" = no;
-  "VXLAN" = no;
-  "W1" = no;
-  "W83627HF_WDT" = no;
-  "W83877F_WDT" = no;
-  "W83977F_WDT" = no;
-  "WAFER_WDT" = no;
-  "WATCHDOG_PRETIMEOUT_GOV_NOOP" = no;
-  "WCN36XX" = no;
-  "WDAT_WDT" = no;
-  "WDTPCI" = no;
-  "WFX" = no;
-  "WIL6210" = no;
-  "WILC1000_SDIO" = no;
-  "WILC1000_SPI" = no;
-  "WINBOND_840" = no;
-  "WINMATE_FM07_KEYS" = no;
-  "WIREGUARD" = no;
-  "WIRELESS_HOTKEY" = no;
-  "WIZNET_W5100" = no;
-  "WIZNET_W5300" = no;
-  "WL1251" = no;
-  "WL12XX" = no;
-  "WL18XX" = no;
-  "WLCORE" = no;
-  "WM831X_BACKUP" = no;
-  "WM831X_POWER" = no;
-  "WM831X_WATCHDOG" = no;
-  "WM8350_POWER" = no;
-  "WM8350_WATCHDOG" = no;
-  "WMI_BMOF" = yes;
-  "WPCM450_SOC" = no;
-  "WWAN" = no;
-  "X86_ACPI_CPUFREQ" = no;
-  "X86_AMD_PSTATE_UT" = no;
-  "X86_ANDROID_TABLETS" = no;
-  "X86_MCE_INJECT" = no;
-  "X86_P4_CLOCKMOD" = no;
-  "X86_PCC_CPUFREQ" = no;
-  "X86_PKG_TEMP_THERMAL" = yes;
-  "X86_PMEM_LEGACY" = no;
-  "XDP_SOCKETS_DIAG" = no;
-  "XENFS" = no;
-  "XEN_ACPI_PROCESSOR" = no;
-  "XEN_BLKDEV_BACKEND" = no;
-  "XEN_BLKDEV_FRONTEND" = no;
-  "XEN_DEV_EVTCHN" = no;
-  "XEN_FBDEV_FRONTEND" = no;
-  "XEN_GNTDEV" = no;
-  "XEN_GRANT_DEV_ALLOC" = no;
-  "XEN_NETDEV_BACKEND" = no;
-  "XEN_NETDEV_FRONTEND" = no;
-  "XEN_PCIDEV_BACKEND" = no;
-  "XEN_PCIDEV_FRONTEND" = no;
-  "XEN_PRIVCMD" = no;
-  "XEN_PVCALLS_BACKEND" = no;
-  "XEN_PVCALLS_FRONTEND" = no;
-  "XEN_SCSI_FRONTEND" = no;
-  "XEN_WDT" = no;
-  "XFRM_USER" = no;
-  "XFS_FS" = no;
-  "XIAOMI_WMI" = no;
-  "XILINX_DMA" = no;
-  "XILINX_EMACLITE" = no;
-  "XILINX_GMII2RGMII" = no;
-  "XILINX_LL_TEMAC" = no;
-  "XILINX_SDFEC" = no;
-  "XILINX_VCU" = no;
-  "XILINX_WATCHDOG" = no;
-  "XILINX_XDMA" = no;
-  "XILLYBUS" = no;
-  "XILLYUSB" = no;
-  "YELLOWFIN" = no;
-  "YOGABOOK" = no;
-  "YT2_1380" = no;
-  "ZD1211RW" = no;
-  "ZIIRAVE_WATCHDOG" = no;
-  "ZONEFS_FS" = no;
-  "ZRAM" = no;
-  "GPIO_BT8XX" = no;
-  "SND_SE6X" = no;
-  "X86_DISABLED_FEATURE_SEV_SNP" = yes;
-}
+[
+  "60XX_WDT n"
+  "6LOWPAN n"
+  "8139CP n"
+  "8139TOO n"
+  "ACENIC n"
+  "ACERHDF n"
+  "ACER_WIRELESS n"
+  "ACER_WMI n"
+  "ACPI_APEI_EINJ n"
+  "ACPI_APEI_ERST_DEBUG n"
+  "ACPI_CMPC n"
+  "ACPI_CONFIGFS n"
+  "ACPI_EC_DEBUGFS n"
+  "ACPI_EXTLOG n"
+  "ACPI_MDIO y"
+  "ACPI_NFIT n"
+  "ACPI_PFRUT n"
+  "ACPI_PROCESSOR_AGGREGATOR y"
+  "ACPI_QUICKSTART n"
+  "ACPI_SBS n"
+  "ACPI_TAD n"
+  "ACPI_VIDEO y"
+  "ACPI_WMI y"
+  "ACQUIRE_WDT n"
+  "ACRN_HSM n"
+  "AD525X_DPOT n"
+  "ADAPTEC_STARFIRE n"
+  "ADIN1100_PHY n"
+  "ADIN1110 n"
+  "ADIN_PHY n"
+  "ADM8211 n"
+  "ADVANTECH_EC_WDT n"
+  "ADVANTECH_WDT n"
+  "ADV_SWBUTTON n"
+  "AFFS_FS n"
+  "AFS_FS n"
+  "AF_KCM n"
+  "AF_RXRPC n"
+  "AGP_AMD64 n"
+  "AGP_INTEL n"
+  "AGP_SIS n"
+  "AGP_VIA n"
+  "AHCI_DWC n"
+  "AIR_EN8811H_PHY n"
+  "ALIENWARE_WMI n"
+  "ALIM1535_WDT n"
+  "ALIM7101_WDT n"
+  "ALTERA_MBOX n"
+  "ALTERA_MSGDMA n"
+  "ALTERA_STAPL n"
+  "ALTERA_TSE n"
+  "ALX n"
+  "AMD8111_ETH n"
+  "AMD_ATL n"
+  "AMD_HSMP_ACPI n"
+  "AMD_HSMP_PLAT n"
+  "AMD_ISP_PLATFORM n"
+  "AMD_PHY n"
+  "AMD_PMC n"
+  "AMD_PTDMA n"
+  "AMD_QDMA n"
+  "AMD_SBRMI_I2C n"
+  "AMD_SFH_HID n"
+  "AMD_XGBE n"
+  "AMILO_RFKILL n"
+  "AMT n"
+  "APDS9802ALS n"
+  "APPLE_BCE n"
+  "APPLE_GMUX n"
+  "APPLE_MFI_FASTCHARGE n"
+  "APPLICOM n"
+  "AQTION n"
+  "AQUANTIA_PHY n"
+  "AR5523 n"
+  "AS21XXX_PHY n"
+  "ASUS_LAPTOP n"
+  "ASUS_TF103C_DOCK n"
+  "ASUS_WIRELESS n"
+  "ASUS_WMI n"
+  "AT76C50X_USB n"
+  "AT803X_PHY n"
+  "ATALK n"
+  "ATA_GENERIC n"
+  "ATA_OVER_ETH n"
+  "ATA_PIIX n"
+  "ATH10K n"
+  "ATH11K n"
+  "ATH12K n"
+  "ATH5K n"
+  "ATH6KL n"
+  "ATH9K y"
+  "ATH9K_COMMON y"
+  "ATH9K_HTC n"
+  "ATH9K_HW y"
+  "ATH9K_PCI_NO_EEPROM n"
+  "ATH_COMMON y"
+  "ATL1 n"
+  "ATL1C n"
+  "ATL1E n"
+  "ATL2 n"
+  "ATM n"
+  "AX25 n"
+  "AX88796B_PHY n"
+  "B43 n"
+  "B43LEGACY n"
+  "B44 n"
+  "BACKLIGHT_88PM860X n"
+  "BACKLIGHT_AAT2870 n"
+  "BACKLIGHT_ADP5520 n"
+  "BACKLIGHT_ADP8860 n"
+  "BACKLIGHT_ADP8870 n"
+  "BACKLIGHT_APPLE n"
+  "BACKLIGHT_ARCXCNN n"
+  "BACKLIGHT_AS3711 n"
+  "BACKLIGHT_BD6107 n"
+  "BACKLIGHT_DA903X n"
+  "BACKLIGHT_DA9052 n"
+  "BACKLIGHT_GPIO n"
+  "BACKLIGHT_KTD253 n"
+  "BACKLIGHT_KTD2801 n"
+  "BACKLIGHT_KTZ8866 n"
+  "BACKLIGHT_LM3509 n"
+  "BACKLIGHT_LM3630A n"
+  "BACKLIGHT_LM3639 n"
+  "BACKLIGHT_LP855X n"
+  "BACKLIGHT_LP8788 n"
+  "BACKLIGHT_LV5207LP n"
+  "BACKLIGHT_MAX8925 n"
+  "BACKLIGHT_MP3309C n"
+  "BACKLIGHT_PANDORA n"
+  "BACKLIGHT_PWM n"
+  "BACKLIGHT_QCOM_WLED n"
+  "BACKLIGHT_SAHARA n"
+  "BACKLIGHT_WM831X n"
+  "BARCO_P50_GPIO n"
+  "BAREUDP n"
+  "BATMAN_ADV n"
+  "BATTERY_88PM860X n"
+  "BATTERY_BQ27XXX n"
+  "BATTERY_CHAGALL n"
+  "BATTERY_CW2015 n"
+  "BATTERY_DA9030 n"
+  "BATTERY_DA9052 n"
+  "BATTERY_DS2780 n"
+  "BATTERY_DS2781 n"
+  "BATTERY_DS2782 n"
+  "BATTERY_GAUGE_LTC2941 n"
+  "BATTERY_GOLDFISH n"
+  "BATTERY_MAX17042 n"
+  "BATTERY_MAX1720X n"
+  "BATTERY_RT5033 n"
+  "BATTERY_SBS n"
+  "BATTERY_UG3105 n"
+  "BCACHE n"
+  "BCACHEFS_FS n"
+  "BCM54140_PHY n"
+  "BCM7XXX_PHY n"
+  "BCM84881_PHY n"
+  "BCM87XX_PHY n"
+  "BCMA n"
+  "BCMGENET n"
+  "BCM_KONA_USB2_PHY n"
+  "BCM_VK n"
+  "BE2ISCSI n"
+  "BE2NET n"
+  "BEFS_FS n"
+  "BLK_DEV_3W_XXXX_RAID n"
+  "BLK_DEV_DM n"
+  "BLK_DEV_DRBD n"
+  "BLK_DEV_FD n"
+  "BLK_DEV_LOOP y"
+  "BLK_DEV_MD n"
+  "BLK_DEV_NBD n"
+  "BLK_DEV_NULL_BLK n"
+  "BLK_DEV_NVME n"
+  "BLK_DEV_PCIESSD_MTIP32XX n"
+  "BLK_DEV_RAM n"
+  "BLK_DEV_RBD n"
+  "BLK_DEV_SR n"
+  "BLK_DEV_UBLK n"
+  "BLK_DEV_ZONED_LOOP n"
+  "BNA n"
+  "BNX2 n"
+  "BNX2X n"
+  "BNXT n"
+  "BONDING n"
+  "BRCMFMAC n"
+  "BRCMSMAC n"
+  "BRIDGE y"
+  "BRIDGE_NETFILTER n"
+  "BRIDGE_NF_EBTABLES n"
+  "BRIDGE_NF_EBTABLES_LEGACY n"
+  "BROADCOM_PHY n"
+  "BT y"
+  "BT_ATH3K y"
+  "BT_BCM y"
+  "BT_BNEP n"
+  "BT_HCIBCM203X n"
+  "BT_HCIBCM4377 n"
+  "BT_HCIBFUSB n"
+  "BT_HCIBPA10X n"
+  "BT_HCIBTSDIO n"
+  "BT_HCIBTUSB y"
+  "BT_HCIUART n"
+  "BT_HCIVHCI n"
+  "BT_HIDP n"
+  "BT_INTEL y"
+  "BT_INTEL_PCIE y"
+  "BT_MRVL n"
+  "BT_MTK y"
+  "BT_MTKSDIO n"
+  "BT_MTKUART n"
+  "BT_NXPUART n"
+  "BT_RFCOMM n"
+  "BT_RTL y"
+  "BT_VIRTIO n"
+  "C2PORT n"
+  "CADENCE_WATCHDOG n"
+  "CAN n"
+  "CARL9170 n"
+  "CASSINI n"
+  "CB710_CORE n"
+  "CDROM_PKTCDVD n"
+  "CEC_CH7322 n"
+  "CEC_CORE y"
+  "CEC_GPIO n"
+  "CEC_NXP_TDA9950 n"
+  "CEC_SECO n"
+  "CEPH_FS n"
+  "CEPH_LIB n"
+  "CFG80211 y"
+  "CHARGER_ADP5061 n"
+  "CHARGER_BD99954 n"
+  "CHARGER_BQ2415X n"
+  "CHARGER_BQ24190 n"
+  "CHARGER_BQ24257 n"
+  "CHARGER_BQ24735 n"
+  "CHARGER_BQ2515X n"
+  "CHARGER_BQ256XX n"
+  "CHARGER_BQ25890 n"
+  "CHARGER_BQ25980 n"
+  "CHARGER_GPIO n"
+  "CHARGER_LP8727 n"
+  "CHARGER_LT3651 n"
+  "CHARGER_LTC4162L n"
+  "CHARGER_MANAGER n"
+  "CHARGER_MAX77976 n"
+  "CHARGER_MAX8903 n"
+  "CHARGER_MAX8971 n"
+  "CHARGER_RT9455 n"
+  "CHARGER_RT9467 n"
+  "CHARGER_RT9471 n"
+  "CHARGER_SBS n"
+  "CHARGER_SMB347 n"
+  "CHARGER_TPS65090 n"
+  "CHELSIO_T1 n"
+  "CHELSIO_T3 n"
+  "CHELSIO_T4 n"
+  "CHELSIO_T4VF n"
+  "CHROMEOS_ACPI n"
+  "CHROMEOS_LAPTOP n"
+  "CHROMEOS_PRIVACY_SCREEN n"
+  "CHROMEOS_PSTORE n"
+  "CHROMEOS_TBMC n"
+  "CHR_DEV_SCH n"
+  "CHR_DEV_SG n"
+  "CHR_DEV_ST n"
+  "CICADA_PHY n"
+  "CIFS n"
+  "CLK_TWL n"
+  "CLK_TWL6040 n"
+  "CNIC n"
+  "CODA_FS n"
+  "COMMON_CLK_CDCE706 n"
+  "COMMON_CLK_CS2000_CP n"
+  "COMMON_CLK_MAX9485 n"
+  "COMMON_CLK_PWM n"
+  "COMMON_CLK_SI5341 n"
+  "COMMON_CLK_SI5351 n"
+  "COMMON_CLK_SI544 n"
+  "COMMON_CLK_WM831X n"
+  "COMPAL_LAPTOP n"
+  "CORDIC n"
+  "CORTINA_PHY n"
+  "COUNTER n"
+  "CRAMFS n"
+  "CROS_EC n"
+  "CROS_HPS_I2C n"
+  "CROS_KBD_LED_BACKLIGHT n"
+  "CRYPTO_842 n"
+  "CRYPTO_ADIANTUM n"
+  "CRYPTO_AEAD y"
+  "CRYPTO_AEGIS128 n"
+  "CRYPTO_AEGIS128_AESNI_SSE2 n"
+  "CRYPTO_AES_NI_INTEL y"
+  "CRYPTO_AES_TI n"
+  "CRYPTO_ANSI_CPRNG n"
+  "CRYPTO_ARIA n"
+  "CRYPTO_ARIA_AESNI_AVX2_X86_64 n"
+  "CRYPTO_ARIA_AESNI_AVX_X86_64 n"
+  "CRYPTO_ARIA_GFNI_AVX512_X86_64 n"
+  "CRYPTO_AUTHENC n"
+  "CRYPTO_BLOWFISH n"
+  "CRYPTO_BLOWFISH_X86_64 n"
+  "CRYPTO_CAMELLIA n"
+  "CRYPTO_CAMELLIA_AESNI_AVX2_X86_64 n"
+  "CRYPTO_CAMELLIA_AESNI_AVX_X86_64 n"
+  "CRYPTO_CAMELLIA_X86_64 n"
+  "CRYPTO_CAST5 n"
+  "CRYPTO_CAST5_AVX_X86_64 n"
+  "CRYPTO_CAST6 n"
+  "CRYPTO_CAST6_AVX_X86_64 n"
+  "CRYPTO_CCM y"
+  "CRYPTO_CHACHA20 n"
+  "CRYPTO_CHACHA20POLY1305 n"
+  "CRYPTO_CMAC y"
+  "CRYPTO_CRC32 n"
+  "CRYPTO_CRYPTD y"
+  "CRYPTO_CURVE25519 n"
+  "CRYPTO_DEFLATE n"
+  "CRYPTO_DES n"
+  "CRYPTO_DES3_EDE_X86_64 n"
+  "CRYPTO_DEV_AMLOGIC_GXL n"
+  "CRYPTO_DEV_ATMEL_ECC n"
+  "CRYPTO_DEV_ATMEL_SHA204A n"
+  "CRYPTO_DEV_CCP_DD n"
+  "CRYPTO_DEV_NITROX_CNN55XX n"
+  "CRYPTO_DEV_PADLOCK n"
+  "CRYPTO_DEV_QAT_420XX n"
+  "CRYPTO_DEV_QAT_4XXX n"
+  "CRYPTO_DEV_QAT_6XXX n"
+  "CRYPTO_DEV_QAT_C3XXX n"
+  "CRYPTO_DEV_QAT_C3XXXVF n"
+  "CRYPTO_DEV_QAT_C62X n"
+  "CRYPTO_DEV_QAT_C62XVF n"
+  "CRYPTO_DEV_QAT_DH895xCC n"
+  "CRYPTO_DEV_QAT_DH895xCCVF n"
+  "CRYPTO_DEV_SAFEXCEL n"
+  "CRYPTO_DEV_VIRTIO n"
+  "CRYPTO_ECHAINIV n"
+  "CRYPTO_ECRDSA n"
+  "CRYPTO_ESSIV n"
+  "CRYPTO_FCRYPT n"
+  "CRYPTO_GCM y"
+  "CRYPTO_GHASH y"
+  "CRYPTO_GHASH_CLMUL_NI_INTEL y"
+  "CRYPTO_HCTR2 n"
+  "CRYPTO_KRB5 n"
+  "CRYPTO_KRB5ENC n"
+  "CRYPTO_LIB_ARC4 y"
+  "CRYPTO_LRW n"
+  "CRYPTO_LZ4 n"
+  "CRYPTO_LZ4HC n"
+  "CRYPTO_MD4 n"
+  "CRYPTO_MICHAEL_MIC n"
+  "CRYPTO_NHPOLY1305_AVX2 n"
+  "CRYPTO_NHPOLY1305_SSE2 n"
+  "CRYPTO_NULL n"
+  "CRYPTO_PCBC n"
+  "CRYPTO_PCRYPT n"
+  "CRYPTO_POLYVAL y"
+  "CRYPTO_POLYVAL_CLMUL_NI y"
+  "CRYPTO_RMD160 n"
+  "CRYPTO_SEQIV n"
+  "CRYPTO_SERPENT n"
+  "CRYPTO_SERPENT_AVX2_X86_64 n"
+  "CRYPTO_SERPENT_AVX_X86_64 n"
+  "CRYPTO_SERPENT_SSE2_X86_64 n"
+  "CRYPTO_SHA1_SSSE3 y"
+  "CRYPTO_SHA512_SSSE3 y"
+  "CRYPTO_SM3_AVX_X86_64 n"
+  "CRYPTO_SM3_GENERIC n"
+  "CRYPTO_SM4_AESNI_AVX2_X86_64 n"
+  "CRYPTO_SM4_AESNI_AVX_X86_64 n"
+  "CRYPTO_SM4_GENERIC n"
+  "CRYPTO_STREEBOG n"
+  "CRYPTO_TWOFISH n"
+  "CRYPTO_TWOFISH_AVX_X86_64 n"
+  "CRYPTO_TWOFISH_X86_64 n"
+  "CRYPTO_TWOFISH_X86_64_3WAY n"
+  "CRYPTO_USER n"
+  "CRYPTO_USER_API_AEAD n"
+  "CRYPTO_USER_API_HASH n"
+  "CRYPTO_USER_API_RNG n"
+  "CRYPTO_USER_API_SKCIPHER n"
+  "CRYPTO_WP512 n"
+  "CRYPTO_XCBC n"
+  "CUSE n"
+  "CW1200 n"
+  "CXD2880_SPI_DRV n"
+  "CXL_BUS n"
+  "CX_ECAT n"
+  "DA9052_WATCHDOG n"
+  "DA9055_WATCHDOG n"
+  "DASHARO_ACPI n"
+  "DAVICOM_PHY n"
+  "DCDBAS y"
+  "DE2104X n"
+  "DELL_LAPTOP y"
+  "DELL_PC n"
+  "DELL_RBTN y"
+  "DELL_SMBIOS y"
+  "DELL_SMO8800 n"
+  "DELL_UART_BACKLIGHT n"
+  "DELL_WMI y"
+  "DELL_WMI_AIO n"
+  "DELL_WMI_DDV n"
+  "DELL_WMI_DESCRIPTOR y"
+  "DELL_WMI_LED n"
+  "DELL_WMI_SYSMAN n"
+  "DEVFREQ_GOV_PASSIVE n"
+  "DEVFREQ_GOV_PERFORMANCE n"
+  "DEVFREQ_GOV_POWERSAVE n"
+  "DEVFREQ_GOV_SIMPLE_ONDEMAND n"
+  "DEVFREQ_GOV_USERSPACE n"
+  "DEV_DAX n"
+  "DEV_DAX_HMEM n"
+  "DL2K n"
+  "DLM n"
+  "DM9051 n"
+  "DM9102 n"
+  "DNET n"
+  "DNS_RESOLVER n"
+  "DP83822_PHY n"
+  "DP83848_PHY n"
+  "DP83867_PHY n"
+  "DP83869_PHY n"
+  "DP83TC811_PHY n"
+  "DP83TD510_PHY n"
+  "DP83TG720_PHY n"
+  "DPTF_PCH_FIVR n"
+  "DPTF_POWER n"
+  "DRM_ACCEL_AMDXDNA n"
+  "DRM_ACCEL_HABANALABS n"
+  "DRM_ACCEL_IVPU n"
+  "DRM_AMDGPU n"
+  "DRM_ANALOGIX_ANX78XX n"
+  "DRM_APPLETBDRM n"
+  "DRM_AST n"
+  "DRM_BOCHS n"
+  "DRM_BUDDY y"
+  "DRM_CIRRUS_QEMU n"
+  "DRM_DISPLAY_HELPER y"
+  "DRM_EXEC y"
+  "DRM_GM12U320 n"
+  "DRM_GMA500 n"
+  "DRM_GPUSVM y"
+  "DRM_GPUVM y"
+  "DRM_GUD n"
+  "DRM_HISI_HIBMC n"
+  "DRM_I2C_NXP_TDA998X n"
+  "DRM_I915 y"
+  "DRM_MGAG200 n"
+  "DRM_NOUVEAU n"
+  "DRM_PANEL_AUO_A030JTN01 n"
+  "DRM_PANEL_ILITEK_ILI9341 n"
+  "DRM_PANEL_MIPI_DBI n"
+  "DRM_PANEL_ORISETECH_OTA5601A n"
+  "DRM_PANEL_RASPBERRYPI_TOUCHSCREEN n"
+  "DRM_PANEL_WIDECHIPS_WS2401 n"
+  "DRM_QXL n"
+  "DRM_RADEON n"
+  "DRM_SCHED y"
+  "DRM_SSD130X n"
+  "DRM_ST7571_I2C n"
+  "DRM_ST7586 n"
+  "DRM_ST7735R n"
+  "DRM_SUBALLOC_HELPER y"
+  "DRM_TTM y"
+  "DRM_TTM_HELPER y"
+  "DRM_UDL n"
+  "DRM_VBOXVIDEO n"
+  "DRM_VGEM n"
+  "DRM_VIRTIO_GPU n"
+  "DRM_VKMS n"
+  "DRM_VMWGFX n"
+  "DRM_XE y"
+  "DRM_XEN_FRONTEND n"
+  "DS1682 n"
+  "DUMMY n"
+  "DVB_AS102 n"
+  "DVB_AV7110 n"
+  "DVB_B2C2_FLEXCOP_PCI n"
+  "DVB_B2C2_FLEXCOP_USB n"
+  "DVB_BUDGET_CORE n"
+  "DVB_CORE y"
+  "DVB_DDBRIDGE n"
+  "DVB_DM1105 n"
+  "DVB_DUMMY_FE n"
+  "DVB_NETUP_UNIDVB n"
+  "DVB_NGENE n"
+  "DVB_PLUTO2 n"
+  "DVB_PT1 n"
+  "DVB_PT3 n"
+  "DVB_SMIPCIE n"
+  "DVB_TTUSB_BUDGET n"
+  "DVB_TTUSB_DEC n"
+  "DVB_USB n"
+  "DVB_USB_V2 n"
+  "DVB_VIDTV n"
+  "DWC_PCIE_PMU n"
+  "DWC_XLGMAC n"
+  "DW_DMAC n"
+  "DW_EDMA n"
+  "DW_WATCHDOG n"
+  "DW_XDATA_PCIE n"
+  "E100 n"
+  "E1000 n"
+  "E1000E n"
+  "EBC_C384_WDT n"
+  "ECRYPT_FS n"
+  "EDAC_AMD64 n"
+  "EDAC_E752X n"
+  "EDAC_I10NM n"
+  "EDAC_I3000 n"
+  "EDAC_I3200 n"
+  "EDAC_I5100 n"
+  "EDAC_I5400 n"
+  "EDAC_I7300 n"
+  "EDAC_I7CORE n"
+  "EDAC_I82975X n"
+  "EDAC_IE31200 n"
+  "EDAC_IGEN6 n"
+  "EDAC_PND2 n"
+  "EDAC_SBRIDGE n"
+  "EDAC_SKX n"
+  "EDAC_X38 n"
+  "EDD n"
+  "EEEPC_LAPTOP n"
+  "EEPROM_93CX6 n"
+  "EEPROM_AT24 n"
+  "EEPROM_EE1004 y"
+  "EEPROM_IDT_89HPESX n"
+  "EEPROM_MAX6875 n"
+  "EFI_BOOTLOADER_CONTROL n"
+  "EFI_CAPSULE_LOADER n"
+  "EFI_SECRET n"
+  "ENA_ETHERNET n"
+  "ENC28J60 n"
+  "ENCLOSURE_SERVICES n"
+  "ENCRYPTED_KEYS n"
+  "ENCX24J600 n"
+  "ENIC n"
+  "EPIC100 n"
+  "EQUALIZER n"
+  "EROFS_FS n"
+  "ET131X n"
+  "ETHOC n"
+  "EUROTECH_WDT n"
+  "EXAR_WDT n"
+  "EXFAT_FS n"
+  "EXTCON_FSA9480 n"
+  "EXTCON_GPIO n"
+  "EXTCON_INTEL_CHT_WC n"
+  "EXTCON_INTEL_INT3496 n"
+  "EXTCON_LC824206XA n"
+  "EXTCON_MAX3355 n"
+  "EXTCON_MAX77843 n"
+  "EXTCON_MAX8997 n"
+  "EXTCON_PTN5150 n"
+  "EXTCON_RT8973A n"
+  "EXTCON_SM5502 n"
+  "EXTCON_USB_GPIO n"
+  "F2FS_FS n"
+  "F71808E_WDT n"
+  "FAILOVER n"
+  "FAT_FS y"
+  "FBNIC n"
+  "FDDI n"
+  "FEALNX n"
+  "FIREWIRE n"
+  "FIREWIRE_NOSY n"
+  "FIXED_PHY y"
+  "FM10K n"
+  "FORCEDETH n"
+  "FPGA n"
+  "FUEL_GAUGE_MM8013 n"
+  "FUJITSU_ES n"
+  "FUJITSU_LAPTOP n"
+  "FUJITSU_TABLET n"
+  "FUN_ETH n"
+  "FUSION_SAS n"
+  "FUSION_SPI n"
+  "FWCTL n"
+  "FWNODE_MDIO y"
+  "FW_CFG_SYSFS n"
+  "GAMEPORT n"
+  "GENEVE n"
+  "GENWQE n"
+  "GFS2_FS n"
+  "GIGABYTE_WMI n"
+  "GNSS n"
+  "GOOGLE_COREBOOT_TABLE n"
+  "GPD_POCKET_FAN n"
+  "GPIB n"
+  "GPIO_74X164 n"
+  "GPIO_ADP5520 n"
+  "GPIO_AGGREGATOR n"
+  "GPIO_ALTERA n"
+  "GPIO_AMD8111 n"
+  "GPIO_AMDPT n"
+  "GPIO_AMD_FCH n"
+  "GPIO_DA9052 n"
+  "GPIO_DA9055 n"
+  "GPIO_DS4520 n"
+  "GPIO_DWAPB n"
+  "GPIO_ELKHARTLAKE n"
+  "GPIO_F7188X n"
+  "GPIO_FXL6408 n"
+  "GPIO_GENERIC_PLATFORM n"
+  "GPIO_GRANITERAPIDS n"
+  "GPIO_ICH n"
+  "GPIO_IT87 n"
+  "GPIO_LATCH n"
+  "GPIO_MAX3191X n"
+  "GPIO_MAX7300 n"
+  "GPIO_MAX7301 n"
+  "GPIO_MAX732X n"
+  "GPIO_MB86S7X n"
+  "GPIO_MC33880 n"
+  "GPIO_ML_IOH n"
+  "GPIO_MOCKUP n"
+  "GPIO_MPSSE n"
+  "GPIO_PCA953X n"
+  "GPIO_PCA9570 n"
+  "GPIO_PCF857X n"
+  "GPIO_PCIE_IDIO_24 n"
+  "GPIO_PCI_IDIO_16 n"
+  "GPIO_PISOSR n"
+  "GPIO_RDC321X n"
+  "GPIO_SCH311X n"
+  "GPIO_SIM n"
+  "GPIO_TPIC2810 n"
+  "GPIO_TWL4030 n"
+  "GPIO_TWL6040 n"
+  "GPIO_VIRTIO n"
+  "GPIO_VX855 n"
+  "GPIO_WINBOND n"
+  "GPIO_WM831X n"
+  "GPIO_WM8350 n"
+  "GPIO_WS16C48 n"
+  "GPIO_XILINX n"
+  "GPIO_XRA1403 n"
+  "GP_PCI1XXXX n"
+  "GTP n"
+  "GVE n"
+  "HALTPOLL_CPUIDLE n"
+  "HAMACHI n"
+  "HANGCHECK_TIMER n"
+  "HAPPYMEAL n"
+  "HAVE_KVM_IRQ_BYPASS y"
+  "HDMI_LPE_AUDIO n"
+  "HFSPLUS_FS n"
+  "HFS_FS n"
+  "HIBMCGE n"
+  "HID_A4TECH n"
+  "HID_ACCUTOUCH n"
+  "HID_ACRUX n"
+  "HID_ALPS n"
+  "HID_APPLE n"
+  "HID_APPLEIR n"
+  "HID_APPLETB_BL n"
+  "HID_APPLETB_KBD n"
+  "HID_AUREAL n"
+  "HID_BELKIN n"
+  "HID_BETOP_FF n"
+  "HID_BIGBEN_FF n"
+  "HID_CHERRY n"
+  "HID_CHICONY n"
+  "HID_CMEDIA n"
+  "HID_CORSAIR n"
+  "HID_COUGAR n"
+  "HID_CP2112 n"
+  "HID_CREATIVE_SB0540 n"
+  "HID_CYPRESS n"
+  "HID_DRAGONRISE n"
+  "HID_ELAN n"
+  "HID_ELECOM n"
+  "HID_ELO n"
+  "HID_EMS_FF n"
+  "HID_EVISION n"
+  "HID_EZKEY n"
+  "HID_FT260 n"
+  "HID_GEMBIRD n"
+  "HID_GFRM n"
+  "HID_GLORIOUS n"
+  "HID_GOODIX_SPI n"
+  "HID_GOOGLE_STADIA_FF n"
+  "HID_GREENASIA n"
+  "HID_GT683R n"
+  "HID_GYRATION n"
+  "HID_HOLTEK n"
+  "HID_ICADE n"
+  "HID_ITE n"
+  "HID_JABRA n"
+  "HID_KENSINGTON n"
+  "HID_KEYTOUCH n"
+  "HID_KYE n"
+  "HID_KYSONA n"
+  "HID_LCPOWER n"
+  "HID_LED n"
+  "HID_LENOVO n"
+  "HID_LETSKETCH n"
+  "HID_MACALLY n"
+  "HID_MAGICMOUSE n"
+  "HID_MALTRON n"
+  "HID_MAYFLASH n"
+  "HID_MCP2200 n"
+  "HID_MCP2221 n"
+  "HID_MEGAWORLD_FF n"
+  "HID_MICROSOFT n"
+  "HID_MONTEREY n"
+  "HID_MULTITOUCH y"
+  "HID_NINTENDO n"
+  "HID_NTI n"
+  "HID_NTRIG n"
+  "HID_ORTEK n"
+  "HID_PANTHERLORD n"
+  "HID_PENMOUNT n"
+  "HID_PETALYNX n"
+  "HID_PICOLCD n"
+  "HID_PLANTRONICS n"
+  "HID_PRIMAX n"
+  "HID_PRODIKEYS n"
+  "HID_PXRC n"
+  "HID_RAZER n"
+  "HID_REDRAGON n"
+  "HID_RETRODE n"
+  "HID_RMI n"
+  "HID_ROCCAT n"
+  "HID_SAITEK n"
+  "HID_SAMSUNG n"
+  "HID_SEMITEK n"
+  "HID_SENSOR_HUB n"
+  "HID_SIGMAMICRO n"
+  "HID_SMARTJOYPLUS n"
+  "HID_SONY n"
+  "HID_SPEEDLINK n"
+  "HID_STEAM n"
+  "HID_STEELSERIES n"
+  "HID_SUNPLUS n"
+  "HID_THINGM n"
+  "HID_THRUSTMASTER n"
+  "HID_TIVO n"
+  "HID_TOPRE n"
+  "HID_TOPSEED n"
+  "HID_TWINHAN n"
+  "HID_U2FZERO n"
+  "HID_UCLOGIC n"
+  "HID_UDRAW_PS3 n"
+  "HID_UNIVERSAL_PIDFF n"
+  "HID_VIEWSONIC n"
+  "HID_VIVALDI n"
+  "HID_VRC2 n"
+  "HID_WACOM n"
+  "HID_WALTOP n"
+  "HID_WIIMOTE n"
+  "HID_WINWING n"
+  "HID_XIAOMI n"
+  "HID_XINMO n"
+  "HID_ZEROPLUS n"
+  "HID_ZYDACRON n"
+  "HINIC n"
+  "HINIC3 n"
+  "HMC6352 n"
+  "HOTPLUG_PCI_ACPI_IBM n"
+  "HOTPLUG_PCI_CPCI_GENERIC n"
+  "HOTPLUG_PCI_CPCI_ZT5550 n"
+  "HP_ACCEL n"
+  "HP_BIOSCFG n"
+  "HP_ILO n"
+  "HP_WATCHDOG n"
+  "HP_WMI n"
+  "HSR n"
+  "HUAWEI_WMI n"
+  "HWPOISON_INJECT n"
+  "HW_RANDOM_AMD n"
+  "HW_RANDOM_BA431 n"
+  "HW_RANDOM_INTEL n"
+  "HW_RANDOM_TIMERIOMEM n"
+  "HW_RANDOM_VIA n"
+  "HW_RANDOM_VIRTIO n"
+  "HW_RANDOM_XIPHERA n"
+  "HYPERV n"
+  "I2C_ALGOBIT y"
+  "I2C_ALI1535 n"
+  "I2C_ALI1563 n"
+  "I2C_ALI15X3 n"
+  "I2C_AMD756 n"
+  "I2C_AMD8111 n"
+  "I2C_AMD_MP2 n"
+  "I2C_CBUS_GPIO n"
+  "I2C_CHARDEV n"
+  "I2C_CHT_WC n"
+  "I2C_CP2615 n"
+  "I2C_DIOLAN_U2C n"
+  "I2C_EMEV2 n"
+  "I2C_GPIO n"
+  "I2C_HID y"
+  "I2C_HID_ACPI y"
+  "I2C_HID_CORE y"
+  "I2C_HID_OF n"
+  "I2C_I801 y"
+  "I2C_ISCH n"
+  "I2C_ISMT n"
+  "I2C_MLXCPLD n"
+  "I2C_MUX y"
+  "I2C_MUX_GPIO n"
+  "I2C_MUX_LTC4306 n"
+  "I2C_MUX_MLXCPLD n"
+  "I2C_MUX_PCA9541 n"
+  "I2C_MUX_PCA954x n"
+  "I2C_MUX_REG n"
+  "I2C_NFORCE2 n"
+  "I2C_NVIDIA_GPU n"
+  "I2C_OCORES n"
+  "I2C_PCA_PLATFORM n"
+  "I2C_PCI1XXXX n"
+  "I2C_PIIX4 n"
+  "I2C_ROBOTFUZZ_OSIF n"
+  "I2C_SCMI n"
+  "I2C_SIMTEC n"
+  "I2C_SIS5595 n"
+  "I2C_SIS630 n"
+  "I2C_SIS96X n"
+  "I2C_SLAVE_EEPROM n"
+  "I2C_SLAVE_TESTUNIT n"
+  "I2C_SMBUS y"
+  "I2C_STUB n"
+  "I2C_TAOS_EVM n"
+  "I2C_TINY_USB n"
+  "I2C_VIA n"
+  "I2C_VIAPRO n"
+  "I2C_VIRTIO n"
+  "I2C_XILINX n"
+  "I2C_ZHAOXIN n"
+  "I40E n"
+  "I40EVF n"
+  "I6300ESB_WDT n"
+  "IB700_WDT n"
+  "IBMASR n"
+  "IBM_ASM n"
+  "IBM_RTL n"
+  "ICE n"
+  "ICPLUS_PHY n"
+  "ICS932S401 n"
+  "IDEAPAD_LAPTOP n"
+  "IDPF n"
+  "IE6XX_WDT n"
+  "IEEE802154 n"
+  "IGB n"
+  "IGBVF n"
+  "IGC n"
+  "IIO n"
+  "IKHEADERS n"
+  "INET6_AH n"
+  "INET6_ESP n"
+  "INET6_IPCOMP n"
+  "INET_AH n"
+  "INET_DIAG n"
+  "INET_ESP n"
+  "INET_IPCOMP n"
+  "INFINIBAND n"
+  "INPUT_88PM860X_ONKEY n"
+  "INPUT_AD714X n"
+  "INPUT_ADXL34X n"
+  "INPUT_APANEL n"
+  "INPUT_ATI_REMOTE2 n"
+  "INPUT_ATLAS_BTNS n"
+  "INPUT_BMA150 n"
+  "INPUT_CM109 n"
+  "INPUT_CMA3000 n"
+  "INPUT_DA7280_HAPTICS n"
+  "INPUT_DA9052_ONKEY n"
+  "INPUT_DA9055_ONKEY n"
+  "INPUT_DRV260X_HAPTICS n"
+  "INPUT_DRV2665_HAPTICS n"
+  "INPUT_DRV2667_HAPTICS n"
+  "INPUT_E3X0_BUTTON n"
+  "INPUT_FF_MEMLESS n"
+  "INPUT_GPIO_BEEPER n"
+  "INPUT_GPIO_DECODER n"
+  "INPUT_GPIO_ROTARY_ENCODER n"
+  "INPUT_GPIO_VIBRA n"
+  "INPUT_IBM_PANEL n"
+  "INPUT_IDEAPAD_SLIDEBAR n"
+  "INPUT_IMS_PCU n"
+  "INPUT_IQS269A n"
+  "INPUT_IQS626A n"
+  "INPUT_IQS7222 n"
+  "INPUT_JOYDEV y"
+  "INPUT_KEYSPAN_REMOTE n"
+  "INPUT_KXTJ9 n"
+  "INPUT_MATRIXKMAP n"
+  "INPUT_MAX77693_HAPTIC n"
+  "INPUT_MAX8925_ONKEY n"
+  "INPUT_MAX8997_HAPTIC n"
+  "INPUT_MMA8450 n"
+  "INPUT_MOUSEDEV y"
+  "INPUT_PCAP n"
+  "INPUT_PCF8574 n"
+  "INPUT_PCSPKR n"
+  "INPUT_POWERMATE n"
+  "INPUT_PWM_BEEPER n"
+  "INPUT_PWM_VIBRA n"
+  "INPUT_REGULATOR_HAPTIC n"
+  "INPUT_SPARSEKMAP y"
+  "INPUT_TWL4030_PWRBUTTON n"
+  "INPUT_TWL4030_VIBRA n"
+  "INPUT_TWL6040_VIBRA n"
+  "INPUT_UINPUT n"
+  "INPUT_WM831X_ON n"
+  "INPUT_XEN_KBDDEV_FRONTEND n"
+  "INPUT_YEALINK n"
+  "INSPUR_PLATFORM_PROFILE n"
+  "INT340X_THERMAL n"
+  "INTEL_ATOMISP2_PM n"
+  "INTEL_BYTCRC_PWRSRC n"
+  "INTEL_GTT y"
+  "INTEL_HID_EVENT n"
+  "INTEL_IDMA64 y"
+  "INTEL_IDXD n"
+  "INTEL_IFS n"
+  "INTEL_INT0002_VGPIO n"
+  "INTEL_IOATDMA n"
+  "INTEL_IPS n"
+  "INTEL_ISH_HID n"
+  "INTEL_MEI y"
+  "INTEL_MEI_GSC n"
+  "INTEL_MEI_GSC_PROXY n"
+  "INTEL_MEI_HDCP y"
+  "INTEL_MEI_ME y"
+  "INTEL_MEI_PXP y"
+  "INTEL_MEI_TXE n"
+  "INTEL_MEI_VSC_HW n"
+  "INTEL_MEI_WDT n"
+  "INTEL_OAKTRAIL n"
+  "INTEL_OC_WATCHDOG y"
+  "INTEL_PCH_THERMAL y"
+  "INTEL_PMC_CORE y"
+  "INTEL_PMC_SSRAM_TELEMETRY y"
+  "INTEL_PMT_CLASS y"
+  "INTEL_PMT_CRASHLOG n"
+  "INTEL_PMT_TELEMETRY y"
+  "INTEL_POWERCLAMP y"
+  "INTEL_PUNIT_IPC n"
+  "INTEL_RAPL y"
+  "INTEL_RAPL_CORE y"
+  "INTEL_RST n"
+  "INTEL_SAR_INT1092 n"
+  "INTEL_SCU_IPC_UTIL n"
+  "INTEL_SCU_PLATFORM n"
+  "INTEL_SDSI n"
+  "INTEL_SKL_INT3472 n"
+  "INTEL_SMARTCONNECT n"
+  "INTEL_SOC_DTS_THERMAL n"
+  "INTEL_SOC_PMIC_BXTWC n"
+  "INTEL_SOC_PMIC_CHTDC_TI n"
+  "INTEL_SOC_PMIC_MRFLD n"
+  "INTEL_SPEED_SELECT_INTERFACE n"
+  "INTEL_TCC_COOLING y"
+  "INTEL_TH n"
+  "INTEL_THC_HID n"
+  "INTEL_TPMI n"
+  "INTEL_UNCORE_FREQ_CONTROL n"
+  "INTEL_VBTN n"
+  "INTEL_VSC n"
+  "INTEL_VSEC y"
+  "INTEL_WMI_SBL_FW_UPDATE n"
+  "INTEL_WMI_THUNDERBOLT n"
+  "INTEL_XWAY_PHY n"
+  "IOMMUFD n"
+  "IONIC n"
+  "IP5XXX_POWER n"
+  "IP6_NF_FILTER n"
+  "IP6_NF_IPTABLES y"
+  "IP6_NF_IPTABLES_LEGACY y"
+  "IP6_NF_MANGLE y"
+  "IP6_NF_MATCH_AH n"
+  "IP6_NF_MATCH_EUI64 n"
+  "IP6_NF_MATCH_FRAG n"
+  "IP6_NF_MATCH_HL n"
+  "IP6_NF_MATCH_IPV6HEADER n"
+  "IP6_NF_MATCH_MH n"
+  "IP6_NF_MATCH_OPTS n"
+  "IP6_NF_MATCH_RPFILTER y"
+  "IP6_NF_MATCH_RT n"
+  "IP6_NF_MATCH_SRH n"
+  "IP6_NF_NAT n"
+  "IP6_NF_RAW y"
+  "IP6_NF_SECURITY n"
+  "IP6_NF_TARGET_HL n"
+  "IP6_NF_TARGET_NPT n"
+  "IP6_NF_TARGET_REJECT n"
+  "IP6_NF_TARGET_SYNPROXY n"
+  "IPACK_BUS n"
+  "IPMB_DEVICE_INTERFACE n"
+  "IPMI_HANDLER n"
+  "IPU_BRIDGE n"
+  "IPV6_ILA n"
+  "IPV6_MIP6 n"
+  "IPV6_SIT n"
+  "IPV6_TUNNEL n"
+  "IPV6_VTI n"
+  "IPVLAN n"
+  "IPW2100 n"
+  "IPW2200 n"
+  "IP_NF_ARPFILTER n"
+  "IP_NF_ARPTABLES n"
+  "IP_NF_ARP_MANGLE n"
+  "IP_NF_FILTER n"
+  "IP_NF_IPTABLES y"
+  "IP_NF_IPTABLES_LEGACY y"
+  "IP_NF_MANGLE y"
+  "IP_NF_MATCH_AH n"
+  "IP_NF_MATCH_ECN n"
+  "IP_NF_MATCH_RPFILTER y"
+  "IP_NF_MATCH_TTL n"
+  "IP_NF_NAT n"
+  "IP_NF_RAW y"
+  "IP_NF_SECURITY n"
+  "IP_NF_TARGET_ECN n"
+  "IP_NF_TARGET_REJECT n"
+  "IP_NF_TARGET_SYNPROXY n"
+  "IP_NF_TARGET_TTL n"
+  "IP_SCTP n"
+  "IP_SET n"
+  "IP_VS n"
+  "IRQ_BYPASS_MANAGER y"
+  "IR_ENE n"
+  "IR_FINTEK n"
+  "IR_IGORPLUGUSB n"
+  "IR_IGUANA n"
+  "IR_IMON n"
+  "IR_IMON_DECODER n"
+  "IR_IMON_RAW n"
+  "IR_ITE_CIR n"
+  "IR_JVC_DECODER n"
+  "IR_MCEUSB n"
+  "IR_MCE_KBD_DECODER n"
+  "IR_NEC_DECODER n"
+  "IR_NUVOTON n"
+  "IR_RC5_DECODER n"
+  "IR_RC6_DECODER n"
+  "IR_RCMM_DECODER n"
+  "IR_REDRAT3 n"
+  "IR_SANYO_DECODER n"
+  "IR_SERIAL n"
+  "IR_SHARP_DECODER n"
+  "IR_SONY_DECODER n"
+  "IR_STREAMZAP n"
+  "IR_TOY n"
+  "IR_TTUSBIR n"
+  "IR_WINBOND_CIR n"
+  "IR_XMP_DECODER n"
+  "ISCSI_BOOT_SYSFS n"
+  "ISCSI_IBFT n"
+  "ISCSI_TCP n"
+  "ISL29003 n"
+  "ISL29020 n"
+  "ISO9660_FS n"
+  "IT8712F_WDT n"
+  "IT87_WDT n"
+  "ITCO_WDT y"
+  "IWL3945 n"
+  "IWL4965 n"
+  "IWLWIFI n"
+  "IXGBE n"
+  "IXGBEVF n"
+  "JFS_FS n"
+  "JME n"
+  "JOYSTICK_A3D n"
+  "JOYSTICK_ADI n"
+  "JOYSTICK_ANALOG n"
+  "JOYSTICK_AS5011 n"
+  "JOYSTICK_COBRA n"
+  "JOYSTICK_FSIA6B n"
+  "JOYSTICK_GF2K n"
+  "JOYSTICK_GRIP n"
+  "JOYSTICK_GRIP_MP n"
+  "JOYSTICK_GUILLEMOT n"
+  "JOYSTICK_IFORCE n"
+  "JOYSTICK_INTERACT n"
+  "JOYSTICK_JOYDUMP n"
+  "JOYSTICK_MAGELLAN n"
+  "JOYSTICK_PSXPAD_SPI n"
+  "JOYSTICK_PXRC n"
+  "JOYSTICK_QWIIC n"
+  "JOYSTICK_SEESAW n"
+  "JOYSTICK_SENSEHAT n"
+  "JOYSTICK_SIDEWINDER n"
+  "JOYSTICK_SPACEBALL n"
+  "JOYSTICK_SPACEORB n"
+  "JOYSTICK_STINGER n"
+  "JOYSTICK_TMDC n"
+  "JOYSTICK_TWIDJOY n"
+  "JOYSTICK_WARRIOR n"
+  "JOYSTICK_XPAD n"
+  "JOYSTICK_ZHENHUA n"
+  "KEBA_CP500 n"
+  "KEYBOARD_ADP5520 n"
+  "KEYBOARD_ADP5588 n"
+  "KEYBOARD_ADP5589 n"
+  "KEYBOARD_APPLESPI n"
+  "KEYBOARD_CYPRESS_SF n"
+  "KEYBOARD_DLINK_DIR685 n"
+  "KEYBOARD_GPIO n"
+  "KEYBOARD_GPIO_POLLED n"
+  "KEYBOARD_LKKBD n"
+  "KEYBOARD_LM8323 n"
+  "KEYBOARD_LM8333 n"
+  "KEYBOARD_MATRIX n"
+  "KEYBOARD_MAX7359 n"
+  "KEYBOARD_MPR121 n"
+  "KEYBOARD_NEWTON n"
+  "KEYBOARD_OPENCORES n"
+  "KEYBOARD_PINEPHONE n"
+  "KEYBOARD_QT1050 n"
+  "KEYBOARD_QT1070 n"
+  "KEYBOARD_QT2160 n"
+  "KEYBOARD_SAMSUNG n"
+  "KEYBOARD_STOWAWAY n"
+  "KEYBOARD_SUNKBD n"
+  "KEYBOARD_TCA6416 n"
+  "KEYBOARD_TCA8418 n"
+  "KEYBOARD_TM2_TOUCHKEY n"
+  "KEYBOARD_TWL4030 n"
+  "KEYBOARD_XTKBD n"
+  "KS8842 n"
+  "KS8851 n"
+  "KS8851_MLL n"
+  "KSZ884X_PCI n"
+  "KVM y"
+  "KVM_AMD y"
+  "KVM_INTEL y"
+  "KVM_X86 y"
+  "L2TP n"
+  "LAN743X n"
+  "LAN865X n"
+  "LATTICE_ECP3_CONFIG n"
+  "LCD_CLASS_DEVICE n"
+  "LEDS_88PM860X n"
+  "LEDS_ADP5520 n"
+  "LEDS_APU n"
+  "LEDS_AW200XX n"
+  "LEDS_BD2606MVV n"
+  "LEDS_BD2802 n"
+  "LEDS_BLINKM n"
+  "LEDS_CHT_WCOVE n"
+  "LEDS_CLASS_FLASH n"
+  "LEDS_CLASS_MULTICOLOR n"
+  "LEDS_DA903X n"
+  "LEDS_DA9052 n"
+  "LEDS_DAC124S085 n"
+  "LEDS_GPIO n"
+  "LEDS_INTEL_SS4200 n"
+  "LEDS_IS31FL319X n"
+  "LEDS_LM3530 n"
+  "LEDS_LM3532 n"
+  "LEDS_LM355x n"
+  "LEDS_LM3642 n"
+  "LEDS_LP3944 n"
+  "LEDS_LP3952 n"
+  "LEDS_LP8788 n"
+  "LEDS_LT3593 n"
+  "LEDS_MAX8997 n"
+  "LEDS_MLXCPLD n"
+  "LEDS_MLXREG n"
+  "LEDS_NIC78BX n"
+  "LEDS_PCA9532 n"
+  "LEDS_PCA955X n"
+  "LEDS_PCA963X n"
+  "LEDS_PCA995X n"
+  "LEDS_PWM n"
+  "LEDS_REGULATOR n"
+  "LEDS_SPI_BYTE n"
+  "LEDS_TCA6507 n"
+  "LEDS_TLC591XX n"
+  "LEDS_TRIGGER_ACTIVITY n"
+  "LEDS_TRIGGER_BACKLIGHT n"
+  "LEDS_TRIGGER_CAMERA n"
+  "LEDS_TRIGGER_DEFAULT_ON n"
+  "LEDS_TRIGGER_GPIO n"
+  "LEDS_TRIGGER_HEARTBEAT n"
+  "LEDS_TRIGGER_INPUT_EVENTS n"
+  "LEDS_TRIGGER_NETDEV n"
+  "LEDS_TRIGGER_ONESHOT n"
+  "LEDS_TRIGGER_PATTERN n"
+  "LEDS_TRIGGER_TIMER n"
+  "LEDS_TRIGGER_TRANSIENT n"
+  "LEDS_TRIGGER_TTY n"
+  "LEDS_USER n"
+  "LEDS_WM831X_STATUS n"
+  "LEDS_WM8350 n"
+  "LENOVO_SE10_WDT n"
+  "LENOVO_SE30_WDT n"
+  "LENOVO_WMI_CAMERA n"
+  "LENOVO_WMI_HOTKEY_UTILITIES n"
+  "LG_LAPTOP n"
+  "LIBERTAS n"
+  "LIBERTAS_THINFIRM n"
+  "LIBNVDIMM n"
+  "LIQUIDIO n"
+  "LIQUIDIO_VF n"
+  "LLC y"
+  "LLC2 n"
+  "LMK04832 n"
+  "LPC_ICH y"
+  "LPC_SCH n"
+  "LSI_ET1011C_PHY n"
+  "LXT_PHY n"
+  "MAC80211 y"
+  "MAC80211_HWSIM n"
+  "MACB n"
+  "MACHZ_WDT n"
+  "MACSEC n"
+  "MACVLAN y"
+  "MACVTAP y"
+  "MAC_EMUMOUSEBTN y"
+  "MANAGER_SBS n"
+  "MANTIS_CORE n"
+  "MARVELL_10G_PHY n"
+  "MARVELL_88Q2XXX_PHY n"
+  "MARVELL_88X2222_PHY n"
+  "MARVELL_PHY n"
+  "MAX31827 n"
+  "MAX63XX_WATCHDOG n"
+  "MAX8925_POWER n"
+  "MAXLINEAR_86110_PHY n"
+  "MAXLINEAR_GPHY n"
+  "MCB n"
+  "MCTP_SERIAL n"
+  "MCTP_TRANSPORT_I2C n"
+  "MCTP_TRANSPORT_USB n"
+  "MDIO_BCM_UNIMAC n"
+  "MDIO_BITBANG n"
+  "MDIO_BUS y"
+  "MDIO_MSCC_MIIM n"
+  "MDIO_MVUSB n"
+  "MDIO_THUNDER n"
+  "MEDIATEK_GE_PHY n"
+  "MEDIA_SUPPORT y"
+  "MEDIA_TUNER y"
+  "MEDIA_TUNER_MC44S803 y"
+  "MEDIA_TUNER_MT20XX y"
+  "MEDIA_TUNER_SIMPLE y"
+  "MEDIA_TUNER_TDA18271 y"
+  "MEDIA_TUNER_TDA827X y"
+  "MEDIA_TUNER_TDA8290 y"
+  "MEDIA_TUNER_TDA9887 y"
+  "MEDIA_TUNER_TEA5761 y"
+  "MEDIA_TUNER_TEA5767 y"
+  "MEDIA_TUNER_XC2028 y"
+  "MEDIA_TUNER_XC4000 y"
+  "MEDIA_TUNER_XC5000 y"
+  "MEEGOPAD_ANX7428 n"
+  "MEGARAID_LEGACY n"
+  "MEGARAID_MM n"
+  "MEGARAID_SAS n"
+  "MEMSTICK y"
+  "MEMSTICK_JMICRON_38X n"
+  "MEMSTICK_R592 n"
+  "MEMSTICK_REALTEK_USB y"
+  "MEMSTICK_TIFM_MS n"
+  "MEN_A21_WDT n"
+  "MFD_88PM800 n"
+  "MFD_88PM805 n"
+  "MFD_ARIZONA_I2C n"
+  "MFD_ARIZONA_SPI n"
+  "MFD_ATC260X_I2C n"
+  "MFD_AXP20X_I2C n"
+  "MFD_BCM590XX n"
+  "MFD_BD9571MWV n"
+  "MFD_CGBC n"
+  "MFD_CS40L50_I2C n"
+  "MFD_CS40L50_SPI n"
+  "MFD_CS42L43_I2C n"
+  "MFD_DA9062 n"
+  "MFD_DA9063 n"
+  "MFD_DA9150 n"
+  "MFD_DLN2 n"
+  "MFD_INTEL_LPSS y"
+  "MFD_INTEL_LPSS_ACPI n"
+  "MFD_INTEL_LPSS_PCI y"
+  "MFD_INTEL_M10_BMC_SPI n"
+  "MFD_INTEL_PMC_BXT y"
+  "MFD_INTEL_QUARK_I2C_GPIO n"
+  "MFD_IQS62X n"
+  "MFD_JANZ_CMODIO n"
+  "MFD_KEMPLD n"
+  "MFD_LM3533 n"
+  "MFD_LP3943 n"
+  "MFD_MADERA n"
+  "MFD_MAX14577 n"
+  "MFD_MAX77541 n"
+  "MFD_MAX77693 n"
+  "MFD_MAX77705 n"
+  "MFD_MAX8907 n"
+  "MFD_MC13XXX_I2C n"
+  "MFD_MC13XXX_SPI n"
+  "MFD_MENF21BMC n"
+  "MFD_MP2629 n"
+  "MFD_MT6360 n"
+  "MFD_MT6370 n"
+  "MFD_MT6397 n"
+  "MFD_OCELOT n"
+  "MFD_PALMAS n"
+  "MFD_QNAP_MCU n"
+  "MFD_RDC321X n"
+  "MFD_RETU n"
+  "MFD_RT4831 n"
+  "MFD_RT5033 n"
+  "MFD_RT5120 n"
+  "MFD_SI476X_CORE n"
+  "MFD_SKY81452 n"
+  "MFD_SM501 n"
+  "MFD_SMPRO n"
+  "MFD_SY7636A n"
+  "MFD_TI_LMU n"
+  "MFD_TI_LP873X n"
+  "MFD_TPS65086 n"
+  "MFD_TPS65912_I2C n"
+  "MFD_TPS65912_SPI n"
+  "MFD_TPS6594_I2C n"
+  "MFD_TPS6594_SPI n"
+  "MFD_TQMX86 n"
+  "MFD_UPBOARD_FPGA n"
+  "MFD_VIPERBOARD n"
+  "MFD_VX855 n"
+  "MFD_WL1273_CORE n"
+  "MFD_WM8994 n"
+  "MHI_BUS n"
+  "MHI_BUS_EP n"
+  "MICREL_KS8995MA n"
+  "MICREL_PHY n"
+  "MICROCHIP_PHY n"
+  "MICROCHIP_T1S_PHY n"
+  "MICROCHIP_T1_PHY n"
+  "MICROSEMI_PHY n"
+  "MINIX_FS n"
+  "MISC_ALCOR_PCI n"
+  "MISC_RTSX y"
+  "MISC_RTSX_PCI n"
+  "MISC_RTSX_USB y"
+  "MISDN n"
+  "MLX4_EN n"
+  "MLX5_CORE n"
+  "MLXFW n"
+  "MLXREG_DPU n"
+  "MLXREG_HOTPLUG n"
+  "MLXREG_IO n"
+  "MLXREG_LC n"
+  "MLXSW_CORE n"
+  "MLX_PLATFORM n"
+  "MLX_WDT n"
+  "MMC y"
+  "MMC_BLOCK n"
+  "MMC_CB710 n"
+  "MMC_CQHCI n"
+  "MMC_HSQ n"
+  "MMC_MTK n"
+  "MMC_REALTEK_USB y"
+  "MMC_SDHCI n"
+  "MMC_SPI n"
+  "MMC_TEST n"
+  "MMC_TIFM_SD n"
+  "MMC_TOSHIBA_PCI n"
+  "MMC_USDHI6ROL0 n"
+  "MMC_USHC n"
+  "MMC_VIA_SDMMC n"
+  "MMC_VUB300 n"
+  "MMC_WBSD n"
+  "MOST n"
+  "MOTORCOMM_PHY n"
+  "MOUSE_APPLETOUCH n"
+  "MOUSE_BCM5974 n"
+  "MOUSE_CYAPA n"
+  "MOUSE_ELAN_I2C n"
+  "MOUSE_GPIO n"
+  "MOUSE_PS2 y"
+  "MOUSE_SERIAL n"
+  "MOUSE_SYNAPTICS_I2C n"
+  "MOUSE_SYNAPTICS_USB n"
+  "MOUSE_VSXXXAA n"
+  "MOXA_INTELLIO n"
+  "MOXA_SMARTIO n"
+  "MPLS_ROUTING n"
+  "MSDOS_FS n"
+  "MSE102X n"
+  "MSI_EC n"
+  "MSI_LAPTOP n"
+  "MSI_WMI n"
+  "MSI_WMI_PLATFORM n"
+  "MSPRO_BLOCK n"
+  "MS_BLOCK n"
+  "MT7601U n"
+  "MT7603E n"
+  "MT7615E n"
+  "MT7663S n"
+  "MT7663U n"
+  "MT76x0E n"
+  "MT76x0U n"
+  "MT76x2E n"
+  "MT76x2U n"
+  "MT7915E n"
+  "MT7921E n"
+  "MT7921S n"
+  "MT7921U n"
+  "MT7925E n"
+  "MT7925U n"
+  "MT7996E n"
+  "MTD n"
+  "MVMDIO n"
+  "MWAVE n"
+  "MWIFIEX n"
+  "MWL8K n"
+  "MXM_WMI n"
+  "MYRI10GE n"
+  "NATIONAL_PHY n"
+  "NATSEMI n"
+  "NCN26000_PHY n"
+  "NE2K_PCI n"
+  "NETCONSOLE n"
+  "NETDEVSIM n"
+  "NETFILTER_NETLINK y"
+  "NETFILTER_NETLINK_ACCT n"
+  "NETFILTER_NETLINK_HOOK n"
+  "NETFILTER_NETLINK_LOG n"
+  "NETFILTER_NETLINK_OSF n"
+  "NETFILTER_NETLINK_QUEUE n"
+  "NETFILTER_XTABLES y"
+  "NETFILTER_XT_CONNMARK n"
+  "NETFILTER_XT_MARK n"
+  "NETFILTER_XT_MATCH_ADDRTYPE n"
+  "NETFILTER_XT_MATCH_BPF n"
+  "NETFILTER_XT_MATCH_CGROUP n"
+  "NETFILTER_XT_MATCH_CLUSTER n"
+  "NETFILTER_XT_MATCH_COMMENT n"
+  "NETFILTER_XT_MATCH_CONNBYTES n"
+  "NETFILTER_XT_MATCH_CONNLABEL n"
+  "NETFILTER_XT_MATCH_CONNLIMIT n"
+  "NETFILTER_XT_MATCH_CONNMARK n"
+  "NETFILTER_XT_MATCH_CONNTRACK y"
+  "NETFILTER_XT_MATCH_CPU n"
+  "NETFILTER_XT_MATCH_DCCP n"
+  "NETFILTER_XT_MATCH_DEVGROUP n"
+  "NETFILTER_XT_MATCH_DSCP n"
+  "NETFILTER_XT_MATCH_ECN n"
+  "NETFILTER_XT_MATCH_ESP n"
+  "NETFILTER_XT_MATCH_HASHLIMIT n"
+  "NETFILTER_XT_MATCH_HELPER n"
+  "NETFILTER_XT_MATCH_HL n"
+  "NETFILTER_XT_MATCH_IPCOMP n"
+  "NETFILTER_XT_MATCH_IPRANGE n"
+  "NETFILTER_XT_MATCH_L2TP n"
+  "NETFILTER_XT_MATCH_LENGTH n"
+  "NETFILTER_XT_MATCH_LIMIT n"
+  "NETFILTER_XT_MATCH_MAC n"
+  "NETFILTER_XT_MATCH_MARK n"
+  "NETFILTER_XT_MATCH_MULTIPORT n"
+  "NETFILTER_XT_MATCH_NFACCT n"
+  "NETFILTER_XT_MATCH_OSF n"
+  "NETFILTER_XT_MATCH_OWNER n"
+  "NETFILTER_XT_MATCH_PKTTYPE y"
+  "NETFILTER_XT_MATCH_QUOTA n"
+  "NETFILTER_XT_MATCH_RATEEST n"
+  "NETFILTER_XT_MATCH_REALM n"
+  "NETFILTER_XT_MATCH_RECENT n"
+  "NETFILTER_XT_MATCH_SCTP n"
+  "NETFILTER_XT_MATCH_SOCKET n"
+  "NETFILTER_XT_MATCH_STATE n"
+  "NETFILTER_XT_MATCH_STATISTIC n"
+  "NETFILTER_XT_MATCH_STRING n"
+  "NETFILTER_XT_MATCH_TCPMSS n"
+  "NETFILTER_XT_MATCH_TIME n"
+  "NETFILTER_XT_MATCH_U32 n"
+  "NETFILTER_XT_TARGET_AUDIT n"
+  "NETFILTER_XT_TARGET_CHECKSUM n"
+  "NETFILTER_XT_TARGET_CLASSIFY n"
+  "NETFILTER_XT_TARGET_CONNMARK n"
+  "NETFILTER_XT_TARGET_CONNSECMARK n"
+  "NETFILTER_XT_TARGET_CT n"
+  "NETFILTER_XT_TARGET_DSCP n"
+  "NETFILTER_XT_TARGET_HL n"
+  "NETFILTER_XT_TARGET_HMARK n"
+  "NETFILTER_XT_TARGET_IDLETIMER n"
+  "NETFILTER_XT_TARGET_LED n"
+  "NETFILTER_XT_TARGET_LOG y"
+  "NETFILTER_XT_TARGET_MARK n"
+  "NETFILTER_XT_TARGET_NFLOG n"
+  "NETFILTER_XT_TARGET_NFQUEUE n"
+  "NETFILTER_XT_TARGET_NOTRACK n"
+  "NETFILTER_XT_TARGET_RATEEST n"
+  "NETFILTER_XT_TARGET_SECMARK n"
+  "NETFILTER_XT_TARGET_TCPMSS n"
+  "NETFILTER_XT_TARGET_TCPOPTSTRIP n"
+  "NETFILTER_XT_TARGET_TEE n"
+  "NETFILTER_XT_TARGET_TPROXY n"
+  "NETFILTER_XT_TARGET_TRACE n"
+  "NETLINK_DIAG n"
+  "NETXEN_NIC n"
+  "NET_9P n"
+  "NET_ACT_BPF n"
+  "NET_ACT_CONNMARK n"
+  "NET_ACT_CSUM n"
+  "NET_ACT_CTINFO n"
+  "NET_ACT_GACT n"
+  "NET_ACT_GATE n"
+  "NET_ACT_IFE n"
+  "NET_ACT_MIRRED n"
+  "NET_ACT_MPLS n"
+  "NET_ACT_NAT n"
+  "NET_ACT_PEDIT n"
+  "NET_ACT_POLICE n"
+  "NET_ACT_SAMPLE n"
+  "NET_ACT_SIMP n"
+  "NET_ACT_SKBEDIT n"
+  "NET_ACT_SKBMOD n"
+  "NET_ACT_TUNNEL_KEY n"
+  "NET_ACT_VLAN n"
+  "NET_CLS_BASIC n"
+  "NET_CLS_BPF n"
+  "NET_CLS_CGROUP n"
+  "NET_CLS_FLOW n"
+  "NET_CLS_FLOWER n"
+  "NET_CLS_FW n"
+  "NET_CLS_MATCHALL n"
+  "NET_CLS_ROUTE4 n"
+  "NET_CLS_U32 n"
+  "NET_DSA n"
+  "NET_EMATCH_CMP n"
+  "NET_EMATCH_IPT n"
+  "NET_EMATCH_META n"
+  "NET_EMATCH_NBYTE n"
+  "NET_EMATCH_TEXT n"
+  "NET_EMATCH_U32 n"
+  "NET_FAILOVER n"
+  "NET_FOU n"
+  "NET_IFE n"
+  "NET_IPGRE_DEMUX n"
+  "NET_IPIP n"
+  "NET_IPVTI n"
+  "NET_KEY n"
+  "NET_MPLS_GSO n"
+  "NET_NSH n"
+  "NET_PKTGEN n"
+  "NET_SCH_CAKE n"
+  "NET_SCH_CBS n"
+  "NET_SCH_CHOKE n"
+  "NET_SCH_CODEL n"
+  "NET_SCH_DRR n"
+  "NET_SCH_ETF n"
+  "NET_SCH_ETS n"
+  "NET_SCH_FQ_CODEL y"
+  "NET_SCH_GRED n"
+  "NET_SCH_HFSC n"
+  "NET_SCH_HHF n"
+  "NET_SCH_HTB n"
+  "NET_SCH_INGRESS n"
+  "NET_SCH_MQPRIO n"
+  "NET_SCH_MULTIQ n"
+  "NET_SCH_NETEM n"
+  "NET_SCH_PIE n"
+  "NET_SCH_PLUG n"
+  "NET_SCH_PRIO n"
+  "NET_SCH_QFQ n"
+  "NET_SCH_RED n"
+  "NET_SCH_SFB n"
+  "NET_SCH_SFQ n"
+  "NET_SCH_SKBPRIO n"
+  "NET_SCH_TAPRIO n"
+  "NET_SCH_TBF n"
+  "NET_SCH_TEQL n"
+  "NET_SELFTESTS y"
+  "NET_TEAM n"
+  "NET_VRF n"
+  "NFC n"
+  "NFP n"
+  "NFSD n"
+  "NFS_FS n"
+  "NFT_COMPAT y"
+  "NFT_COMPAT_ARP y"
+  "NFT_CONNLIMIT n"
+  "NFT_CT n"
+  "NFT_DUP_IPV4 n"
+  "NFT_DUP_IPV6 n"
+  "NFT_DUP_NETDEV n"
+  "NFT_FIB_IPV4 n"
+  "NFT_FIB_IPV6 n"
+  "NFT_FWD_NETDEV n"
+  "NFT_HASH n"
+  "NFT_LIMIT n"
+  "NFT_LOG n"
+  "NFT_NAT n"
+  "NFT_NUMGEN n"
+  "NFT_OSF n"
+  "NFT_QUOTA n"
+  "NFT_REJECT n"
+  "NFT_SOCKET n"
+  "NFT_SYNPROXY n"
+  "NFT_TPROXY n"
+  "NFT_TUNNEL n"
+  "NF_CONNTRACK y"
+  "NF_CONNTRACK_AMANDA n"
+  "NF_CONNTRACK_BRIDGE n"
+  "NF_CONNTRACK_FTP n"
+  "NF_CONNTRACK_H323 n"
+  "NF_CONNTRACK_IRC n"
+  "NF_CONNTRACK_NETBIOS_NS n"
+  "NF_CONNTRACK_PPTP n"
+  "NF_CONNTRACK_SANE n"
+  "NF_CONNTRACK_SIP n"
+  "NF_CONNTRACK_SNMP n"
+  "NF_CONNTRACK_TFTP n"
+  "NF_CT_NETLINK n"
+  "NF_CT_NETLINK_TIMEOUT n"
+  "NF_DEFRAG_IPV4 y"
+  "NF_DEFRAG_IPV6 y"
+  "NF_DUP_IPV4 n"
+  "NF_DUP_IPV6 n"
+  "NF_DUP_NETDEV n"
+  "NF_FLOW_TABLE n"
+  "NF_LOG_ARP n"
+  "NF_LOG_IPV4 n"
+  "NF_LOG_IPV6 y"
+  "NF_LOG_SYSLOG y"
+  "NF_NAT n"
+  "NF_REJECT_IPV4 n"
+  "NF_REJECT_IPV6 n"
+  "NF_SOCKET_IPV4 n"
+  "NF_SOCKET_IPV6 n"
+  "NF_TABLES y"
+  "NF_TABLES_BRIDGE n"
+  "NF_TPROXY_IPV4 n"
+  "NF_TPROXY_IPV6 n"
+  "NGBE n"
+  "NI903X_WDT n"
+  "NIC7018_WDT n"
+  "NILFS2_FS n"
+  "NITRO_ENCLAVES n"
+  "NIU n"
+  "NI_XGE_MANAGEMENT_ENET n"
+  "NLMON n"
+  "NLS_CODEPAGE_1250 n"
+  "NLS_CODEPAGE_1251 n"
+  "NLS_CODEPAGE_737 n"
+  "NLS_CODEPAGE_775 n"
+  "NLS_CODEPAGE_850 n"
+  "NLS_CODEPAGE_852 n"
+  "NLS_CODEPAGE_855 n"
+  "NLS_CODEPAGE_857 n"
+  "NLS_CODEPAGE_860 n"
+  "NLS_CODEPAGE_861 n"
+  "NLS_CODEPAGE_862 n"
+  "NLS_CODEPAGE_863 n"
+  "NLS_CODEPAGE_864 n"
+  "NLS_CODEPAGE_865 n"
+  "NLS_CODEPAGE_866 n"
+  "NLS_CODEPAGE_869 n"
+  "NLS_CODEPAGE_874 n"
+  "NLS_CODEPAGE_932 n"
+  "NLS_CODEPAGE_936 n"
+  "NLS_CODEPAGE_949 n"
+  "NLS_CODEPAGE_950 n"
+  "NLS_ISO8859_1 n"
+  "NLS_ISO8859_13 n"
+  "NLS_ISO8859_14 n"
+  "NLS_ISO8859_15 n"
+  "NLS_ISO8859_2 n"
+  "NLS_ISO8859_3 n"
+  "NLS_ISO8859_4 n"
+  "NLS_ISO8859_5 n"
+  "NLS_ISO8859_6 n"
+  "NLS_ISO8859_7 n"
+  "NLS_ISO8859_8 n"
+  "NLS_ISO8859_9 n"
+  "NLS_KOI8_R n"
+  "NLS_KOI8_U n"
+  "NLS_MAC_CELTIC n"
+  "NLS_MAC_CENTEURO n"
+  "NLS_MAC_CROATIAN n"
+  "NLS_MAC_CYRILLIC n"
+  "NLS_MAC_GAELIC n"
+  "NLS_MAC_GREEK n"
+  "NLS_MAC_ICELAND n"
+  "NLS_MAC_INUIT n"
+  "NLS_MAC_ROMAN n"
+  "NLS_MAC_ROMANIAN n"
+  "NLS_MAC_TURKISH n"
+  "NLS_UTF8 n"
+  "NOP_USB_XCEIV n"
+  "NOZOMI n"
+  "NS83820 n"
+  "NSM n"
+  "NTB n"
+  "NTFS3_FS n"
+  "NTFS_FS n"
+  "NTSYNC n"
+  "NULL_TTY n"
+  "NVIDIA_WMI_EC_BACKLIGHT n"
+  "NVMEM_RMEM n"
+  "NVME_FC n"
+  "NVME_TARGET n"
+  "NVME_TCP n"
+  "NVSW_SN2201 n"
+  "NV_TCO n"
+  "NXP_C45_TJA11XX_PHY n"
+  "NXP_CBTX_PHY n"
+  "NXP_TJA11XX_PHY n"
+  "N_HDLC n"
+  "OCFS2_FS n"
+  "OCTEON_EP n"
+  "OCTEON_EP_VF n"
+  "OMFS_FS n"
+  "OPENVSWITCH n"
+  "ORANGEFS_FS n"
+  "OVERLAY_FS n"
+  "OVPN n"
+  "OXP_EC n"
+  "P54_COMMON n"
+  "PACKET_DIAG n"
+  "PANASONIC_LAPTOP n"
+  "PARPORT n"
+  "PATA_ACPI n"
+  "PATA_ALI n"
+  "PATA_AMD n"
+  "PATA_ARTOP n"
+  "PATA_ATIIXP n"
+  "PATA_ATP867X n"
+  "PATA_CMD640_PCI n"
+  "PATA_CMD64X n"
+  "PATA_CYPRESS n"
+  "PATA_EFAR n"
+  "PATA_HPT366 n"
+  "PATA_HPT37X n"
+  "PATA_HPT3X2N n"
+  "PATA_HPT3X3 n"
+  "PATA_IT8213 n"
+  "PATA_IT821X n"
+  "PATA_JMICRON n"
+  "PATA_LEGACY n"
+  "PATA_MARVELL n"
+  "PATA_MPIIX n"
+  "PATA_NETCELL n"
+  "PATA_NINJA32 n"
+  "PATA_NS87410 n"
+  "PATA_NS87415 n"
+  "PATA_OLDPIIX n"
+  "PATA_OPTI n"
+  "PATA_OPTIDMA n"
+  "PATA_PDC2027X n"
+  "PATA_PDC_OLD n"
+  "PATA_RADISYS n"
+  "PATA_RDC n"
+  "PATA_RZ1000 n"
+  "PATA_SCH n"
+  "PATA_SERVERWORKS n"
+  "PATA_SIL680 n"
+  "PATA_SIS n"
+  "PATA_TOSHIBA n"
+  "PATA_TRIFLEX n"
+  "PATA_VIA n"
+  "PATA_WINBOND n"
+  "PC87413_WDT n"
+  "PCCARD n"
+  "PCENGINES_APU2 n"
+  "PCIEAER_INJECT n"
+  "PCIPCWATCHDOG n"
+  "PCI_ENDPOINT_TEST n"
+  "PCI_MESON n"
+  "PCI_PF_STUB n"
+  "PCI_PWRCTRL_SLOT n"
+  "PCI_SW_SWITCHTEC n"
+  "PCNET32 n"
+  "PCS_XPCS n"
+  "PDC_ADMA n"
+  "PDS_CORE n"
+  "PERF_EVENTS_AMD_POWER n"
+  "PERF_EVENTS_AMD_UNCORE n"
+  "PERF_EVENTS_INTEL_CSTATE y"
+  "PERF_EVENTS_INTEL_RAPL y"
+  "PERF_EVENTS_INTEL_UNCORE y"
+  "PFCP n"
+  "PHANTOM n"
+  "PHONET n"
+  "PHYLIB y"
+  "PHY_CAN_TRANSCEIVER n"
+  "PHY_INTEL_LGM_EMMC n"
+  "PHY_PXA_28NM_HSIC n"
+  "PHY_PXA_28NM_USB2 n"
+  "PINCTRL_ALDERLAKE n"
+  "PINCTRL_BROXTON n"
+  "PINCTRL_CANNONLAKE n"
+  "PINCTRL_CEDARFORK n"
+  "PINCTRL_CY8C95X0 n"
+  "PINCTRL_DENVERTON n"
+  "PINCTRL_ELKHARTLAKE n"
+  "PINCTRL_EMMITSBURG n"
+  "PINCTRL_GEMINILAKE n"
+  "PINCTRL_ICELAKE n"
+  "PINCTRL_INTEL_PLATFORM n"
+  "PINCTRL_JASPERLAKE n"
+  "PINCTRL_LAKEFIELD n"
+  "PINCTRL_LEWISBURG n"
+  "PINCTRL_LYNXPOINT n"
+  "PINCTRL_MCP23S08 n"
+  "PINCTRL_METEORLAKE n"
+  "PINCTRL_METEORPOINT n"
+  "PINCTRL_SUNRISEPOINT y"
+  "PINCTRL_TIGERLAKE n"
+  "PKCS8_PRIVATE_KEY_PARSER n"
+  "PLFXLC n"
+  "PLX_DMA n"
+  "PMBUS n"
+  "PORTWELL_EC n"
+  "POWER_SEQUENCING n"
+  "PPP n"
+  "PPS n"
+  "PSAMPLE n"
+  "PSE_PD692X0 n"
+  "PSE_REGULATOR n"
+  "PSE_TPS23881 n"
+  "PSTORE_BLK n"
+  "PSTORE_RAM n"
+  "PTP_1588_CLOCK n"
+  "PTP_1588_CLOCK_OPTIONAL y"
+  "PVPANIC_MMIO n"
+  "PVPANIC_PCI n"
+  "PWM_CLK n"
+  "PWM_DWC n"
+  "PWM_GPIO n"
+  "PWM_LPSS_PCI n"
+  "PWM_LPSS_PLATFORM n"
+  "PWM_PCA9685 n"
+  "PWM_TWL n"
+  "PWM_TWL_LED n"
+  "QCA808X_PHY n"
+  "QCA83XX_PHY n"
+  "QCOM_EMAC n"
+  "QCOM_HIDMA n"
+  "QCOM_HIDMA_MGMT n"
+  "QED n"
+  "QFMT_V1 n"
+  "QFMT_V2 n"
+  "QLA3XXX n"
+  "QLCNIC n"
+  "QRTR n"
+  "QSEMI_PHY n"
+  "QTNFMAC_PCIE n"
+  "R6040 n"
+  "R8169 y"
+  "RADIO_ADAPTERS n"
+  "RAID_ATTRS n"
+  "RAVE_SP_CORE n"
+  "RC_ATI_REMOTE n"
+  "RC_LOOPBACK n"
+  "RC_MAP n"
+  "RC_XBOX_DVD n"
+  "RDS n"
+  "REALTEK_PHY y"
+  "REGULATOR_88PG86X n"
+  "REGULATOR_88PM8607 n"
+  "REGULATOR_AAT2870 n"
+  "REGULATOR_ACT8865 n"
+  "REGULATOR_AD5398 n"
+  "REGULATOR_ADP5055 n"
+  "REGULATOR_AS3711 n"
+  "REGULATOR_AW37503 n"
+  "REGULATOR_DA9052 n"
+  "REGULATOR_DA9055 n"
+  "REGULATOR_DA9210 n"
+  "REGULATOR_DA9211 n"
+  "REGULATOR_FAN53555 n"
+  "REGULATOR_FIXED_VOLTAGE n"
+  "REGULATOR_GPIO n"
+  "REGULATOR_ISL6271A n"
+  "REGULATOR_ISL9305 n"
+  "REGULATOR_LP3971 n"
+  "REGULATOR_LP3972 n"
+  "REGULATOR_LP872X n"
+  "REGULATOR_LP8755 n"
+  "REGULATOR_LP8788 n"
+  "REGULATOR_LTC3589 n"
+  "REGULATOR_LTC3676 n"
+  "REGULATOR_MAX1586 n"
+  "REGULATOR_MAX20086 n"
+  "REGULATOR_MAX20411 n"
+  "REGULATOR_MAX77503 n"
+  "REGULATOR_MAX77693 n"
+  "REGULATOR_MAX77826 n"
+  "REGULATOR_MAX77857 n"
+  "REGULATOR_MAX8649 n"
+  "REGULATOR_MAX8660 n"
+  "REGULATOR_MAX8893 n"
+  "REGULATOR_MAX8925 n"
+  "REGULATOR_MAX8952 n"
+  "REGULATOR_MAX8997 n"
+  "REGULATOR_MAX8998 n"
+  "REGULATOR_MP8859 n"
+  "REGULATOR_MT6311 n"
+  "REGULATOR_PCA9450 n"
+  "REGULATOR_PCAP n"
+  "REGULATOR_PF9453 n"
+  "REGULATOR_PV88060 n"
+  "REGULATOR_PV88080 n"
+  "REGULATOR_PV88090 n"
+  "REGULATOR_PWM n"
+  "REGULATOR_RAA215300 n"
+  "REGULATOR_RC5T583 n"
+  "REGULATOR_RT4801 n"
+  "REGULATOR_RT4803 n"
+  "REGULATOR_RT5190A n"
+  "REGULATOR_RT5739 n"
+  "REGULATOR_RT5759 n"
+  "REGULATOR_RT6160 n"
+  "REGULATOR_RT6190 n"
+  "REGULATOR_RT6245 n"
+  "REGULATOR_RTMV20 n"
+  "REGULATOR_RTQ2134 n"
+  "REGULATOR_RTQ2208 n"
+  "REGULATOR_RTQ6752 n"
+  "REGULATOR_SLG51000 n"
+  "REGULATOR_TPS51632 n"
+  "REGULATOR_TPS62360 n"
+  "REGULATOR_TPS65023 n"
+  "REGULATOR_TPS6507X n"
+  "REGULATOR_TPS65090 n"
+  "REGULATOR_TPS65132 n"
+  "REGULATOR_TPS6524X n"
+  "REGULATOR_TPS6586X n"
+  "REGULATOR_TPS65910 n"
+  "REGULATOR_TWL4030 n"
+  "REGULATOR_USERSPACE_CONSUMER n"
+  "REGULATOR_VIRTUAL_CONSUMER n"
+  "REGULATOR_WM831X n"
+  "REGULATOR_WM8350 n"
+  "REGULATOR_WM8400 n"
+  "RENESAS_PHY n"
+  "RESET_GPIO n"
+  "RESET_TI_SYSCON n"
+  "RESET_TI_TPS380X n"
+  "RFKILL y"
+  "RFKILL_GPIO n"
+  "RMI4_CORE n"
+  "RMNET n"
+  "ROCKER n"
+  "ROMFS_FS n"
+  "RPMB n"
+  "RPMSG_QCOM_GLINK_RPM n"
+  "RPMSG_VIRTIO n"
+  "RSI_91X n"
+  "RT2X00 n"
+  "RTASE n"
+  "RTC_DRV_88PM860X n"
+  "RTC_DRV_ABB5ZES3 n"
+  "RTC_DRV_ABEOZ9 n"
+  "RTC_DRV_ABX80X n"
+  "RTC_DRV_BQ32K n"
+  "RTC_DRV_DA9052 n"
+  "RTC_DRV_DA9055 n"
+  "RTC_DRV_DS1286 n"
+  "RTC_DRV_DS1302 n"
+  "RTC_DRV_DS1305 n"
+  "RTC_DRV_DS1307 n"
+  "RTC_DRV_DS1343 n"
+  "RTC_DRV_DS1347 n"
+  "RTC_DRV_DS1374 n"
+  "RTC_DRV_DS1390 n"
+  "RTC_DRV_DS1511 n"
+  "RTC_DRV_DS1553 n"
+  "RTC_DRV_DS1672 n"
+  "RTC_DRV_DS1685_FAMILY n"
+  "RTC_DRV_DS1742 n"
+  "RTC_DRV_DS2404 n"
+  "RTC_DRV_DS3232 n"
+  "RTC_DRV_EM3027 n"
+  "RTC_DRV_FM3130 n"
+  "RTC_DRV_FTRTC010 n"
+  "RTC_DRV_GOLDFISH n"
+  "RTC_DRV_ISL12022 n"
+  "RTC_DRV_ISL1208 n"
+  "RTC_DRV_LP8788 n"
+  "RTC_DRV_M41T80 n"
+  "RTC_DRV_M41T93 n"
+  "RTC_DRV_M41T94 n"
+  "RTC_DRV_M48T35 n"
+  "RTC_DRV_M48T59 n"
+  "RTC_DRV_M48T86 n"
+  "RTC_DRV_MAX31335 n"
+  "RTC_DRV_MAX6900 n"
+  "RTC_DRV_MAX6902 n"
+  "RTC_DRV_MAX6916 n"
+  "RTC_DRV_MAX8925 n"
+  "RTC_DRV_MAX8997 n"
+  "RTC_DRV_MAX8998 n"
+  "RTC_DRV_MCP795 n"
+  "RTC_DRV_MSM6242 n"
+  "RTC_DRV_PCAP n"
+  "RTC_DRV_PCF2123 n"
+  "RTC_DRV_PCF2127 n"
+  "RTC_DRV_PCF85063 n"
+  "RTC_DRV_PCF8523 n"
+  "RTC_DRV_PCF85363 n"
+  "RTC_DRV_PCF8563 n"
+  "RTC_DRV_PCF8583 n"
+  "RTC_DRV_R9701 n"
+  "RTC_DRV_RC5T583 n"
+  "RTC_DRV_RP5C01 n"
+  "RTC_DRV_RS5C348 n"
+  "RTC_DRV_RS5C372 n"
+  "RTC_DRV_RV3028 n"
+  "RTC_DRV_RV3029C2 n"
+  "RTC_DRV_RV3032 n"
+  "RTC_DRV_RV8803 n"
+  "RTC_DRV_RX4581 n"
+  "RTC_DRV_RX6110 n"
+  "RTC_DRV_RX8010 n"
+  "RTC_DRV_RX8025 n"
+  "RTC_DRV_RX8111 n"
+  "RTC_DRV_RX8581 n"
+  "RTC_DRV_S35390A n"
+  "RTC_DRV_SD2405AL n"
+  "RTC_DRV_SD3078 n"
+  "RTC_DRV_STK17TA8 n"
+  "RTC_DRV_TPS6586X n"
+  "RTC_DRV_TPS65910 n"
+  "RTC_DRV_WM831X n"
+  "RTC_DRV_WM8350 n"
+  "RTC_DRV_X1205 n"
+  "RTL8180 n"
+  "RTL8187 n"
+  "RTL8723BS n"
+  "RTL8XXXU n"
+  "RTL_CARDS n"
+  "RTW88 n"
+  "RTW89 n"
+  "S2IO n"
+  "SAMSUNG_GALAXYBOOK n"
+  "SAMSUNG_LAPTOP n"
+  "SAMSUNG_Q10 n"
+  "SATA_ACARD_AHCI n"
+  "SATA_AHCI_PLATFORM n"
+  "SATA_DWC n"
+  "SATA_INIC162X n"
+  "SATA_MV n"
+  "SATA_NV n"
+  "SATA_PROMISE n"
+  "SATA_QSTOR n"
+  "SATA_SIL n"
+  "SATA_SIL24 n"
+  "SATA_SIS n"
+  "SATA_SVW n"
+  "SATA_SX4 n"
+  "SATA_ULI n"
+  "SATA_VIA n"
+  "SATA_VITESSE n"
+  "SBC_EPX_C3_WATCHDOG n"
+  "SBC_FITPC2_WATCHDOG n"
+  "SC1200_WDT n"
+  "SC92031 n"
+  "SCSI_3W_9XXX n"
+  "SCSI_3W_SAS n"
+  "SCSI_AACRAID n"
+  "SCSI_ACARD n"
+  "SCSI_ADVANSYS n"
+  "SCSI_AIC79XX n"
+  "SCSI_AIC7XXX n"
+  "SCSI_AIC94XX n"
+  "SCSI_AM53C974 n"
+  "SCSI_ARCMSR n"
+  "SCSI_BNX2_ISCSI n"
+  "SCSI_BUSLOGIC n"
+  "SCSI_CXGB3_ISCSI n"
+  "SCSI_CXGB4_ISCSI n"
+  "SCSI_DC395x n"
+  "SCSI_DEBUG n"
+  "SCSI_DH_ALUA n"
+  "SCSI_DH_EMC n"
+  "SCSI_DH_HP_SW n"
+  "SCSI_DH_RDAC n"
+  "SCSI_DMX3191D n"
+  "SCSI_ESAS2R n"
+  "SCSI_FC_ATTRS n"
+  "SCSI_FDOMAIN_PCI n"
+  "SCSI_HPSA n"
+  "SCSI_HPTIOP n"
+  "SCSI_INIA100 n"
+  "SCSI_INITIO n"
+  "SCSI_IPR n"
+  "SCSI_IPS n"
+  "SCSI_ISCI n"
+  "SCSI_ISCSI_ATTRS n"
+  "SCSI_MPI3MR n"
+  "SCSI_MPT2SAS n"
+  "SCSI_MPT3SAS n"
+  "SCSI_MVSAS n"
+  "SCSI_MVUMI n"
+  "SCSI_MYRB n"
+  "SCSI_MYRS n"
+  "SCSI_PM8001 n"
+  "SCSI_PMCRAID n"
+  "SCSI_QLA_ISCSI n"
+  "SCSI_QLOGIC_1280 n"
+  "SCSI_SAS_ATTRS n"
+  "SCSI_SAS_LIBSAS n"
+  "SCSI_SMARTPQI n"
+  "SCSI_SNIC n"
+  "SCSI_SPI_ATTRS n"
+  "SCSI_SRP_ATTRS n"
+  "SCSI_STEX n"
+  "SCSI_SYM53C8XX_2 n"
+  "SCSI_UFSHCD n"
+  "SCSI_VIRTIO n"
+  "SCSI_WD719X n"
+  "SDIO_UART n"
+  "SENSORS_ABITUGURU n"
+  "SENSORS_ABITUGURU3 n"
+  "SENSORS_ACPI_POWER n"
+  "SENSORS_AD7314 n"
+  "SENSORS_AD7414 n"
+  "SENSORS_AD7418 n"
+  "SENSORS_ADC128D818 n"
+  "SENSORS_ADCXX n"
+  "SENSORS_ADM1025 n"
+  "SENSORS_ADM1026 n"
+  "SENSORS_ADM1029 n"
+  "SENSORS_ADM1031 n"
+  "SENSORS_ADM1177 n"
+  "SENSORS_ADM9240 n"
+  "SENSORS_ADS7828 n"
+  "SENSORS_ADS7871 n"
+  "SENSORS_ADT7310 n"
+  "SENSORS_ADT7410 n"
+  "SENSORS_ADT7411 n"
+  "SENSORS_ADT7462 n"
+  "SENSORS_ADT7470 n"
+  "SENSORS_ADT7475 n"
+  "SENSORS_AHT10 n"
+  "SENSORS_AMC6821 n"
+  "SENSORS_APDS990X n"
+  "SENSORS_APPLESMC n"
+  "SENSORS_AQUACOMPUTER_D5NEXT n"
+  "SENSORS_AS370 n"
+  "SENSORS_ASB100 n"
+  "SENSORS_ASC7621 n"
+  "SENSORS_ASUS_EC n"
+  "SENSORS_ASUS_ROG_RYUJIN n"
+  "SENSORS_ASUS_WMI n"
+  "SENSORS_ATK0110 n"
+  "SENSORS_ATXP1 n"
+  "SENSORS_AXI_FAN_CONTROL n"
+  "SENSORS_BH1770 n"
+  "SENSORS_CHIPCAP2 n"
+  "SENSORS_CORETEMP y"
+  "SENSORS_CORSAIR_CPRO n"
+  "SENSORS_CORSAIR_PSU n"
+  "SENSORS_DA9052_ADC n"
+  "SENSORS_DA9055 n"
+  "SENSORS_DELL_SMM y"
+  "SENSORS_DME1737 n"
+  "SENSORS_DRIVETEMP n"
+  "SENSORS_DS1621 n"
+  "SENSORS_DS620 n"
+  "SENSORS_EMC1403 n"
+  "SENSORS_EMC2103 n"
+  "SENSORS_EMC2305 n"
+  "SENSORS_EMC6W201 n"
+  "SENSORS_F71805F n"
+  "SENSORS_F71882FG n"
+  "SENSORS_F75375S n"
+  "SENSORS_FAM15H_POWER n"
+  "SENSORS_FSCHMD n"
+  "SENSORS_FTSTEUTATES n"
+  "SENSORS_G760A n"
+  "SENSORS_G762 n"
+  "SENSORS_GIGABYTE_WATERFORCE n"
+  "SENSORS_GL518SM n"
+  "SENSORS_GL520SM n"
+  "SENSORS_HDAPS n"
+  "SENSORS_HIH6130 n"
+  "SENSORS_HP_WMI n"
+  "SENSORS_HS3001 n"
+  "SENSORS_HTU31 n"
+  "SENSORS_I5500 n"
+  "SENSORS_I5K_AMB n"
+  "SENSORS_INA209 n"
+  "SENSORS_INA238 n"
+  "SENSORS_INA2XX n"
+  "SENSORS_INA3221 n"
+  "SENSORS_ISL28022 n"
+  "SENSORS_IT87 n"
+  "SENSORS_JC42 n"
+  "SENSORS_K10TEMP n"
+  "SENSORS_K8TEMP n"
+  "SENSORS_LENOVO_EC n"
+  "SENSORS_LINEAGE n"
+  "SENSORS_LIS3_I2C n"
+  "SENSORS_LM63 n"
+  "SENSORS_LM70 n"
+  "SENSORS_LM73 n"
+  "SENSORS_LM75 n"
+  "SENSORS_LM77 n"
+  "SENSORS_LM78 n"
+  "SENSORS_LM80 n"
+  "SENSORS_LM83 n"
+  "SENSORS_LM85 n"
+  "SENSORS_LM87 n"
+  "SENSORS_LM90 n"
+  "SENSORS_LM92 n"
+  "SENSORS_LM93 n"
+  "SENSORS_LM95234 n"
+  "SENSORS_LM95241 n"
+  "SENSORS_LM95245 n"
+  "SENSORS_LTC2945 n"
+  "SENSORS_LTC2947_I2C n"
+  "SENSORS_LTC2947_SPI n"
+  "SENSORS_LTC2990 n"
+  "SENSORS_LTC2991 n"
+  "SENSORS_LTC2992 n"
+  "SENSORS_LTC4151 n"
+  "SENSORS_LTC4215 n"
+  "SENSORS_LTC4222 n"
+  "SENSORS_LTC4245 n"
+  "SENSORS_LTC4260 n"
+  "SENSORS_LTC4261 n"
+  "SENSORS_LTC4282 n"
+  "SENSORS_MAX1111 n"
+  "SENSORS_MAX127 n"
+  "SENSORS_MAX16065 n"
+  "SENSORS_MAX1619 n"
+  "SENSORS_MAX1668 n"
+  "SENSORS_MAX197 n"
+  "SENSORS_MAX31722 n"
+  "SENSORS_MAX31730 n"
+  "SENSORS_MAX31760 n"
+  "SENSORS_MAX31790 n"
+  "SENSORS_MAX6620 n"
+  "SENSORS_MAX6621 n"
+  "SENSORS_MAX6639 n"
+  "SENSORS_MAX6650 n"
+  "SENSORS_MAX6697 n"
+  "SENSORS_MC34VR500 n"
+  "SENSORS_MCP3021 n"
+  "SENSORS_MLXREG_FAN n"
+  "SENSORS_MR75203 n"
+  "SENSORS_NCT6683 n"
+  "SENSORS_NCT6775 n"
+  "SENSORS_NCT6775_I2C n"
+  "SENSORS_NCT7363 n"
+  "SENSORS_NCT7802 n"
+  "SENSORS_NCT7904 n"
+  "SENSORS_NPCM7XX n"
+  "SENSORS_NZXT_KRAKEN2 n"
+  "SENSORS_NZXT_KRAKEN3 n"
+  "SENSORS_NZXT_SMART2 n"
+  "SENSORS_OCC_P8_I2C n"
+  "SENSORS_PC87360 n"
+  "SENSORS_PC87427 n"
+  "SENSORS_PCF8591 n"
+  "SENSORS_POWERZ n"
+  "SENSORS_POWR1220 n"
+  "SENSORS_PT5161L n"
+  "SENSORS_PWM_FAN n"
+  "SENSORS_SBTSI n"
+  "SENSORS_SCH5627 n"
+  "SENSORS_SCH5636 n"
+  "SENSORS_SHT15 n"
+  "SENSORS_SHT21 n"
+  "SENSORS_SHT3x n"
+  "SENSORS_SHT4x n"
+  "SENSORS_SHTC1 n"
+  "SENSORS_SIS5595 n"
+  "SENSORS_SMSC47B397 n"
+  "SENSORS_SMSC47M1 n"
+  "SENSORS_SMSC47M192 n"
+  "SENSORS_SPD5118 n"
+  "SENSORS_STTS751 n"
+  "SENSORS_TC654 n"
+  "SENSORS_TC74 n"
+  "SENSORS_THMC50 n"
+  "SENSORS_TMP102 n"
+  "SENSORS_TMP103 n"
+  "SENSORS_TMP108 n"
+  "SENSORS_TMP401 n"
+  "SENSORS_TMP421 n"
+  "SENSORS_TMP464 n"
+  "SENSORS_TMP513 n"
+  "SENSORS_TPS23861 n"
+  "SENSORS_TSL2550 n"
+  "SENSORS_VIA686A n"
+  "SENSORS_VIA_CPUTEMP n"
+  "SENSORS_VT1211 n"
+  "SENSORS_VT8231 n"
+  "SENSORS_W83627EHF n"
+  "SENSORS_W83627HF n"
+  "SENSORS_W83773G n"
+  "SENSORS_W83781D n"
+  "SENSORS_W83791D n"
+  "SENSORS_W83792D n"
+  "SENSORS_W83793 n"
+  "SENSORS_W83795 n"
+  "SENSORS_W83L785TS n"
+  "SENSORS_W83L786NG n"
+  "SENSORS_WM831X n"
+  "SENSORS_WM8350 n"
+  "SENSORS_XGENE n"
+  "SERIAL_8250_DW n"
+  "SERIAL_8250_EXAR n"
+  "SERIAL_8250_LPSS n"
+  "SERIAL_8250_MID n"
+  "SERIAL_8250_NI n"
+  "SERIAL_8250_PCI1XXXX n"
+  "SERIAL_8250_PERICOM n"
+  "SERIAL_ALTERA_JTAGUART n"
+  "SERIAL_ALTERA_UART n"
+  "SERIAL_ARC n"
+  "SERIAL_FSL_LINFLEXUART n"
+  "SERIAL_FSL_LPUART n"
+  "SERIAL_JSM n"
+  "SERIAL_MAX3100 n"
+  "SERIAL_MAX310X n"
+  "SERIAL_MULTI_INSTANTIATE n"
+  "SERIAL_RP2 n"
+  "SERIAL_SC16IS7XX n"
+  "SERIAL_SCCNXP n"
+  "SERIAL_SPRD n"
+  "SERIAL_UARTLITE n"
+  "SERIO_ALTERA_PS2 n"
+  "SERIO_ARC_PS2 n"
+  "SERIO_CT82C710 n"
+  "SERIO_GPIO_PS2 n"
+  "SERIO_PCIPS2 n"
+  "SERIO_PS2MULT n"
+  "SERIO_RAW y"
+  "SERIO_SERPORT n"
+  "SEV_GUEST n"
+  "SFC n"
+  "SFC_FALCON n"
+  "SF_PDMA n"
+  "SIEMENS_SIMATIC_IPC n"
+  "SIOX n"
+  "SIS190 n"
+  "SIS900 n"
+  "SKGE n"
+  "SKY2 n"
+  "SLICOSS n"
+  "SLIMBUS n"
+  "SLIP n"
+  "SMB_SERVER n"
+  "SMSC37B787_WDT n"
+  "SMSC911X n"
+  "SMSC9420 n"
+  "SMSC_PHY n"
+  "SMSC_SCH311X_WDT n"
+  "SMS_SDIO_DRV n"
+  "SMS_USB_DRV n"
+  "SND y"
+  "SND_AD1889 n"
+  "SND_ALI5451 n"
+  "SND_ALOOP n"
+  "SND_ALS300 n"
+  "SND_ALS4000 n"
+  "SND_AMD_ACP_CONFIG n"
+  "SND_ASIHPI n"
+  "SND_ATIIXP n"
+  "SND_ATIIXP_MODEM n"
+  "SND_ATMEL_SOC n"
+  "SND_AU8810 n"
+  "SND_AU8820 n"
+  "SND_AU8830 n"
+  "SND_AW2 n"
+  "SND_AZT3328 n"
+  "SND_BCD2000 n"
+  "SND_BT87X n"
+  "SND_CA0106 n"
+  "SND_CMIPCI n"
+  "SND_COMPRESS_OFFLOAD y"
+  "SND_CS4281 n"
+  "SND_CS46XX n"
+  "SND_CTL_LED y"
+  "SND_CTXFI n"
+  "SND_DARLA20 n"
+  "SND_DARLA24 n"
+  "SND_DESIGNWARE_I2S n"
+  "SND_DUMMY n"
+  "SND_ECHO3G n"
+  "SND_EMU10K1 n"
+  "SND_EMU10K1X n"
+  "SND_ENS1370 n"
+  "SND_ENS1371 n"
+  "SND_ES1938 n"
+  "SND_ES1968 n"
+  "SND_FM801 n"
+  "SND_GINA20 n"
+  "SND_GINA24 n"
+  "SND_HDA y"
+  "SND_HDA_ACPI n"
+  "SND_HDA_CODEC_ANALOG n"
+  "SND_HDA_CODEC_CA0110 n"
+  "SND_HDA_CODEC_CA0132 n"
+  "SND_HDA_CODEC_CIRRUS n"
+  "SND_HDA_CODEC_CMEDIA n"
+  "SND_HDA_CODEC_CONEXANT n"
+  "SND_HDA_CODEC_CS8409 n"
+  "SND_HDA_CODEC_HDMI y"
+  "SND_HDA_CODEC_REALTEK y"
+  "SND_HDA_CODEC_SENARYTECH n"
+  "SND_HDA_CODEC_SI3054 n"
+  "SND_HDA_CODEC_SIGMATEL n"
+  "SND_HDA_CODEC_VIA n"
+  "SND_HDA_CORE y"
+  "SND_HDA_EXT_CORE y"
+  "SND_HDA_GENERIC y"
+  "SND_HDA_INTEL y"
+  "SND_HDA_SCODEC_COMPONENT y"
+  "SND_HDA_SCODEC_CS35L41_I2C n"
+  "SND_HDA_SCODEC_CS35L41_SPI n"
+  "SND_HDA_SCODEC_CS35L56_I2C n"
+  "SND_HDA_SCODEC_CS35L56_SPI n"
+  "SND_HDA_SCODEC_TAS2781_I2C n"
+  "SND_HDA_SCODEC_TAS2781_SPI n"
+  "SND_HDSP n"
+  "SND_HDSPM n"
+  "SND_HRTIMER y"
+  "SND_HWDEP y"
+  "SND_I2S_HI6210_I2S n"
+  "SND_ICE1712 n"
+  "SND_ICE1724 n"
+  "SND_INDIGO n"
+  "SND_INDIGODJ n"
+  "SND_INDIGODJX n"
+  "SND_INDIGOIO n"
+  "SND_INDIGOIOX n"
+  "SND_INTEL8X0 n"
+  "SND_INTEL8X0M n"
+  "SND_INTEL_DSP_CONFIG y"
+  "SND_INTEL_SOUNDWIRE_ACPI y"
+  "SND_KORG1212 n"
+  "SND_LAYLA20 n"
+  "SND_LAYLA24 n"
+  "SND_LOLA n"
+  "SND_LX6464ES n"
+  "SND_MAESTRO3 n"
+  "SND_MIA n"
+  "SND_MIXART n"
+  "SND_MIXER_OSS n"
+  "SND_MONA n"
+  "SND_MPU401 n"
+  "SND_MTPAV n"
+  "SND_NM256 n"
+  "SND_OXYGEN n"
+  "SND_PCM y"
+  "SND_PCMTEST n"
+  "SND_PCM_OSS n"
+  "SND_PCXHR n"
+  "SND_RIPTIDE n"
+  "SND_RME32 n"
+  "SND_RME96 n"
+  "SND_RME9652 n"
+  "SND_SEQUENCER y"
+  "SND_SEQUENCER_OSS n"
+  "SND_SEQ_DEVICE y"
+  "SND_SEQ_DUMMY y"
+  "SND_SERIAL_U16550 n"
+  "SND_SIMPLE_CARD n"
+  "SND_SOC y"
+  "SND_SOC_AC97_CODEC n"
+  "SND_SOC_ACPI y"
+  "SND_SOC_ADAU1372_I2C n"
+  "SND_SOC_ADAU1372_SPI n"
+  "SND_SOC_ADAU1373 n"
+  "SND_SOC_ADAU1701 n"
+  "SND_SOC_ADAU1761_I2C n"
+  "SND_SOC_ADAU1761_SPI n"
+  "SND_SOC_ADAU7002 n"
+  "SND_SOC_ADAU7118_HW n"
+  "SND_SOC_ADAU7118_I2C n"
+  "SND_SOC_ADI n"
+  "SND_SOC_AK4104 n"
+  "SND_SOC_AK4118 n"
+  "SND_SOC_AK4375 n"
+  "SND_SOC_AK4458 n"
+  "SND_SOC_AK4554 n"
+  "SND_SOC_AK4613 n"
+  "SND_SOC_AK4619 n"
+  "SND_SOC_AK4642 n"
+  "SND_SOC_AK5386 n"
+  "SND_SOC_AK5558 n"
+  "SND_SOC_ALC5623 n"
+  "SND_SOC_AMD_ACP n"
+  "SND_SOC_AMD_ACP3x n"
+  "SND_SOC_AMD_ACP5x n"
+  "SND_SOC_AMD_ACP6x n"
+  "SND_SOC_AMD_ACP_COMMON n"
+  "SND_SOC_AMD_RENOIR n"
+  "SND_SOC_AMD_RPL_ACP6x n"
+  "SND_SOC_AW8738 n"
+  "SND_SOC_AW87390 n"
+  "SND_SOC_AW88081 n"
+  "SND_SOC_AW88166 n"
+  "SND_SOC_AW88261 n"
+  "SND_SOC_AW88395 n"
+  "SND_SOC_AW88399 n"
+  "SND_SOC_BD28623 n"
+  "SND_SOC_CHV3_CODEC n"
+  "SND_SOC_CHV3_I2S n"
+  "SND_SOC_CS35L32 n"
+  "SND_SOC_CS35L33 n"
+  "SND_SOC_CS35L34 n"
+  "SND_SOC_CS35L35 n"
+  "SND_SOC_CS35L36 n"
+  "SND_SOC_CS35L41_I2C n"
+  "SND_SOC_CS35L41_SPI n"
+  "SND_SOC_CS35L45_I2C n"
+  "SND_SOC_CS35L45_SPI n"
+  "SND_SOC_CS35L56_I2C n"
+  "SND_SOC_CS35L56_SPI n"
+  "SND_SOC_CS4234 n"
+  "SND_SOC_CS4265 n"
+  "SND_SOC_CS4270 n"
+  "SND_SOC_CS4271_I2C n"
+  "SND_SOC_CS4271_SPI n"
+  "SND_SOC_CS42L42 n"
+  "SND_SOC_CS42L51_I2C n"
+  "SND_SOC_CS42L52 n"
+  "SND_SOC_CS42L56 n"
+  "SND_SOC_CS42L73 n"
+  "SND_SOC_CS42L83 n"
+  "SND_SOC_CS42L84 n"
+  "SND_SOC_CS42XX8_I2C n"
+  "SND_SOC_CS43130 n"
+  "SND_SOC_CS4341 n"
+  "SND_SOC_CS4349 n"
+  "SND_SOC_CS48L32 n"
+  "SND_SOC_CS530X_I2C n"
+  "SND_SOC_CS53L30 n"
+  "SND_SOC_CX2072X n"
+  "SND_SOC_DA7213 n"
+  "SND_SOC_DMIC n"
+  "SND_SOC_ES7134 n"
+  "SND_SOC_ES7241 n"
+  "SND_SOC_ES8311 n"
+  "SND_SOC_ES8316 n"
+  "SND_SOC_ES8323 n"
+  "SND_SOC_ES8326 n"
+  "SND_SOC_ES8328_I2C n"
+  "SND_SOC_ES8328_SPI n"
+  "SND_SOC_ES8375 n"
+  "SND_SOC_ES8389 n"
+  "SND_SOC_FSL_XCVR n"
+  "SND_SOC_GTM601 n"
+  "SND_SOC_HDA y"
+  "SND_SOC_I2C_AND_SPI y"
+  "SND_SOC_ICS43432 n"
+  "SND_SOC_IDT821034 n"
+  "SND_SOC_IMG_I2S_IN n"
+  "SND_SOC_IMG_I2S_OUT n"
+  "SND_SOC_IMG_PARALLEL_OUT n"
+  "SND_SOC_IMG_PISTACHIO_INTERNAL_DAC n"
+  "SND_SOC_IMG_SPDIF_IN n"
+  "SND_SOC_IMG_SPDIF_OUT n"
+  "SND_SOC_INTEL_AVS y"
+  "SND_SOC_INTEL_AVS_MACH_DA7219 n"
+  "SND_SOC_INTEL_AVS_MACH_DMIC n"
+  "SND_SOC_INTEL_AVS_MACH_ES8336 n"
+  "SND_SOC_INTEL_AVS_MACH_HDAUDIO n"
+  "SND_SOC_INTEL_AVS_MACH_I2S_TEST n"
+  "SND_SOC_INTEL_AVS_MACH_MAX98357A n"
+  "SND_SOC_INTEL_AVS_MACH_MAX98373 n"
+  "SND_SOC_INTEL_AVS_MACH_MAX98927 n"
+  "SND_SOC_INTEL_AVS_MACH_NAU8825 n"
+  "SND_SOC_INTEL_AVS_MACH_PCM3168A n"
+  "SND_SOC_INTEL_AVS_MACH_PROBE n"
+  "SND_SOC_INTEL_AVS_MACH_RT274 n"
+  "SND_SOC_INTEL_AVS_MACH_RT286 n"
+  "SND_SOC_INTEL_AVS_MACH_RT298 n"
+  "SND_SOC_INTEL_AVS_MACH_RT5514 n"
+  "SND_SOC_INTEL_AVS_MACH_RT5663 n"
+  "SND_SOC_INTEL_AVS_MACH_RT5682 n"
+  "SND_SOC_INTEL_AVS_MACH_SSM4567 n"
+  "SND_SOC_INTEL_CATPT n"
+  "SND_SOC_LPASS_RX_MACRO n"
+  "SND_SOC_LPASS_TX_MACRO n"
+  "SND_SOC_LPASS_VA_MACRO n"
+  "SND_SOC_LPASS_WSA_MACRO n"
+  "SND_SOC_MAX9759 n"
+  "SND_SOC_MAX98088 n"
+  "SND_SOC_MAX98090 n"
+  "SND_SOC_MAX98357A n"
+  "SND_SOC_MAX98373_I2C n"
+  "SND_SOC_MAX98388 n"
+  "SND_SOC_MAX98390 n"
+  "SND_SOC_MAX98396 n"
+  "SND_SOC_MAX98504 n"
+  "SND_SOC_MAX98520 n"
+  "SND_SOC_MAX9860 n"
+  "SND_SOC_MAX9867 n"
+  "SND_SOC_MAX98927 n"
+  "SND_SOC_MSM8916_WCD_DIGITAL n"
+  "SND_SOC_MT6351 n"
+  "SND_SOC_MT6357 n"
+  "SND_SOC_MT6358 n"
+  "SND_SOC_MT6660 n"
+  "SND_SOC_MTK_BTCVSD n"
+  "SND_SOC_NAU8315 n"
+  "SND_SOC_NAU8540 n"
+  "SND_SOC_NAU8810 n"
+  "SND_SOC_NAU8821 n"
+  "SND_SOC_NAU8822 n"
+  "SND_SOC_NAU8824 n"
+  "SND_SOC_NTP8835 n"
+  "SND_SOC_NTP8918 n"
+  "SND_SOC_PCM1681 n"
+  "SND_SOC_PCM1789_I2C n"
+  "SND_SOC_PCM179X_I2C n"
+  "SND_SOC_PCM179X_SPI n"
+  "SND_SOC_PCM186X_I2C n"
+  "SND_SOC_PCM186X_SPI n"
+  "SND_SOC_PCM3060_I2C n"
+  "SND_SOC_PCM3060_SPI n"
+  "SND_SOC_PCM3168A_I2C n"
+  "SND_SOC_PCM3168A_SPI n"
+  "SND_SOC_PCM5102A n"
+  "SND_SOC_PCM512x_I2C n"
+  "SND_SOC_PCM512x_SPI n"
+  "SND_SOC_PCM6240 n"
+  "SND_SOC_PEB2466 n"
+  "SND_SOC_RT5616 n"
+  "SND_SOC_RT5631 n"
+  "SND_SOC_RT5640 n"
+  "SND_SOC_RT5659 n"
+  "SND_SOC_RT9120 n"
+  "SND_SOC_RT9123 n"
+  "SND_SOC_RT9123P n"
+  "SND_SOC_RTQ9128 n"
+  "SND_SOC_SDCA_OPTIONAL y"
+  "SND_SOC_SGTL5000 n"
+  "SND_SOC_SIMPLE_AMPLIFIER n"
+  "SND_SOC_SIMPLE_MUX n"
+  "SND_SOC_SMA1303 n"
+  "SND_SOC_SMA1307 n"
+  "SND_SOC_SOF_ACPI n"
+  "SND_SOC_SOF_AMD_TOPLEVEL n"
+  "SND_SOC_SOF_PCI n"
+  "SND_SOC_SPDIF n"
+  "SND_SOC_SRC4XXX_I2C n"
+  "SND_SOC_SSM2305 n"
+  "SND_SOC_SSM2518 n"
+  "SND_SOC_SSM2602_I2C n"
+  "SND_SOC_SSM2602_SPI n"
+  "SND_SOC_SSM4567 n"
+  "SND_SOC_STA32X n"
+  "SND_SOC_STA350 n"
+  "SND_SOC_STI_SAS n"
+  "SND_SOC_TAS2552 n"
+  "SND_SOC_TAS2562 n"
+  "SND_SOC_TAS2764 n"
+  "SND_SOC_TAS2770 n"
+  "SND_SOC_TAS2780 n"
+  "SND_SOC_TAS2781_I2C n"
+  "SND_SOC_TAS5086 n"
+  "SND_SOC_TAS571X n"
+  "SND_SOC_TAS5720 n"
+  "SND_SOC_TAS5805M n"
+  "SND_SOC_TAS6424 n"
+  "SND_SOC_TDA7419 n"
+  "SND_SOC_TFA9879 n"
+  "SND_SOC_TFA989X n"
+  "SND_SOC_TLV320ADC3XXX n"
+  "SND_SOC_TLV320ADCX140 n"
+  "SND_SOC_TLV320AIC23_I2C n"
+  "SND_SOC_TLV320AIC23_SPI n"
+  "SND_SOC_TLV320AIC31XX n"
+  "SND_SOC_TLV320AIC32X4_I2C n"
+  "SND_SOC_TLV320AIC32X4_SPI n"
+  "SND_SOC_TLV320AIC3X_I2C n"
+  "SND_SOC_TLV320AIC3X_SPI n"
+  "SND_SOC_TPA6130A2 n"
+  "SND_SOC_TS3A227E n"
+  "SND_SOC_TSCS42XX n"
+  "SND_SOC_TSCS454 n"
+  "SND_SOC_UDA1334 n"
+  "SND_SOC_UDA1342 n"
+  "SND_SOC_WM8510 n"
+  "SND_SOC_WM8523 n"
+  "SND_SOC_WM8524 n"
+  "SND_SOC_WM8580 n"
+  "SND_SOC_WM8711 n"
+  "SND_SOC_WM8728 n"
+  "SND_SOC_WM8731_I2C n"
+  "SND_SOC_WM8731_SPI n"
+  "SND_SOC_WM8737 n"
+  "SND_SOC_WM8741 n"
+  "SND_SOC_WM8750 n"
+  "SND_SOC_WM8753 n"
+  "SND_SOC_WM8770 n"
+  "SND_SOC_WM8776 n"
+  "SND_SOC_WM8782 n"
+  "SND_SOC_WM8804_I2C n"
+  "SND_SOC_WM8804_SPI n"
+  "SND_SOC_WM8903 n"
+  "SND_SOC_WM8904 n"
+  "SND_SOC_WM8940 n"
+  "SND_SOC_WM8960 n"
+  "SND_SOC_WM8961 n"
+  "SND_SOC_WM8962 n"
+  "SND_SOC_WM8974 n"
+  "SND_SOC_WM8978 n"
+  "SND_SOC_WM8985 n"
+  "SND_SOC_XILINX_AUDIO_FORMATTER n"
+  "SND_SOC_XILINX_I2S n"
+  "SND_SOC_XILINX_SPDIF n"
+  "SND_SOC_XTFPGA_I2S n"
+  "SND_SOC_ZL38060 n"
+  "SND_SONICVIBES n"
+  "SND_SST_ATOM_HIFI2_PLATFORM_ACPI n"
+  "SND_SST_ATOM_HIFI2_PLATFORM_PCI n"
+  "SND_TIMER y"
+  "SND_TRIDENT n"
+  "SND_USB_6FIRE n"
+  "SND_USB_AUDIO n"
+  "SND_USB_CAIAQ n"
+  "SND_USB_HIFACE n"
+  "SND_USB_POD n"
+  "SND_USB_PODHD n"
+  "SND_USB_TONEPORT n"
+  "SND_USB_UA101 n"
+  "SND_USB_US122L n"
+  "SND_USB_USX2Y n"
+  "SND_USB_VARIAX n"
+  "SND_VIA82XX n"
+  "SND_VIA82XX_MODEM n"
+  "SND_VIRMIDI n"
+  "SND_VIRTIO n"
+  "SND_VIRTUOSO n"
+  "SND_VX222 n"
+  "SND_XEN_FRONTEND n"
+  "SND_YMFPCI n"
+  "SOFT_WATCHDOG n"
+  "SONY_LAPTOP n"
+  "SOUND y"
+  "SOUNDWIRE n"
+  "SP5100_TCO n"
+  "SPEAKUP n"
+  "SPI_ALTERA n"
+  "SPI_AMD n"
+  "SPI_AX88796C n"
+  "SPI_AXI_SPI_ENGINE n"
+  "SPI_BITBANG n"
+  "SPI_CADENCE n"
+  "SPI_CH341 n"
+  "SPI_DESIGNWARE n"
+  "SPI_GPIO n"
+  "SPI_INTEL_PCI n"
+  "SPI_INTEL_PLATFORM n"
+  "SPI_LOOPBACK_TEST n"
+  "SPI_MICROCHIP_CORE n"
+  "SPI_MICROCHIP_CORE_QSPI n"
+  "SPI_MUX n"
+  "SPI_MXIC n"
+  "SPI_OC_TINY n"
+  "SPI_PCI1XXXX n"
+  "SPI_PXA2XX n"
+  "SPI_SC18IS602 n"
+  "SPI_SIFIVE n"
+  "SPI_SLAVE_SYSTEM_CONTROL n"
+  "SPI_SLAVE_TIME n"
+  "SPI_SPIDEV n"
+  "SPI_TLE62X0 n"
+  "SPI_XCOMM n"
+  "SPI_XILINX n"
+  "SPI_ZYNQMP_GQSPI n"
+  "SQUASHFS n"
+  "SSB n"
+  "SSIF_IPMI_BMC n"
+  "STE10XP n"
+  "STM n"
+  "STMMAC_ETH n"
+  "STP y"
+  "SUNGEM n"
+  "SURFACE3_WMI n"
+  "SURFACE_3_POWER_OPREGION n"
+  "SURFACE_AGGREGATOR n"
+  "SURFACE_GPE n"
+  "SURFACE_HOTPLUG n"
+  "SURFACE_PRO3_BUTTON n"
+  "SXGBE_ETH n"
+  "SYSTEM76_ACPI n"
+  "SYSTEMPORT n"
+  "TABLET_SERIAL_WACOM4 n"
+  "TABLET_USB_ACECAD n"
+  "TABLET_USB_AIPTEK n"
+  "TABLET_USB_HANWANG n"
+  "TABLET_USB_KBTAB n"
+  "TABLET_USB_PEGASUS n"
+  "TAP y"
+  "TARGET_CORE n"
+  "TCG_ATMEL n"
+  "TCG_INFINEON n"
+  "TCG_NSC n"
+  "TCG_SVSM n"
+  "TCG_TIS_I2C n"
+  "TCG_TIS_I2C_ATMEL n"
+  "TCG_TIS_I2C_CR50 n"
+  "TCG_TIS_I2C_INFINEON n"
+  "TCG_TIS_I2C_NUVOTON n"
+  "TCG_TIS_SPI n"
+  "TCG_TIS_ST33ZP24_I2C n"
+  "TCG_TIS_ST33ZP24_SPI n"
+  "TCG_VTPM_PROXY n"
+  "TCG_XEN n"
+  "TCP_CONG_BIC n"
+  "TCP_CONG_CDG n"
+  "TCP_CONG_CUBIC n"
+  "TCP_CONG_DCTCP n"
+  "TCP_CONG_HSTCP n"
+  "TCP_CONG_HTCP n"
+  "TCP_CONG_HYBLA n"
+  "TCP_CONG_ILLINOIS n"
+  "TCP_CONG_LP n"
+  "TCP_CONG_NV n"
+  "TCP_CONG_SCALABLE n"
+  "TCP_CONG_VEGAS n"
+  "TCP_CONG_VENO n"
+  "TCP_CONG_WESTWOOD n"
+  "TCP_CONG_YEAH n"
+  "TDX_GUEST_DRIVER n"
+  "TEE n"
+  "TEHUTI n"
+  "TEHUTI_TN40 n"
+  "TELCLOCK n"
+  "TERANETICS_PHY n"
+  "TEST_POWER n"
+  "THERMAL_CORE_TESTING n"
+  "THINKPAD_ACPI n"
+  "THINKPAD_LMI n"
+  "THUNDER_NIC_BGX n"
+  "THUNDER_NIC_PF n"
+  "THUNDER_NIC_RGX n"
+  "THUNDER_NIC_VF n"
+  "TIFM_CORE n"
+  "TIGON3 n"
+  "TINYDRM_HX8357D n"
+  "TINYDRM_ILI9163 n"
+  "TINYDRM_ILI9225 n"
+  "TINYDRM_ILI9341 n"
+  "TINYDRM_ILI9486 n"
+  "TINYDRM_MI0283QT n"
+  "TINYDRM_REPAPER n"
+  "TINYDRM_SHARP_MEMORY n"
+  "TIPC n"
+  "TI_FPC202 n"
+  "TLAN n"
+  "TLS n"
+  "TOPSTAR_LAPTOP n"
+  "TOSHIBA_BT_RFKILL n"
+  "TOSHIBA_HAPS n"
+  "TOSHIBA_WMI n"
+  "TOUCHSCREEN_88PM860X n"
+  "TOUCHSCREEN_AD7877 n"
+  "TOUCHSCREEN_AD7879 n"
+  "TOUCHSCREEN_ADS7846 n"
+  "TOUCHSCREEN_ATMEL_MXT n"
+  "TOUCHSCREEN_AUO_PIXCIR n"
+  "TOUCHSCREEN_BU21013 n"
+  "TOUCHSCREEN_BU21029 n"
+  "TOUCHSCREEN_CHIPONE_ICN8505 n"
+  "TOUCHSCREEN_CY8CTMA140 n"
+  "TOUCHSCREEN_CY8CTMG110 n"
+  "TOUCHSCREEN_CYTTSP5 n"
+  "TOUCHSCREEN_CYTTSP_CORE n"
+  "TOUCHSCREEN_DA9034 n"
+  "TOUCHSCREEN_DA9052 n"
+  "TOUCHSCREEN_DYNAPRO n"
+  "TOUCHSCREEN_EDT_FT5X06 n"
+  "TOUCHSCREEN_EETI n"
+  "TOUCHSCREEN_EGALAX_SERIAL n"
+  "TOUCHSCREEN_EKTF2127 n"
+  "TOUCHSCREEN_ELAN n"
+  "TOUCHSCREEN_ELO n"
+  "TOUCHSCREEN_EXC3000 n"
+  "TOUCHSCREEN_FUJITSU n"
+  "TOUCHSCREEN_GOODIX n"
+  "TOUCHSCREEN_GOODIX_BERLIN_I2C n"
+  "TOUCHSCREEN_GOODIX_BERLIN_SPI n"
+  "TOUCHSCREEN_GUNZE n"
+  "TOUCHSCREEN_HAMPSHIRE n"
+  "TOUCHSCREEN_HIDEEP n"
+  "TOUCHSCREEN_HIMAX_HX83112B n"
+  "TOUCHSCREEN_HYCON_HY46XX n"
+  "TOUCHSCREEN_HYNITRON_CSTXXX n"
+  "TOUCHSCREEN_ILI210X n"
+  "TOUCHSCREEN_ILITEK n"
+  "TOUCHSCREEN_IMAGIS n"
+  "TOUCHSCREEN_INEXIO n"
+  "TOUCHSCREEN_IQS5XX n"
+  "TOUCHSCREEN_IQS7211 n"
+  "TOUCHSCREEN_MAX11801 n"
+  "TOUCHSCREEN_MELFAS_MIP4 n"
+  "TOUCHSCREEN_MMS114 n"
+  "TOUCHSCREEN_MSG2638 n"
+  "TOUCHSCREEN_MTOUCH n"
+  "TOUCHSCREEN_NOVATEK_NVT_TS n"
+  "TOUCHSCREEN_PCAP n"
+  "TOUCHSCREEN_PENMOUNT n"
+  "TOUCHSCREEN_PIXCIR n"
+  "TOUCHSCREEN_RM_TS n"
+  "TOUCHSCREEN_ROHM_BU21023 n"
+  "TOUCHSCREEN_S6SY761 n"
+  "TOUCHSCREEN_SILEAD n"
+  "TOUCHSCREEN_SIS_I2C n"
+  "TOUCHSCREEN_ST1232 n"
+  "TOUCHSCREEN_STMFTS n"
+  "TOUCHSCREEN_SUR40 n"
+  "TOUCHSCREEN_SURFACE3_SPI n"
+  "TOUCHSCREEN_SX8654 n"
+  "TOUCHSCREEN_TOUCHIT213 n"
+  "TOUCHSCREEN_TOUCHRIGHT n"
+  "TOUCHSCREEN_TOUCHWIN n"
+  "TOUCHSCREEN_TPS6507X n"
+  "TOUCHSCREEN_TSC2004 n"
+  "TOUCHSCREEN_TSC2005 n"
+  "TOUCHSCREEN_TSC2007 n"
+  "TOUCHSCREEN_TSC_SERIO n"
+  "TOUCHSCREEN_USB_COMPOSITE n"
+  "TOUCHSCREEN_WACOM_I2C n"
+  "TOUCHSCREEN_WACOM_W8001 n"
+  "TOUCHSCREEN_WDT87XX_I2C n"
+  "TOUCHSCREEN_WM831X n"
+  "TOUCHSCREEN_ZET6223 n"
+  "TOUCHSCREEN_ZFORCE n"
+  "TOUCHSCREEN_ZINITIX n"
+  "TPS6105X n"
+  "TPS65010 n"
+  "TPS6507X n"
+  "TQMX86_WDT n"
+  "TRUSTED_KEYS n"
+  "TSNEP n"
+  "TULIP n"
+  "TUN y"
+  "TUXEDO_NB04_WMI_AB n"
+  "TWL4030_WATCHDOG n"
+  "TXGBE n"
+  "TYPEC n"
+  "TYPHOON n"
+  "UACCE n"
+  "UDF_FS n"
+  "UFS_FS n"
+  "UHID n"
+  "UIO n"
+  "ULI526X n"
+  "UNIX_DIAG n"
+  "USB4 n"
+  "USBIP_CORE n"
+  "USBPCWATCHDOG n"
+  "USB_ACM n"
+  "USB_ADUTUX n"
+  "USB_APPLEDISPLAY n"
+  "USB_C67X00_HCD n"
+  "USB_CDNS_SUPPORT n"
+  "USB_CHAOSKEY n"
+  "USB_CHIPIDEA n"
+  "USB_CONN_GPIO n"
+  "USB_CYPRESS_CY7C63 n"
+  "USB_CYTHERM n"
+  "USB_DWC2 n"
+  "USB_DWC3 n"
+  "USB_EHCI_FSL n"
+  "USB_EHCI_HCD_PLATFORM n"
+  "USB_EHSET_TEST_FIXTURE n"
+  "USB_EMI26 n"
+  "USB_EMI62 n"
+  "USB_EZUSB_FX2 n"
+  "USB_GADGET n"
+  "USB_GPIO_VBUS n"
+  "USB_GSPCA n"
+  "USB_HSIC_USB3503 n"
+  "USB_HSIC_USB4604 n"
+  "USB_HUB_USB251XB n"
+  "USB_IDMOUSE n"
+  "USB_IOWARRIOR n"
+  "USB_ISIGHTFW n"
+  "USB_ISP116X_HCD n"
+  "USB_ISP1301 n"
+  "USB_ISP1760 n"
+  "USB_LCD n"
+  "USB_LD n"
+  "USB_LEDS_TRIGGER_USBPORT n"
+  "USB_LEGOTOWER n"
+  "USB_LGM_PHY n"
+  "USB_LINK_LAYER_TEST n"
+  "USB_LJCA n"
+  "USB_MAX3421_HCD n"
+  "USB_MDC800 n"
+  "USB_MICROTEK n"
+  "USB_MON n"
+  "USB_MUSB_HDRC n"
+  "USB_NET_DRIVERS n"
+  "USB_OHCI_HCD_PLATFORM n"
+  "USB_OXU210HP_HCD n"
+  "USB_PRINTER n"
+  "USB_PULSE8_CEC n"
+  "USB_PWC n"
+  "USB_R8A66597_HCD n"
+  "USB_RAINSHADOW_CEC n"
+  "USB_ROLES_INTEL_XHCI y"
+  "USB_ROLE_SWITCH y"
+  "USB_S2255 n"
+  "USB_SERIAL_AIRCABLE n"
+  "USB_SERIAL_ARK3116 n"
+  "USB_SERIAL_BELKIN n"
+  "USB_SERIAL_CH341 n"
+  "USB_SERIAL_CP210X n"
+  "USB_SERIAL_CYBERJACK n"
+  "USB_SERIAL_CYPRESS_M8 n"
+  "USB_SERIAL_DEBUG n"
+  "USB_SERIAL_DIGI_ACCELEPORT n"
+  "USB_SERIAL_EDGEPORT n"
+  "USB_SERIAL_EDGEPORT_TI n"
+  "USB_SERIAL_EMPEG n"
+  "USB_SERIAL_F81232 n"
+  "USB_SERIAL_F8153X n"
+  "USB_SERIAL_FTDI_SIO n"
+  "USB_SERIAL_GARMIN n"
+  "USB_SERIAL_IPAQ n"
+  "USB_SERIAL_IPW n"
+  "USB_SERIAL_IR n"
+  "USB_SERIAL_IUU n"
+  "USB_SERIAL_KEYSPAN n"
+  "USB_SERIAL_KEYSPAN_PDA n"
+  "USB_SERIAL_KLSI n"
+  "USB_SERIAL_KOBIL_SCT n"
+  "USB_SERIAL_MCT_U232 n"
+  "USB_SERIAL_METRO n"
+  "USB_SERIAL_MOS7720 n"
+  "USB_SERIAL_MOS7840 n"
+  "USB_SERIAL_MXUPORT n"
+  "USB_SERIAL_NAVMAN n"
+  "USB_SERIAL_OMNINET n"
+  "USB_SERIAL_OPTICON n"
+  "USB_SERIAL_OPTION n"
+  "USB_SERIAL_OTI6858 n"
+  "USB_SERIAL_PL2303 n"
+  "USB_SERIAL_QCAUX n"
+  "USB_SERIAL_QT2 n"
+  "USB_SERIAL_QUALCOMM n"
+  "USB_SERIAL_SAFE n"
+  "USB_SERIAL_SIERRAWIRELESS n"
+  "USB_SERIAL_SIMPLE n"
+  "USB_SERIAL_SPCP8X5 n"
+  "USB_SERIAL_SSU100 n"
+  "USB_SERIAL_SYMBOL n"
+  "USB_SERIAL_TI n"
+  "USB_SERIAL_UPD78F0730 n"
+  "USB_SERIAL_VISOR n"
+  "USB_SERIAL_WHITEHEAT n"
+  "USB_SERIAL_WISHBONE n"
+  "USB_SERIAL_XR n"
+  "USB_SERIAL_XSENS_MT n"
+  "USB_SEVSEG n"
+  "USB_SISUSBVGA n"
+  "USB_SL811_HCD n"
+  "USB_STORAGE y"
+  "USB_STORAGE_ALAUDA n"
+  "USB_STORAGE_CYPRESS_ATACB n"
+  "USB_STORAGE_DATAFAB n"
+  "USB_STORAGE_ENE_UB6250 n"
+  "USB_STORAGE_FREECOM n"
+  "USB_STORAGE_ISD200 n"
+  "USB_STORAGE_JUMPSHOT n"
+  "USB_STORAGE_KARMA n"
+  "USB_STORAGE_ONETOUCH n"
+  "USB_STORAGE_REALTEK n"
+  "USB_STORAGE_SDDR09 n"
+  "USB_STORAGE_SDDR55 n"
+  "USB_STORAGE_USBAT n"
+  "USB_TEST n"
+  "USB_TMC n"
+  "USB_TRANCEVIBRATOR n"
+  "USB_UAS y"
+  "USB_ULPI_BUS n"
+  "USB_VIDEO_CLASS y"
+  "USB_WDM n"
+  "USB_XEN_HCD n"
+  "USB_XHCI_PCI_RENESAS n"
+  "USB_XHCI_PLATFORM n"
+  "USB_YUREX n"
+  "USERIO n"
+  "UVC_COMMON y"
+  "V4L2_ASYNC y"
+  "V4L2_FWNODE y"
+  "V4L2_LOOPBACK n"
+  "VBOXGUEST n"
+  "VDPA n"
+  "VETH n"
+  "VFAT_FS y"
+  "VFIO n"
+  "VHBA n"
+  "VHOST_NET n"
+  "VIA_RHINE n"
+  "VIA_VELOCITY n"
+  "VIA_WDT n"
+  "VIDEOBUF2_CORE y"
+  "VIDEOBUF2_MEMOPS y"
+  "VIDEOBUF2_V4L2 y"
+  "VIDEOBUF2_VMALLOC y"
+  "VIDEO_AD5820 n"
+  "VIDEO_ADP1653 n"
+  "VIDEO_AK7375 n"
+  "VIDEO_ALVIUM_CSI2 n"
+  "VIDEO_AR0521 n"
+  "VIDEO_AU0828 n"
+  "VIDEO_BT848 n"
+  "VIDEO_CADENCE_CSI2RX n"
+  "VIDEO_CADENCE_CSI2TX n"
+  "VIDEO_CAFE_CCIC n"
+  "VIDEO_CCS n"
+  "VIDEO_CX18 n"
+  "VIDEO_CX231XX n"
+  "VIDEO_CX23885 n"
+  "VIDEO_CX25821 n"
+  "VIDEO_CX88 n"
+  "VIDEO_DEV y"
+  "VIDEO_DT3155 n"
+  "VIDEO_DW9714 n"
+  "VIDEO_DW9719 n"
+  "VIDEO_DW9768 n"
+  "VIDEO_DW9807_VCM n"
+  "VIDEO_EM28XX n"
+  "VIDEO_ET8EK8 n"
+  "VIDEO_GC0308 n"
+  "VIDEO_GC05A2 n"
+  "VIDEO_GC08A3 n"
+  "VIDEO_GC2145 n"
+  "VIDEO_GO7007 n"
+  "VIDEO_GS1662 n"
+  "VIDEO_HDPVR n"
+  "VIDEO_HEXIUM_GEMINI n"
+  "VIDEO_HEXIUM_ORION n"
+  "VIDEO_HI556 n"
+  "VIDEO_HI846 n"
+  "VIDEO_HI847 n"
+  "VIDEO_IMX208 n"
+  "VIDEO_IMX214 n"
+  "VIDEO_IMX219 n"
+  "VIDEO_IMX258 n"
+  "VIDEO_IMX274 n"
+  "VIDEO_IMX283 n"
+  "VIDEO_IMX290 n"
+  "VIDEO_IMX296 n"
+  "VIDEO_IMX319 n"
+  "VIDEO_IMX355 n"
+  "VIDEO_INTEL_IPU6 n"
+  "VIDEO_IPU3_CIO2 n"
+  "VIDEO_IPU3_IMGU n"
+  "VIDEO_IR_I2C y"
+  "VIDEO_IVTV n"
+  "VIDEO_LM3560 n"
+  "VIDEO_LM3646 n"
+  "VIDEO_MEM2MEM_DEINTERLACE n"
+  "VIDEO_MT9M001 n"
+  "VIDEO_MT9M111 n"
+  "VIDEO_MT9M114 n"
+  "VIDEO_MT9P031 n"
+  "VIDEO_MT9T112 n"
+  "VIDEO_MT9V011 n"
+  "VIDEO_MT9V032 n"
+  "VIDEO_MT9V111 n"
+  "VIDEO_MXB n"
+  "VIDEO_OG01A1B n"
+  "VIDEO_OV01A10 n"
+  "VIDEO_OV02A10 n"
+  "VIDEO_OV02C10 n"
+  "VIDEO_OV02E10 n"
+  "VIDEO_OV08D10 n"
+  "VIDEO_OV08X40 n"
+  "VIDEO_OV13858 n"
+  "VIDEO_OV13B10 n"
+  "VIDEO_OV2640 n"
+  "VIDEO_OV2659 n"
+  "VIDEO_OV2680 n"
+  "VIDEO_OV2685 n"
+  "VIDEO_OV2740 n"
+  "VIDEO_OV4689 n"
+  "VIDEO_OV5647 n"
+  "VIDEO_OV5648 n"
+  "VIDEO_OV5670 n"
+  "VIDEO_OV5675 n"
+  "VIDEO_OV5693 n"
+  "VIDEO_OV5695 n"
+  "VIDEO_OV64A40 n"
+  "VIDEO_OV6650 n"
+  "VIDEO_OV7251 n"
+  "VIDEO_OV7640 n"
+  "VIDEO_OV7670 n"
+  "VIDEO_OV772X n"
+  "VIDEO_OV7740 n"
+  "VIDEO_OV8856 n"
+  "VIDEO_OV8858 n"
+  "VIDEO_OV8865 n"
+  "VIDEO_OV9640 n"
+  "VIDEO_OV9650 n"
+  "VIDEO_OV9734 n"
+  "VIDEO_PVRUSB2 n"
+  "VIDEO_RDACM20 n"
+  "VIDEO_RDACM21 n"
+  "VIDEO_RJ54N1 n"
+  "VIDEO_RP1_CFE n"
+  "VIDEO_S5C73M3 n"
+  "VIDEO_S5K5BAF n"
+  "VIDEO_S5K6A3 n"
+  "VIDEO_SAA7134 n"
+  "VIDEO_SAA7164 n"
+  "VIDEO_SOLO6X10 n"
+  "VIDEO_STK1160 n"
+  "VIDEO_THP7312 n"
+  "VIDEO_TW5864 n"
+  "VIDEO_TW68 n"
+  "VIDEO_TW686X n"
+  "VIDEO_USBTV n"
+  "VIDEO_VD55G1 n"
+  "VIDEO_VD56G3 n"
+  "VIDEO_VICODEC n"
+  "VIDEO_VIM2M n"
+  "VIDEO_VIMC n"
+  "VIDEO_VISL n"
+  "VIDEO_VIVID n"
+  "VIRTIO_BALLOON n"
+  "VIRTIO_INPUT n"
+  "VIRTIO_IOMMU n"
+  "VIRTIO_MEM n"
+  "VIRTIO_MMIO n"
+  "VIRTIO_NET n"
+  "VIRTIO_RTC n"
+  "VIRT_WIFI n"
+  "VITESSE_PHY n"
+  "VLAN_8021Q n"
+  "VMD n"
+  "VMWARE_PVSCSI n"
+  "VMWARE_VMCI n"
+  "VMXNET3 n"
+  "VORTEX n"
+  "VSOCKETS n"
+  "VXLAN n"
+  "W1 n"
+  "W83627HF_WDT n"
+  "W83877F_WDT n"
+  "W83977F_WDT n"
+  "WAFER_WDT n"
+  "WATCHDOG_PRETIMEOUT_GOV_NOOP n"
+  "WCN36XX n"
+  "WDAT_WDT n"
+  "WDTPCI n"
+  "WFX n"
+  "WIL6210 n"
+  "WILC1000_SDIO n"
+  "WILC1000_SPI n"
+  "WINBOND_840 n"
+  "WINMATE_FM07_KEYS n"
+  "WIREGUARD n"
+  "WIRELESS_HOTKEY n"
+  "WIZNET_W5100 n"
+  "WIZNET_W5300 n"
+  "WL1251 n"
+  "WL12XX n"
+  "WL18XX n"
+  "WLCORE n"
+  "WM831X_BACKUP n"
+  "WM831X_POWER n"
+  "WM831X_WATCHDOG n"
+  "WM8350_POWER n"
+  "WM8350_WATCHDOG n"
+  "WMI_BMOF y"
+  "WPCM450_SOC n"
+  "WWAN n"
+  "X86_ACPI_CPUFREQ n"
+  "X86_AMD_PSTATE_UT n"
+  "X86_ANDROID_TABLETS n"
+  "X86_MCE_INJECT n"
+  "X86_P4_CLOCKMOD n"
+  "X86_PCC_CPUFREQ n"
+  "X86_PKG_TEMP_THERMAL y"
+  "X86_PMEM_LEGACY n"
+  "XDP_SOCKETS_DIAG n"
+  "XENFS n"
+  "XEN_ACPI_PROCESSOR n"
+  "XEN_BLKDEV_BACKEND n"
+  "XEN_BLKDEV_FRONTEND n"
+  "XEN_DEV_EVTCHN n"
+  "XEN_FBDEV_FRONTEND n"
+  "XEN_GNTDEV n"
+  "XEN_GRANT_DEV_ALLOC n"
+  "XEN_NETDEV_BACKEND n"
+  "XEN_NETDEV_FRONTEND n"
+  "XEN_PCIDEV_BACKEND n"
+  "XEN_PCIDEV_FRONTEND n"
+  "XEN_PRIVCMD n"
+  "XEN_PVCALLS_BACKEND n"
+  "XEN_PVCALLS_FRONTEND n"
+  "XEN_SCSI_FRONTEND n"
+  "XEN_WDT n"
+  "XFRM_USER n"
+  "XFS_FS n"
+  "XIAOMI_WMI n"
+  "XILINX_DMA n"
+  "XILINX_EMACLITE n"
+  "XILINX_GMII2RGMII n"
+  "XILINX_LL_TEMAC n"
+  "XILINX_SDFEC n"
+  "XILINX_VCU n"
+  "XILINX_WATCHDOG n"
+  "XILINX_XDMA n"
+  "XILLYBUS n"
+  "XILLYUSB n"
+  "YELLOWFIN n"
+  "YOGABOOK n"
+  "YT2_1380 n"
+  "ZD1211RW n"
+  "ZIIRAVE_WATCHDOG n"
+  "ZONEFS_FS n"
+  "ZRAM n"
+  "GPIO_BT8XX n"
+  "SND_SE6X n"
+  "X86_DISABLED_FEATURE_SEV_SNP y"
+]

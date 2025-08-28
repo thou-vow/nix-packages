@@ -13,9 +13,9 @@
   patches ? [],
   useO3 ? false,
   mArch ? "",
-  prependStructuredConfig ? {},
+  prependConfigValues ? [],
   withLTO ? "",
-  appendStructuredConfig ? {},
+  appendConfigValues ? [],
   features ? {},
   verbose ? false,
   ...
@@ -78,7 +78,7 @@
     });
 
   configfile = callPackage ./configfile.nix {
-    inherit linux suffix patches prependStructuredConfig withLTO appendStructuredConfig;
+    inherit linux suffix patches prependConfigValues withLTO appendConfigValues;
     stdenv = stdenvLLVM;
   };
 
@@ -105,7 +105,7 @@
     };
   };
 
-  # You can generate a config to pass to prependConfig following these steps:
+  # You can generate values to pass to prependConfigValues following these steps:
   # ```
   # nix develop /etc/nixos#nixosConfigurations.nixos.boot.kernelPackages.kernel.configEnv
   # unpackPhase
@@ -117,24 +117,24 @@
   configEnv = let
     diff-to-nix = writeShellScriptBin "diff-to-nix" ''
       #!${bash}
-      exec > "kernel-config.nix"
+      exec > "prepend-config-values.nix"
 
-      echo "lib: with lib.kernel; {"
+      echo "["
       while IFS= read -r line; do
         if [[ $line == \#* ]] && [[ $line =~ CONFIG_([A-Za-z0-9_]+) ]]; then
           name=$${BASH_REMATCH[1]}
-          echo "  \"$name\" = no;"
+          echo "  \"$name n\""
         elif [[ $line == *"=y" ]]; then
           name=$${line#CONFIG_}
           name=$${name%=y}
-          echo "  \"$name\" = yes;"
+          echo "  \"$name y\""
         elif [[ $line == *"=m" ]]; then
           name=$${line#CONFIG_}
           name=$${name%=m}
-          echo "  \"$name\" = module;"
+          echo "  \"$name m\""
         fi
       done
-      echo "}"
+      echo "]"
     '';
   in
     configfile.overrideAttrs (prevAttrs: {
@@ -151,6 +151,9 @@
         + ''
           cp "${linux.configfile}" ".config"
         '';
+
+      dontBuild = true;
+      dontInstall = true;
     });
 in
   kernel.overrideAttrs (prevAttrs: {
