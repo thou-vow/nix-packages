@@ -1,17 +1,19 @@
-final: prev: inputs: let
+final: prev: inputs:
+let
   lib = inputs.nixpkgs.lib;
 
-  concatOptionalString = optional: others:
-    lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
-in {
+  concatOptionalString =
+    optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
+in
+{
   helix-steel = prev.helix.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS =
-          concatOptionalString (prevAttrs.env.RUSTFLAGS or "")
-          ["-C target-cpu=skylake" "-C opt-level=3" "-C lto=fat"];
-      };
+    env = prevAttrs.env or { } // {
+      RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+        "-C target-cpu=skylake"
+        "-C opt-level=3"
+        "-C lto=fat"
+      ];
+    };
   });
 
   linux-llvm = prev.linux-llvm.override {
@@ -21,7 +23,7 @@ in {
     useO3 = true;
     mArch = "skylake";
     prependConfigValues = import ./kernel-localyesconfig.nix;
-    withLTO = "full";
+    withLTO = "thin";
     appendConfigValues = [
       "AUTOFDO_CLANG y"
       # "PROPELLER_CLANG y"
@@ -69,41 +71,41 @@ in {
   };
 
   niri-unstable = prev.niri-unstable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C target-cpu=skylake"
-        "-C opt-level=3"
-        "-C lto=fat"
-      ];
+    RUSTFLAGS = prevAttrs.RUSTFLAGS or [ ] ++ [
+      "-C target-cpu=skylake"
+      "-C opt-level=3"
+      "-C lto=fat"
+    ];
   });
 
-  nixd = (prev.nixd.override {inherit (final.llvmPackages_latest) stdenv;}).overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") ["-O3" "-march=skylake"];
-        CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") ["-O3" "-march=skylake"];
-      };
-  });
+  nixd =
+    (prev.nixd.override { inherit (final.llvmPackages_latest) stdenv; }).overrideAttrs
+      (prevAttrs: {
+        env = prevAttrs.env or { } // {
+          CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") [
+            "-O3"
+            "-march=skylake"
+          ];
+          CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") [
+            "-O3"
+            "-march=skylake"
+          ];
+        };
+      });
 
   rust-analyzer-unwrapped = prev.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C target-cpu=skylake"
-          "-C opt-level=3"
-        ];
-      };
+    env = prevAttrs.env or { } // {
+      RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+        "-C target-cpu=skylake"
+        "-C opt-level=3"
+      ];
+    };
   });
 
   xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C target-cpu=skylake"
-        "-C opt-level=3"
-      ];
+    RUSTFLAGS = prevAttrs.RUSTFLAGS or [ ] ++ [
+      "-C target-cpu=skylake"
+      "-C opt-level=3"
+    ];
   });
 }
