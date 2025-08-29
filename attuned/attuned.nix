@@ -1,24 +1,25 @@
-final: prev: inputs:
-let
+inputs: system: let
+  inherit (inputs) self chaotic niri;
+  pkgs = inputs.nixpkgs.legacyPackages.${system};
   lib = inputs.nixpkgs.lib;
 
-  concatOptionalString =
-    optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
-in
-{
-  helix-steel = prev.helix.overrideAttrs (prevAttrs: {
-    env = prevAttrs.env or { } // {
-      RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-        "-C target-cpu=skylake"
-        "-C opt-level=3"
-        "-C lto=fat"
-      ];
-    };
+  concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
+in {
+  helix-steel = self.legacyPackages.${system}.helix-steel.overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+          "-C target-cpu=skylake"
+          "-C opt-level=3"
+          "-C lto=fat"
+        ];
+      };
   });
 
-  linux-llvm = prev.linux-llvm.override {
-    linux = final.linux_cachyos-lto;
-    llvmPackages = final.llvmPackages_latest;
+  linux-llvm = self.legacyPackages.${system}.linux-llvm.override {
+    linux = chaotic.packages.${system}.linux_cachyos-lto;
+    llvmPackages = pkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -67,21 +68,25 @@ in
       "CPU_MITIGATIONS n"
       "FORTIFY_SOURCE n"
     ];
-    inherit (final.linux_cachyos) features;
+    inherit (chaotic.packages.${system}.linux_cachyos-lto) features;
   };
 
-  niri-unstable = prev.niri-unstable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS = prevAttrs.RUSTFLAGS or [ ] ++ [
-      "-C target-cpu=skylake"
-      "-C opt-level=3"
-      "-C lto=fat"
-    ];
+  niri-unstable = niri.packages.${system}.niri-unstable.overrideAttrs (prevAttrs: {
+    RUSTFLAGS =
+      prevAttrs.RUSTFLAGS or []
+      ++ [
+        "-C target-cpu=skylake"
+        "-C opt-level=3"
+        "-C lto=fat"
+      ];
   });
 
   nixd =
-    (prev.nixd.override { inherit (final.llvmPackages_latest) stdenv; }).overrideAttrs
-      (prevAttrs: {
-        env = prevAttrs.env or { } // {
+    (pkgs.nixd.override {inherit (pkgs.llvmPackages_latest) stdenv;}).overrideAttrs
+    (prevAttrs: {
+      env =
+        prevAttrs.env or {}
+        // {
           CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") [
             "-O3"
             "-march=skylake"
@@ -91,21 +96,25 @@ in
             "-march=skylake"
           ];
         };
-      });
+    });
 
-  rust-analyzer-unwrapped = prev.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
-    env = prevAttrs.env or { } // {
-      RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+  rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+          "-C target-cpu=skylake"
+          "-C opt-level=3"
+        ];
+      };
+  });
+
+  xwayland-satellite-unstable = niri.packages.${system}.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
+    RUSTFLAGS =
+      prevAttrs.RUSTFLAGS or []
+      ++ [
         "-C target-cpu=skylake"
         "-C opt-level=3"
       ];
-    };
-  });
-
-  xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS = prevAttrs.RUSTFLAGS or [ ] ++ [
-      "-C target-cpu=skylake"
-      "-C opt-level=3"
-    ];
   });
 }

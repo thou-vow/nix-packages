@@ -2,7 +2,9 @@
   description = "Cached nix packages for thou";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     helix.url = "github:mattwparas/helix/steel-event-system";
@@ -29,50 +31,14 @@
       "x86_64-linux"
       "aarch64-linux"
     ];
-
-    externalOverlays = [
-      inputs.chaotic.overlays.default
-      inputs.niri.overlays.niri
-    ];
-
-    baseOverlays =
-      externalOverlays
-      ++ [
-        self.overlays.default
-      ];
   in {
     # Packages defined on this flake. Use with `nix build`, `nix run`, `nix shell`.
-    legacyPackages = lib.genAttrs systems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-      pkgsExternalOverlays = pkgs.appendOverlays externalOverlays;
-      pkgsBaseOverlays = pkgs.appendOverlays baseOverlays;
-    in
-      # I use an overlay interface for convenience (I like it).
-      import ./default/default.nix pkgsBaseOverlays pkgsExternalOverlays inputs
+    legacyPackages = lib.genAttrs systems (system:
+      import ./default/default.nix inputs system
       // {
         # The other package sets are made upon the default packages.
-        attunedPackages =
-          import ./attuned/attuned.nix
-          (pkgsBaseOverlays.appendOverlays [self.overlays.attuned])
-          pkgsBaseOverlays
-          inputs;
+        attunedPackages = import ./attuned/attuned.nix inputs system;
       });
-
-    # Overlays based on the packages defined on this flake.
-    overlays = let
-      # Package sets of this flake aren't updated versions of previously defined sets
-      # Which means they aren't like `linuxPackages = prev.linuxPackages // { ... };`.
-      # So, we update the previously defined sets here.
-      recursivelyUpdatePackages = originalAttrs: newAttrs:
-        lib.mapAttrs (name: value:
-          if lib.isDerivation value
-          then value
-          else originalAttrs.${name} // recursivelyUpdatePackages originalAttrs.${name} value)
-        newAttrs;
-    in {
-      default = final: prev: recursivelyUpdatePackages prev (import ./default/default.nix final prev inputs);
-      attuned = final: prev: recursivelyUpdatePackages prev (import ./attuned/attuned.nix final prev inputs);
-    };
 
     # Packages to cache.
     checks = let
@@ -83,6 +49,7 @@
         ++ (with self.legacyPackages."x86_64-linux".attunedPackages; [
           helix-steel
           linux-llvm
+          linux-llvm.configfile
           niri-unstable
           nixd
           rust-analyzer-unwrapped
