@@ -2,7 +2,7 @@ name: Periodically bump flake.lock (and build cache)
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 */6 * * *
+    - cron: 0 */3 * * *
 permissions:
   contents: write
 concurrency:
