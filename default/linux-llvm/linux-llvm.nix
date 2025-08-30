@@ -97,8 +97,6 @@
 
     stdenv = stdenvLLVM;
 
-    allowImportFromDerivation = true;
-
     extraMeta = {
       description = "Easily-customizable Linux built with LLVM";
       broken = !stdenvLLVM.isx86_64;

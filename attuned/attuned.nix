@@ -2,6 +2,7 @@ inputs: system: let
   inherit (inputs) self chaotic niri;
   pkgs = inputs.nixpkgs.legacyPackages.${system};
   lib = inputs.nixpkgs.lib;
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 
   concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
@@ -19,7 +20,7 @@ in {
 
   linux-llvm = self.legacyPackages.${system}.linux-llvm.override {
     linux = chaotic.packages.${system}.linux_cachyos-lto;
-    llvmPackages = pkgs.llvmPackages_latest;
+    llvmPackages = pkgs-unstable.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -82,7 +83,7 @@ in {
   });
 
   nixd =
-    (pkgs.nixd.override {inherit (pkgs.llvmPackages_latest) stdenv;}).overrideAttrs
+    (pkgs-unstable.nixd.override {inherit (pkgs-unstable.llvmPackages_latest) stdenv;}).overrideAttrs
     (prevAttrs: {
       env =
         prevAttrs.env or {}
@@ -98,7 +99,7 @@ in {
         };
     });
 
-  rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped = pkgs-unstable.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {

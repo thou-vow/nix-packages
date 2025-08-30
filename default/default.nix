@@ -1,6 +1,7 @@
 inputs: system: let
   inherit (inputs) helix;
   pkgs = inputs.nixpkgs.legacyPackages.${system};
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in {
   # nixpkgs only has 17 and 23.
   graalvm-oracle_21 = let
@@ -20,5 +21,5 @@ in {
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 
-  linux-llvm = pkgs.callPackage ./linux-llvm/linux-llvm.nix {};
+  linux-llvm = pkgs-unstable.callPackage ./linux-llvm/linux-llvm.nix {};
 }
