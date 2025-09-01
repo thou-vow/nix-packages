@@ -1,12 +1,14 @@
 inputs: system: let
-  inherit (inputs) self chaotic niri;
   pkgs = inputs.nixpkgs.legacyPackages.${system};
   lib = inputs.nixpkgs.lib;
-  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+
+  self = inputs.self.legacyPackages.${system};
+  chaotic = inputs.chaotic.legacyPackages.${system};
+  niri = inputs.niri.packages.${system};
 
   concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
-  helix-steel = self.legacyPackages.${system}.helix-steel.overrideAttrs (prevAttrs: {
+  helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
@@ -18,9 +20,9 @@ in {
       };
   });
 
-  linux-llvm = self.legacyPackages.${system}.linux-llvm.override {
-    linux = chaotic.packages.${system}.linux_cachyos-lto;
-    llvmPackages = pkgs-unstable.llvmPackages_latest;
+  linux-llvm = self.linux-llvm.override {
+    linux = chaotic.linux_cachyos-lto;
+    llvmPackages = pkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -69,10 +71,10 @@ in {
       "CPU_MITIGATIONS n"
       "FORTIFY_SOURCE n"
     ];
-    inherit (chaotic.packages.${system}.linux_cachyos-lto) features;
+    inherit (chaotic.linux_cachyos-lto) features;
   };
 
-  niri-unstable = niri.packages.${system}.niri-unstable.overrideAttrs (prevAttrs: {
+  niri-unstable = niri.niri-unstable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
@@ -83,7 +85,7 @@ in {
   });
 
   nixd =
-    (pkgs-unstable.nixd.override {inherit (pkgs-unstable.llvmPackages_latest) stdenv;}).overrideAttrs
+    (pkgs.nixd.override {inherit (pkgs.llvmPackages_latest) stdenv;}).overrideAttrs
     (prevAttrs: {
       env =
         prevAttrs.env or {}
@@ -99,7 +101,7 @@ in {
         };
     });
 
-  rust-analyzer-unwrapped = pkgs-unstable.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
@@ -110,7 +112,7 @@ in {
       };
   });
 
-  xwayland-satellite-unstable = niri.packages.${system}.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
+  xwayland-satellite-unstable = niri.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [

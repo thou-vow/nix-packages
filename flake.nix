@@ -2,9 +2,8 @@
   description = "Cached nix packages for thou";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     helix.url = "github:mattwparas/helix/steel-event-system";
