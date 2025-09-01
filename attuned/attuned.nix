@@ -31,6 +31,7 @@ in {
     appendConfigValues = [
       "AUTOFDO_CLANG y"
       # "PROPELLER_CLANG y"
+      "NR_CPUS 2"
 
       # Unnecessary stuff uncaught by localyesconfig
       "DRM_XE n"
@@ -58,6 +59,7 @@ in {
       "AMD_IOMMU n"
       "XEN n"
       "KVM_XEN n"
+      "X86_SGX n"
 
       # For containers
       "VETH y"
