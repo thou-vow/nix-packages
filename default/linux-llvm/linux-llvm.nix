@@ -4,7 +4,10 @@
   lib,
   linux,
   linuxManualConfig,
+  llvmPackages,
+  patchelf,
   pkgsBuildBuild,
+  overrideCC,
   writeShellScriptBin,
   suffix ? "",
   patches ? [],
@@ -15,29 +18,73 @@
   appendConfigValues ? [],
   features ? {},
   verbose ? false,
-  inputs,
   ...
 }: let
-  extraMakeFlags =
-    (lib.optionals (mArch != "") [
-      "KCFLAGS+=-march=${mArch}"
-      "KRUSTFLAGS+=-Ctarget-cpu=${mArch}"
-    ])
-    ++ (lib.optionals useO3 [
-      "KCFLAGS+=-O3"
-      "KRUSTFLAGS+=-Copt-level=3"
-    ])
-    ++ (lib.optionals verbose [
-      "V=1"
-    ]);
+  stdenvLLVM = let
+    noBintools = {
+      bootBintools = null;
+      bootBintoolsNoLibc = null;
+    };
+    hostLLVM = llvmPackages.override noBintools;
+    buildLLVM = llvmPackages.override noBintools;
+
+    mkLLVMPlatform = platform:
+      platform
+      // {
+        linux-kernel =
+          platform.linux-kernel
+          // {
+            makeFlags =
+              (platform.linux-kernel.makeFlags or [])
+              ++ [
+                "LLVM=1"
+                "LLVM_IAS=1"
+                "CC=${buildLLVM.clangUseLLVM}/bin/clang"
+                "LD=${buildLLVM.lld}/bin/ld.lld"
+                "HOSTLD=${hostLLVM.lld}/bin/ld.lld"
+                "AR=${buildLLVM.llvm}/bin/llvm-ar"
+                "HOSTAR=${hostLLVM.llvm}/bin/llvm-ar"
+                "NM=${buildLLVM.llvm}/bin/llvm-nm"
+                "STRIP=${buildLLVM.llvm}/bin/llvm-strip"
+                "OBJCOPY=${buildLLVM.llvm}/bin/llvm-objcopy"
+                "OBJDUMP=${buildLLVM.llvm}/bin/llvm-objdump"
+                "READELF=${buildLLVM.llvm}/bin/llvm-readelf"
+                "HOSTCC=${hostLLVM.clangUseLLVM}/bin/clang"
+                "HOSTCXX=${hostLLVM.clangUseLLVM}/bin/clang++"
+              ]
+              ++ (lib.optionals (mArch != "") [
+                "KCFLAGS+=-march=${mArch}"
+                "KRUSTFLAGS+=-Ctarget-cpu=${mArch}"
+              ])
+              ++ (lib.optionals useO3 [
+                "KCFLAGS+=-O3"
+                "KRUSTFLAGS+=-Copt-level=3"
+              ])
+              ++ (lib.optionals verbose [
+                "V=1"
+              ]);
+          };
+      };
+
+    stdenv' = overrideCC hostLLVM.stdenv hostLLVM.clangUseLLVM;
+  in
+    stdenv'.override (old: {
+      hostPlatform = mkLLVMPlatform old.hostPlatform;
+      buildPlatform = mkLLVMPlatform old.buildPlatform;
+      extraNativeBuildInputs = [
+        hostLLVM.lld
+        patchelf
+      ];
+    });
 
   configfile = callPackage ./configfile.nix {
-    inherit linux suffix patches prependConfigValues withLTO appendConfigValues extraMakeFlags inputs;
+    inherit linux suffix patches prependConfigValues withLTO appendConfigValues;
+    stdenv = stdenvLLVM;
   };
 
   kernel = linuxManualConfig {
     inherit (linux) src version;
-    inherit configfile extraMakeFlags features;
+    inherit configfile features;
     modDirVersion = "${linux.version}-${suffix}";
 
     kernelPatches =
@@ -48,9 +95,11 @@
         })
         patches);
 
+    stdenv = stdenvLLVM;
+
     extraMeta = {
       description = "Easily-customizable Linux built with LLVM";
-      platforms = ["x86_64-linux"];
+      broken = !stdenvLLVM.isx86_64;
     };
   };
 

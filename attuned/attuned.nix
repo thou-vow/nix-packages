@@ -22,6 +22,7 @@ in {
 
   linux-llvm = self.linux-llvm.override {
     linux = chaotic.linux_cachyos-lto;
+    llvmPackages = pkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -30,6 +31,7 @@ in {
     appendConfigValues = [
       "AUTOFDO_CLANG y"
       # "PROPELLER_CLANG y"
+      "NR_CPUS 2"
 
       # Unnecessary stuff uncaught by localyesconfig
       "DRM_XE n"
@@ -58,7 +60,6 @@ in {
       "XEN n"
       "KVM_XEN n"
       "X86_SGX n"
-      "NR_CPUS 2"
 
       # For containers
       "VETH y"
