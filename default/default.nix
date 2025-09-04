@@ -21,5 +21,5 @@ in {
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 
-  linux-llvm = pkgs.callPackage ./linux-llvm/linux-llvm.nix {};
+  linux-llvm = pkgs.pkgsLLVM.callPackage ./linux-llvm/linux-llvm.nix {inherit inputs;};
 }

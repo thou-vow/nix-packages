@@ -1,4 +1,5 @@
 {
+  buildPackages,
   lib,
   linux,
   stdenv,
@@ -8,6 +9,8 @@
   prependConfigValues,
   withLTO,
   appendConfigValues,
+  extraMakeFlags ? [],
+  inputs,
 }: let
   transformConfigValue = raw: let
     split = lib.splitString " " raw;
@@ -50,6 +53,15 @@ in
     name = "linux-${lib.optionalString (suffix != "") "${suffix}-"}config";
 
     patches = (builtins.map (kernelPatch: kernelPatch.patch) linux.kernelPatches) ++ patches;
+
+    makeFlags = import "${inputs.nixpkgs}/pkgs/os-specific/linux/kernel/common-flags.nix" {
+      inherit
+        lib
+        stdenv
+        buildPackages
+        extraMakeFlags
+        ;
+    };
 
     nativeBuildInputs = linux.nativeBuildInputs ++ linux.buildInputs;
 
