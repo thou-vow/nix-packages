@@ -61,8 +61,12 @@ in {
       "KVM_XEN n"
       "X86_SGX n"
 
-      # For containers
+      # For containers and waydroid
       "VETH y"
+      "NF_NAT y"
+      "IP_NF_FILTER y"
+      "IP_NF_NAT y"
+      "NETFILTER_XT_TARGET_CHECKSUM y"
 
       # Good for gaming
       "NTSYNC y"
