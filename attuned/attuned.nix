@@ -67,6 +67,7 @@ in {
       "IP_NF_FILTER y"
       "IP_NF_NAT y"
       "NETFILTER_XT_TARGET_CHECKSUM y"
+      "NETFILTER_XT_TARGET_MASQUERADE y"
 
       # Good for gaming
       "NTSYNC y"
