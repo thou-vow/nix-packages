@@ -49,10 +49,10 @@
           helix-steel
           linux-llvm
           linux-llvm.configfile
-          niri-unstable
+          niri-stable
           nixd
           rust-analyzer-unwrapped
-          xwayland-satellite-unstable
+          xwayland-satellite-stable
         ]);
 
       # Since nix-fast-build only support sets, we need this to repeat a package.

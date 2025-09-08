@@ -81,7 +81,7 @@ in {
     inherit (chaotic.linux_cachyos-lto) features;
   };
 
-  niri-unstable = niri.niri-unstable.overrideAttrs (prevAttrs: {
+  niri-stable = niri.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
@@ -119,7 +119,7 @@ in {
       };
   });
 
-  xwayland-satellite-unstable = niri.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
+  xwayland-satellite-stable = niri.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
