@@ -1,5 +1,5 @@
 inputs: system: let
-  pkgs = inputs.nixpkgs.legacyPackages.${system};
+  nixpkgs = inputs.nixpkgs.legacyPackages.${system};
   lib = inputs.nixpkgs.lib;
 
   self = inputs.self.legacyPackages.${system};
@@ -22,7 +22,7 @@ in {
 
   linux-llvm = self.linux-llvm.override {
     linux = chaotic.linux_cachyos-lto;
-    llvmPackages = pkgs.llvmPackages_latest;
+    llvmPackages = nixpkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -92,7 +92,7 @@ in {
   });
 
   nixd =
-    (pkgs.nixd.override {inherit (pkgs.llvmPackages_latest) stdenv;}).overrideAttrs
+    (nixpkgs.nixd.override {inherit (nixpkgs.llvmPackages_latest) stdenv;}).overrideAttrs
     (prevAttrs: {
       env =
         prevAttrs.env or {}
@@ -108,7 +108,7 @@ in {
         };
     });
 
-  rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped = nixpkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
