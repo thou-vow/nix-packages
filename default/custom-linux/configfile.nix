@@ -8,6 +8,7 @@
   prependConfigValues,
   withLTO,
   appendConfigValues,
+  preferBuiltinsOverModules
 }: let
   transformConfigValue = raw: let
     split = lib.splitString " " raw;
@@ -51,12 +52,16 @@ in
 
     patches = (builtins.map (kernelPatch: kernelPatch.patch) linux.kernelPatches) ++ patches;
 
+    postPatch = ''
+      cp ${linux.configfile} .config
+      make LLVM=1 LLVM_IAS=1 olddefconfig
+    '';
+
     nativeBuildInputs = linux.nativeBuildInputs ++ linux.buildInputs;
 
     buildPhase = ''
-      cp "${linux.configfile}" ".config"
       patchShebangs scripts/kconfig/merge_config.sh
-      LLVM=1 LLVM_IAS=1 scripts/kconfig/merge_config.sh -n .config ${customConfigFragment}
+      LLVM=1 LLVM_IAS=1 scripts/kconfig/merge_config.sh -n -Q -r ${lib.optionalString preferBuiltinsOverModules "-y"} .config ${customConfigFragment}
     '';
 
     installPhase = ''

@@ -3,6 +3,8 @@ inputs: system: let
 
   helix = inputs.helix.packages.${system};
 in {
+  custom-linux = nixpkgs.callPackage ./custom-linux/custom-linux.nix {};
+
   # nixpkgs only has 17 and 23.
   graalvm-oracle_21 = let
     src = {
@@ -20,6 +22,4 @@ in {
   helix-steel = helix.helix.overrideAttrs (prevAttrs: {
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
-
-  linux-llvm = nixpkgs.callPackage ./linux-llvm/linux-llvm.nix {};
 }

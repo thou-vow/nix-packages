@@ -8,29 +8,15 @@ inputs: system: let
 
   concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
-  helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C target-cpu=skylake"
-          "-C opt-level=3"
-          "-C lto=fat"
-        ];
-      };
-  });
-
-  linux-llvm = self.linux-llvm.override {
-    linux = chaotic.linux_cachyos-lto;
+  custom-linux = self.custom-linux.override {
+    linux = chaotic.linux_cachyos-lts;
     llvmPackages = nixpkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
     prependConfigValues = import ./kernel-localyesconfig.nix;
-    withLTO = "thin";
+    withLTO = "full";
     appendConfigValues = [
-      "AUTOFDO_CLANG y"
-      # "PROPELLER_CLANG y"
       "NR_CPUS 2"
 
       # Unnecessary stuff uncaught by localyesconfig
@@ -69,17 +55,29 @@ in {
       "NETFILTER_XT_TARGET_CHECKSUM y"
       "NETFILTER_XT_TARGET_MASQUERADE y"
 
-      # Good for gaming
-      "NTSYNC y"
-
+      "DEBUG_INFO n"
+      "DEBUG_INFO_DWARF5 n"
       "SLUB_DEBUG n"
       "PM_DEBUG n"
       "WATCHDOG n"
       "CPU_MITIGATIONS n"
       "FORTIFY_SOURCE n"
     ];
-    inherit (chaotic.linux_cachyos-lto) features;
+    preferBuiltinsOverModules = true;
+    inherit (chaotic.linux_cachyos-lts) features;
   };
+
+  helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
+    env =
+      prevAttrs.env or {}
+      // {
+        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
+          "-C target-cpu=skylake"
+          "-C opt-level=3"
+          "-C lto=fat"
+        ];
+      };
+  });
 
   niri-stable = niri.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
@@ -100,10 +98,15 @@ in {
           CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") [
             "-O3"
             "-march=skylake"
+            "-flto"
           ];
           CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") [
             "-O3"
             "-march=skylake"
+            "-flto"
+          ];
+          LDFLAGS = concatOptionalString (prevAttrs.env.LDFLAGS or "") [
+            "-flto"
           ];
         };
     });
@@ -115,6 +118,8 @@ in {
         RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
           "-C target-cpu=skylake"
           "-C opt-level=3"
+          "-C embed-bitcode=yes" # For LTO
+          "-C lto=fat"
         ];
       };
   });
@@ -125,6 +130,8 @@ in {
       ++ [
         "-C target-cpu=skylake"
         "-C opt-level=3"
+        "-C embed-bitcode=yes" # For LTO
+        "-C lto=fat"
       ];
   });
 }

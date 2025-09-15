@@ -46,9 +46,9 @@
           helix-steel
         ])
         ++ (with self.legacyPackages."x86_64-linux".attunedPackages; [
+          custom-linux
+          custom-linux.configfile
           helix-steel
-          linux-llvm
-          linux-llvm.configfile
           niri-stable
           nixd
           rust-analyzer-unwrapped

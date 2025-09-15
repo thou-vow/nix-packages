@@ -1,5 +1,4 @@
 {
-  bash,
   callPackage,
   lib,
   linux,
@@ -16,6 +15,7 @@
   prependConfigValues ? [],
   withLTO ? "",
   appendConfigValues ? [],
+  preferBuiltinsOverModules ? false,
   features ? {},
   verbose ? false,
   ...
@@ -78,7 +78,7 @@
     });
 
   configfile = callPackage ./configfile.nix {
-    inherit linux suffix patches prependConfigValues withLTO appendConfigValues;
+    inherit linux suffix patches prependConfigValues withLTO appendConfigValues preferBuiltinsOverModules;
     stdenv = stdenvLLVM;
   };
 
@@ -114,21 +114,20 @@
   # ```
   configEnv = let
     diff-to-nix = writeShellScriptBin "diff-to-nix" ''
-      #!${bash}
       exec > "prepend-config-values.nix"
 
       echo "["
       while IFS= read -r line; do
         if [[ $line == \#* ]] && [[ $line =~ CONFIG_([A-Za-z0-9_]+) ]]; then
-          name=$${BASH_REMATCH[1]}
+          name=''${BASH_REMATCH[1]}
           echo "  \"$name n\""
         elif [[ $line == *"=y" ]]; then
-          name=$${line#CONFIG_}
-          name=$${name%=y}
+          name=''${line#CONFIG_}
+          name=''${name%=y}
           echo "  \"$name y\""
         elif [[ $line == *"=m" ]]; then
-          name=$${line#CONFIG_}
-          name=$${name%=m}
+          name=''${line#CONFIG_}
+          name=''${name%=m}
           echo "  \"$name m\""
         fi
       done
@@ -143,12 +142,6 @@
           pkg-config
           ncurses
         ]);
-
-      postPatch =
-        prevAttrs.postPatch or ""
-        + ''
-          cp "${linux.configfile}" ".config"
-        '';
 
       dontBuild = true;
       dontInstall = true;
