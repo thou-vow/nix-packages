@@ -8,7 +8,7 @@
   prependConfigValues,
   withLTO,
   appendConfigValues,
-  preferBuiltinsOverModules
+  preferBuiltinsOverModules,
 }: let
   transformConfigValue = raw: let
     split = lib.splitString " " raw;

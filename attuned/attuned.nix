@@ -1,16 +1,15 @@
-inputs: system: let
-  nixpkgs = inputs.nixpkgs.legacyPackages.${system};
-  lib = inputs.nixpkgs.lib;
+inputs: pkgs: let
+  inherit (inputs.nixpkgs) lib;
 
-  self = inputs.self.legacyPackages.${system};
-  chaotic = inputs.chaotic.legacyPackages.${system};
-  niri = inputs.niri.packages.${system};
+  self = inputs.self.legacyPackages.${pkgs.system};
+  chaotic = inputs.chaotic.legacyPackages.${pkgs.system};
+  niri = inputs.niri.packages.${pkgs.system};
 
   concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
   custom-linux = self.custom-linux.override {
     linux = chaotic.linux_cachyos-lts;
-    llvmPackages = nixpkgs.llvmPackages_latest;
+    llvmPackages = pkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
     mArch = "skylake";
@@ -49,6 +48,7 @@ in {
 
       # For containers and waydroid
       "VETH y"
+      "TUN y"
       "NF_NAT y"
       "IP_NF_FILTER y"
       "IP_NF_NAT y"
@@ -79,6 +79,18 @@ in {
       };
   });
 
+  lix = pkgs.lixPackageSets.latest.lix.overrideAttrs (prevAttrs: {
+    mesonBuildType = "release";
+
+    mesonFlags =
+      prevAttrs.mesonFlags
+      ++ [
+        "-Dc_args=-march=skylake"
+        "-Dcxx_args=-march=skylake"
+        "-Drust_args=-Ctarget-cpu=skylake"
+      ];
+  });
+
   niri-stable = niri.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
@@ -90,7 +102,7 @@ in {
   });
 
   nixd =
-    (nixpkgs.nixd.override {inherit (nixpkgs.llvmPackages_latest) stdenv;}).overrideAttrs
+    (pkgs.nixd.override {inherit (pkgs.llvmPackages_latest) stdenv;}).overrideAttrs
     (prevAttrs: {
       env =
         prevAttrs.env or {}
@@ -111,7 +123,7 @@ in {
         };
     });
 
-  rust-analyzer-unwrapped = nixpkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
       // {
