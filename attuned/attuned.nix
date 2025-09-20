@@ -86,7 +86,7 @@ in {
       prevAttrs.mesonFlags
       ++ [
         "-Dc_args=-march=skylake"
-        "-Dcxx_args=-march=skylake"
+        "-Dcpp_args=-march=skylake"
         "-Drust_args=-Ctarget-cpu=skylake"
       ];
   });
