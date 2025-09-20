@@ -15,7 +15,7 @@ inputs: pkgs: {
       src = src.${pkgs.system};
     });
 
-  helix-steel = inputs.helix.packages.${pkgs.system}.helix.overrideAttrs (prevAttrs: {
+  helix-steel = inputs.helix-steel.packages.${pkgs.system}.helix.overrideAttrs (prevAttrs: {
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 }

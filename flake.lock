@@ -37,7 +37,7 @@
         "url": "https://flakehub.com/f/DeterminateSystems/flake-schemas/%3D0.1.5.tar.gz"
       }
     },
-    "helix": {
+    "helix-steel": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2"
@@ -100,7 +100,7 @@
         "type": "github"
       }
     },
-    "niri": {
+    "niri-flake": {
       "inputs": {
         "niri-stable": "niri-stable",
         "niri-unstable": "niri-unstable",
@@ -294,8 +294,8 @@
     "root": {
       "inputs": {
         "chaotic": "chaotic",
-        "helix": "helix",
-        "niri": "niri",
+        "helix-steel": "helix-steel",
+        "niri-flake": "niri-flake",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "systems": "systems",
@@ -326,7 +326,7 @@
     "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
-          "helix",
+          "helix-steel",
           "nixpkgs"
         ]
       },

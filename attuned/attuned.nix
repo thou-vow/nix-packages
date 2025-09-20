@@ -3,7 +3,7 @@ inputs: pkgs: let
 
   self = inputs.self.legacyPackages.${pkgs.system};
   chaotic = inputs.chaotic.legacyPackages.${pkgs.system};
-  niri = inputs.niri.packages.${pkgs.system};
+  niri-flake = inputs.niri-flake.packages.${pkgs.system};
 
   concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
@@ -85,7 +85,6 @@ in {
     mesonFlags =
       prevAttrs.mesonFlags
       ++ [
-        "-Dc_args=-march=skylake"
         "-Dcpp_args=-march=skylake"
         "-Drust_args=-Ctarget-cpu=skylake"
       ];
@@ -93,7 +92,7 @@ in {
     doInstallCheck = false;
   });
 
-  niri-stable = niri.niri-stable.overrideAttrs (prevAttrs: {
+  niri-stable = niri-flake.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
@@ -138,7 +137,7 @@ in {
       };
   });
 
-  xwayland-satellite-stable = niri.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
+  xwayland-satellite-stable = niri-flake.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [

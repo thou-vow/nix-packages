@@ -6,8 +6,8 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    helix.url = "github:mattwparas/helix/steel-event-system";
-    niri.url = "github:sodiboo/niri-flake";
+    helix-steel.url = "github:mattwparas/helix/steel-event-system";
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     systems.url = "github:nix-systems/default";
     treefmt-nix.url = "github:numtide/treefmt-nix";
