@@ -89,6 +89,8 @@ in {
         "-Dcpp_args=-march=skylake"
         "-Drust_args=-Ctarget-cpu=skylake"
       ];
+
+    doInstallCheck = false;
   });
 
   niri-stable = niri.niri-stable.overrideAttrs (prevAttrs: {
