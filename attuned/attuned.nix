@@ -75,7 +75,6 @@ in {
           "-C target-cpu=skylake"
           "-C opt-level=3"
           "-C lto=fat"
-          "-C panic=abort"
         ];
       };
   });
@@ -102,7 +101,6 @@ in {
       ++ [
         "-C lto=fat"
         "-C opt-level=3"
-        "-C panic=abort"
         "-C target-cpu=skylake"
       ];
 
@@ -138,10 +136,9 @@ in {
       prevAttrs.env or {}
       // {
         RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C embed-bitcode=yes" # It's enabled in the original derivation, we need to disable for LTO
+          "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
           "-C lto=fat"
           "-C opt-level=3"
-          "-C panic=abort"
           "-C target-cpu=skylake"
         ];
       };
@@ -151,9 +148,9 @@ in {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
+          "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
           "-C lto=fat"
           "-C opt-level=3"
-          "-C panic=abort"
           "-C target-cpu=skylake"
       ];
   });
