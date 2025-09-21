@@ -65,7 +65,6 @@
             custom-linux.configfile
             helix-steel
             lix
-            mesa
             niri-stable
             nixd
             rust-analyzer-unwrapped
