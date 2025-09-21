@@ -75,7 +75,6 @@ in {
           "-C target-cpu=skylake"
           "-C opt-level=3"
           "-C lto=fat"
-          "-C codegen-units=1"
           "-C panic=abort"
         ];
       };
@@ -101,7 +100,6 @@ in {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
-        "-C codegen-units=1"
         "-C lto=fat"
         "-C opt-level=3"
         "-C panic=abort"
@@ -140,7 +138,6 @@ in {
       prevAttrs.env or {}
       // {
         RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C codegen-units=1"
           "-C embed-bitcode=yes" # It's enabled in the original derivation, we need to disable for LTO
           "-C lto=fat"
           "-C opt-level=3"
@@ -154,7 +151,6 @@ in {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
-          "-C codegen-units=1"
           "-C lto=fat"
           "-C opt-level=3"
           "-C panic=abort"
