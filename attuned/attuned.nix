@@ -16,9 +16,8 @@ in {
     prependConfigValues = import ./kernel-localyesconfig.nix;
     withLTO = "full";
     appendConfigValues = [
-      "NR_CPUS 2"
-
       # Unnecessary stuff uncaught by localyesconfig
+      "NR_CPUS 2"
       "DRM_XE n"
       "EXT4_FS n"
       "CRYPTO_LZO n"
@@ -46,15 +45,7 @@ in {
       "KVM_XEN n"
       "X86_SGX n"
 
-      # For containers and waydroid
-      "VETH y"
-      "TUN y"
-      "NF_NAT y"
-      "IP_NF_FILTER y"
-      "IP_NF_NAT y"
-      "NETFILTER_XT_TARGET_CHECKSUM y"
-      "NETFILTER_XT_TARGET_MASQUERADE y"
-
+      # Not unnecessary but I'm not interested
       "DEBUG_INFO n"
       "DEBUG_INFO_DWARF5 n"
       "SLUB_DEBUG n"
@@ -62,6 +53,19 @@ in {
       "WATCHDOG n"
       "CPU_MITIGATIONS n"
       "FORTIFY_SOURCE n"
+
+      # USB drive
+      "EXFAT_FS y"
+
+      # For containers and waydroid
+      "BRIDGE y"
+      "VETH y"
+      "TUN y"
+      "NF_NAT y"
+      "IP_NF_FILTER y"
+      "IP_NF_NAT y"
+      "NETFILTER_XT_TARGET_CHECKSUM y"
+      "NETFILTER_XT_TARGET_MASQUERADE y"
     ];
     preferBuiltinsOverModules = true;
     inherit (chaotic.linux_cachyos-lts) features;

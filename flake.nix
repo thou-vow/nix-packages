@@ -30,7 +30,8 @@
     nixpkgs,
     ...
   } @ inputs: let
-    eachSystem = f: nixpkgs.lib.genAttrs (import inputs.systems) (system: f nixpkgs.legacyPackages.${system});
+    eachSystem = f: nixpkgs.lib.genAttrs (import inputs.systems) (
+      system: f nixpkgs.legacyPackages.${system});
   in {
     formatter = eachSystem (pkgs:
       inputs.treefmt-nix.lib.mkWrapper pkgs {
