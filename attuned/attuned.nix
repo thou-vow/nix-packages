@@ -71,14 +71,20 @@ in {
     inherit (chaotic.linux_cachyos-lts) features;
   };
 
-  graalvm-oracle_21 = (self.graalvm-oracle_21.override {
-    inherit (pkgs.llvmPackages_latest) stdenv;
-  }).overrideAttrs (prevAttrs: {
-    env.NIX_CFLAGS_COMPILE =
-      concatOptionalString (prevAttrs.env.NIX_CFLAGS_COMPILE or "") ["-O3" "-march=skylake"];
+  graalvm-oracle_21 =
+    (self.graalvm-oracle_21.override {
+      inherit (pkgs.llvmPackages_latest) stdenv;
+    }).overrideAttrs (prevAttrs: {
+      postInstall =
+        prevAttrs.postInstall
+        + ''
+          wrapProgram $out/bin/native-image \
+            --add-flags "-march=skylake" \
+            --add-flags "-O3"
+        '';
 
-    doInstallCheck = false;
-  });
+      doInstallCheck = false;
+    });
 
   helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
     env =
