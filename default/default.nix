@@ -10,7 +10,7 @@ inputs: pkgs: {
       };
     };
   in
-    pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (finalAttrs: {
+    pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
       version = "21";
       src = src.${pkgs.system};
     });

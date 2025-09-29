@@ -62,11 +62,13 @@
       packagesToCache = {
         x86_64-linux = with self.legacyPackages.x86_64-linux;
           [
+            # graalvm-oracle_21
             helix-steel
           ]
           ++ (with attunedPackages; [
             custom-linux
             custom-linux.configfile
+            # graalvm-oracle_21
             helix-steel
             lix
             niri-stable

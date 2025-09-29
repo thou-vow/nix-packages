@@ -71,6 +71,13 @@ in {
     inherit (chaotic.linux_cachyos-lts) features;
   };
 
+  graalvm-oracle_21 = self.graalvm-oracle_21.overrideAttrs (prevAttrs: {
+    env.NIX_CFLAGS_COMPILE =
+      concatOptionalString (prevAttrs.env.NIX_CFLAGS_COMPILE) ["-O3" "-march=skylake"];
+
+    doInstallCheck = false;
+  });
+
   helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
@@ -152,10 +159,10 @@ in {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
-          "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
-          "-C lto=fat"
-          "-C opt-level=3"
-          "-C target-cpu=skylake"
+        "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
+        "-C lto=fat"
+        "-C opt-level=3"
+        "-C target-cpu=skylake"
       ];
   });
 }
