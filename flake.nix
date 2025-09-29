@@ -77,7 +77,6 @@
           ++ (with attunedPackages; [
             custom-linux
             custom-linux.configfile
-            # graalvm-oracle_21
             helix-steel
             lix
             niri-stable

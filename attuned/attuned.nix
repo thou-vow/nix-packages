@@ -71,21 +71,6 @@ in {
     inherit (chaotic.linux_cachyos-lts) features;
   };
 
-  graalvm-oracle_21 =
-    (self.graalvm-oracle_21.override {
-      inherit (pkgs.llvmPackages_latest) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      postInstall =
-        prevAttrs.postInstall
-        + ''
-          wrapProgram $out/bin/native-image \
-            --add-flags "-march=skylake" \
-            --add-flags "-O3"
-        '';
-
-      doInstallCheck = false;
-    });
-
   helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env or {}
