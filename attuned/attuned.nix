@@ -73,7 +73,7 @@ in {
 
   graalvm-oracle_21 = self.graalvm-oracle_21.overrideAttrs (prevAttrs: {
     env.NIX_CFLAGS_COMPILE =
-      concatOptionalString (prevAttrs.env.NIX_CFLAGS_COMPILE) ["-O3" "-march=skylake"];
+      concatOptionalString (prevAttrs.env.NIX_CFLAGS_COMPILE or "") ["-O3" "-march=skylake"];
 
     doInstallCheck = false;
   });
