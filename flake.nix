@@ -30,8 +30,17 @@
     nixpkgs,
     ...
   } @ inputs: let
-    eachSystem = f: nixpkgs.lib.genAttrs (import inputs.systems) (
-      system: f nixpkgs.legacyPackages.${system});
+    systems = import inputs.systems;
+    
+    # I need to allow unfree here to be able to use graalvm on my nix-config flake...
+    eachPkgs = nixpkgs.lib.genAttrs systems (system: import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    });
+
+    eachSystem = f:
+      nixpkgs.lib.genAttrs systems
+      (system: f eachPkgs.${system});
   in {
     formatter = eachSystem (pkgs:
       inputs.treefmt-nix.lib.mkWrapper pkgs {
