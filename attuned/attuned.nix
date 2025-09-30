@@ -19,7 +19,6 @@ in {
       # Unnecessary stuff uncaught by localyesconfig
       "NR_CPUS 2"
       "DRM_XE n"
-      "EXT4_FS n"
       "CRYPTO_LZO n"
       "LDM_PARTITION n"
       "KARMA_PARTITION n"
@@ -58,6 +57,7 @@ in {
       "EXFAT_FS y"
 
       # For containers and waydroid
+      "EXT4_FS y"
       "BRIDGE y"
       "VETH y"
       "TUN y"
@@ -116,23 +116,13 @@ in {
       inherit (pkgs.llvmPackages_latest) stdenv;
     }).overrideAttrs
     (prevAttrs: {
-      env =
-        prevAttrs.env or {}
-        // {
-          CFLAGS = concatOptionalString (prevAttrs.env.CFLAGS or "") [
-            "-O3"
-            "-march=skylake"
-            "-flto"
-          ];
-          CXXFLAGS = concatOptionalString (prevAttrs.env.CXXFLAGS or "") [
-            "-O3"
-            "-march=skylake"
-            "-flto"
-          ];
-          LDFLAGS = concatOptionalString (prevAttrs.env.LDFLAGS or "") [
-            "-flto"
-          ];
-        };
+      mesonFlags =
+        prevAttrs.mesonFlags
+        ++ [
+          (lib.mesonBool "b_lto" true)
+          (lib.mesonOption "cpp_args" "-march=skylake")
+          (lib.mesonOption "rust_args" "-Ctarget-cpu=skylake")
+        ];
     });
 
   rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
