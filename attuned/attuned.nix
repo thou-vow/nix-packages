@@ -117,7 +117,7 @@ in {
     }).overrideAttrs
     (prevAttrs: {
       mesonFlags =
-        prevAttrs.mesonFlags
+        prevAttrs.mesonFlags or []
         ++ [
           (lib.mesonBool "b_lto" true)
           (lib.mesonOption "cpp_args" "-march=skylake")
