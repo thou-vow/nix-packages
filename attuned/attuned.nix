@@ -99,6 +99,40 @@ in {
       doInstallCheck = false;
     });
 
+  mesa =
+    (pkgs.mesa.override {
+      inherit (pkgs.llvmPackages) stdenv;
+      galliumDrivers = ["iris" "llvmpipe"];
+      vulkanDrivers = ["intel"];
+      withValgrind = false;
+    }).overrideAttrs (prevAttrs: {
+      mesonBuildType = "release";
+
+      mesonFlags =
+        prevAttrs.mesonFlags
+        ++ [
+          # (lib.mesonBool "b_lto" true)
+          (lib.mesonOption "c_args" "-march=skylake")
+          (lib.mesonOption "cpp_args" "-march=skylake")
+
+          # Unnecessary stuff
+          (lib.mesonBool "gallium-rusticl" false)
+          (lib.mesonBool "teflon" false)
+          (lib.mesonBool "gallium-extra-hud" false)
+          (lib.mesonEnable "intel-rt" false)
+          (lib.mesonOption "tools" "")
+
+          # Required drivers aren't enabled for these
+          (lib.mesonEnable "gallium-vdpau" false)
+          (lib.mesonEnable "gallium-va" false)
+        ];
+
+        outputs = ["out"];
+
+        postInstall = "";
+    });
+
+    
   niri-stable = niri-flake.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
