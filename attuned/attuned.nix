@@ -104,8 +104,13 @@ in {
       inherit (pkgs.llvmPackages) stdenv;
       galliumDrivers = ["iris" "llvmpipe"];
       vulkanDrivers = ["intel"];
+      vulkanLayers = ["overlay"];
       withValgrind = false;
     }).overrideAttrs (prevAttrs: {
+      depsBuildBuild = lib.remove pkgs.buildPackages.stdenv.cc prevAttrs.depsBuildBuild ++ [
+        pkgs.buildPackages.llvmPackages.clang
+      ];
+
       mesonBuildType = "release";
 
       mesonFlags =
@@ -116,23 +121,24 @@ in {
           (lib.mesonOption "cpp_args" "-march=skylake")
 
           # Unnecessary stuff
-          (lib.mesonBool "gallium-rusticl" false)
           (lib.mesonBool "teflon" false)
           (lib.mesonBool "gallium-extra-hud" false)
+          (lib.mesonBool "gallium-rusticl" false)
           (lib.mesonEnable "intel-rt" false)
           (lib.mesonOption "tools" "")
+          (lib.mesonBool "install-mesa-clc" false)
+          (lib.mesonBool "install-precomp-compiler" false)
 
-          # Required drivers aren't enabled for these
+          # Can't be enabled because required drivers are missing
           (lib.mesonEnable "gallium-vdpau" false)
           (lib.mesonEnable "gallium-va" false)
         ];
 
-        outputs = ["out"];
+      outputs = ["out"];
 
-        postInstall = "";
+      postInstall = "";
     });
 
-    
   niri-stable = niri-flake.niri-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
