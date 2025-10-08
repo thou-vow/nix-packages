@@ -103,15 +103,15 @@
     };
   };
 
-  # You can generate values to pass to prependConfigValues following these steps:
-  # ```
-  # nix develop /etc/nixos#nixosConfigurations.nixos.boot.kernelPackages.kernel.configEnv
-  # unpackPhase
-  # cd $sourceRoot
-  # patchPhase
-  # make LLVM=1 LLVM_IAS=1 localyesconfig
-  # scripts/diffconfig -m | diff-to-nix
-  # ```
+  # To generate values for prependConfigValues, you should run your chosen base kernel
+  # Then modify your boot.kernelPackages with your appropriate custom-linux (except for prependConfigValues)
+  # Then run these commands:
+  #  nix develop /etc/nixos#nixosConfigurations.nixos.boot.kernelPackages.kernel.configEnv
+  #  unpackPhase
+  #  cd $sourceRoot
+  #  patchPhase
+  #  make LLVM=1 LLVM_IAS=1 localyesconfig
+  #  scripts/diffconfig -m | diff-to-nix
   configEnv = let
     diff-to-nix = writeShellScriptBin "diff-to-nix" ''
       exec > "prepend-config-values.nix"
