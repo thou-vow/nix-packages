@@ -13,7 +13,10 @@
     niri-flake.url = "github:sodiboo/niri-flake";
 
     systems.url = "github:nix-systems/default";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -31,12 +34,13 @@
     ...
   } @ inputs: let
     systems = import inputs.systems;
-    
+
     # I need to allow unfree here to be able to use graalvm on my nix-config flake...
-    eachPkgs = nixpkgs.lib.genAttrs systems (system: import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    });
+    eachPkgs = nixpkgs.lib.genAttrs systems (system:
+      import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
 
     eachSystem = f:
       nixpkgs.lib.genAttrs systems

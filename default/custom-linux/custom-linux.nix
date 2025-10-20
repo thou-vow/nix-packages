@@ -20,14 +20,13 @@
   verbose ? false,
   ...
 }: let
-  stdenvLLVM = let
+  stdenv = let
     noBintools = {
       bootBintools = null;
       bootBintoolsNoLibc = null;
     };
     hostLLVM = llvmPackages.override noBintools;
     buildLLVM = llvmPackages.override noBintools;
-
     mkLLVMPlatform = platform:
       platform
       // {
@@ -65,7 +64,6 @@
               ]);
           };
       };
-
     stdenv' = overrideCC hostLLVM.stdenv hostLLVM.clangUseLLVM;
   in
     stdenv'.override (old: {
@@ -78,13 +76,12 @@
     });
 
   configfile = callPackage ./configfile.nix {
-    inherit linux suffix patches prependConfigValues withLTO appendConfigValues preferBuiltinsOverModules;
-    stdenv = stdenvLLVM;
+    inherit linux suffix patches prependConfigValues withLTO appendConfigValues preferBuiltinsOverModules stdenv;
   };
 
   kernel = linuxManualConfig {
     inherit (linux) src version;
-    inherit configfile features;
+    inherit configfile features stdenv;
     modDirVersion = "${linux.version}-${suffix}";
 
     kernelPatches =
@@ -95,11 +92,9 @@
         })
         patches);
 
-    stdenv = stdenvLLVM;
-
     extraMeta = {
       description = "Easily-customizable Linux built with LLVM";
-      broken = !stdenvLLVM.isx86_64;
+      broken = !stdenv.isx86_64;
     };
   };
 

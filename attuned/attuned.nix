@@ -101,15 +101,14 @@ in {
 
   mesa =
     (pkgs.mesa.override {
-      inherit (pkgs.llvmPackages) stdenv;
       galliumDrivers = ["iris" "llvmpipe"];
       vulkanDrivers = ["intel"];
       vulkanLayers = ["overlay"];
       withValgrind = false;
     }).overrideAttrs (prevAttrs: {
-      depsBuildBuild = lib.remove pkgs.buildPackages.stdenv.cc prevAttrs.depsBuildBuild ++ [
-        pkgs.buildPackages.llvmPackages.clang
-      ];
+      depsBuildBuild =
+        lib.remove pkgs.buildPackages.stdenv.cc prevAttrs.depsBuildBuild
+        ++ [pkgs.buildPackages.llvmPackages.clang];
 
       mesonBuildType = "release";
 
