@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1762036128,
-        "narHash": "sha256-0VgVPYq5upSXc+LSn3ubxJhH+DLdakYW4QXeabo0Ivg=",
+        "lastModified": 1762142233,
+        "narHash": "sha256-iaCwRAWud6hcy6piBAiU9t8swmyAGVmucHnTjcPe6IM=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "499783c86e6e9436534d1a23b35da98c7f6af3f4",
+        "rev": "3a26d7cf3b5d8083fc7c406e8aed4251e364c48f",
         "type": "github"
       },
       "original": {
@@ -112,11 +112,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1762112996,
-        "narHash": "sha256-hDYJWcxcYrpCJ9Lxva9B+pAlhGJgwbr2e0guoQQfMoc=",
+        "lastModified": 1762152856,
+        "narHash": "sha256-U3SDbk7tIwLChpvb3FL66o8V0byaQ2RGMiy/3oLdxTI=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "bf4782cf43600a4bf14269ee28a7daae962b054b",
+        "rev": "df17789929ac80f4157b15724450db6a303a6dc9",
         "type": "github"
       },
       "original": {
@@ -145,11 +145,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1761888958,
-        "narHash": "sha256-YgArUHI81Esn6fOCwVSrMI2G4RI3f3BPbRbPWsJubAc=",
+        "lastModified": 1762146685,
+        "narHash": "sha256-anRlNG6t7esBbF1+ALDeathVBSclA0PEL52Vo0WnN5g=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "e2576879216a39e5c45b9d2906531bc2065e724c",
+        "rev": "a2ca2b3c866bc781b12c334a9f949b3db6d7c943",
         "type": "github"
       },
       "original": {
