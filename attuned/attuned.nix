@@ -4,8 +4,6 @@ inputs: pkgs: let
   self = inputs.self.legacyPackages.${pkgs.system};
   chaotic = inputs.chaotic.legacyPackages.${pkgs.system};
   niri-flake = inputs.niri-flake.packages.${pkgs.system};
-
-  concatOptionalString = optional: others: lib.concatStringsSep " " (lib.optional (optional != "") optional ++ others);
 in {
   custom-linux = self.custom-linux.override {
     linux = chaotic.linux_cachyos-lts;
@@ -72,15 +70,13 @@ in {
   };
 
   helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C target-cpu=skylake"
-          "-C opt-level=3"
-          "-C lto=fat"
-        ];
-      };
+    RUSTFLAGS =
+      prevAttrs.RUSTFLAGS or []
+      ++ [
+        "-C target-cpu=skylake"
+        "-C opt-level=3"
+        "-C lto=fat"
+      ];
   });
 
   lix =
@@ -165,23 +161,21 @@ in {
     });
 
   rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS = concatOptionalString (prevAttrs.env.RUSTFLAGS or "") [
-          "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
-          "-C lto=fat"
-          "-C opt-level=3"
-          "-C target-cpu=skylake"
-        ];
-      };
+    RUSTFLAGS =
+      prevAttrs.RUSTFLAGS or []
+      ++ [
+        "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
+        "-C lto=fat"
+        "-C opt-level=3"
+        "-C target-cpu=skylake"
+      ];
   });
 
   xwayland-satellite-stable = niri-flake.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
     RUSTFLAGS =
       prevAttrs.RUSTFLAGS or []
       ++ [
-        "-C embed-bitcode=yes" # It's enabled for some reason, we need to disable for LTO
+        "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
         "-C lto=fat"
         "-C opt-level=3"
         "-C target-cpu=skylake"

@@ -24,12 +24,11 @@ inputs: pkgs: {
     vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
   });
 
-  # nixpkgs only has 17 and 23.
   graalvm-oracle_21 = let
     src = {
       "x86_64-linux" = pkgs.fetchurl {
-        hash = "sha256-yANbPObkXxSBdSxrOBU7tKU+60d8U0XVvsXKRO0YoFY=";
-        url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.8_linux-x64_bin.tar.gz";
+        url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.9_linux-x64_bin.tar.gz";
+        hash = "sha256-cLTSX7sxHZiLhsm2HleAKouWfbYW7mFyMMMYEnbkH3E=";
       };
     };
   in
