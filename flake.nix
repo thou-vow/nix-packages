@@ -75,6 +75,7 @@
       packagesToCache = {
         x86_64-linux = with self.legacyPackages.x86_64-linux;
           [
+            discord-rpc-lsp
             helix-steel
           ]
           ++ (with attunedPackages; [

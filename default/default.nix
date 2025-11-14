@@ -8,7 +8,7 @@ inputs: pkgs: {
     src = pkgs.fetchFromGitHub {
       owner = "zerootoad";
       repo = "discord-rpc-lsp";
-      tag = "v${finalAttrs.version}";
+      tag = finalAttrs.version;
       hash = "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=";
     };
 
