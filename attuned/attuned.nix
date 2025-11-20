@@ -1,9 +1,9 @@
 inputs: pkgs: let
   inherit (inputs.nixpkgs) lib;
 
-  self = inputs.self.legacyPackages.${pkgs.system};
-  chaotic = inputs.chaotic.legacyPackages.${pkgs.system};
-  niri-flake = inputs.niri-flake.packages.${pkgs.system};
+  self = inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  chaotic = inputs.chaotic.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  niri-flake = inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   custom-linux = self.custom-linux.override {
     linux = chaotic.linux_cachyos-lts;
@@ -125,7 +125,6 @@ in {
           (lib.mesonBool "install-precomp-compiler" false)
 
           # Can't be enabled because required drivers are missing
-          (lib.mesonEnable "gallium-vdpau" false)
           (lib.mesonEnable "gallium-va" false)
         ];
 

@@ -24,20 +24,26 @@ inputs: pkgs: {
     vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
   });
 
-  graalvm-oracle_21 = let
+  graalvm-ce_8 = let
     src = {
-      "x86_64-linux" = pkgs.fetchurl {
-        url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.9_linux-x64_bin.tar.gz";
-        hash = "sha256-cLTSX7sxHZiLhsm2HleAKouWfbYW7mFyMMMYEnbkH3E=";
+      "x86_64-linux" = {
       };
     };
   in
-    pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
-      version = "21";
-      src = src.${pkgs.system};
-    });
+    pkgs.graalvmPackages.graalvm-ce.overrideAttrs;
 
-  helix-steel = inputs.helix-steel.packages.${pkgs.system}.helix.overrideAttrs (prevAttrs: {
+  graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
+    version = "21";
+    src =
+      {
+        "x86_64-linux" = pkgs.fetchurl {
+          url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.9_linux-x64_bin.tar.gz";
+          hash = "sha256-cLTSX7sxHZiLhsm2HleAKouWfbYW7mFyMMMYEnbkH3E=";
+        };
+      }.${pkgs.stdenv.hostPlatform.system};
+  });
+
+  helix-steel = inputs.helix-steel.packages.${pkgs.stdenv.hostPlatform.system}.helix.overrideAttrs (prevAttrs: {
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 }
