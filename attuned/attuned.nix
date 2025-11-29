@@ -70,13 +70,17 @@ in {
   };
 
   helix-steel = self.helix-steel.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C target-cpu=skylake"
-        "-C opt-level=3"
-        "-C lto=fat"
-      ];
+    env =
+      prevAttrs.env
+      // {
+        RUSTFLAGS =
+          prevAttrs.env.RUSTFLAGS or ""
+          + builtins.toString [
+            "-C target-cpu=skylake"
+            "-C opt-level=3"
+            "-C lto=fat"
+          ];
+      };
   });
 
   lix =
@@ -134,13 +138,17 @@ in {
     });
 
   niri-stable = niri-flake.niri-stable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C lto=fat"
-        "-C opt-level=3"
-        "-C target-cpu=skylake"
-      ];
+    env =
+      prevAttrs.env
+      // {
+        RUSTFLAGS =
+          prevAttrs.env.RUSTFLAGS or ""
+          + builtins.toString [
+            "-C lto=fat"
+            "-C opt-level=3"
+            "-C target-cpu=skylake"
+          ];
+      };
 
     doCheck = false;
   });
@@ -160,24 +168,32 @@ in {
     });
 
   rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
-        "-C lto=fat"
-        "-C opt-level=3"
-        "-C target-cpu=skylake"
-      ];
+    env =
+      prevAttrs.env
+      // {
+        RUSTFLAGS =
+          prevAttrs.env.RUSTFLAGS or ""
+          + builtins.toString [
+            "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
+            "-C lto=fat"
+            "-C opt-level=3"
+            "-C target-cpu=skylake"
+          ];
+      };
   });
 
   xwayland-satellite-stable = niri-flake.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
-    RUSTFLAGS =
-      prevAttrs.RUSTFLAGS or []
-      ++ [
-        "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
-        "-C lto=fat"
-        "-C opt-level=3"
-        "-C target-cpu=skylake"
-      ];
+    env =
+      prevAttrs.env
+      // {
+        RUSTFLAGS =
+          prevAttrs.env.RUSTFLAGS or ""
+          + builtins.toString [
+            "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
+            "-C lto=fat"
+            "-C opt-level=3"
+            "-C target-cpu=skylake"
+          ];
+      };
   });
 }
