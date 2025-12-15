@@ -79,8 +79,8 @@
             helix-steel
           ]
           ++ (with attunedPackages; [
-            # custom-linux
-            # custom-linux.configfile
+            custom-linux
+            custom-linux.configfile
             helix-steel
             lix
             mesa

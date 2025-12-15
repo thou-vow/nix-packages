@@ -6,7 +6,7 @@ inputs: pkgs: let
   niri-flake = inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   custom-linux = self.custom-linux.override {
-    linux = chaotic.linux_cachyos-lts;
+    linux = chaotic.linux_cachyos-lto;
     llvmPackages = pkgs.llvmPackages_latest;
     suffix = "attuned";
     useO3 = true;
