@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic.url = "github:lonerOrz/nyx-loner";
     helix-steel = {
       url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,8 +79,8 @@
             helix-steel
           ]
           ++ (with attunedPackages; [
-            custom-linux
-            custom-linux.configfile
+            # custom-linux
+            # custom-linux.configfile
             helix-steel
             lix
             mesa

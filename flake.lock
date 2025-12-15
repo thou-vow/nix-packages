@@ -9,17 +9,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1765204341,
-        "narHash": "sha256-7xd45skcuLCu2DHxVvU+W/z+7CUOjyv+QPtT4PLZaIU=",
-        "owner": "chaotic-cx",
-        "repo": "nyx",
-        "rev": "aacb796ccd42be1555196c20013b9b674b71df75",
+        "lastModified": 1765755974,
+        "narHash": "sha256-o2X//wTBu4Wz9g39YP9Yt3kW+QK1Ysw1xBxW6Bq6KBM=",
+        "owner": "lonerOrz",
+        "repo": "nyx-loner",
+        "rev": "e64e5ed34d3a950968faaade3cc7ea1f99144b9c",
         "type": "github"
       },
       "original": {
-        "owner": "chaotic-cx",
-        "ref": "nyxpkgs-unstable",
-        "repo": "nyx",
+        "owner": "lonerOrz",
+        "repo": "nyx-loner",
         "type": "github"
       }
     },
