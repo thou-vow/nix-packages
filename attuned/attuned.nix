@@ -143,8 +143,7 @@ in {
       prevAttrs.env
       // {
         RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS
-          + lib.optionalString (prevAttrs.env.RUSTFLAGS != "") " "
+          lib.optionalString (prevAttrs.env.RUSTFLAGS != "") "${prevAttrs.env.RUSTFLAGS} "
           + builtins.toString [
             "-C lto=fat"
             "-C opt-level=3"
@@ -174,8 +173,7 @@ in {
       prevAttrs.env
       // {
         RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS
-          + lib.optionalString (prevAttrs.env.RUSTFLAGS != "") " "
+          lib.optionalString (prevAttrs.env.RUSTFLAGS != "") "${prevAttrs.env.RUSTFLAGS} "
           + builtins.toString [
             "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
             "-C lto=fat"
@@ -190,8 +188,7 @@ in {
       prevAttrs.env
       // {
         RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS
-          + lib.optionalString (prevAttrs.env.RUSTFLAGS != "") " "
+          lib.optionalString (prevAttrs.env.RUSTFLAGS != "") "${prevAttrs.env.RUSTFLAGS} "
           + builtins.toString [
             "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
             "-C lto=fat"
