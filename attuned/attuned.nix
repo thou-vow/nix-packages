@@ -74,8 +74,7 @@ in {
       prevAttrs.env
       // {
         RUSTFLAGS =
-          prevAttrs.env.RUSTFLAGS
-          + lib.optionalString (prevAttrs.env.RUSTFLAGS != "") " "
+          lib.optionalString (prevAttrs.env.RUSTFLAGS != "") "${prevAttrs.env.RUSTFLAGS} "
           + builtins.toString [
             "-C target-cpu=skylake"
             "-C opt-level=3"
