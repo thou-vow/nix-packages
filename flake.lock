@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1767670606,
-        "narHash": "sha256-i8KGhmHVPJzVDtbdmvTDbIHu5kKzqJoTKKnpZvpYCAc=",
+        "lastModified": 1767672848,
+        "narHash": "sha256-OWtpzgP81NochwAYArdYUIERdf+NsKPqseRjsjp9G7o=",
         "owner": "lonerOrz",
         "repo": "nyx-loner",
-        "rev": "08114612edd7a9cc1ec72ec1a99d3ad776f51967",
+        "rev": "b2e952b666e70b0d8677446047ee29ed813c1586",
         "type": "github"
       },
       "original": {
