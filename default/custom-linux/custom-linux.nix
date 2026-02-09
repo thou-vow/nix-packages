@@ -86,8 +86,8 @@
 
     kernelPatches =
       linux.kernelPatches
-      ++ (builtins.map (file: {
-          name = builtins.baseNameOf file;
+      ++ (map (file: {
+          name = baseNameOf file;
           patch = file;
         })
         patches);

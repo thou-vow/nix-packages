@@ -84,17 +84,17 @@
             helix-steel
             lix
             mesa
-            niri-stable
+            niri-unstable
             nixd
             rust-analyzer-unwrapped
-            xwayland-satellite-stable
+            xwayland-satellite-unstable
           ]);
       };
 
       # nix-fast-build only support sets, but we have duplicated names on the list...
       derivationListToAttrs = list:
         builtins.listToAttrs (nixpkgs.lib.imap0 (i: drv: {
-            name = "${drv.name}-${builtins.toString i}";
+            name = "${drv.name}-${toString i}";
             value = drv;
           })
           list);

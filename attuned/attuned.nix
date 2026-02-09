@@ -75,7 +75,7 @@ in {
       // {
         RUSTFLAGS =
           lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-          + builtins.toString [
+          + toString [
             "-C target-cpu=skylake"
             "-C opt-level=3"
             "-C lto=fat"
@@ -137,13 +137,13 @@ in {
       postInstall = "";
     });
 
-  niri-stable = niri-flake.niri-stable.overrideAttrs (prevAttrs: {
+  niri-unstable = niri-flake.niri-unstable.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
         RUSTFLAGS =
           lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-          + builtins.toString [
+          + toString [
             "-C lto=fat"
             "-C opt-level=3"
             "-C target-cpu=skylake"
@@ -173,7 +173,7 @@ in {
       // {
         RUSTFLAGS =
           lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-          + builtins.toString [
+          + toString [
             "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
             "-C lto=fat"
             "-C opt-level=3"
@@ -182,13 +182,13 @@ in {
       };
   });
 
-  xwayland-satellite-stable = niri-flake.xwayland-satellite-stable.overrideAttrs (prevAttrs: {
+  xwayland-satellite-unstable = niri-flake.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
         RUSTFLAGS =
           lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-          + builtins.toString [
+          + toString [
             "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
             "-C lto=fat"
             "-C opt-level=3"

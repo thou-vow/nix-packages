@@ -24,13 +24,13 @@ inputs: pkgs: {
     vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
   });
 
-  graalvm-ce_8 = let
-    src = {
-      "x86_64-linux" = {
-      };
-    };
-  in
-    pkgs.graalvmPackages.graalvm-ce.overrideAttrs;
+  # graalvm-ce_8 = let
+  #   src = {
+  #     "x86_64-linux" = {
+  #     };
+  #   };
+  # in
+  #   pkgs.graalvmPackages.graalvm-ce.overrideAttrs;
 
   graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
     version = "21";

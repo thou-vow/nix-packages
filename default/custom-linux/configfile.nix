@@ -50,7 +50,7 @@ in
     inherit (linux) src;
     name = "linux-${lib.optionalString (suffix != "") "${suffix}-"}config";
 
-    patches = (builtins.map (kernelPatch: kernelPatch.patch) linux.kernelPatches) ++ patches;
+    patches = (map (kernelPatch: kernelPatch.patch) linux.kernelPatches) ++ patches;
 
     postPatch = ''
       cp ${linux.configfile} .config
