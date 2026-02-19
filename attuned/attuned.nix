@@ -122,7 +122,7 @@ in {
           # Unnecessary stuff
           (lib.mesonBool "teflon" false)
           (lib.mesonBool "gallium-extra-hud" false)
-          (lib.mesonBool "gallium-rusticl" false)
+          # (lib.mesonBool "gallium-rusticl" false)
           (lib.mesonEnable "intel-rt" false)
           (lib.mesonOption "tools" "")
           (lib.mesonBool "install-mesa-clc" false)
