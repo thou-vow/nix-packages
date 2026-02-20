@@ -120,16 +120,16 @@ in {
           (lib.mesonOption "cpp_args" "-march=skylake")
 
           # Unnecessary stuff
-          (lib.mesonBool "teflon" false)
-          (lib.mesonBool "gallium-extra-hud" false)
+          # (lib.mesonBool "teflon" false)
+          # (lib.mesonBool "gallium-extra-hud" false)
           # (lib.mesonBool "gallium-rusticl" false)
-          (lib.mesonEnable "intel-rt" false)
-          (lib.mesonOption "tools" "")
-          (lib.mesonBool "install-mesa-clc" false)
-          (lib.mesonBool "install-precomp-compiler" false)
+          # (lib.mesonEnable "intel-rt" false)
+          # (lib.mesonOption "tools" "")
+          # (lib.mesonBool "install-mesa-clc" false)
+          # (lib.mesonBool "install-precomp-compiler" false)
 
           # Can't be enabled because required drivers are missing
-          (lib.mesonEnable "gallium-va" false)
+          # (lib.mesonEnable "gallium-va" false)
         ];
 
       outputs = ["out"];
