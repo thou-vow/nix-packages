@@ -129,7 +129,7 @@ in {
           # (lib.mesonBool "install-precomp-compiler" false)
 
           # Can't be enabled because required drivers are missing
-          # (lib.mesonEnable "gallium-va" false)
+          (lib.mesonEnable "gallium-va" false)
         ];
 
       outputs = ["out"];
