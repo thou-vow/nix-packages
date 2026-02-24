@@ -83,22 +83,6 @@ in {
       };
   });
 
-  lix =
-    (pkgs.lixPackageSets.latest.lix.override {
-      inherit (pkgs.llvmPackages_latest) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      mesonBuildType = "release";
-
-      mesonFlags =
-        prevAttrs.mesonFlags
-        ++ [
-          (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonOption "rust_args" "-Ctarget-cpu=skylake")
-        ];
-
-      doInstallCheck = false;
-    });
-
   mesa =
     (pkgs.mesa.override {
       galliumDrivers = ["iris"];

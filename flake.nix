@@ -2,8 +2,8 @@
   description = "Cached nix packages for thou";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
+    nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     chaotic.url = "github:lonerOrz/nyx-loner";
     helix-steel = {
@@ -82,7 +82,6 @@
             custom-linux
             custom-linux.configfile
             helix-steel
-            lix
             mesa
             niri-unstable
             nixd
