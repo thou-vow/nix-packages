@@ -6,6 +6,9 @@
     nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     chaotic.url = "github:lonerOrz/nyx-loner";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    determinate-nix.follows = "determinate/nix";
+    determinate-nix-eval-jobs.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     helix-steel = {
       url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,6 +78,7 @@
       packagesToCache = {
         x86_64-linux = with self.legacyPackages.x86_64-linux;
           [
+            determinate-nix-direnv
             discord-rpc-lsp
             helix-steel
           ]

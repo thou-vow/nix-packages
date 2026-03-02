@@ -1,6 +1,10 @@
 inputs: pkgs: {
   custom-linux = pkgs.callPackage ./custom-linux/custom-linux.nix {};
 
+  determinate-nix-direnv = pkgs.nix-direnv.override {
+    nix = inputs.determinate-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  };
+
   discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
     pname = "discord-rpc-lsp";
     version = "1.0.1";
