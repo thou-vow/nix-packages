@@ -5,7 +5,12 @@
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
-    chaotic.url = "github:lonerOrz/nyx-loner";
+    systems.url = "github:nix-systems/default";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     determinate-nix.follows = "determinate/nix";
     determinate-nix-eval-jobs.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
@@ -14,20 +19,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-flake.url = "github:sodiboo/niri-flake";
-
-    systems.url = "github:nix-systems/default";
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nix-gaming-edge.url = "github:powerofthe69/nix-gaming-edge";
   };
 
   nixConfig = {
     extra-substituters = [
       "https://thou-vow.cachix.org"
+      "https://install.determinate.systems"
     ];
     extra-trusted-public-keys = [
       "thou-vow.cachix.org-1:n6zUvWYOI7kh0jgd+ghWhxeMd9tVdYF2KdOvufJ/Qy4="
+      "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
     ];
   };
 
@@ -83,8 +86,8 @@
             helix-steel
           ]
           ++ (with attunedPackages; [
-            custom-linux
-            custom-linux.configfile
+            # custom-linux
+            # custom-linux.configfile
             helix-steel
             mesa
             niri-unstable
