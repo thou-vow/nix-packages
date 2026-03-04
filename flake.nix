@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-flake.url = "github:sodiboo/niri-flake";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-gaming-edge.url = "github:powerofthe69/nix-gaming-edge";
   };
 
