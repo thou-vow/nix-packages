@@ -97,7 +97,7 @@
         "rev": "b0833008a670c5d1ad2d1afbd711c1bf101f5296",
         "revCount": 405,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.16.3/019c8e19-e7a4-7fe4-ad79-b4b5feefd24a/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.16.3/019c8e19-e7a4-7fe4-ad79-b4b5feefd24a/source.tar.gz?rev=b0833008a670c5d1ad2d1afbd711c1bf101f5296&revCount=405"
       },
       "original": {
         "type": "tarball",
@@ -118,7 +118,7 @@
         "rev": "b0833008a670c5d1ad2d1afbd711c1bf101f5296",
         "revCount": 405,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.16.3/019c8e19-e7a4-7fe4-ad79-b4b5feefd24a/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.16.3/019c8e19-e7a4-7fe4-ad79-b4b5feefd24a/source.tar.gz?rev=b0833008a670c5d1ad2d1afbd711c1bf101f5296&revCount=405"
       },
       "original": {
         "type": "tarball",
@@ -844,7 +844,7 @@
         "rev": "c581273b8d5bdf1c6ce7e0a54da9841e6a763913",
         "revCount": 908647,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.2511.908647%2Brev-c581273b8d5bdf1c6ce7e0a54da9841e6a763913/019cb23f-495a-7fa1-9920-5c9f25eb4598/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.2511.908647%2Brev-c581273b8d5bdf1c6ce7e0a54da9841e6a763913/019cb23f-495a-7fa1-9920-5c9f25eb4598/source.tar.gz?rev=c581273b8d5bdf1c6ce7e0a54da9841e6a763913&revCount=908647"
       },
       "original": {
         "type": "tarball",
@@ -948,7 +948,7 @@
         "rev": "8c809a146a140c5c8806f13399592dbcb1bb5dc4",
         "revCount": 957538,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.1.957538%2Brev-8c809a146a140c5c8806f13399592dbcb1bb5dc4/019cb563-81c1-72cf-aec2-46679a968011/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.1.957538%2Brev-8c809a146a140c5c8806f13399592dbcb1bb5dc4/019cb563-81c1-72cf-aec2-46679a968011/source.tar.gz?rev=8c809a146a140c5c8806f13399592dbcb1bb5dc4&revCount=957538"
       },
       "original": {
         "type": "tarball",
