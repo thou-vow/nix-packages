@@ -598,11 +598,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1772631301,
-        "narHash": "sha256-wAHeBX+aSiA+cAlWtwe5NisjMfrJq6WxrtT+CE7/tFM=",
+        "lastModified": 1772698812,
+        "narHash": "sha256-7+K/VaZ7TXUeUGSYshg8wC3UsRZHB+M4x6r38Q1B79c=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "110e61e49828860499ead8bc539470f1261896ae",
+        "rev": "5641625ef950f024e3e0e3f38bb91f876290c0be",
         "type": "github"
       },
       "original": {
@@ -895,11 +895,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1772542754,
-        "narHash": "sha256-WGV2hy+VIeQsYXpsLjdr4GvHv5eECMISX1zKLTedhdg=",
+        "lastModified": 1772624091,
+        "narHash": "sha256-QKyJ0QGWBn6r0invrMAK8dmJoBYWoOWy7lN+UHzW1jc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8c809a146a140c5c8806f13399592dbcb1bb5dc4",
+        "rev": "80bdc1e5ce51f56b19791b52b2901187931f5353",
         "type": "github"
       },
       "original": {
@@ -943,12 +943,12 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1772542754,
-        "narHash": "sha256-WGV2hy+VIeQsYXpsLjdr4GvHv5eECMISX1zKLTedhdg=",
-        "rev": "8c809a146a140c5c8806f13399592dbcb1bb5dc4",
-        "revCount": 957538,
+        "lastModified": 1772624091,
+        "narHash": "sha256-QKyJ0QGWBn6r0invrMAK8dmJoBYWoOWy7lN+UHzW1jc=",
+        "rev": "80bdc1e5ce51f56b19791b52b2901187931f5353",
+        "revCount": 958232,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.1.957538%2Brev-8c809a146a140c5c8806f13399592dbcb1bb5dc4/019cb563-81c1-72cf-aec2-46679a968011/source.tar.gz?rev=8c809a146a140c5c8806f13399592dbcb1bb5dc4&revCount=957538"
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.1.958232%2Brev-80bdc1e5ce51f56b19791b52b2901187931f5353/019cbcff-0413-7b59-87be-b2cea58a4043/source.tar.gz?rev=80bdc1e5ce51f56b19791b52b2901187931f5353&revCount=958232"
       },
       "original": {
         "type": "tarball",
