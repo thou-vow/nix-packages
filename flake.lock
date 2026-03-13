@@ -97,7 +97,7 @@
         "rev": "dc4d71b197a9bce053178291da2ead757cdf93bc",
         "revCount": 406,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.17.0/019cbb55-3789-7f90-87bf-d0580468ebf6/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.17.0/019cbb55-3789-7f90-87bf-d0580468ebf6/source.tar.gz?rev=dc4d71b197a9bce053178291da2ead757cdf93bc&revCount=406"
       },
       "original": {
         "type": "tarball",
@@ -118,7 +118,7 @@
         "rev": "dc4d71b197a9bce053178291da2ead757cdf93bc",
         "revCount": 406,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.17.0/019cbb55-3789-7f90-87bf-d0580468ebf6/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.17.0/019cbb55-3789-7f90-87bf-d0580468ebf6/source.tar.gz?rev=dc4d71b197a9bce053178291da2ead757cdf93bc&revCount=406"
       },
       "original": {
         "type": "tarball",
