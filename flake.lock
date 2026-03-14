@@ -674,11 +674,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1773425138,
-        "narHash": "sha256-BHKB/WTMs5GVSKItqHHeaqfpbTJxSstrncQ389DRD4g=",
+        "lastModified": 1773445733,
+        "narHash": "sha256-YqPe3lNtwPJAVC92I46biJFLGBSdsJevIChnTF1ZtL4=",
         "owner": "xddxdd",
         "repo": "nix-cachyos-kernel",
-        "rev": "86a4ac16564a09c05b602049a5f39409644f4e30",
+        "rev": "fc5803132dfa7856fc001d093ce47dc0105f923d",
         "type": "github"
       },
       "original": {
