@@ -694,11 +694,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1774110874,
-        "narHash": "sha256-XPp6k2RILElTfjelEkqFUcHE9FYYuzlLWCszYBHcNz8=",
+        "lastModified": 1774411610,
+        "narHash": "sha256-Oxhu0BqjDf/PtZmwQUK6+DjDA3FpXHECfA8KyJVNwuA=",
         "owner": "powerofthe69",
         "repo": "nix-gaming-edge",
-        "rev": "518727d69a642b0968aa86d12d08ea1217197e6e",
+        "rev": "d797feb9b1d2d27decaacd554e53b58469751e52",
         "type": "github"
       },
       "original": {
