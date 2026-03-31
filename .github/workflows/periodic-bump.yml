@@ -32,7 +32,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run .#determinate-nix-fast-build -- \
+          nix run nixpkgs#nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache
       - if: steps.update.outputs.updated == 'true'
         env:
