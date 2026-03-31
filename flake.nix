@@ -67,6 +67,7 @@
           with self'.legacyPackages;
             [
               determinate-nix-direnv
+              determinate-nix-fast-build
               discord-rpc-lsp
               helix-steel
             ]
@@ -79,16 +80,14 @@
               xwayland-satellite-unstable
             ]));
       in
-        packagesToCache
-        |> builtins.mapAttrs (
-          _: list:
-            list
-            |> lib.imap0 (i: v: {
-              name = "${v.name}-${toString i}";
-              value = v;
-            })
-            |> builtins.listToAttrs 
-        );
+        builtins.mapAttrs (_: list:
+          list
+          |> lib.imap0 (i: v: {
+            name = "${v.name}-${toString i}";
+            value = v;
+          })
+          |> builtins.listToAttrs)
+        packagesToCache;
 
       perSystem = {
         pkgs,
@@ -112,6 +111,7 @@
           };
         };
 
+        # So the wrappers won't generate packages.*.* outputs by default
         wrappers.control_type = "build";
       };
 
