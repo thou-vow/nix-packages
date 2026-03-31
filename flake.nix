@@ -20,16 +20,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    determinate.url = "github:DeterminateSystems/determinate";
     determinate-nix.follows = "determinate/nix";
-    determinate-nix-eval-jobs.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    determinate-nix-eval-jobs = {
+      url = "github:DeterminateSystems/nix-eval-jobs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
     helix-steel = {
       url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-flake.url = "github:sodiboo/niri-flake";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    nix-gaming-edge.url = "github:powerofthe69/nix-gaming-edge";
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel/release";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   nixConfig = {
