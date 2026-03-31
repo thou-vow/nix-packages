@@ -5,9 +5,18 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    systems.url = "github:nix-systems/default";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    import-tree.url = "github:vic/import-tree";
+    nix-std.url = "github:chessai/nix-std";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -34,77 +43,70 @@
     ];
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    systems = import inputs.systems;
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({
+      lib,
+      withSystem,
+      ...
+    }: {
+      imports = [
+        (inputs.import-tree ./modules)
+        inputs.wrapper-modules.flakeModules.wrappers
+      ];
 
-    # I need to allow unfree here to be able to use graalvm on my nix-config flake...
-    eachPkgs = nixpkgs.lib.genAttrs systems (system:
-      import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      });
+      flake.checks = let
+        packagesToCache.x86_64-linux = withSystem "x86_64-linux" ({self', ...}:
+          with self'.legacyPackages;
+            [
+              determinate-nix-direnv
+              discord-rpc-lsp
+              helix-steel
+            ]
+            ++ (with attunedPackages; [
+              helix-steel
+              mesa
+              niri-unstable
+              nixd
+              rust-analyzer-unwrapped
+              xwayland-satellite-unstable
+            ]));
+      in
+        packagesToCache
+        |> builtins.mapAttrs (
+          _: list:
+            list
+            |> lib.imap0 (i: v: {
+              name = "${v.name}-${toString i}";
+              value = v;
+            })
+            |> builtins.listToAttrs 
+        );
 
-    eachSystem = f:
-      nixpkgs.lib.genAttrs systems
-      (system: f eachPkgs.${system});
-  in {
-    formatter = eachSystem (pkgs:
-      inputs.treefmt-nix.lib.mkWrapper pkgs {
-        projectRootFile = "flake.nix";
-
-        programs = {
-          alejandra.enable = true; # Nix
-          yamlfmt.enable = true;
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
         };
-      });
 
-    # Packages defined on this flake. Use with `nix build`, `nix run`, `nix shell`.
-    legacyPackages = eachSystem (pkgs:
-      import ./default/default.nix inputs pkgs
-      // {
-        # The other package sets are made upon the default packages.
-        attunedPackages = import ./attuned/attuned.nix inputs pkgs;
-      });
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [alejandra yamlfmt];
+        };
 
-    devShells = eachSystem (pkgs: {
-      default = pkgs.mkShell {
-        packages = with pkgs; [alejandra yamlfmt];
+        formatter = inputs.treefmt-nix.lib.mkWrapper pkgs {
+          projectRootFile = "flake.nix";
+          programs = {
+            alejandra.enable = true;
+            yamlfmt.enable = true;
+          };
+        };
+
+        wrappers.control_type = "build";
       };
+
+      systems = ["aarch64-linux" "x86_64-linux"];
     });
-
-    # Packages to cache.
-    checks = let
-      packagesToCache = {
-        x86_64-linux = with self.legacyPackages.x86_64-linux;
-          [
-            determinate-nix-direnv
-            discord-rpc-lsp
-            helix-steel
-          ]
-          ++ (with attunedPackages; [
-            # custom-linux
-            # custom-linux.configfile
-            helix-steel
-            mesa
-            niri-unstable
-            nixd
-            rust-analyzer-unwrapped
-            xwayland-satellite-unstable
-          ]);
-      };
-
-      # nix-fast-build only support sets, but we have duplicated names on the list...
-      derivationListToAttrs = list:
-        builtins.listToAttrs (nixpkgs.lib.imap0 (i: drv: {
-            name = "${drv.name}-${toString i}";
-            value = drv;
-          })
-          list);
-    in
-      builtins.mapAttrs (_: packages: derivationListToAttrs packages) packagesToCache;
-  };
 }
