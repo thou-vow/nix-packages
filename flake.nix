@@ -10,13 +10,8 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
-    nix-std.url = "github:chessai/nix-std";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    wrapper-modules = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -57,10 +52,7 @@
       withSystem,
       ...
     }: {
-      imports = [
-        (inputs.import-tree ./modules)
-        inputs.wrapper-modules.flakeModules.wrappers
-      ];
+      imports = [(inputs.import-tree ./modules)];
 
       flake.checks = let
         packagesToCache.x86_64-linux = withSystem "x86_64-linux" ({self', ...}:
@@ -110,9 +102,6 @@
             yamlfmt.enable = true;
           };
         };
-
-        # So the wrappers won't generate packages.*.* outputs by default
-        wrappers.control_type = "build";
       };
 
       systems = ["aarch64-linux" "x86_64-linux"];
