@@ -3,25 +3,24 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 0 */3 * * *
+permissions:
+  contents: write
 concurrency:
   group: bump
 jobs:
   bump:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: "write"
-      contents: "write"
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: nixbuild/nix-quick-install-action@v34
+      - uses: canidae-solutions/lix-quick-install-action@v3
         with:
-          nix_conf: |
-            extra-experimental-features = pipe-operators
+          lix_conf: |
+            extra-experimental-features = pipe-operator
       - id: update
         run: |
-          nix flake update
+          nix --accept-flake-config flake update
           if git diff --quiet -- flake.lock; then
             echo "flake.lock unchanged"
             echo "updated=false" >> $GITHUB_OUTPUT
@@ -32,7 +31,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run nixpkgs#nix-fast-build -- \
+          nix run --inputs-from . nixpkgs#lixPackageSets.latest.nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache
       - if: steps.update.outputs.updated == 'true'
         env:

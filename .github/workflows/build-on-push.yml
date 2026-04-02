@@ -8,19 +8,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: "write"
-      contents: "read"
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: nixbuild/nix-quick-install-action@v34
+      - uses: canidae-solutions/lix-quick-install-action@v3
         with:
-          nix_conf: |
-            extra-experimental-features = pipe-operators
+          lix_conf: |
+            extra-experimental-features = pipe-operator
       - env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run nixpkgs#nix-fast-build -- \
+          nix run --inputs-from . nixpkgs#lixPackageSets.latest.nix-fast-build -- \
             --cachix-cache thou-vow --no-nom --skip-cache
