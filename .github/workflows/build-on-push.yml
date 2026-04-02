@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: canidae-solutions/lix-quick-install-action@v3
+      - uses: canidae-solutions/lix-quick-install-action@v4
         with:
           lix_conf: |
             extra-experimental-features = pipe-operator
