@@ -5,7 +5,6 @@ on:
     - cron: 0 */3 * * *
 permissions:
   contents: write
-  id-token: read
 concurrency:
   group: bump
 jobs:

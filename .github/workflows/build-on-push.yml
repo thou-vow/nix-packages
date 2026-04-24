@@ -2,9 +2,6 @@ name: Build cache after a commit
 on:
   push:
   workflow_dispatch:
-permissions:
-  contents: write
-  id-token: read
 concurrency:
   group: bump
   cancel-in-progress: true
