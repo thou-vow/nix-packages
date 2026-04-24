@@ -17,7 +17,7 @@ jobs:
       - uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
-            extra-experimental-features = pipe-operator
+            extra-experimental-features = pipe-operators
       - id: update
         run: |
           nix --accept-flake-config flake update
