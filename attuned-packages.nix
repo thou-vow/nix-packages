@@ -6,7 +6,7 @@
     ...
   }: {
     packages = {
-      helix-steel-attuned = self'.legacyPackages.helix-steel.overrideAttrs (prevAttrs: {
+      helix-steel-attuned = self'.packages.helix-steel.overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {
@@ -58,22 +58,6 @@
           postInstall = "";
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
         });
-
-      niri-unstable-attuned = inputs'.niri-flake.packages.niri-unstable.overrideAttrs (prevAttrs: {
-        env =
-          prevAttrs.env
-          // {
-            RUSTFLAGS =
-              lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-              + toString [
-                "-C lto=fat"
-                "-C opt-level=3"
-                "-C target-cpu=skylake"
-              ];
-          };
-
-        doCheck = false;
-      });
 
       nixd-attuned =
         (pkgs.nixd.override {
