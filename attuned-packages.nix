@@ -5,8 +5,8 @@
     self',
     ...
   }: {
-    legacyPackages.attunedPackages = {
-      helix-steel = self'.legacyPackages.helix-steel.overrideAttrs (prevAttrs: {
+    packages = {
+      helix-steel-attuned = self'.legacyPackages.helix-steel.overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {
@@ -20,7 +20,7 @@
           };
       });
 
-      mesa =
+      mesa-attuned =
         (pkgs.mesa.override {
           galliumDrivers = ["iris"];
           vulkanDrivers = ["intel"];
@@ -59,7 +59,7 @@
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
         });
 
-      niri-unstable = inputs'.niri-flake.packages.niri-unstable.overrideAttrs (prevAttrs: {
+      niri-unstable-attuned = inputs'.niri-flake.packages.niri-unstable.overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {
@@ -75,7 +75,7 @@
         doCheck = false;
       });
 
-      nixd =
+      nixd-attuned =
         (pkgs.nixd.override {
           inherit (pkgs.llvmPackages_latest) stdenv;
         }).overrideAttrs
@@ -89,7 +89,7 @@
             ];
         });
 
-      rust-analyzer-unwrapped = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+      rust-analyzer-unwrapped-attuned = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {
@@ -104,7 +104,7 @@
           };
       });
 
-      xwayland-satellite-unstable = inputs'.niri-flake.packages.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
+      xwayland-satellite-unstable-attuned = inputs'.niri-flake.packages.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {

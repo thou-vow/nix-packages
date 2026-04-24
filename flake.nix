@@ -9,9 +9,12 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-    import-tree.url = "github:vic/import-tree";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -49,37 +52,39 @@
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} ({
       lib,
-      withSystem,
+      self,
       ...
     }: {
-      imports = [(inputs.import-tree ./modules)];
-
-      flake.checks = let
-        packagesToCache.x86_64-linux = withSystem "x86_64-linux" ({self', ...}:
-          with self'.legacyPackages;
-            [
-              determinate-nix-direnv
-              determinate-nix-fast-build
-              discord-rpc-lsp
-              helix-steel
-            ]
-            ++ (with attunedPackages; [
-              helix-steel
-              mesa
-              niri-unstable
-              nixd
-              rust-analyzer-unwrapped
-              xwayland-satellite-unstable
-            ]));
+      imports = let
+        isFlakeModule = file:
+          file.hasExt "nix"
+          && file.name != "flake.nix"
+          && !lib.hasPrefix "_" file.name;
       in
-        builtins.mapAttrs (_: list:
-          list
-          |> lib.imap0 (i: v: {
-            name = "${v.name}-${toString i}";
-            value = v;
-          })
-          |> builtins.listToAttrs)
-        packagesToCache;
+        (./.
+          |> lib.fileset.fileFilter isFlakeModule
+          |> lib.fileset.toList)
+        ++ [
+          inputs.nix-wrapper-modules.flakeModules.default
+        ];
+
+      flake.checks = {
+        x86_64-linux = {
+          inherit
+            (self.packages.x86_64-linux)
+            determinate-nix-direnv
+            determinate-nix-fast-build
+            discord-rpc-lsp
+            helix-steel
+            helix-steel-attuned
+            mesa-attuned
+            niri-unstable-attuned
+            nixd-attuned
+            rust-analyzer-unwrapped-attuned
+            xwayland-satellite-unstable-attuned
+            ;
+        };
+      };
 
       perSystem = {
         pkgs,
@@ -92,13 +97,14 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [alejandra yamlfmt];
+          buildInputs = with pkgs; [alejandra ruff yamlfmt];
         };
 
         formatter = inputs.treefmt-nix.lib.mkWrapper pkgs {
           projectRootFile = "flake.nix";
           programs = {
             alejandra.enable = true;
+            ruff-format.enable = true;
             yamlfmt.enable = true;
           };
         };

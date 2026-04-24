@@ -1,21 +1,20 @@
-{withSystem, ...}: {
+{...}: {
   perSystem = {
     inputs',
     pkgs,
     system,
     ...
   }: {
-    legacyPackages = {
+    packages = {
       determinate-nix-direnv = pkgs.nix-direnv.override {
         nix = inputs'.determinate-nix.packages.default;
       };
 
       determinate-nix-fast-build = pkgs.nix-fast-build.override {
-        nix-eval-jobs = withSystem system ({inputs', ...}:
-          inputs'.determinate-nix-eval-jobs.packages.default.overrideAttrs (finalAttrs: {
-            # nix-fast-build in nixpkgs needs this
-            passthru.nix = finalAttrs.passthru.nixComponents.nix-cli;
-          }));
+        nix-eval-jobs = inputs'.determinate-nix-eval-jobs.packages.default.overrideAttrs (finalAttrs: {
+          # nix-fast-build in nixpkgs needs this
+          passthru.nix = finalAttrs.passthru.nixComponents.nix-cli;
+        });
       };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
@@ -36,7 +35,7 @@
         #  go mod tidy
         #  git add -A
         #  git diff --staged > discord-rpc-lsp-go-mod-tidy.patch
-        patches = [../assets/discord-rpc-lsp-go-mod-tidy.patch];
+        patches = [./discord-rpc-lsp-go-mod-tidy.patch];
 
         vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
       });

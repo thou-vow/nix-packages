@@ -1,0 +1,29 @@
+{
+  "brave": {
+    "x86_64-linux": {
+      "hash": "sha256-w/Nxbrg+TnJVgAg4UvbtuyF4/CBqzr9yO5AFw6dVqSg=",
+      "owner": "brave",
+      "repo": "brave-browser",
+      "rev": "1dfea68c012dcc31385e3b147b240f5bc0a5cf4f"
+    }
+  },
+  "graalvm-oracle_21": {
+    "aarch64-linux": {
+      "hash": "sha256-brO/340rOBm7PkUar8r5yhkuW+7u+3jyrMj3P9aqofI=",
+      "url": "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-aarch64_bin.tar.gz"
+    },
+    "x86_64-linux": {
+      "hash": "sha256-xH0nUDkRbCKp+qMX/D1FPUHcY5dKnclt7zphMbHexOo=",
+      "url": "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-x64_bin.tar.gz"
+    }
+  },
+  "graalvm-oracle_25": {
+    "aarch64-linux": {
+      "url": "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-25.0.3_linux-aarch64_bin.tar.gz"
+    },
+    "x86_64-linux": {
+      "hash": "sha256-bghD8GhtvSJVoQ7JKk/hicOdBZytpCmYjC74MxAvZWc=",
+      "url": "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-25.0.3_linux-x64_bin.tar.gz"
+    }
+  }
+}
