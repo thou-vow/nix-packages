@@ -2,6 +2,9 @@ name: Build cache after a commit
 on:
   push:
   workflow_dispatch:
+permissions:
+  contents: write
+  id-token: read
 concurrency:
   group: bump
   cancel-in-progress: true
@@ -9,15 +12,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: canidae-solutions/lix-quick-install-action@v4
+      - uses: DeterminateSystems/determinate-nix-action@main
         with:
-          lix_conf: |
+          extra-conf: |
             extra-experimental-features = pipe-operator
       - env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run --inputs-from . nixpkgs#lixPackageSets.latest.nix-fast-build -- \
-            --cachix-cache thou-vow --no-nom --skip-cache
+          nix --accept-flake-config shell --inputs-from . \
+            .#determinate-nix-fast-build .#determinate-nurl nixpkgs#python3
+
+          python update-srcs.py < srcs.json > tmp-srcs.json 
+          mv tmp-srcs.json srcs.json
+
+          nix-fast-build --cachix-cache thou-vow --no-nom --skip-cache

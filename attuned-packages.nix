@@ -103,21 +103,6 @@
               ];
           };
       });
-
-      xwayland-satellite-unstable-attuned = inputs'.niri-flake.packages.xwayland-satellite-unstable.overrideAttrs (prevAttrs: {
-        env =
-          prevAttrs.env
-          // {
-            RUSTFLAGS =
-              lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-              + toString [
-                "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
-                "-C lto=fat"
-                "-C opt-level=3"
-                "-C target-cpu=skylake"
-              ];
-          };
-      });
     };
   };
 }

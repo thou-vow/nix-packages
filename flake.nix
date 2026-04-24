@@ -31,7 +31,6 @@
       url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri-flake.url = "github:sodiboo/niri-flake";
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
       inputs.flake-parts.follows = "flake-parts";
@@ -74,14 +73,13 @@
             (self.packages.x86_64-linux)
             determinate-nix-direnv
             determinate-nix-fast-build
+            determinate-nurl
             discord-rpc-lsp
             helix-steel
             helix-steel-attuned
             mesa-attuned
-            niri-unstable-attuned
             nixd-attuned
             rust-analyzer-unwrapped-attuned
-            xwayland-satellite-unstable-attuned
             ;
         };
       };

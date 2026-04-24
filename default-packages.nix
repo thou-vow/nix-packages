@@ -5,7 +5,14 @@
     system,
     ...
   }: {
-    packages = {
+    packages = let
+      srcs = builtins.fromJSON ./srcs.json;
+    in {
+      brave = pkgs.brave.overrideAttrs (prevAttrs: {
+        version = "";
+        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.brave).${system};
+      });
+
       determinate-nix-direnv = pkgs.nix-direnv.override {
         nix = inputs'.determinate-nix.packages.default;
       };
@@ -15,6 +22,10 @@
           # nix-fast-build in nixpkgs needs this
           passthru.nix = finalAttrs.passthru.nixComponents.nix-cli;
         });
+      };
+
+      determinate-nurl = pkgs.nurl.override {
+        nix = inputs'.determinate-nix.packages.default;
       };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
@@ -42,15 +53,14 @@
 
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
         version = "21";
-        src =
-          {
-            "x86_64-linux" = pkgs.fetchurl {
-              url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.9_linux-x64_bin.tar.gz";
-              hash = "sha256-cLTSX7sxHZiLhsm2HleAKouWfbYW7mFyMMMYEnbkH3E=";
-            };
-          }.${
-            system
-          };
+        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.graalvm-oracle_21).${system};
+        doCheck = false;
+      });
+
+      graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
+        version = "25";
+        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.graalvm-oracle_25).${system};
+        doCheck = false;
       });
 
       helix-steel = inputs'.helix-steel.packages.helix.overrideAttrs (prevAttrs: {
