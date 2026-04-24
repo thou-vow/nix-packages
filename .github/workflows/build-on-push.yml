@@ -15,11 +15,12 @@ jobs:
       - uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
+            accept-flake-config = true
             extra-experimental-features = pipe-operators
       - env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix --accept-flake-config shell --inputs-from . \
+          nix shell --inputs-from . \
             .#determinate-nix-fast-build .#determinate-nurl nixpkgs#python3 \
             -c bash -c '
               python update-srcs.py < srcs.json > tmp-srcs.json
