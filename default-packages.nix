@@ -19,7 +19,7 @@
 
       determinate-nix-fast-build = pkgs.nix-fast-build.override {
         nix-eval-jobs = inputs'.determinate-nix-eval-jobs.packages.default.overrideAttrs (finalAttrs: {
-          # nix-fast-build in nixpkgs needs this
+          # nix-fast-build in nixpkgs has this
           passthru.nix = finalAttrs.passthru.nixComponents.nix-cli;
         });
       };
