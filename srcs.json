@@ -1,10 +1,8 @@
 {
   "brave": {
     "x86_64-linux": {
-      "hash": "sha256-w/Nxbrg+TnJVgAg4UvbtuyF4/CBqzr9yO5AFw6dVqSg=",
-      "owner": "brave",
-      "repo": "brave-browser",
-      "rev": "1dfea68c012dcc31385e3b147b240f5bc0a5cf4f"
+      "hash": "sha256-PwicpQOZBlKGf5BbKS2w6vA5izUXfL20Ogv9JYDLu7U=",
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb"
     }
   },
   "graalvm-oracle_21": {
