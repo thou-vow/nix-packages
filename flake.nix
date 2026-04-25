@@ -106,6 +106,8 @@
             yamlfmt.enable = true;
           };
         };
+
+        wrappers.control_type = "build";
       };
 
       systems = ["aarch64-linux" "x86_64-linux"];
