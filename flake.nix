@@ -13,10 +13,6 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-wrapper-modules = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     determinate.url = "github:DeterminateSystems/determinate";
     determinate-nix.follows = "determinate/nix";
@@ -59,13 +55,9 @@
           file.hasExt "nix"
           && file.name != "flake.nix"
           && !lib.hasPrefix "_" file.name;
-      in
-        (./.
-          |> lib.fileset.fileFilter isFlakeModule
-          |> lib.fileset.toList)
-        ++ [
-          inputs.nix-wrapper-modules.flakeModules.default
-        ];
+      in (./.
+        |> lib.fileset.fileFilter isFlakeModule
+        |> lib.fileset.toList);
 
       flake.checks = {
         x86_64-linux = {
@@ -106,8 +98,6 @@
             yamlfmt.enable = true;
           };
         };
-
-        wrappers.control_type = "build";
       };
 
       systems = ["aarch64-linux" "x86_64-linux"];
