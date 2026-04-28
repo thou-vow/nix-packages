@@ -1,3 +1,7 @@
+[apple-emoji]
+src.github = "samuelngs/apple-emoji-linux"
+fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji-Linux.ttf"
+
 [brave-aarch64-linux]
 src.github = "brave/brave-browser"
 src.prefix = "v"
@@ -7,6 +11,10 @@ fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brav
 src.github = "brave/brave-browser"
 src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
+
+[discord-rpc-lsp]
+src.github = "zerootoad/discord-rpc-lsp"
+fetch.github = "zerootoad/discord-rpc-lsp"
 
 [graalvm-oracle-21-aarch64-linux]
 src.manual = "21.0.11"

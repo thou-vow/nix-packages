@@ -33,7 +33,8 @@ jobs:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
           nix run --inputs-from . nixpkgs#nix-fast-build -- \
-            --cachix-cache thou-vow --no-nom --skip-cache
+            --cachix-cache thou-vow --no-nom --skip-cached \
+            --no-link --flake .#checks.x86_64-linux
       - if: steps.update.outputs.updated == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

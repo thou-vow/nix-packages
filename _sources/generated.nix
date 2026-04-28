@@ -4,8 +4,7 @@
   fetchurl,
   fetchFromGitHub,
   dockerTools,
-}:
-{
+}: {
   brave-x64-linux = {
     pname = "brave-x64-linux";
     version = "1.89.143";

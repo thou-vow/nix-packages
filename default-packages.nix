@@ -8,6 +8,28 @@
     packages = let
       sources = import ./_sources/generated.nix;
     in {
+      apple-emoji = pkgs.callPackage ({
+        stdenvNoCC,
+        lib,
+      }:
+        stdenvNoCC.mkDerivation {
+          inherit (sources.apple-emoji) pname version src;
+
+          dontUnpack = true;
+          dontConfigure = true;
+          dontBuild = true;
+
+          installPhase = ''
+            install -D -m644 $src $out/share/fonts/truetype/AppleColorEmoji-Linux.ttf
+          '';
+
+          meta = with lib; {
+            homepage = "https://github.com/samuelngs/apple-emoji-linux";
+            description = "Apple Color Emoji for Linux";
+            license = licenses.asl20;
+          };
+        }) {};
+
       brave = pkgs.brave.overrideAttrs {
         version =
           {
@@ -26,15 +48,7 @@
       };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
-        pname = "discord-rpc-lsp";
-        version = "1.0.1";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "zerootoad";
-          repo = "discord-rpc-lsp";
-          tag = finalAttrs.version;
-          hash = "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=";
-        };
+        inherit (sources.discord-rpc-lsp) pname version src;
 
         # A reproducible build needs `go.sum`, which is missing in the source
         # Instructions to generate this patch:
