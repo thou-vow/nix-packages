@@ -4,13 +4,41 @@
   fetchurl,
   fetchFromGitHub,
   dockerTools,
-}: {
+}:
+{
+  apple-emoji = {
+    pname = "apple-emoji";
+    version = "macos-26-20260219-2aa12422";
+    src = fetchurl {
+      url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260219-2aa12422/AppleColorEmoji-Linux.ttf";
+      sha256 = "sha256-U1oEOvBHBtJEcQWeZHRb/IDWYXraLuo0NdxWINwPUxg=";
+    };
+  };
+  brave-aarch64-linux = {
+    pname = "brave-aarch64-linux";
+    version = "1.89.143";
+    src = fetchurl {
+      url = "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_arm64.deb";
+      sha256 = "sha256-js8JQ0W13W7wwjd7+WsA6UHkB80NhkA3Vsj6e13ULBs=";
+    };
+  };
   brave-x64-linux = {
     pname = "brave-x64-linux";
     version = "1.89.143";
     src = fetchurl {
       url = "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb";
       sha256 = "sha256-PwicpQOZBlKGf5BbKS2w6vA5izUXfL20Ogv9JYDLu7U=";
+    };
+  };
+  discord-rpc-lsp = {
+    pname = "discord-rpc-lsp";
+    version = "1.0.1";
+    src = fetchFromGitHub {
+      owner = "zerootoad";
+      repo = "discord-rpc-lsp";
+      rev = "1.0.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {

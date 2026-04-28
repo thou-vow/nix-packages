@@ -1,4 +1,34 @@
 {
+    "apple-emoji": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "apple-emoji",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-U1oEOvBHBtJEcQWeZHRb/IDWYXraLuo0NdxWINwPUxg=",
+            "type": "url",
+            "url": "https://github.com/samuelngs/apple-emoji-linux/releases/download/macos-26-20260219-2aa12422/AppleColorEmoji-Linux.ttf"
+        },
+        "version": "macos-26-20260219-2aa12422"
+    },
+    "brave-aarch64-linux": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "brave-aarch64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-js8JQ0W13W7wwjd7+WsA6UHkB80NhkA3Vsj6e13ULBs=",
+            "type": "url",
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_arm64.deb"
+        },
+        "version": "1.89.143"
+    },
     "brave-x64-linux": {
         "cargoLock": null,
         "date": null,
@@ -13,6 +43,27 @@
             "url": "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb"
         },
         "version": "1.89.143"
+    },
+    "discord-rpc-lsp": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "discord-rpc-lsp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zerootoad",
+            "repo": "discord-rpc-lsp",
+            "rev": "1.0.1",
+            "sha256": "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.0.1"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,

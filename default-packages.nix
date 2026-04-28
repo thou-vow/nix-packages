@@ -6,7 +6,9 @@
     ...
   }: {
     packages = let
-      sources = import ./_sources/generated.nix {inherit (pkgs) fetchurl fetchgit fetchFromGitHub dockerTools};
+      sources = import ./_sources/generated.nix {
+        inherit (pkgs) fetchurl fetchgit fetchFromGitHub dockerTools;
+      };
     in {
       apple-emoji = pkgs.callPackage ({
         stdenvNoCC,
