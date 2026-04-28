@@ -5,28 +5,20 @@
     system,
     ...
   }: {
-    packages = let
-      srcs = builtins.fromJSON ./srcs.json;
-    in {
+    packages = {
       brave = pkgs.brave.overrideAttrs (prevAttrs: {
-        version = "";
-        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.brave).${system};
+        version = "1.89.143";
+        src =
+          {
+            x86_64-linux = {
+              url = "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb";
+              hash = "sha256-PwicpQOZBlKGf5BbKS2w6vA5izUXfL20Ogv9JYDLu7U=";
+            };
+          }.${
+            system
+          }
+          |> pkgs.fetchurl;
       });
-
-      determinate-nix-direnv = pkgs.nix-direnv.override {
-        nix = inputs'.determinate-nix.packages.default;
-      };
-
-      determinate-nix-fast-build = pkgs.nix-fast-build.override {
-        nix-eval-jobs = inputs'.determinate-nix-eval-jobs.packages.default.overrideAttrs (finalAttrs: {
-          # nix-fast-build in nixpkgs has this
-          passthru.nix = finalAttrs.passthru.nixComponents.nix-cli;
-        });
-      };
-
-      determinate-nurl = pkgs.nurl.override {
-        nix = inputs'.determinate-nix.packages.default;
-      };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
         pname = "discord-rpc-lsp";
@@ -53,13 +45,31 @@
 
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
         version = "21";
-        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.graalvm-oracle_21).${system};
+        src =
+          {
+            aarch64-linux = {
+              url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-aarch64_bin.tar.gz";
+              hash = "sha256-brO/340rOBm7PkUar8r5yhkuW+7u+3jyrMj3P9aqofI=";
+            };
+            x86_64-linux = {
+              url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-x64_bin.tar.gz";
+              hash = "sha256-xH0nUDkRbCKp+qMX/D1FPUHcY5dKnclt7zphMbHexOo=";
+            };
+          }.${
+            system
+          }
+          |> pkgs.fetchurl;
         doCheck = false;
       });
 
       graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
         version = "25";
-        src = (builtins.mapAttrs (arch: args: pkgs.fetchurl args) srcs.graalvm-oracle_25).${system};
+        src =
+          {
+          }.${
+            system
+          }
+          |> pkgs.fetchurl;
         doCheck = false;
       });
 

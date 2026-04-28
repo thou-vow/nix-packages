@@ -16,13 +16,6 @@
 
     determinate.url = "github:DeterminateSystems/determinate";
     determinate-nix.follows = "determinate/nix";
-    determinate-nix-eval-jobs = {
-      url = "github:DeterminateSystems/nix-eval-jobs";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
     helix-steel = {
       url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,14 +27,8 @@
   };
 
   nixConfig = {
-    extra-substituters = [
-      "https://thou-vow.cachix.org"
-      "https://install.determinate.systems"
-    ];
-    extra-trusted-public-keys = [
-      "thou-vow.cachix.org-1:n6zUvWYOI7kh0jgd+ghWhxeMd9tVdYF2KdOvufJ/Qy4="
-      "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
-    ];
+    extra-substituters = ["https://thou-vow.cachix.org"];
+    extra-trusted-public-keys = ["thou-vow.cachix.org-1:n6zUvWYOI7kh0jgd+ghWhxeMd9tVdYF2KdOvufJ/Qy4="];
   };
 
   outputs = inputs:
@@ -63,9 +50,6 @@
         x86_64-linux = {
           inherit
             (self.packages.x86_64-linux)
-            determinate-nix-direnv
-            determinate-nix-fast-build
-            determinate-nurl
             discord-rpc-lsp
             helix-steel
             helix-steel-attuned
