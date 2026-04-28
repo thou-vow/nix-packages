@@ -9,6 +9,7 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    import-tree.url = "github:vic/import-tree";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,14 +38,7 @@
       self,
       ...
     }: {
-      imports = let
-        isFlakeModule = file:
-          file.hasExt "nix"
-          && file.name != "flake.nix"
-          && !lib.hasPrefix "_" file.name;
-      in (./.
-        |> lib.fileset.fileFilter isFlakeModule
-        |> lib.fileset.toList);
+      imports = [(inputs.import-tree.filterNot (lib.hasSuffix "flake.nix") ./.)];
 
       flake.checks = {
         x86_64-linux = {

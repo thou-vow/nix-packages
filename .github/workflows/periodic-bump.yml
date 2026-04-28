@@ -21,7 +21,8 @@ jobs:
       - id: update
         run: |
           nix flake update
-          if git diff --quiet -- flake.lock; then
+          nix run --inputs-from . nixpkgs#nvfetcher
+          if git diff --quiet; then
             echo "unchanged"
             echo "updated=false" >> $GITHUB_OUTPUT
           else

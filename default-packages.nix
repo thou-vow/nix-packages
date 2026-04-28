@@ -1,24 +1,29 @@
-{...}: {
+{
   perSystem = {
     inputs',
     pkgs,
     system,
     ...
   }: {
-    packages = {
-      brave = pkgs.brave.overrideAttrs (prevAttrs: {
-        version = "1.89.143";
-        src =
+    packages = let
+      sources = import ./_sources/generated.nix;
+    in {
+      brave = pkgs.brave.overrideAttrs {
+        version =
           {
-            x86_64-linux = {
-              url = "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb";
-              hash = "sha256-PwicpQOZBlKGf5BbKS2w6vA5izUXfL20Ogv9JYDLu7U=";
-            };
+            aarch64-linux = sources.brave-aarch64-linux.version;
+            x86_64-linux = sources.brave-x64-linux.version;
           }.${
             system
-          }
-          |> pkgs.fetchurl;
-      });
+          };
+        src =
+          {
+            aarch64-linux = sources.brave-aarch64-linux.src;
+            x86_64-linux = sources.brave-x64-linux.src;
+          }.${
+            system
+          };
+      };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
         pname = "discord-rpc-lsp";
@@ -43,35 +48,41 @@
         vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
       });
 
-      graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
-        version = "21";
-        src =
+      graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
+        version =
           {
-            aarch64-linux = {
-              url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-aarch64_bin.tar.gz";
-              hash = "sha256-brO/340rOBm7PkUar8r5yhkuW+7u+3jyrMj3P9aqofI=";
-            };
-            x86_64-linux = {
-              url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-x64_bin.tar.gz";
-              hash = "sha256-xH0nUDkRbCKp+qMX/D1FPUHcY5dKnclt7zphMbHexOo=";
-            };
+            aarch64-linux = sources.graalvm-oracle-21-aarch64-linux.version;
+            x86_64-linux = sources.graalvm-oracle-21-x64-linux.version;
           }.${
             system
-          }
-          |> pkgs.fetchurl;
+          };
+        src =
+          {
+            aarch64-linux = sources.graalvm-oracle-21-aarch64-linux.src;
+            x86_64-linux = sources.graalvm-oracle-21-x64-linux.src;
+          }.${
+            system
+          };
         doCheck = false;
-      });
+      };
 
-      graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs (prevAttrs: {
-        version = "25";
-        src =
+      graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
+        version =
           {
+            aarch64-linux = sources.graalvm-oracle-25-aarch64-linux.version;
+            x86_64-linux = sources.graalvm-oracle-25-x64-linux.version;
           }.${
             system
-          }
-          |> pkgs.fetchurl;
+          };
+        src =
+          {
+            aarch64-linux = sources.graalvm-oracle-25-aarch64-linux.src;
+            x86_64-linux = sources.graalvm-oracle-25-x64-linux.src;
+          }.${
+            system
+          };
         doCheck = false;
-      });
+      };
 
       helix-steel = inputs'.helix-steel.packages.helix.overrideAttrs (prevAttrs: {
         cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
