@@ -18,7 +18,7 @@ jobs:
         with:
           extra_nix_config: |
             accept-flake-config = true
-            extra-experimental-features = pipe-operators
+            experimental-features = flakes nix-command pipe-operators
           install_options: --no-daemon
       - id: update
         run: |

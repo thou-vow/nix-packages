@@ -16,7 +16,7 @@ jobs:
         with:
           extra_nix_config: |
             accept-flake-config = true
-            extra-experimental-features = pipe-operators
+            experimental-features = flakes nix-command pipe-operators
           install_options: --no-daemon
       - env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
