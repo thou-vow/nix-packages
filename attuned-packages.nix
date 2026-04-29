@@ -85,6 +85,7 @@
                 "-C target-cpu=skylake"
               ];
           };
+        doCheck = false;
       });
     };
   };

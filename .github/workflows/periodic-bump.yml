@@ -6,10 +6,12 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: bump
+  group: cache
 jobs:
   bump:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    outputs:
+      updated: ${{ steps.update.outputs.updated }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -30,17 +32,54 @@ jobs:
             echo "updated=true" >> $GITHUB_OUTPUT
           fi
       - if: steps.update.outputs.updated == 'true'
-        uses: cachix/cachix-action@v17
+        uses: actions/upload-artifact@v7
+        with:
+          name: updated-lockfiles
+          path: |
+            flake.lock
+            _sources/
+  build:
+    needs: bump
+    if: needs.bump.outputs.updated == 'true'
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        include:
+          - system: aarch64-linux
+            runner: ubuntu-24.04-arm
+          - system: x86_64-linux
+            runner: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v8
+        with:
+          name: updated-lockfiles
+      - uses: DeterminateSystems/determinate-nix-action@main
+        with:
+          extra-conf: |
+            accept-flake-config = true
+            extra-experimental-features = pipe-operators
+      - uses: cachix/cachix-action@v17
         with:
           name: thou-vow
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-      - if: steps.update.outputs.updated == 'true'
-        run: |
+      - run: |
           cachix watch-exec -m xz -l 9 thou-vow -- \
             nix build -L --no-link --impure --expr \
-            'builtins.attrValues (builtins.getFlake (toString ./.)).checks.x86_64-linux'
-      - if: steps.update.outputs.updated == 'true'
-        env:
+            'builtins.attrValues (builtins.getFlake (toString ./.)).checks.${{ matrix.system }}'
+  commit:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v8
+        with:
+          name: updated-lockfiles
+      - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"

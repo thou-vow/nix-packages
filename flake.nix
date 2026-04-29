@@ -41,6 +41,12 @@
       imports = [(inputs.import-tree.filterNot (lib.hasSuffix "flake.nix") ./.)];
 
       flake.checks = {
+        aarch64-linux = {
+          inherit
+            (self.packages.aarch64-linux)
+            helix-steel
+            ;
+        };
         x86_64-linux = {
           inherit
             (self.packages.x86_64-linux)
@@ -65,14 +71,14 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [alejandra ruff yamlfmt];
+          buildInputs = with pkgs; [alejandra nvfetcher taplo yamlfmt];
         };
 
         formatter = inputs.treefmt-nix.lib.mkWrapper pkgs {
           projectRootFile = "flake.nix";
           programs = {
             alejandra.enable = true;
-            ruff-format.enable = true;
+            taplo.enable = true;
             yamlfmt.enable = true;
           };
         };
