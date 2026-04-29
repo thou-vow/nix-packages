@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-js8JQ0W13W7wwjd7+WsA6UHkB80NhkA3Vsj6e13ULBs=",
+            "sha256": "sha256-WcLCmhbALtVHL4LEPCUyLfRZR30kdc/41pfHxvE0rJQ=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_arm64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.89.145/brave-browser_1.89.145_arm64.deb"
         },
-        "version": "1.89.143"
+        "version": "1.89.145"
     },
     "brave-x64-linux": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-PwicpQOZBlKGf5BbKS2w6vA5izUXfL20Ogv9JYDLu7U=",
+            "sha256": "sha256-t7OXN+42gXd/b9fE8sd40aH2l/nW2OvtLvHCqb7/1qI=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.89.143/brave-browser_1.89.143_amd64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.89.145/brave-browser_1.89.145_amd64.deb"
         },
-        "version": "1.89.143"
+        "version": "1.89.145"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
