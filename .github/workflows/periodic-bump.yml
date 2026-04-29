@@ -14,12 +14,13 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: cachix/install-nix-action@v31
+      - uses: nixbuild/nix-quick-install-action@v34
         with:
-          extra_nix_config: |
-            accept-flake-config = true
-            experimental-features = flakes nix-command pipe-operators
-          install_options: --no-daemon
+          nix_conf: |
+            always-allow-substitutes = true
+            extra-experimental-features = pipe-operators
+            max-jobs = auto
+            show-trace = true
       - id: update
         run: |
           nix flake update
