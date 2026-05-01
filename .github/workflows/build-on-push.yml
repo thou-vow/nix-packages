@@ -32,4 +32,4 @@ jobs:
           nix build -L --impure --expr \
             'builtins.attrValues (builtins.getFlake (toString ./.)).checks.${{ matrix.system }}' \
             --print-out-paths \
-            | cachix -m xz -l 9 push thou-vow
+            | cachix push -m xz -l 9 thou-vow
