@@ -66,9 +66,10 @@ jobs:
           name: thou-vow
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: |
-          cachix watch-exec -m xz -l 9 thou-vow -- \
-            nix build -L --no-link --impure --expr \
-            'builtins.attrValues (builtins.getFlake (toString ./.)).checks.${{ matrix.system }}'
+          nix build -L --impure --expr \
+            'builtins.attrValues (builtins.getFlake (toString ./.)).checks.${{ matrix.system }}' \
+            --print-out-paths \
+            | cachix -m xz -l 9 push thou-vow
   commit:
     needs: build
     runs-on: ubuntu-24.04
