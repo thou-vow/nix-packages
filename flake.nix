@@ -2,29 +2,26 @@
   description = "Cached nix packages for thou";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
+    nixpkgs-stable.url = "git+https://github.com/NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
 
     flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+      url = "git+https://github.com/hercules-ci/flake-parts?shallow=1";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-    import-tree.url = "github:vic/import-tree";
+    import-tree.url = "git+https://github.com/vic/import-tree?shallow=1";
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      url = "git+https://github.com/numtide/treefmt-nix?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     determinate.url = "github:DeterminateSystems/determinate";
     determinate-nix.follows = "determinate/nix";
     helix-steel = {
-      url = "github:mattwparas/helix/steel-event-system";
+      url = "git+https://github.com/mattwparas/helix?ref=steel-event-system&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
-      inputs.flake-parts.follows = "flake-parts";
-    };
+    nyx-loner.url = "git+https://github.com/lonerOrz/nyx-loner?shallow=1";
   };
 
   nixConfig = {
