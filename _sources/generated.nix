@@ -14,16 +14,16 @@
       sha256 = "sha256-U1oEOvBHBtJEcQWeZHRb/IDWYXraLuo0NdxWINwPUxg=";
     };
   };
-  brave-aarch64-linux = {
-    pname = "brave-aarch64-linux";
+  brave-latest-aarch64-linux = {
+    pname = "brave-latest-aarch64-linux";
     version = "1.89.145";
     src = fetchurl {
       url = "https://github.com/brave/brave-browser/releases/download/v1.89.145/brave-browser_1.89.145_arm64.deb";
       sha256 = "sha256-WcLCmhbALtVHL4LEPCUyLfRZR30kdc/41pfHxvE0rJQ=";
     };
   };
-  brave-x64-linux = {
-    pname = "brave-x64-linux";
+  brave-latest-x64-linux = {
+    pname = "brave-latest-x64-linux";
     version = "1.89.145";
     src = fetchurl {
       url = "https://github.com/brave/brave-browser/releases/download/v1.89.145/brave-browser_1.89.145_amd64.deb";

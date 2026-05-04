@@ -14,11 +14,11 @@
         },
         "version": "macos-26-20260219-2aa12422"
     },
-    "brave-aarch64-linux": {
+    "brave-latest-aarch64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "brave-aarch64-linux",
+        "name": "brave-latest-aarch64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -29,11 +29,11 @@
         },
         "version": "1.89.145"
     },
-    "brave-x64-linux": {
+    "brave-latest-x64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "brave-x64-linux",
+        "name": "brave-latest-x64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
