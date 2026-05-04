@@ -32,18 +32,18 @@
           };
         }) {};
 
-      brave = pkgs.brave.overrideAttrs {
+      brave-latest = pkgs.brave.overrideAttrs {
         version =
           {
-            aarch64-linux = sources.brave-aarch64-linux.version;
-            x86_64-linux = sources.brave-x64-linux.version;
+            aarch64-linux = sources.brave-latest-aarch64-linux.version;
+            x86_64-linux = sources.brave-latest-x64-linux.version;
           }.${
             system
           };
         src =
           {
-            aarch64-linux = sources.brave-aarch64-linux.src;
-            x86_64-linux = sources.brave-x64-linux.src;
+            aarch64-linux = sources.brave-latest-aarch64-linux.src;
+            x86_64-linux = sources.brave-latest-x64-linux.src;
           }.${
             system
           };
@@ -79,7 +79,7 @@
           }.${
             system
           };
-        doCheck = false;
+        doInstallCheck = false;
       };
 
       graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
@@ -97,7 +97,7 @@
           }.${
             system
           };
-        doCheck = false;
+        doInstallCheck = false;
       };
 
       helix-steel = inputs'.helix-steel.packages.helix.overrideAttrs (prevAttrs: {
