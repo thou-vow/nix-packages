@@ -13,6 +13,14 @@
   };
 
   inputs = {
+    determinate = {
+      url = "github:DeterminateSystems/determinate";
+      inputs.nix.inputs = {
+        nixpkgs-23-11.follows = "nixpkgs";
+        nixpkgs-regression.follows = "nixpkgs";
+      };
+    };
+    determinate-nix.follows = "determinate/nix";
     flake-file.url = "github:denful/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -25,8 +33,28 @@
         rust-overlay.follows = "rust-overlay";
       };
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     import-tree.url = "github:vic/import-tree";
+    nix-wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nyx-loner = {
+      url = "github:lonerOrz/nyx-loner";
+      inputs.home-manager.follows = "home-manager";
+    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
