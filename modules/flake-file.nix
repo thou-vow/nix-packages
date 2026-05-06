@@ -3,9 +3,7 @@
   lib,
   ...
 } @ top: {
-  imports = [
-    inputs.flake-file.flakeModules.default
-  ];
+  imports = [inputs.flake-file.flakeModules.default];
 
   flake-file = {
     description = "Cached nix packages for thou";

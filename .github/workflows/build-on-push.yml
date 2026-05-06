@@ -17,8 +17,6 @@ jobs:
             system: aarch64-linux
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
