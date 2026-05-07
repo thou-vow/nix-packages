@@ -51,7 +51,12 @@
     };
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-docs.follows = "nixpkgs";
+        nixpkgs-for-bootstrap.follows = "nixpkgs";
+      };
     };
     nix-wrapper-modules = {
       url = "github:BirdeeHub/nix-wrapper-modules";
