@@ -7,7 +7,7 @@
 }: {
   flake.packages = let
     mkCachePackage = system: packages:
-      (withSystem aarch64-linux ({pkgs, ...}: pkgs)).symlinkJoin {
+      (withSystem system ({pkgs, ...}: pkgs)).symlinkJoin {
         name = "cache-${system}";
         paths = packages;
       };
