@@ -26,5 +26,5 @@ jobs:
           name: thou-vow
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: |
-          nix build -f ./packages-to-cache.nix --print-out-paths \
+          nix build .#cache --print-out-paths \
             | cachix push -m xz -l 9 thou-vow
