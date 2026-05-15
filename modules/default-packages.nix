@@ -1,21 +1,18 @@
 {
   perSystem = {
     inputs',
+    nvfetcherSources,
     pkgs,
     system,
     ...
   }: {
-    packages = let
-      sources = import ../_sources/generated.nix {
-        inherit (pkgs) fetchurl fetchgit fetchFromGitHub dockerTools;
-      };
-    in {
+    packages = {
       apple-emoji = pkgs.callPackage ({
         stdenvNoCC,
         lib,
       }:
         stdenvNoCC.mkDerivation {
-          inherit (sources.apple-emoji) pname version src;
+          inherit (nvfetcherSources.apple-emoji) pname version src;
 
           dontUnpack = true;
           dontConfigure = true;
@@ -33,24 +30,18 @@
         }) {};
 
       brave-latest = pkgs.brave.overrideAttrs {
-        version =
-          {
-            aarch64-linux = sources.brave-latest-aarch64-linux.version;
-            x86_64-linux = sources.brave-latest-x64-linux.version;
-          }.${
-            system
-          };
-        src =
-          {
-            aarch64-linux = sources.brave-latest-aarch64-linux.src;
-            x86_64-linux = sources.brave-latest-x64-linux.src;
-          }.${
-            system
-          };
+        version = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.brave-latest-aarch64-linux.version;
+          x86_64-linux = nvfetcherSources.brave-latest-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.brave-latest-aarch64-linux.src;
+          x86_64-linux = nvfetcherSources.brave-latest-x64-linux.src;
+        };
       };
 
       discord-rpc-lsp = pkgs.buildGoModule (finalAttrs: {
-        inherit (sources.discord-rpc-lsp) pname version src;
+        inherit (nvfetcherSources.discord-rpc-lsp) pname version src;
 
         # A reproducible build needs `go.sum`, which is missing in the source
         # Instructions to generate this patch:
@@ -65,38 +56,26 @@
       });
 
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-        version =
-          {
-            aarch64-linux = sources.graalvm-oracle-21-aarch64-linux.version;
-            x86_64-linux = sources.graalvm-oracle-21-x64-linux.version;
-          }.${
-            system
-          };
-        src =
-          {
-            aarch64-linux = sources.graalvm-oracle-21-aarch64-linux.src;
-            x86_64-linux = sources.graalvm-oracle-21-x64-linux.src;
-          }.${
-            system
-          };
+        version = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.version;
+          x86_64-linux = nvfetcherSources.graalvm-oracle-21-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.src;
+          x86_64-linux = nvfetcherSources.graalvm-oracle-21-x64-linux.src;
+        };
         doInstallCheck = false;
       };
 
       graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-        version =
-          {
-            aarch64-linux = sources.graalvm-oracle-25-aarch64-linux.version;
-            x86_64-linux = sources.graalvm-oracle-25-x64-linux.version;
-          }.${
-            system
-          };
-        src =
-          {
-            aarch64-linux = sources.graalvm-oracle-25-aarch64-linux.src;
-            x86_64-linux = sources.graalvm-oracle-25-x64-linux.src;
-          }.${
-            system
-          };
+        version = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.graalvm-oracle-25-aarch64-linux.version;
+          x86_64-linux = nvfetcherSources.graalvm-oracle-25-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          aarch64-linux = nvfetcherSources.graalvm-oracle-25-aarch64-linux.src;
+          x86_64-linux = nvfetcherSources.graalvm-oracle-25-x64-linux.src;
+        };
         doInstallCheck = false;
       };
 

@@ -8,7 +8,7 @@ permissions:
 concurrency:
   group: cache
 jobs:
-  bump:
+  update:
     runs-on: ubuntu-24.04
     outputs:
       updated: ${{ steps.update.outputs.updated }}
@@ -20,7 +20,6 @@ jobs:
         with:
           extra-conf: |
             accept-flake-config = true
-            extra-experimental-features = pipe-operators
       - id: update
         run: |
           nix flake update
@@ -39,20 +38,18 @@ jobs:
             flake.lock
             _sources/
   build:
-    needs: bump
-    if: needs.bump.outputs.updated == 'true'
+    needs: update
+    if: needs.update.outputs.updated == 'true'
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
         include:
-          - system: aarch64-linux
-            runner: ubuntu-24.04-arm
-          - system: x86_64-linux
-            runner: ubuntu-24.04
+          - runner: ubuntu-24.04
+          - runner: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: updated-lockfiles
@@ -60,15 +57,12 @@ jobs:
         with:
           extra-conf: |
             accept-flake-config = true
-            extra-experimental-features = pipe-operators
       - uses: cachix/cachix-action@v17
         with:
           name: thou-vow
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: |
-          nix build -L --impure --expr \
-            'builtins.attrValues (builtins.getFlake (toString ./.)).checks.${{ matrix.system }}' \
-            --print-out-paths \
+          nix build -f ./packages-to-cache.nix --print-out-paths \
             | cachix push -m xz -l 9 thou-vow
   commit:
     needs: build
@@ -76,7 +70,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           name: updated-lockfiles
@@ -86,5 +80,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "ci: bump packages to $(date +%Y-%m-%dT%H:%MZ)"
+          git commit -m "chore(deps): bump sources to $(date +%Y-%m-%dT%H:%MZ)"
           git push
