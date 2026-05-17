@@ -16,6 +16,11 @@ fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brav
 src.github = "zerootoad/discord-rpc-lsp"
 fetch.github = "zerootoad/discord-rpc-lsp"
 
+[dwproton-x64-linux]
+src.webpage = "https://dawn.wine/dawn-winery/dwproton/releases"
+src.regex = 'dwproton-([\d.]+-\d+)-x86_64\.tar\.xz'
+fetch.zip = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-$ver/dwproton-$ver-x86_64.tar.xz"
+
 [graalvm-oracle-21-aarch64-linux]
 src.manual = "21.0.11"
 fetch.url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-$ver_linux-aarch64_bin.tar.gz"

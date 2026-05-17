@@ -8,6 +8,14 @@
       system
       ;
   in {
+    dwproton = 
+      (pkgs.proton-ge-bin.override {
+        steamDisplayName = "DW-Proton";
+      }).overrideAttrs {
+        inherit (nvfetcherSources.dwproton-x64-linux) src version;
+        pname = "dwproton";
+      };
+
     proton-cachyos =
       (pkgs.proton-ge-bin.override {
         steamDisplayName = "Proton-CachyOS";
