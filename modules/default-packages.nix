@@ -1,5 +1,5 @@
 {withSystem, ...}: {
-  flake.x86_64-linux = let
+  flake.packages.x86_64-linux = let
     inherit
       (withSystem "x86_64-linux" (args: args))
       inputs'
