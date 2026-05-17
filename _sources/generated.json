@@ -124,5 +124,33 @@
             "url": "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-25.0.3_linux-x64_bin.tar.gz"
         },
         "version": "25.0.3"
+    },
+    "proton-cachyos-x64-linux": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-h2HHH5R/4GcUuL6paUM8b8iZRjI5LRI+RPJnmV+V+bY=",
+            "type": "zip",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260506-slr/proton-cachyos-11.0-20260506-slr-x86_64.tar.xz"
+        },
+        "version": "11.0-20260506-slr"
+    },
+    "proton-cachyos-x64-linux-v3": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x64-linux-v3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-eFj1eZj+aMkZyUFdcB9OdLQrrTukbaBBTlLZkwq9xNs=",
+            "type": "zip",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260506-slr/proton-cachyos-11.0-20260506-slr-x86_64_v3.tar.xz"
+        },
+        "version": "11.0-20260506-slr"
     }
 }

@@ -1,4 +1,30 @@
-{
+{withSystem, ...}: {
+  flake.x86_64-linux = let
+    inherit
+      (withSystem "x86_64-linux" (args: args))
+      inputs'
+      nvfetcherSources
+      pkgs
+      system
+      ;
+  in {
+    proton-cachyos =
+      (pkgs.proton-ge-bin.override {
+        steamDisplayName = "Proton-CachyOS";
+      }).overrideAttrs {
+        inherit (nvfetcherSources.proton-cachyos-x64-linux) src version;
+        pname = "proton-cachyos";
+      };
+
+    proton-cachyos-v3 =
+      (pkgs.proton-ge-bin.override {
+        steamDisplayName = "Proton-CachyOS v3";
+      }).overrideAttrs {
+        inherit (nvfetcherSources.proton-cachyos-x64-linux-v3) src version;
+        pname = "proton-cachyos-v3";
+      };
+  };
+
   perSystem = {
     inputs',
     nvfetcherSources,
@@ -84,6 +110,8 @@
       });
 
       niri-pr = inputs'.niri-pr.packages.niri;
+
+      nvfetcher = inputs'.nvfetcher.packages.default;
     };
   };
 }

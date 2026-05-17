@@ -14,6 +14,7 @@
   in {
     aarch64-linux.cache = mkCachePackage "aarch64-linux" (with self.packages.aarch64-linux; [
       helix-steel
+      nvfetcher
     ]);
 
     x86_64-linux.cache = mkCachePackage "x86_64-linux" (with self.packages.x86_64-linux; [
@@ -24,18 +25,26 @@
       niri-pr
       niri-pr-attuned
       nixd-attuned
+      nvfetcher
       rust-analyzer-unwrapped-attuned
     ]);
   };
 
-  perSystem = {pkgs, ...}: {
+  perSystem = {
+    pkgs,
+    self',
+    ...
+  }: {
     devShells.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        alejandra
-        nvfetcher
-        taplo
-        yamlfmt
-      ];
+      buildInputs =
+        (with pkgs; [
+          alejandra
+          taplo
+          yamlfmt
+        ])
+        ++ [
+          self'.packages.nvfetcher
+        ];
     };
 
     formatter = inputs.treefmt-nix.lib.mkWrapper pkgs {
