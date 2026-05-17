@@ -2,6 +2,7 @@
 {
   fetchgit,
   fetchurl,
+  fetchzip,
   fetchFromGitHub,
   dockerTools,
 }:
