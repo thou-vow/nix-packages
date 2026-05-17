@@ -21,6 +21,8 @@
       helix-steel
       helix-steel-attuned
       mesa-attuned
+      niri-pr
+      niri-pr-attuned
       nixd-attuned
       rust-analyzer-unwrapped-attuned
     ]);

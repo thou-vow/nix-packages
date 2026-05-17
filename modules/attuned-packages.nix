@@ -9,13 +9,11 @@
         env =
           prevAttrs.env
           // {
-            RUSTFLAGS =
-              lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-              + toString [
-                "-C target-cpu=skylake"
-                "-C opt-level=3"
-                "-C lto=fat"
-              ];
+            RUSTFLAGS = toString (
+              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
+              [prevAttrs.env.RUSTFLAGS]
+              ++ ["-C lto=fat" "-C opt-level=3" "-C target-cpu=skylake"]
+            );
           };
       });
 
@@ -40,15 +38,15 @@
               (lib.mesonOption "cpp_args" "-march=skylake")
 
               # Unnecessary stuff
-              (lib.mesonBool "teflon" false)
               (lib.mesonBool "gallium-extra-hud" false)
               (lib.mesonBool "gallium-rusticl" false)
-              (lib.mesonEnable "intel-rt" false)
-              (lib.mesonOption "tools" "")
               (lib.mesonBool "install-mesa-clc" false)
               (lib.mesonBool "install-precomp-compiler" false)
+              (lib.mesonBool "teflon" false)
+              (lib.mesonEnable "intel-rt" false)
+              (lib.mesonOption "tools" "")
 
-              # Can't be enabled because required drivers are missing
+              # Can't be enabled because required drivers are missing :)
               (lib.mesonEnable "gallium-va" false)
             ];
 
@@ -57,6 +55,18 @@
           postInstall = "";
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
         });
+
+      niri-pr-attuned = self'.packages.niri-pr.overrideAttrs (prevAttrs: {
+        env =
+          prevAttrs.env
+          // {
+            RUSTFLAGS = toString (
+              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
+              [prevAttrs.env.RUSTFLAGS]
+              ++ ["-C lto=fat" "-C opt-level=3" "-C target-cpu=skylake"]
+            );
+          };
+      });
 
       nixd-attuned =
         (pkgs.nixd.override {
@@ -76,14 +86,16 @@
         env =
           prevAttrs.env
           // {
-            RUSTFLAGS =
-              lib.optionalString (prevAttrs.env.RUSTFLAGS or "" != "") "${prevAttrs.env.RUSTFLAGS} "
-              + toString [
-                "-C embed-bitcode=yes" # It was disabled for some reason, we need to enable for LTO
+            RUSTFLAGS = toString (
+              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
+              [prevAttrs.env.RUSTFLAGS]
+              ++ [
+                "-C embed-bitcode=yes" # Was implicitly disabled (?), needed for LTO
                 "-C lto=fat"
                 "-C opt-level=3"
                 "-C target-cpu=skylake"
-              ];
+              ]
+            );
           };
         doCheck = false;
       });

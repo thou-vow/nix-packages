@@ -23,6 +23,13 @@
       };
     };
     import-tree.url = "github:vic/import-tree";
+    niri-pr = {
+      url = "github:niri-wm/niri/pull/3621/head";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
+      };
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

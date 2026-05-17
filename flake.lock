@@ -59,6 +59,30 @@
         "type": "github"
       }
     },
+    "niri-pr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777941584,
+        "narHash": "sha256-S7TyDDhu+PAoDSKxBHJ4BCTvg7Tu2ct1ZRZH6gOnN34=",
+        "owner": "niri-wm",
+        "repo": "niri",
+        "rev": "484903954cd3f4047ad8a8a564f02a48d9f7536f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niri-wm",
+        "ref": "pull/3621/head",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1778869304,
@@ -80,6 +104,7 @@
         "flake-parts": "flake-parts",
         "helix-steel": "helix-steel",
         "import-tree": "import-tree",
+        "niri-pr": "niri-pr",
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay",
         "treefmt-nix": "treefmt-nix"

@@ -82,6 +82,8 @@
       helix-steel = inputs'.helix-steel.packages.helix.overrideAttrs (prevAttrs: {
         cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
       });
+
+      niri-pr = inputs'.niri-pr.packages.niri;
     };
   };
 }
