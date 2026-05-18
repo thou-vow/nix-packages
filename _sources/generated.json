@@ -73,11 +73,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-G8VeHp0POZBHfxN78PCwwm6z7zVNMveAdwf/IMJQ/9Q=",
+            "sha256": "sha256-3AxBr8fQh4bbAsdSSZuyQR2GOz78vdhC6jJbLmiYEXY=",
             "type": "zip",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-1/dwproton-11.0-1-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-2/dwproton-11.0-2-x86_64.tar.xz"
         },
-        "version": "11.0-1"
+        "version": "11.0-2"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,
