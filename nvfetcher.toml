@@ -46,3 +46,8 @@ fetch.zip = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos
 src.github = "CachyOS/proton-cachyos"
 src.prefix = "cachyos-"
 fetch.zip = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-$ver/proton-cachyos-$ver-x86_64_v3.tar.xz"
+
+[proton-ge-x64-linux]
+src.github = "GloriousEggroll/proton-ge-custom"
+src.prefix = "GE-Proton"
+fetch.zip = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver.tar.gz"

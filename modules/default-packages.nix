@@ -5,32 +5,30 @@
       inputs'
       nvfetcherSources
       pkgs
+      self'
       system
       ;
   in {
-    dwproton = 
-      (pkgs.proton-ge-bin.override {
-        steamDisplayName = "DW-Proton";
-      }).overrideAttrs {
-        inherit (nvfetcherSources.dwproton-x64-linux) src version;
-        pname = "dwproton";
-      };
+    dwproton = self'.packages.proton-ge.overrideAttrs {
+      inherit (nvfetcherSources.dwproton-x64-linux) src version;
+      pname = "dwproton";
+    };
 
-    proton-cachyos =
-      (pkgs.proton-ge-bin.override {
-        steamDisplayName = "Proton-CachyOS";
-      }).overrideAttrs {
-        inherit (nvfetcherSources.proton-cachyos-x64-linux) src version;
-        pname = "proton-cachyos";
-      };
+    proton-cachyos = self'.packages.proton-ge.overrideAttrs {
+      inherit (nvfetcherSources.proton-cachyos-x64-linux) src version;
+      pname = "proton-cachyos";
+    };
 
-    proton-cachyos-v3 =
-      (pkgs.proton-ge-bin.override {
-        steamDisplayName = "Proton-CachyOS v3";
-      }).overrideAttrs {
-        inherit (nvfetcherSources.proton-cachyos-x64-linux-v3) src version;
-        pname = "proton-cachyos-v3";
-      };
+    proton-cachyos-v3 = self'.packages.proton-ge.overrideAttrs {
+      inherit (nvfetcherSources.proton-cachyos-x64-linux-v3) src version;
+      pname = "proton-cachyos-v3";
+    };
+
+    proton-ge = pkgs.proton-ge-bin.overrideAttrs {
+      inherit (nvfetcherSources.proton-ge-x64-linux) src version;
+      pname = "proton-ge";
+      preFixup = "";
+    };
   };
 
   perSystem = {

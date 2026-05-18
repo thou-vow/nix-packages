@@ -98,4 +98,12 @@
       sha256 = "sha256-eFj1eZj+aMkZyUFdcB9OdLQrrTukbaBBTlLZkwq9xNs=";
     };
   };
+  proton-ge-x64-linux = {
+    pname = "proton-ge-x64-linux";
+    version = "10-34";
+    src = fetchzip {
+      url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton10-34/GE-Proton10-34.tar.gz";
+      sha256 = "sha256-lzPsYYcrp5NoT3B0WFj3o10Z7tXx7xva1wEP3edeuqM=";
+    };
+  };
 }
