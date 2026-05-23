@@ -19,7 +19,6 @@
 
     x86_64-linux.cache = mkCachePackage "x86_64-linux" (with self.packages.x86_64-linux; [
       discord-rpc-lsp
-      faugus-launcher
       helix-steel
       helix-steel-attuned
       mesa-attuned
