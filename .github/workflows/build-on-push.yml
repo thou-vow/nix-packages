@@ -1,7 +1,22 @@
-name: Build cache after a commit
+name: Build cache (after a commit) without updating
 on:
   push:
   workflow_dispatch:
+    inputs:
+      package:
+        description: 'Flake output to build'
+        required: true
+        default: 'cache'
+        type: string
+      runner:
+        description: 'Runner to use'
+        required: true
+        default: 'ubuntu-24.04'
+        type: choice
+        options:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - both
 concurrency:
   group: cache
   cancel-in-progress: true
@@ -10,9 +25,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
-        include:
-          - runner: ubuntu-24.04
-          - runner: ubuntu-24.04-arm
+      runner: ${{ fromJSON( if(inputs.runner == 'both', '["ubuntu-24.04", "ubuntu-24.04-arm"]', format('["{0}"]', inputs.runner)) ) }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -26,5 +39,9 @@ jobs:
           name: thou-vow
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - run: |
-          nix build .#cache --print-out-paths \
+          set -euo pipefail
+
+          echo "Building .#${{ inputs.package }}"
+
+          nix build ".#${{ inputs.package }}" --print-out-paths -L \
             | cachix push -m xz -l 9 thou-vow
