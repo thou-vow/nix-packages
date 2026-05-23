@@ -87,6 +87,10 @@
         vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
       });
 
+      faugus-launcher = pkgs.faugus-launcher.overrideAttrs {
+        inherit (nvfetcherSources.faugus-launcher) src version;
+      };
+
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
         version = builtins.getAttr system {
           aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.version;
