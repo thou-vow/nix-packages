@@ -27,6 +27,7 @@
       nixd-attuned
       nvfetcher
       rust-analyzer-unwrapped-attuned
+      vermouth
     ]);
   };
 
