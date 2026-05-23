@@ -5,7 +5,8 @@
   fetchzip,
   fetchFromGitHub,
   dockerTools,
-}: {
+}:
+{
   apple-emoji = {
     pname = "apple-emoji";
     version = "macos-26-20260219-2aa12422";
@@ -103,6 +104,17 @@
     src = fetchzip {
       url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton10-34/GE-Proton10-34.tar.gz";
       sha256 = "sha256-lzPsYYcrp5NoT3B0WFj3o10Z7tXx7xva1wEP3edeuqM=";
+    };
+  };
+  vermouth = {
+    pname = "vermouth";
+    version = "v1.8.2";
+    src = fetchFromGitHub {
+      owner = "dekomote";
+      repo = "vermouth";
+      rev = "v1.8.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-k2nLPSB/1vmPhISv+p5xm9e9Zb/oMlnzSe+hFOHXm0o=";
     };
   };
 }
