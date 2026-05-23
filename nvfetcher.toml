@@ -8,8 +8,9 @@ src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_arm64.deb"
 
 [brave-latest-x64-linux]
-src.github = "brave/brave-browser"
-src.prefix = "v"
+# src.github = "brave/brave-browser"
+# src.prefix = "v"
+src.manual = "1.90.124"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
 
 [discord-rpc-lsp]
