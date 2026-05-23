@@ -40,8 +40,8 @@
   }: {
     packages = {
       apple-emoji = pkgs.callPackage ({
-        stdenvNoCC,
         lib,
+        stdenvNoCC,
       }:
         stdenvNoCC.mkDerivation {
           inherit (nvfetcherSources.apple-emoji) pname version src;
@@ -118,6 +118,50 @@
       niri-pr = inputs'.niri-pr.packages.niri;
 
       nvfetcher = inputs'.nvfetcher.packages.default;
+
+      vermouth = pkgs.callPackage (
+        {
+          cmake,
+          fetchFromGitHub,
+          icoutils,
+          kdePackages,
+          lib,
+          ninja,
+          SDL2,
+          stdenv,
+        }:
+          stdenv.mkDerivation {
+            inherit (nvfetcherSources.vermouth) pname version src;
+
+            nativeBuildInputs = [
+              cmake
+              kdePackages.extra-cmake-modules
+              kdePackages.wrapQtAppsHook
+              ninja
+            ];
+
+            buildInputs = [
+              kdePackages.kcoreaddons
+              kdePackages.ki18n
+              kdePackages.kirigami
+              kdePackages.qqc2-desktop-style
+              SDL2
+            ];
+
+            qtWrapperArgs = [
+              "--set-default QT_QUICK_CONTROLS_STYLE org.kde.desktop"
+              "--prefix PATH : ${lib.makeBinPath [icoutils]}"
+            ];
+
+            meta = {
+              description = "A game and app launcher for Linux - native, Windows, and retro";
+              homepage = "https://github.com/dekomote/vermouth";
+              license = lib.licenses.mit;
+              platforms = lib.platforms.linux;
+              mainProgram = "vermouth";
+            };
+          }
+      ) {};
     };
   };
 }
