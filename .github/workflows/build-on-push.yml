@@ -25,7 +25,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
-      runner: ${{ fromJSON( if(inputs.runner == 'both', '["ubuntu-24.04", "ubuntu-24.04-arm"]', format('["{0}"]', inputs.runner)) ) }}
+        runner: ${{ fromJSON( if(inputs.runner == 'both', '["ubuntu-24.04", "ubuntu-24.04-arm"]', format('["{0}"]', inputs.runner)) ) }}
     steps:
       - uses: actions/checkout@v6
         with:
