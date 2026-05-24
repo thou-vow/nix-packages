@@ -149,7 +149,6 @@
             ];
 
             qtWrapperArgs = [
-              "--set-default QT_QUICK_CONTROLS_STYLE org.kde.desktop"
               "--prefix PATH : ${lib.makeBinPath [icoutils]}"
             ];
 
