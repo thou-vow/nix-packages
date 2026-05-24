@@ -149,6 +149,7 @@
             ];
 
             qtWrapperArgs = [
+              "--prefix LD_LIBRARY_PATH : ${SDL2}/lib"
               "--prefix PATH : ${lib.makeBinPath [icoutils]}"
             ];
 
