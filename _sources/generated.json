@@ -180,26 +180,5 @@
             "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton10-34/GE-Proton10-34.tar.gz"
         },
         "version": "10-34"
-    },
-    "vermouth": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "vermouth",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "dekomote",
-            "repo": "vermouth",
-            "rev": "v1.8.3",
-            "sha256": "sha256-d/wN7oSFj1kepC0wmqbv7RbpqdJl2UCftWKkkk8uEw4=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v1.8.3"
     }
 }

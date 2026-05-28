@@ -106,15 +106,4 @@
       sha256 = "sha256-lzPsYYcrp5NoT3B0WFj3o10Z7tXx7xva1wEP3edeuqM=";
     };
   };
-  vermouth = {
-    pname = "vermouth";
-    version = "v1.8.3";
-    src = fetchFromGitHub {
-      owner = "dekomote";
-      repo = "vermouth";
-      rev = "v1.8.3";
-      fetchSubmodules = false;
-      sha256 = "sha256-d/wN7oSFj1kepC0wmqbv7RbpqdJl2UCftWKkkk8uEw4=";
-    };
-  };
 }
