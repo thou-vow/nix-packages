@@ -12,7 +12,11 @@
             RUSTFLAGS = toString (
               lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
               [prevAttrs.env.RUSTFLAGS]
-              ++ ["-C lto=fat" "-C opt-level=3" "-C target-cpu=skylake"]
+              ++ [
+                "-C lto=fat"
+                "-C opt-level=3"
+                "-C target-cpu=skylake"
+              ]
             );
           };
       });
@@ -63,7 +67,11 @@
             RUSTFLAGS = toString (
               lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
               [prevAttrs.env.RUSTFLAGS]
-              ++ ["-C lto=fat" "-C opt-level=3" "-C target-cpu=skylake"]
+              ++ [
+                "-C lto=fat"
+                "-C opt-level=3"
+                "-C target-cpu=skylake"
+              ]
             );
           };
       });

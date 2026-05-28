@@ -1,65 +1,34 @@
-{withSystem, ...}: {
-  flake.packages.x86_64-linux = let
-    inherit
-      (withSystem "x86_64-linux" (args: args))
-      inputs'
-      nvfetcherSources
-      pkgs
-      self'
-      system
-      ;
-  in {
-    dwproton = self'.packages.proton-ge.overrideAttrs {
-      inherit (nvfetcherSources.dwproton-x64-linux) src version;
-      pname = "dwproton";
-    };
-
-    proton-cachyos = self'.packages.proton-ge.overrideAttrs {
-      inherit (nvfetcherSources.proton-cachyos-x64-linux) src version;
-      pname = "proton-cachyos";
-    };
-
-    proton-cachyos-v3 = self'.packages.proton-ge.overrideAttrs {
-      inherit (nvfetcherSources.proton-cachyos-x64-linux-v3) src version;
-      pname = "proton-cachyos-v3";
-    };
-
-    proton-ge = pkgs.proton-ge-bin.overrideAttrs {
-      inherit (nvfetcherSources.proton-ge-x64-linux) src version;
-      pname = "proton-ge";
-      preFixup = "";
-    };
-  };
-
+{
+  lib,
+  withSystem,
+  ...
+}: {
   perSystem = {
     inputs',
     nvfetcherSources,
     pkgs,
+    self',
     system,
     ...
   }: {
     packages = {
-      apple-emoji = pkgs.callPackage ({
-        lib,
-        stdenvNoCC,
-      }:
-        stdenvNoCC.mkDerivation {
-          inherit (nvfetcherSources.apple-emoji) pname version src;
+      apple-emoji = pkgs.stdenvNoCC.mkDerivation {
+        inherit (nvfetcherSources.apple-emoji) pname version src;
 
-          dontUnpack = true;
-          dontConfigure = true;
-          dontBuild = true;
+        dontUnpack = true;
+        dontConfigure = true;
+        dontBuild = true;
 
-          installPhase = ''
-            install -D -m644 $src $out/share/fonts/truetype/AppleColorEmoji-Linux.ttf
-          '';
+        installPhase = ''
+          install -D -m644 $src $out/share/fonts/truetype/AppleColorEmoji-Linux.ttf
+        '';
 
-          meta = with lib; {
-            homepage = "https://github.com/samuelngs/apple-emoji-linux";
-            description = "Apple Color Emoji for Linux";
-            license = licenses.asl20;
-          };
-        }) {};
+        meta = with lib; {
+          homepage = "https://github.com/samuelngs/apple-emoji-linux";
+          description = "Apple Color Emoji for Linux";
+          license = licenses.asl20;
+        };
+      };
 
       brave-latest = pkgs.brave.overrideAttrs {
         version = builtins.getAttr system {
@@ -86,6 +55,16 @@
 
         vendorHash = "sha256-C0rXfMGK4P9KA7QhKEkvr4qIWZt3bewjRX3Qh5fwlsk=";
       });
+
+      dwproton = self'.packages.proton-ge.overrideAttrs {
+        pname = "dwproton";
+        version = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.dwproton-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.dwproton-x64-linux.src;
+        };
+      };
 
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
         version = builtins.getAttr system {
@@ -119,49 +98,36 @@
 
       nvfetcher = inputs'.nvfetcher.packages.default;
 
-      vermouth = pkgs.callPackage (
-        {
-          cmake,
-          fetchFromGitHub,
-          icoutils,
-          kdePackages,
-          lib,
-          ninja,
-          SDL2,
-          stdenv,
-        }:
-          stdenv.mkDerivation {
-            inherit (nvfetcherSources.vermouth) pname version src;
+      proton-cachyos = self'.packages.proton-ge.overrideAttrs {
+        pname = "proton-cachyos";
+        version = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux.src;
+        };
+      };
 
-            nativeBuildInputs = [
-              cmake
-              kdePackages.extra-cmake-modules
-              kdePackages.wrapQtAppsHook
-              ninja
-            ];
+      proton-cachyos-v3 = self'.packages.proton-ge.overrideAttrs {
+        pname = "proton-cachyos-v3";
+        version = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux-v3.version;
+        };
+        src = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux-v3.src;
+        };
+      };
 
-            buildInputs = [
-              kdePackages.kcoreaddons
-              kdePackages.ki18n
-              kdePackages.kirigami
-              kdePackages.qqc2-desktop-style
-              SDL2
-            ];
-
-            qtWrapperArgs = [
-              "--prefix LD_LIBRARY_PATH : ${SDL2}/lib"
-              "--prefix PATH : ${lib.makeBinPath [icoutils]}"
-            ];
-
-            meta = {
-              description = "A game and app launcher for Linux - native, Windows, and retro";
-              homepage = "https://github.com/dekomote/vermouth";
-              license = lib.licenses.mit;
-              platforms = lib.platforms.linux;
-              mainProgram = "vermouth";
-            };
-          }
-      ) {};
+      proton-ge = pkgs.proton-ge-bin.overrideAttrs {
+        pname = "proton-ge";
+        version = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-ge-x64-linux.version;
+        };
+        src = builtins.getAttr system {
+          x86_64-linux = nvfetcherSources.proton-ge-x64-linux.src;
+        };
+        preFixup = "";
+      };
     };
   };
 }
