@@ -44,10 +44,10 @@
   };
   dwproton-x64-linux = {
     pname = "dwproton-x64-linux";
-    version = "11.0-2";
+    version = "11.0-3";
     src = fetchzip {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-2/dwproton-11.0-2-x86_64.tar.xz";
-      sha256 = "sha256-3AxBr8fQh4bbAsdSSZuyQR2GOz78vdhC6jJbLmiYEXY=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz";
+      sha256 = "sha256-e/YzKvwe30KveLHRUsntKDwzdEbr7a3Wfkqe/pu93WE=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
