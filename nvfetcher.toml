@@ -14,6 +14,10 @@ fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brav
 src.manual = "1.90.124"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
 
+[determinate-nix-eval-jobs]
+src.github = "DeterminateSystems/nix-eval-jobs"
+fetch.github = "DeterminateSystems/nix-eval-jobs"
+
 [discord-rpc-lsp]
 src.github = "zerootoad/discord-rpc-lsp"
 fetch.github = "zerootoad/discord-rpc-lsp"
@@ -39,6 +43,19 @@ fetch.url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-$ver_lin
 src.manual = "25.0.3"
 fetch.url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-$ver_linux-x64_bin.tar.gz"
 
+[helix-steel]
+src.git = "https://github.com/mattwparas/helix"
+src.branch = "steel-event-system"
+fetch.github = "mattwparas/helix"
+
+[nix-fast-build]
+src.github = "Mic92/nix-fast-build"
+fetch.github = "Mic92/nix-fast-build"
+
+[nvfetcher]
+src.git = "https://github.com/thou-vow/nvfetcher"
+fetch.github = "thou-vow/nvfetcher"
+
 [proton-cachyos-x64-linux]
 src.github = "CachyOS/proton-cachyos"
 src.prefix = "cachyos-"
@@ -53,3 +70,7 @@ fetch.zip = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos
 src.github = "GloriousEggroll/proton-ge-custom"
 src.prefix = "GE-Proton"
 fetch.zip = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver.tar.gz"
+
+[treefmt-nix]
+src.git = "https://github.com/numtide/treefmt-nix"
+fetch.github = "numtide/treefmt-nix"

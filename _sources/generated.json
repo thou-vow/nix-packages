@@ -44,6 +44,27 @@
         },
         "version": "1.90.124"
     },
+    "determinate-nix-eval-jobs": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "determinate-nix-eval-jobs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "DeterminateSystems",
+            "repo": "nix-eval-jobs",
+            "rev": "v3.21.0",
+            "sha256": "sha256-IzDhqdgNthbhSW2fg8+g+vKyCz1n1300f3axPgbdQGQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v3.21.0"
+    },
     "discord-rpc-lsp": {
         "cargoLock": null,
         "date": null,
@@ -139,6 +160,69 @@
         },
         "version": "25.0.3"
     },
+    "helix-steel": {
+        "cargoLock": null,
+        "date": "2026-05-21",
+        "extract": null,
+        "name": "helix-steel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mattwparas",
+            "repo": "helix",
+            "rev": "4d86612df48447088ef4190bf503fd54a7562aa9",
+            "sha256": "sha256-qAUODNxHM9K6CrRCFgfBcbqzRd+YHiWn9fEfmIzrohA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "4d86612df48447088ef4190bf503fd54a7562aa9"
+    },
+    "nix-fast-build": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "nix-fast-build",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Mic92",
+            "repo": "nix-fast-build",
+            "rev": "1.5.0",
+            "sha256": "sha256-8csvAFJtFzA/9hX3C784sMlaQME40LQmWI2V+YzCNhc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.5.0"
+    },
+    "nvfetcher": {
+        "cargoLock": null,
+        "date": "2026-05-17",
+        "extract": null,
+        "name": "nvfetcher",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "thou-vow",
+            "repo": "nvfetcher",
+            "rev": "0d0d21157d3230d240e1a2c92d48c063b0eff256",
+            "sha256": "sha256-EdP/ogAqb6tnnBe599ewlr/F7c09Vaeg77ay/xKKwA4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0d0d21157d3230d240e1a2c92d48c063b0eff256"
+    },
     "proton-cachyos-x64-linux": {
         "cargoLock": null,
         "date": null,
@@ -180,5 +264,26 @@
             "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton10-34/GE-Proton10-34.tar.gz"
         },
         "version": "10-34"
+    },
+    "treefmt-nix": {
+        "cargoLock": null,
+        "date": "2026-05-31",
+        "extract": null,
+        "name": "treefmt-nix",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "numtide",
+            "repo": "treefmt-nix",
+            "rev": "db947814a175b7ca6ded66e21383d938df01c227",
+            "sha256": "sha256-eynAfOmbmxJnkp7YewvCEbShNnnYJ9gLLqkzsYtBPeM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "db947814a175b7ca6ded66e21383d938df01c227"
     }
 }

@@ -3,11 +3,11 @@
     pkgs,
     self',
     ...
-  }: {
-    packages = {
-      helix-steel-attuned = self'.packages.helix-steel.overrideAttrs (prevAttrs: {
+  }: let
+    attuneRust = package:
+      package.overrideAttrs (prevAttrs: {
         env =
-          prevAttrs.env
+          prevAttrs.env or {}
           // {
             RUSTFLAGS = toString (
               lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
@@ -20,6 +20,9 @@
             );
           };
       });
+  in {
+    packages = {
+      helix-steel-attuned = attuneRust self'.packages.helix-steel;
 
       mesa-attuned =
         (pkgs.mesa.override {
@@ -60,21 +63,7 @@
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
         });
 
-      niri-pr-attuned = self'.packages.niri-pr.overrideAttrs (prevAttrs: {
-        env =
-          prevAttrs.env
-          // {
-            RUSTFLAGS = toString (
-              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
-              [prevAttrs.env.RUSTFLAGS]
-              ++ [
-                "-C lto=fat"
-                "-C opt-level=3"
-                "-C target-cpu=skylake"
-              ]
-            );
-          };
-      });
+      niri-attuned = attuneRust pkgs.niri;
 
       nixd-attuned =
         (pkgs.nixd.override {
@@ -90,20 +79,14 @@
             ];
         });
 
-      rust-analyzer-unwrapped-attuned = pkgs.rust-analyzer-unwrapped.overrideAttrs (prevAttrs: {
+      rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
         env =
           prevAttrs.env
           // {
-            RUSTFLAGS = toString (
-              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
-              [prevAttrs.env.RUSTFLAGS]
-              ++ [
-                "-C embed-bitcode=yes" # Was implicitly disabled (?), needed for LTO
-                "-C lto=fat"
-                "-C opt-level=3"
-                "-C target-cpu=skylake"
-              ]
-            );
+            RUSTFLAGS = toString [
+              prevAttrs.env.RUSTFLAGS
+              "-C embed-bitcode=yes" # Was implicitly disabled (?), needed for LTO
+            ];
           };
         doCheck = false;
       });

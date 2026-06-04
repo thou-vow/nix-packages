@@ -14,18 +14,20 @@ jobs:
           - runner: ubuntu-24.04
           - runner: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: DeterminateSystems/determinate-nix-action@main
+
+      - name: Install Nix
+        uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
             accept-flake-config = true
-      - uses: cachix/cachix-action@v17
-        with:
-          name: thou-vow
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-      - run: |
-          set -euo pipefail
-          nix build .#cache --print-out-paths -L \
-            | cachix push -m xz -l 9 thou-vow
+
+      - name: Build cache
+        env:
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+        run: |
+          nix run .#determinate-nix-fast-build -- --file ./ci-cache \
+            --cachix-cache thou-vow --no-nom --skip-cache

@@ -31,6 +31,17 @@
       sha256 = "sha256-mcqe531FqdBVIgZrQLOVDgIi2JBPSKadD4fCLQMimwI=";
     };
   };
+  determinate-nix-eval-jobs = {
+    pname = "determinate-nix-eval-jobs";
+    version = "v3.21.0";
+    src = fetchFromGitHub {
+      owner = "DeterminateSystems";
+      repo = "nix-eval-jobs";
+      rev = "v3.21.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-IzDhqdgNthbhSW2fg8+g+vKyCz1n1300f3axPgbdQGQ=";
+    };
+  };
   discord-rpc-lsp = {
     pname = "discord-rpc-lsp";
     version = "1.0.1";
@@ -82,6 +93,41 @@
       sha256 = "sha256-G1KWYTw9ElIdWU4cmTAt+I2OHwfXSreYPb9XIAC5LHw=";
     };
   };
+  helix-steel = {
+    pname = "helix-steel";
+    version = "4d86612df48447088ef4190bf503fd54a7562aa9";
+    src = fetchFromGitHub {
+      owner = "mattwparas";
+      repo = "helix";
+      rev = "4d86612df48447088ef4190bf503fd54a7562aa9";
+      fetchSubmodules = false;
+      sha256 = "sha256-qAUODNxHM9K6CrRCFgfBcbqzRd+YHiWn9fEfmIzrohA=";
+    };
+    date = "2026-05-21";
+  };
+  nix-fast-build = {
+    pname = "nix-fast-build";
+    version = "1.5.0";
+    src = fetchFromGitHub {
+      owner = "Mic92";
+      repo = "nix-fast-build";
+      rev = "1.5.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-8csvAFJtFzA/9hX3C784sMlaQME40LQmWI2V+YzCNhc=";
+    };
+  };
+  nvfetcher = {
+    pname = "nvfetcher";
+    version = "0d0d21157d3230d240e1a2c92d48c063b0eff256";
+    src = fetchFromGitHub {
+      owner = "thou-vow";
+      repo = "nvfetcher";
+      rev = "0d0d21157d3230d240e1a2c92d48c063b0eff256";
+      fetchSubmodules = false;
+      sha256 = "sha256-EdP/ogAqb6tnnBe599ewlr/F7c09Vaeg77ay/xKKwA4=";
+    };
+    date = "2026-05-17";
+  };
   proton-cachyos-x64-linux = {
     pname = "proton-cachyos-x64-linux";
     version = "11.0-20260521-slr";
@@ -105,5 +151,17 @@
       url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton10-34/GE-Proton10-34.tar.gz";
       sha256 = "sha256-lzPsYYcrp5NoT3B0WFj3o10Z7tXx7xva1wEP3edeuqM=";
     };
+  };
+  treefmt-nix = {
+    pname = "treefmt-nix";
+    version = "db947814a175b7ca6ded66e21383d938df01c227";
+    src = fetchFromGitHub {
+      owner = "numtide";
+      repo = "treefmt-nix";
+      rev = "db947814a175b7ca6ded66e21383d938df01c227";
+      fetchSubmodules = false;
+      sha256 = "sha256-eynAfOmbmxJnkp7YewvCEbShNnnYJ9gLLqkzsYtBPeM=";
+    };
+    date = "2026-05-31";
   };
 }
