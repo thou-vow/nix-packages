@@ -79,7 +79,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix-fast-build --file ./ci-cache \
+          nix-fast-build --file ./ci-cache.nix \
             --cachix-cache thou-vow --no-nom --skip-cache
 
   commit:

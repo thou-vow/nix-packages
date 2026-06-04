@@ -29,5 +29,5 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run .#determinate-nix-fast-build -- --file ./ci-cache \
+          nix run .#determinate-nix-fast-build -- --file ./ci-cache.nix \
             --cachix-cache thou-vow --no-nom --skip-cache
