@@ -118,15 +118,15 @@
   };
   nvfetcher = {
     pname = "nvfetcher";
-    version = "0d0d21157d3230d240e1a2c92d48c063b0eff256";
+    version = "b909de1eddb7c21b014abe88e37e5bd71f30f638";
     src = fetchFromGitHub {
       owner = "thou-vow";
       repo = "nvfetcher";
-      rev = "0d0d21157d3230d240e1a2c92d48c063b0eff256";
+      rev = "b909de1eddb7c21b014abe88e37e5bd71f30f638";
       fetchSubmodules = false;
-      sha256 = "sha256-EdP/ogAqb6tnnBe599ewlr/F7c09Vaeg77ay/xKKwA4=";
+      sha256 = "sha256-9PQK8mnzZoMUHPsY7PcFP0WoqhlHZzxjpTPdB6H+TOg=";
     };
-    date = "2026-05-17";
+    date = "2026-06-08";
   };
   proton-cachyos-x64-linux = {
     pname = "proton-cachyos-x64-linux";
