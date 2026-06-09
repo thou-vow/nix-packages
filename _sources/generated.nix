@@ -33,13 +33,13 @@
   };
   determinate-nix-eval-jobs = {
     pname = "determinate-nix-eval-jobs";
-    version = "v3.21.0";
+    version = "v3.21.1";
     src = fetchFromGitHub {
       owner = "DeterminateSystems";
       repo = "nix-eval-jobs";
-      rev = "v3.21.0";
+      rev = "v3.21.1";
       fetchSubmodules = false;
-      sha256 = "sha256-IzDhqdgNthbhSW2fg8+g+vKyCz1n1300f3axPgbdQGQ=";
+      sha256 = "sha256-ALh2z1NeypfWRVCzV+jv2qRBHFknRoQLJXWmSndhf20=";
     };
   };
   discord-rpc-lsp = {

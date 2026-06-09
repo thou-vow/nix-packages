@@ -58,12 +58,12 @@
             "name": null,
             "owner": "DeterminateSystems",
             "repo": "nix-eval-jobs",
-            "rev": "v3.21.0",
-            "sha256": "sha256-IzDhqdgNthbhSW2fg8+g+vKyCz1n1300f3axPgbdQGQ=",
+            "rev": "v3.21.1",
+            "sha256": "sha256-ALh2z1NeypfWRVCzV+jv2qRBHFknRoQLJXWmSndhf20=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.21.0"
+        "version": "v3.21.1"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
