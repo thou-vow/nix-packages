@@ -19,11 +19,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Reclaim space!
+        uses: wimpysworld/nothing-but-nix@main
+
       - name: Install Nix
         uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
             accept-flake-config = true
+            build-dir = /nix/build
 
       - name: Build cache
         env:
