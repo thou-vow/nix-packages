@@ -107,13 +107,13 @@
   };
   nix-fast-build = {
     pname = "nix-fast-build";
-    version = "1.5.0";
+    version = "1.6.0";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "nix-fast-build";
-      rev = "1.5.0";
+      rev = "1.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-8csvAFJtFzA/9hX3C784sMlaQME40LQmWI2V+YzCNhc=";
+      sha256 = "sha256-PMBbenLBvn/0pSFOhwPVn171Vw7kU5YmBUNDhxllZ7c=";
     };
   };
   nvfetcher = {
