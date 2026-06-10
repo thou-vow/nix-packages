@@ -58,6 +58,10 @@ in {
         };
       };
 
+      faugus-launcher = pkgs.faugus-launcher.overrideAttrs {
+        inherit (nvfetcherSources.faugus-launcher) version src;
+      };
+
       graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
         version = builtins.getAttr system {
           aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.version;

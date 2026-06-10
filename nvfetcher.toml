@@ -3,16 +3,18 @@ src.github = "samuelngs/apple-emoji-linux"
 fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji-Linux.ttf"
 
 [brave-latest-aarch64-linux]
-# src.github = "brave/brave-browser"
-# src.prefix = "v"
-src.manual = "1.90.124"
+src.github = "brave/brave-browser"
+src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_arm64.deb"
 
 [brave-latest-x64-linux]
-# src.github = "brave/brave-browser"
-# src.prefix = "v"
-src.manual = "1.90.124"
+src.github = "brave/brave-browser"
+src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
+
+[faugus-launcher]
+src.github = "Faugus/faugus-launcher"
+fetch.github = "Faugus/faugus-launcher"
 
 [determinate-nix-eval-jobs]
 src.github = "DeterminateSystems/nix-eval-jobs"

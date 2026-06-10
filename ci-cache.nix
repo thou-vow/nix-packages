@@ -17,6 +17,7 @@
         determinate-nix-eval-jobs
         determinate-nix-fast-build
         discord-rpc-lsp
+        faugus-launcher
         helix-steel
         helix-steel-attuned
         mesa-attuned
