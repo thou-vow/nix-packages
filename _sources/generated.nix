@@ -17,18 +17,18 @@
   };
   brave-latest-aarch64-linux = {
     pname = "brave-latest-aarch64-linux";
-    version = "1.90.124";
+    version = "1.91.171";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.90.124/brave-browser_1.90.124_arm64.deb";
-      sha256 = "sha256-+ZJxwwL5jPO49anc+6aBA5jlAsFw7BSHt6lXjFseJ3c=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.91.171/brave-browser_1.91.171_arm64.deb";
+      sha256 = "sha256-a2FTFaICNqeoKwz8YKs4F16IFNibcyhCAFcpUdwPdqU=";
     };
   };
   brave-latest-x64-linux = {
     pname = "brave-latest-x64-linux";
-    version = "1.90.124";
+    version = "1.91.171";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.90.124/brave-browser_1.90.124_amd64.deb";
-      sha256 = "sha256-mcqe531FqdBVIgZrQLOVDgIi2JBPSKadD4fCLQMimwI=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.91.171/brave-browser_1.91.171_amd64.deb";
+      sha256 = "sha256-fiMT0JzhaGUlqgb1XO6L3yIpCna+An33c7bbVmEQBKE=";
     };
   };
   determinate-nix-eval-jobs = {
@@ -59,6 +59,17 @@
     src = fetchzip {
       url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz";
       sha256 = "sha256-e/YzKvwe30KveLHRUsntKDwzdEbr7a3Wfkqe/pu93WE=";
+    };
+  };
+  faugus-launcher = {
+    pname = "faugus-launcher";
+    version = "1.21.1";
+    src = fetchFromGitHub {
+      owner = "Faugus";
+      repo = "faugus-launcher";
+      rev = "1.21.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-ON3d0Kt+ZHp3+0SWDRGE5Z4gaVfh4+Y0XsJxfCXqkTs=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -130,18 +141,18 @@
   };
   proton-cachyos-x64-linux = {
     pname = "proton-cachyos-x64-linux";
-    version = "11.0-20260521-slr";
+    version = "11.0-20260601-slr";
     src = fetchzip {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64.tar.xz";
-      sha256 = "sha256-OrZfLv0FV+fhDuhbmcbMhtylDTMwTfRAvENh/v7iIr8=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64.tar.xz";
+      sha256 = "sha256-WkQRPX7sw/OnphLek5XGSrJTY8hrECCJY9zUaw6/jdA=";
     };
   };
   proton-cachyos-x64-linux-v3 = {
     pname = "proton-cachyos-x64-linux-v3";
-    version = "11.0-20260521-slr";
+    version = "11.0-20260601-slr";
     src = fetchzip {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-Vy4asQ9UfvkD+ZWi+7Le7GjUfMR7QZcGtOQ0msYni7w=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-LOJX4H3g3+9yTQ78RUOJ05p/SLJFJCyyRQ6G/rThyDU=";
     };
   };
   proton-ge-x64-linux = {
