@@ -12,10 +12,6 @@ src.github = "brave/brave-browser"
 src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
 
-[faugus-launcher]
-src.github = "Faugus/faugus-launcher"
-fetch.github = "Faugus/faugus-launcher"
-
 [determinate-nix-eval-jobs]
 src.github = "DeterminateSystems/nix-eval-jobs"
 fetch.github = "DeterminateSystems/nix-eval-jobs"
@@ -28,6 +24,10 @@ fetch.github = "zerootoad/discord-rpc-lsp"
 src.webpage = "https://dawn.wine/dawn-winery/dwproton/releases"
 src.regex = 'dwproton-([\d.]+-\d+)-x86_64\.tar\.xz'
 fetch.zip = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-$ver/dwproton-$ver-x86_64.tar.xz"
+
+[faugus-launcher]
+src.github = "Faugus/faugus-launcher"
+fetch.github = "Faugus/faugus-launcher"
 
 [graalvm-oracle-21-aarch64-linux]
 src.manual = "21.0.11"
