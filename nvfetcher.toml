@@ -12,10 +12,6 @@ src.github = "brave/brave-browser"
 src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
 
-[determinate-nix-eval-jobs]
-src.github = "DeterminateSystems/nix-eval-jobs"
-fetch.github = "DeterminateSystems/nix-eval-jobs"
-
 [discord-rpc-lsp]
 src.github = "zerootoad/discord-rpc-lsp"
 fetch.github = "zerootoad/discord-rpc-lsp"
@@ -49,10 +45,6 @@ fetch.url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-$ver_lin
 src.git = "https://github.com/mattwparas/helix"
 src.branch = "steel-event-system"
 fetch.github = "mattwparas/helix"
-
-[nix-fast-build]
-src.github = "Mic92/nix-fast-build"
-fetch.github = "Mic92/nix-fast-build"
 
 [nvfetcher]
 src.git = "https://github.com/thou-vow/nvfetcher"

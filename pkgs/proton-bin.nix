@@ -5,8 +5,6 @@
   src,
 }:
 proton-ge-bin.overrideAttrs {
-  inherit version src;
-  pname = "proton-ge";
-
+  inherit pname version src;
   preFixup = "";
 }

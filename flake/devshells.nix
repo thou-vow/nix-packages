@@ -18,8 +18,6 @@
           yamlfmt
         ])
         ++ (with self'.packages; [
-          determinate-nix-eval-jobs
-          determinate-nix-fast-build
           nvfetcher
         ]);
     };

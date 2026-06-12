@@ -44,27 +44,6 @@
         },
         "version": "1.91.171"
     },
-    "determinate-nix-eval-jobs": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "determinate-nix-eval-jobs",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "DeterminateSystems",
-            "repo": "nix-eval-jobs",
-            "rev": "v3.21.1",
-            "sha256": "sha256-ALh2z1NeypfWRVCzV+jv2qRBHFknRoQLJXWmSndhf20=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v3.21.1"
-    },
     "discord-rpc-lsp": {
         "cargoLock": null,
         "date": null,
@@ -94,11 +73,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-e/YzKvwe30KveLHRUsntKDwzdEbr7a3Wfkqe/pu93WE=",
+            "sha256": "sha256-t5dLTIN+KSCQIG8spzN6soOhfCnnc+OgBoQWBdtJQFM=",
             "type": "zip",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-4/dwproton-11.0-4-x86_64.tar.xz"
         },
-        "version": "11.0-3"
+        "version": "11.0-4"
     },
     "faugus-launcher": {
         "cargoLock": null,
@@ -114,12 +93,12 @@
             "name": null,
             "owner": "Faugus",
             "repo": "faugus-launcher",
-            "rev": "1.21.1",
-            "sha256": "sha256-ON3d0Kt+ZHp3+0SWDRGE5Z4gaVfh4+Y0XsJxfCXqkTs=",
+            "rev": "1.22.2",
+            "sha256": "sha256-eUETFtltwGC+rWJCfoD6EphRdw4zNbyU6nhtGvDp2WY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.21.1"
+        "version": "1.22.2"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,
@@ -201,27 +180,6 @@
             "type": "github"
         },
         "version": "4d86612df48447088ef4190bf503fd54a7562aa9"
-    },
-    "nix-fast-build": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "nix-fast-build",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Mic92",
-            "repo": "nix-fast-build",
-            "rev": "1.6.0",
-            "sha256": "sha256-PMBbenLBvn/0pSFOhwPVn171Vw7kU5YmBUNDhxllZ7c=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "1.6.0"
     },
     "nvfetcher": {
         "cargoLock": null,

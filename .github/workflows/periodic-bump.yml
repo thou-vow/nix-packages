@@ -13,16 +13,16 @@ jobs:
     outputs:
       updated: ${{ steps.update.outputs.updated }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Install Nix
         uses: DeterminateSystems/determinate-nix-action@main
         with:
           extra-conf: |
             accept-flake-config = true
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update sources
         id: update
@@ -55,11 +55,6 @@ jobs:
           - runner: ubuntu-24.04
           - runner: ubuntu-24.04-arm
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Reclaim space!
         uses: wimpysworld/nothing-but-nix@main
 
@@ -70,9 +65,16 @@ jobs:
             accept-flake-config = true
             build-dir = /nix/build
 
-      - name: Install nix-fast-build before new lockfiles
-        run: |
-          nix profile add .#determinate-nix-fast-build
+      - name: Configure Cachix
+        uses: cachix/cachix-action@v17
+        with:
+          name: thou-vow
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download new lockfiles
         uses: actions/download-artifact@v8
@@ -80,11 +82,10 @@ jobs:
           name: updated-lockfiles
 
       - name: Build cache
-        env:
-          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix-fast-build --file ./ci-cache.nix \
-            --cachix-cache thou-vow --no-nom --skip-cached
+          set -euo pipefail
+          nix build --file ./ci-cache.nix --print-out-paths -L \
+            | cachix push -m xz -l 9 thou-vow
 
   commit:
     needs: build

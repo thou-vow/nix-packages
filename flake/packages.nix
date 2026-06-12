@@ -2,20 +2,14 @@
   inputs,
   lib,
   ...
-}: let
-  flake-compat = import "${inputs.flake-parts}/vendor/flake-compat";
-in {
+}: {
   perSystem = {
     nvfetcherSources,
     pkgs,
     self',
     system,
     ...
-  }: let
-    flakes = {
-      determinate-nix-eval-jobs = flake-compat {inherit (nvfetcherSources.determinate-nix-eval-jobs) src;};
-    };
-  in {
+  }: {
     packages = {
       apple-emoji = pkgs.callPackage ../pkgs/apple-emoji.nix {
         inherit (nvfetcherSources.apple-emoji) version src;
@@ -32,18 +26,6 @@ in {
         };
       };
 
-      determinate-nix-fast-build =
-        (pkgs.callPackage "${nvfetcherSources.nix-fast-build.src}/default.nix" {})
-      .override {
-          nix-eval-jobs = self'.packages.determinate-nix-eval-jobs;
-        };
-
-      determinate-nix-eval-jobs =
-        flakes.determinate-nix-eval-jobs.outputs.packages.${system}.default.overrideAttrs
-        (prevAttrs: {
-          passthru.nix = prevAttrs.passthru.nixComponents.nix-cli;
-        });
-
       discord-rpc-lsp = pkgs.callPackage ../pkgs/discord-rpc-lsp.nix {
         inherit (nvfetcherSources.discord-rpc-lsp) version src;
       };
@@ -58,7 +40,7 @@ in {
         };
       };
 
-      faugus-launcher = pkgs.faugus-launcher.overrideAttrs {
+      faugus-launcher = pkgs.callPackage ../pkgs/faugus-launcher.nix {
         inherit (nvfetcherSources.faugus-launcher) version src;
       };
 

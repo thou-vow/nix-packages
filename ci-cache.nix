@@ -5,8 +5,6 @@
     aarch64-linux = {
       inherit
         (packages.aarch64-linux)
-        determinate-nix-eval-jobs
-        determinate-nix-fast-build
         helix-steel
         nvfetcher
         ;
@@ -14,8 +12,6 @@
     x86_64-linux = {
       inherit
         (packages.x86_64-linux)
-        determinate-nix-eval-jobs
-        determinate-nix-fast-build
         discord-rpc-lsp
         faugus-launcher
         helix-steel

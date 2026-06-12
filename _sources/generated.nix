@@ -31,17 +31,6 @@
       sha256 = "sha256-fiMT0JzhaGUlqgb1XO6L3yIpCna+An33c7bbVmEQBKE=";
     };
   };
-  determinate-nix-eval-jobs = {
-    pname = "determinate-nix-eval-jobs";
-    version = "v3.21.1";
-    src = fetchFromGitHub {
-      owner = "DeterminateSystems";
-      repo = "nix-eval-jobs";
-      rev = "v3.21.1";
-      fetchSubmodules = false;
-      sha256 = "sha256-ALh2z1NeypfWRVCzV+jv2qRBHFknRoQLJXWmSndhf20=";
-    };
-  };
   discord-rpc-lsp = {
     pname = "discord-rpc-lsp";
     version = "1.0.1";
@@ -55,21 +44,21 @@
   };
   dwproton-x64-linux = {
     pname = "dwproton-x64-linux";
-    version = "11.0-3";
+    version = "11.0-4";
     src = fetchzip {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-3/dwproton-11.0-3-x86_64.tar.xz";
-      sha256 = "sha256-e/YzKvwe30KveLHRUsntKDwzdEbr7a3Wfkqe/pu93WE=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-4/dwproton-11.0-4-x86_64.tar.xz";
+      sha256 = "sha256-t5dLTIN+KSCQIG8spzN6soOhfCnnc+OgBoQWBdtJQFM=";
     };
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "1.21.1";
+    version = "1.22.2";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "1.21.1";
+      rev = "1.22.2";
       fetchSubmodules = false;
-      sha256 = "sha256-ON3d0Kt+ZHp3+0SWDRGE5Z4gaVfh4+Y0XsJxfCXqkTs=";
+      sha256 = "sha256-eUETFtltwGC+rWJCfoD6EphRdw4zNbyU6nhtGvDp2WY=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -115,17 +104,6 @@
       sha256 = "sha256-qAUODNxHM9K6CrRCFgfBcbqzRd+YHiWn9fEfmIzrohA=";
     };
     date = "2026-05-21";
-  };
-  nix-fast-build = {
-    pname = "nix-fast-build";
-    version = "1.6.0";
-    src = fetchFromGitHub {
-      owner = "Mic92";
-      repo = "nix-fast-build";
-      rev = "1.6.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-PMBbenLBvn/0pSFOhwPVn171Vw7kU5YmBUNDhxllZ7c=";
-    };
   };
   nvfetcher = {
     pname = "nvfetcher";
