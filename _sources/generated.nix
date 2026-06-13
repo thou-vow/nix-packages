@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "1.22.2";
+    version = "1.22.4";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "1.22.2";
+      rev = "1.22.4";
       fetchSubmodules = false;
-      sha256 = "sha256-eUETFtltwGC+rWJCfoD6EphRdw4zNbyU6nhtGvDp2WY=";
+      sha256 = "sha256-Npfoqa6A1YSNSxV3zcIQL6prlht47dVaZYpq9+Dx9LY=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
