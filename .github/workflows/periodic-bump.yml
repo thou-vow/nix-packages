@@ -81,7 +81,7 @@ jobs:
         run: |
           nix run --inputs-from . nixpkgs#nix-fast-build -- \
             --file ./ci-cache.nix --cachix-cache thou-vow --skip-cached \
-            --max-jobs 0 --no-nom --fail-fast
+            --max-jobs 0 --no-nom
 
   commit:
     needs: build
