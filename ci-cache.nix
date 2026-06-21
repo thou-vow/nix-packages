@@ -16,6 +16,7 @@
         faugus-launcher
         helix-steel
         helix-steel-attuned
+        lix-attuned
         mesa-attuned
         niri-attuned
         nixd-attuned

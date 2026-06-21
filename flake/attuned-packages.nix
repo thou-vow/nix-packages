@@ -24,6 +24,18 @@
     packages = {
       helix-steel-attuned = attuneRust self'.packages.helix-steel;
 
+      lix-attuned =
+        (pkgs.lix.override {inherit (pkgs.llvmPackages_latest) stdenv;})
+      .overrideAttrs (prevAttrs: {
+          mesonBuildType = "release";
+
+          mesonFlags =
+            prevAttrs.mesonFlags ++ [
+              (lib.mesonOption "cpp_args" "-march=skylake")
+              (lib.mesonBool "enable-tests" false)
+            ];
+        });
+
       mesa-attuned =
         (pkgs.mesa.override {
           galliumDrivers = ["iris"];
@@ -75,7 +87,6 @@
             ++ [
               (lib.mesonBool "b_lto" true)
               (lib.mesonOption "cpp_args" "-march=skylake")
-              (lib.mesonOption "rust_args" "-Ctarget-cpu=skylake")
             ];
         });
 

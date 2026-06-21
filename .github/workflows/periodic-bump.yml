@@ -15,9 +15,6 @@ jobs:
     steps:
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v35
-        with:
-          nix_conf: |
-            build-dir = /nix/build
 
       - name: Checkout repository
         uses: actions/checkout@v6
