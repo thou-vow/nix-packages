@@ -58,6 +58,9 @@ jobs:
     steps:
       - name: Reclaim space!
         uses: wimpysworld/nothing-but-nix@main
+        with:
+          hatchet-protocol: 'holster'
+          nix-permission-edict: true
 
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v35
