@@ -174,12 +174,12 @@
             "name": null,
             "owner": "mattwparas",
             "repo": "helix",
-            "rev": "6dee3194c73407b3b825606f70d8f70cc9eb545c",
-            "sha256": "sha256-inbkvO1w/4fSZbgqlBwMHrUMG9a+h0hvF5jGtoov/lo=",
+            "rev": "0522d519fd5227f77ecef387a87e51b732907562",
+            "sha256": "sha256-bGfByNnjuzENdvTW97s4UhwglYY7ydBk54gOZmnaM4Q=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6dee3194c73407b3b825606f70d8f70cc9eb545c"
+        "version": "0522d519fd5227f77ecef387a87e51b732907562"
     },
     "nvfetcher": {
         "cargoLock": null,
