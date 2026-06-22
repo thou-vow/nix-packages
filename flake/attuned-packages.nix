@@ -25,12 +25,13 @@
       helix-steel-attuned = attuneRust self'.packages.helix-steel;
 
       lix-attuned =
-        (pkgs.lix.override {inherit (pkgs.llvmPackages_latest) stdenv;})
+        (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
       .overrideAttrs (prevAttrs: {
           mesonBuildType = "release";
 
           mesonFlags =
-            prevAttrs.mesonFlags ++ [
+            prevAttrs.mesonFlags
+            ++ [
               (lib.mesonOption "cpp_args" "-march=skylake")
               (lib.mesonBool "enable-tests" false)
             ];
@@ -38,6 +39,7 @@
 
       mesa-attuned =
         (pkgs.mesa.override {
+          inherit (pkgs.llvmPackages) stdenv;
           galliumDrivers = ["iris"];
           vulkanDrivers = ["intel"];
           vulkanLayers = ["overlay"];
@@ -45,16 +47,19 @@
         }).overrideAttrs (prevAttrs: {
           depsBuildBuild =
             lib.remove pkgs.buildPackages.stdenv.cc prevAttrs.depsBuildBuild
-            ++ [pkgs.buildPackages.llvmPackages.clang];
+            ++ [pkgs.llvmPackages.bintools];
 
           mesonBuildType = "release";
 
           mesonFlags =
             prevAttrs.mesonFlags
             ++ [
-              # (lib.mesonBool "b_lto" true)
+              (lib.mesonBool "allow-broken-lto" true)
+              (lib.mesonBool "b_lto" true)
               (lib.mesonOption "c_args" "-march=skylake")
+              (lib.mesonOption "c_link_args" "-fuse-ld=lld")
               (lib.mesonOption "cpp_args" "-march=skylake")
+              (lib.mesonOption "cpp_link_args" "-fuse-ld=lld")
 
               # Unnecessary stuff
               (lib.mesonBool "gallium-extra-hud" false)
@@ -79,7 +84,7 @@
 
       nixd-attuned =
         (pkgs.nixd.override {
-          inherit (pkgs.llvmPackages_latest) stdenv;
+          inherit (pkgs.llvmPackages) stdenv;
         }).overrideAttrs
         (prevAttrs: {
           mesonFlags =
