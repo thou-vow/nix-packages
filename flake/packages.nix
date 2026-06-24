@@ -17,12 +17,12 @@
 
       brave = pkgs.brave.overrideAttrs {
         version = builtins.getAttr system {
-          aarch64-linux = nvfetcherSources.brave-latest-aarch64-linux.version;
-          x86_64-linux = nvfetcherSources.brave-latest-x64-linux.version;
+          aarch64-linux = nvfetcherSources.brave-aarch64-linux.version;
+          x86_64-linux = nvfetcherSources.brave-x64-linux.version;
         };
         src = builtins.getAttr system {
-          aarch64-linux = nvfetcherSources.brave-latest-aarch64-linux.src;
-          x86_64-linux = nvfetcherSources.brave-latest-x64-linux.src;
+          aarch64-linux = nvfetcherSources.brave-aarch64-linux.src;
+          x86_64-linux = nvfetcherSources.brave-x64-linux.src;
         };
       };
 
@@ -69,11 +69,16 @@
       };
 
       helix-steel =
-        (pkgs.callPackage "${nvfetcherSources.helix-steel.src}/default.nix" {})
+        (pkgs.callPackage nvfetcherSources.helix-steel.src {})
       .overrideAttrs (prevAttrs: {
           inherit (nvfetcherSources.helix-steel) version;
           cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
         });
+
+      mangowc = (pkgs.callPackage "${nvfetcherSources.mangowc.src}/nix" {}).overrideAttrs {
+        inherit (nvfetcherSources.mangowc) pname version;
+        __intentionallyOverridingVersion = true;
+      };
 
       nvfetcher = pkgs.nvfetcher.overrideAttrs {
         inherit (nvfetcherSources.nvfetcher) version src;
@@ -83,7 +88,7 @@
         (pkgs.prismlauncher.override {
           prismlauncher-unwrapped = self'.packages.prismlauncher-cracked-unwrapped;
         }).overrideAttrs {
-        inherit (nvfetcherSources.prismlauncher-cracked) version;
+          inherit (nvfetcherSources.prismlauncher-cracked) version;
           pname = "prismlauncher-cracked";
         };
 

@@ -14,35 +14,35 @@
         },
         "version": "macos-26-20260613-f1fc560b"
     },
-    "brave-latest-aarch64-linux": {
+    "brave-aarch64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "brave-latest-aarch64-linux",
+        "name": "brave-aarch64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-7O7cK9Y0nqn60G/4J7Tit0Z1ndsEgs9WtwS1yrDGZ0Y=",
+            "sha256": "sha256-H7mDZ/RTUgHLKdGXwDU3uqYWI29FcFYXKcq4QFWfi2A=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.91.175/brave-browser_1.91.175_arm64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.91.178/brave-browser_1.91.178_arm64.deb"
         },
-        "version": "1.91.175"
+        "version": "1.91.178"
     },
-    "brave-latest-x64-linux": {
+    "brave-x64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "brave-latest-x64-linux",
+        "name": "brave-x64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-/+xaqBCYzo4bvYASoRgDHDIUb2aWX1DGxqfDifeWKSQ=",
+            "sha256": "sha256-HxU6U0JOQLocKwr1MX9kkYQprutS4xaMwLD09SKPSKo=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.91.175/brave-browser_1.91.175_amd64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.91.178/brave-browser_1.91.178_amd64.deb"
         },
-        "version": "1.91.175"
+        "version": "1.91.178"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
@@ -180,6 +180,27 @@
             "type": "github"
         },
         "version": "0522d519fd5227f77ecef387a87e51b732907562"
+    },
+    "mangowc": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "mangowc",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mangowm",
+            "repo": "mango",
+            "rev": "0.14.4",
+            "sha256": "sha256-WfQNALT+8ZbjZG2co1tz2dZZZw1tcU5ynuFe+vVMbV0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0.14.4"
     },
     "nvfetcher": {
         "cargoLock": null,

@@ -15,20 +15,20 @@
       sha256 = "sha256-uMjtl/ZCuJuko2o+CWYZ8IBdBswlrhEW5pU7mBQq4gw=";
     };
   };
-  brave-latest-aarch64-linux = {
-    pname = "brave-latest-aarch64-linux";
-    version = "1.91.175";
+  brave-aarch64-linux = {
+    pname = "brave-aarch64-linux";
+    version = "1.91.178";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.91.175/brave-browser_1.91.175_arm64.deb";
-      sha256 = "sha256-7O7cK9Y0nqn60G/4J7Tit0Z1ndsEgs9WtwS1yrDGZ0Y=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.91.178/brave-browser_1.91.178_arm64.deb";
+      sha256 = "sha256-H7mDZ/RTUgHLKdGXwDU3uqYWI29FcFYXKcq4QFWfi2A=";
     };
   };
-  brave-latest-x64-linux = {
-    pname = "brave-latest-x64-linux";
-    version = "1.91.175";
+  brave-x64-linux = {
+    pname = "brave-x64-linux";
+    version = "1.91.178";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.91.175/brave-browser_1.91.175_amd64.deb";
-      sha256 = "sha256-/+xaqBCYzo4bvYASoRgDHDIUb2aWX1DGxqfDifeWKSQ=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.91.178/brave-browser_1.91.178_amd64.deb";
+      sha256 = "sha256-HxU6U0JOQLocKwr1MX9kkYQprutS4xaMwLD09SKPSKo=";
     };
   };
   discord-rpc-lsp = {
@@ -104,6 +104,17 @@
       sha256 = "sha256-bGfByNnjuzENdvTW97s4UhwglYY7ydBk54gOZmnaM4Q=";
     };
     date = "2026-06-21";
+  };
+  mangowc = {
+    pname = "mangowc";
+    version = "0.14.4";
+    src = fetchFromGitHub {
+      owner = "mangowm";
+      repo = "mango";
+      rev = "0.14.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-WfQNALT+8ZbjZG2co1tz2dZZZw1tcU5ynuFe+vVMbV0=";
+    };
   };
   nvfetcher = {
     pname = "nvfetcher";

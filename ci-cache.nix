@@ -17,6 +17,7 @@
         helix-steel
         helix-steel-attuned
         lix-attuned
+        mangowc
         mesa-attuned
         niri-attuned
         nixd-attuned

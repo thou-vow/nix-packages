@@ -2,12 +2,12 @@
 src.github = "samuelngs/apple-emoji-linux"
 fetch.url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/$ver/AppleColorEmoji-Linux.ttf"
 
-[brave-latest-aarch64-linux]
+[brave-aarch64-linux]
 src.github = "brave/brave-browser"
 src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_arm64.deb"
 
-[brave-latest-x64-linux]
+[brave-x64-linux]
 src.github = "brave/brave-browser"
 src.prefix = "v"
 fetch.url = "https://github.com/brave/brave-browser/releases/download/v$ver/brave-browser_$ver_amd64.deb"
@@ -45,6 +45,10 @@ fetch.url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-$ver_lin
 src.git = "https://github.com/mattwparas/helix"
 src.branch = "steel-event-system"
 fetch.github = "mattwparas/helix"
+
+[mangowc]
+src.github = "mangowm/mango"
+fetch.github = "mangowm/mango"
 
 [nvfetcher]
 src.git = "https://github.com/thou-vow/nvfetcher"
