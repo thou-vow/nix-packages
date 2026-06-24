@@ -15,7 +15,7 @@
         inherit (nvfetcherSources.apple-emoji) version src;
       };
 
-      brave-latest = pkgs.brave.overrideAttrs {
+      brave = pkgs.brave.overrideAttrs {
         version = builtins.getAttr system {
           aarch64-linux = nvfetcherSources.brave-latest-aarch64-linux.version;
           x86_64-linux = nvfetcherSources.brave-latest-x64-linux.version;
