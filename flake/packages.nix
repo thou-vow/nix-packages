@@ -79,6 +79,19 @@
         inherit (nvfetcherSources.nvfetcher) version src;
       };
 
+      prismlauncher-cracked =
+        (pkgs.prismlauncher.override {
+          prismlauncher-unwrapped = self'.packages.prismlauncher-cracked-unwrapped;
+        }).overrideAttrs {
+        inherit (nvfetcherSources.prismlauncher-cracked) version;
+          pname = "prismlauncher-cracked";
+        };
+
+      prismlauncher-cracked-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
+        inherit (nvfetcherSources.prismlauncher-cracked) version src;
+        pname = "prismlauncher-cracked-unwrapped";
+      };
+
       proton-cachyos = pkgs.callPackage ../pkgs/proton-bin.nix {
         pname = "proton-cachyos";
         version = builtins.getAttr system {

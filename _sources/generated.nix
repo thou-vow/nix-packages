@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "1.22.4";
+    version = "1.22.6";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "1.22.4";
+      rev = "1.22.6";
       fetchSubmodules = false;
-      sha256 = "sha256-Npfoqa6A1YSNSxV3zcIQL6prlht47dVaZYpq9+Dx9LY=";
+      sha256 = "sha256-hN0DU7MFlG8+TVQ2pWRRIVIDlmmHE54Dv/PqFAwwECs=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -116,6 +116,17 @@
       sha256 = "sha256-9PQK8mnzZoMUHPsY7PcFP0WoqhlHZzxjpTPdB6H+TOg=";
     };
     date = "2026-06-08";
+  };
+  prismlauncher-cracked = {
+    pname = "prismlauncher-cracked";
+    version = "11.0.2-1";
+    src = fetchFromGitHub {
+      owner = "Diegiwg";
+      repo = "PrismLauncher-Cracked";
+      rev = "11.0.2-1";
+      fetchSubmodules = false;
+      sha256 = "sha256-YrqHeE9ZEnmxJiXE+IBAxbmNRFPE7mn9KbxZ3Mpu388=";
+    };
   };
   proton-cachyos-x64-linux = {
     pname = "proton-cachyos-x64-linux";

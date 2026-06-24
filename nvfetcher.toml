@@ -50,6 +50,10 @@ fetch.github = "mattwparas/helix"
 src.git = "https://github.com/thou-vow/nvfetcher"
 fetch.github = "thou-vow/nvfetcher"
 
+[prismlauncher-cracked]
+src.github = "Diegiwg/PrismLauncher-Cracked"
+fetch.github = "Diegiwg/PrismLauncher-Cracked"
+
 [proton-cachyos-x64-linux]
 src.github = "CachyOS/proton-cachyos"
 src.prefix = "cachyos-"

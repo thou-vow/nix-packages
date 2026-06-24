@@ -106,6 +106,10 @@
           };
         doCheck = false;
       });
+
+      rust-analyzer-attuned = pkgs.rust-analyzer-unwrapped-attuned.override {
+        rust-analyzer-unwrapped = self'.packages.rust-analyzer-unwrapped-attuned;
+      };
     };
   };
 }

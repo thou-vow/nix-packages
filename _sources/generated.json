@@ -93,12 +93,12 @@
             "name": null,
             "owner": "Faugus",
             "repo": "faugus-launcher",
-            "rev": "1.22.4",
-            "sha256": "sha256-Npfoqa6A1YSNSxV3zcIQL6prlht47dVaZYpq9+Dx9LY=",
+            "rev": "1.22.6",
+            "sha256": "sha256-hN0DU7MFlG8+TVQ2pWRRIVIDlmmHE54Dv/PqFAwwECs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.22.4"
+        "version": "1.22.6"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,
@@ -201,6 +201,27 @@
             "type": "github"
         },
         "version": "b909de1eddb7c21b014abe88e37e5bd71f30f638"
+    },
+    "prismlauncher-cracked": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "prismlauncher-cracked",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Diegiwg",
+            "repo": "PrismLauncher-Cracked",
+            "rev": "11.0.2-1",
+            "sha256": "sha256-YrqHeE9ZEnmxJiXE+IBAxbmNRFPE7mn9KbxZ3Mpu388=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "11.0.2-1"
     },
     "proton-cachyos-x64-linux": {
         "cargoLock": null,

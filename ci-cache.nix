@@ -21,6 +21,7 @@
         niri-attuned
         nixd-attuned
         nvfetcher
+        prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
         ;
     };
