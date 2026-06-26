@@ -22,6 +22,7 @@
         mangowc-attuned
         mesa-attuned
         nixd-attuned
+        nushell-attuned
         nvfetcher
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned

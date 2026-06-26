@@ -28,6 +28,7 @@
               --replace-fail "native_optimizations and not sanitize" "not sanitize" \
               --replace-fail "-march=native -mtune=native" "-march=skylake -mtune=skylake" \
           '';
+        doCheck = false;
       });
 
       lix-attuned =
@@ -111,6 +112,19 @@
               (lib.mesonOption "cpp_args" "-march=skylake")
             ];
         });
+
+      nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
+        env =
+          prevAttrs.env
+          // {
+            RUSTFLAGS = toString [
+              prevAttrs.env.RUSTFLAGS
+              "-C lto=fat"
+              "-C opt-level=3"
+            ];
+          };
+        doCheck = false;
+      });
 
       rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
         env =
