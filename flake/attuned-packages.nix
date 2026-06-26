@@ -139,6 +139,13 @@
               "-C opt-level=3"
             ];
           };
+
+        postPatch =
+          prevAttrs.postPatch or ""
+          + ''
+            substituteInPlace Cargo.toml \
+              --replace-fail '"thin"' 'true'
+          '';
       });
 
       rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
