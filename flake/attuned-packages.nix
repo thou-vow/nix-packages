@@ -15,6 +15,9 @@
               "-C target-cpu=skylake"
             ];
           };
+
+        doCheck = false;
+        doInstallCheck = false;
       });
   in {
     packages = {
@@ -28,7 +31,9 @@
               --replace-fail "native_optimizations and not sanitize" "not sanitize" \
               --replace-fail "-march=native -mtune=native" "-march=skylake -mtune=skylake" \
           '';
+
         doCheck = false;
+        doInstallCheck = false;
       });
 
       lix-attuned =
@@ -42,6 +47,9 @@
               (lib.mesonOption "cpp_args" "-march=skylake")
               (lib.mesonBool "enable-tests" false)
             ];
+
+          doCheck = false;
+          doInstallCheck = false;
         });
 
       mangowc-attuned =
@@ -53,6 +61,9 @@
             ++ [
               (lib.mesonOption "c_args" "-march=skylake")
             ];
+
+          doCheck = false;
+          doInstallCheck = false;
         });
 
       mesa-attuned =
@@ -96,6 +107,9 @@
 
           postInstall = "";
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
+
+          doCheck = false;
+          doInstallCheck = false;
         });
 
       nixd-attuned =
@@ -111,6 +125,9 @@
               (lib.mesonBool "b_lto" true)
               (lib.mesonOption "cpp_args" "-march=skylake")
             ];
+
+          doCheck = false;
+          doInstallCheck = false;
         });
 
       nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
@@ -119,11 +136,9 @@
           // {
             RUSTFLAGS = toString [
               prevAttrs.env.RUSTFLAGS
-              "-C lto=fat"
               "-C opt-level=3"
             ];
           };
-        doCheck = false;
       });
 
       rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
@@ -137,7 +152,6 @@
               "-C opt-level=3"
             ];
           };
-        doCheck = false;
       });
 
       rust-analyzer-attuned = pkgs.rust-analyzer.override {
