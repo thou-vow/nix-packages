@@ -72,13 +72,33 @@
         (pkgs.callPackage nvfetcherSources.helix-steel.src {})
       .overrideAttrs (prevAttrs: {
           inherit (nvfetcherSources.helix-steel) version;
+
+          env =
+            prevAttrs.env or {}
+            // {
+              RUSTFLAGS = toString [
+                (lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
+                  prevAttrs.env.RUSTFLAGS)
+                "-C lto=fat"
+                "-C opt-level=3"
+              ];
+            };
+
           cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
         });
 
-      mangowc = (pkgs.callPackage "${nvfetcherSources.mangowc.src}/nix" {}).overrideAttrs {
+      mangowc = (pkgs.callPackage "${nvfetcherSources.mangowc.src}/nix" {}).overrideAttrs (prevAttrs: {
         inherit (nvfetcherSources.mangowc) pname version;
         __intentionallyOverridingVersion = true;
-      };
+
+        mesonBuildType = "release";
+
+        mesonFlags =
+          prevAttrs.mesonFlags
+          ++ [
+            (lib.mesonBool "b_lto" true)
+          ];
+      });
 
       nvfetcher = pkgs.nvfetcher.overrideAttrs {
         inherit (nvfetcherSources.nvfetcher) version src;

@@ -9,15 +9,11 @@
         env =
           prevAttrs.env or {}
           // {
-            RUSTFLAGS = toString (
-              lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
-              [prevAttrs.env.RUSTFLAGS]
-              ++ [
-                "-C lto=fat"
-                "-C opt-level=3"
-                "-C target-cpu=skylake"
-              ]
-            );
+            RUSTFLAGS = toString [
+              (lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
+                prevAttrs.env.RUSTFLAGS)
+              "-C target-cpu=skylake"
+            ];
           };
       });
   in {
@@ -34,6 +30,17 @@
             ++ [
               (lib.mesonOption "cpp_args" "-march=skylake")
               (lib.mesonBool "enable-tests" false)
+            ];
+        });
+
+      mangowc-attuned =
+        (self'.packages.mangowc.override {
+          inherit (pkgs.llvmPackages) stdenv;
+        }).overrideAttrs (prevAttrs: {
+          mesonFlags =
+            prevAttrs.mesonFlags
+            ++ [
+              (lib.mesonOption "c_args" "-march=skylake")
             ];
         });
 
@@ -80,13 +87,13 @@
           postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
         });
 
-      niri-attuned = attuneRust pkgs.niri;
-
       nixd-attuned =
         (pkgs.nixd.override {
           inherit (pkgs.llvmPackages) stdenv;
         }).overrideAttrs
         (prevAttrs: {
+          mesonBuildType = "release";
+
           mesonFlags =
             prevAttrs.mesonFlags or []
             ++ [
@@ -102,12 +109,14 @@
             RUSTFLAGS = toString [
               prevAttrs.env.RUSTFLAGS
               "-C embed-bitcode=yes" # Was implicitly disabled (?), needed for LTO
+              "-C lto=fat"
+              "-C opt-level=3"
             ];
           };
         doCheck = false;
       });
 
-      rust-analyzer-attuned = pkgs.rust-analyzer-unwrapped-attuned.override {
+      rust-analyzer-attuned = pkgs.rust-analyzer.override {
         rust-analyzer-unwrapped = self'.packages.rust-analyzer-unwrapped-attuned;
       };
     };

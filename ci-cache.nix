@@ -18,8 +18,8 @@
         helix-steel-attuned
         lix-attuned
         mangowc
+        mangowc-attuned
         mesa-attuned
-        niri-attuned
         nixd-attuned
         nvfetcher
         prismlauncher-cracked-unwrapped
