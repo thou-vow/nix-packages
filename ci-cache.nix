@@ -16,6 +16,7 @@
         faugus-launcher
         helix-steel
         helix-steel-attuned
+        kitty-attuned
         lix-attuned
         mangowc
         mangowc-attuned

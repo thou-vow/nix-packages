@@ -20,6 +20,16 @@
     packages = {
       helix-steel-attuned = attuneRust self'.packages.helix-steel;
 
+      kitty-attuned = pkgs.kitty.overrideAttrs (prevAttrs: {
+        postPatch =
+          prevAttrs.postPatch or ""
+          + ''
+            substituteInPlace setup.py \
+              --replace-fail "native_optimizations and not sanitize" "not sanitize" \
+              --replace-fail "-march=native -mtune=native" "-march=skylake -mtune=skylake" \
+          '';
+      });
+
       lix-attuned =
         (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
       .overrideAttrs (prevAttrs: {
