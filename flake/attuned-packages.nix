@@ -52,8 +52,8 @@
           doInstallCheck = false;
         });
 
-      mangowc-attuned =
-        (self'.packages.mangowc.override {
+      mango-attuned =
+        (self'.packages.mango.override {
           inherit (pkgs.llvmPackages) stdenv;
         }).overrideAttrs (prevAttrs: {
           mesonFlags =

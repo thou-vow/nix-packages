@@ -105,8 +105,8 @@
     };
     date = "2026-06-21";
   };
-  mangowc = {
-    pname = "mangowc";
+  mango = {
+    pname = "mango";
     version = "0.14.4";
     src = fetchFromGitHub {
       owner = "mangowm";

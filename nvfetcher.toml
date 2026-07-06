@@ -46,7 +46,7 @@ src.git = "https://github.com/mattwparas/helix"
 src.branch = "steel-event-system"
 fetch.github = "mattwparas/helix"
 
-[mangowc]
+[mango]
 src.github = "mangowm/mango"
 fetch.github = "mangowm/mango"
 

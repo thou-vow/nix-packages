@@ -18,8 +18,8 @@
         helix-steel-attuned
         kitty-attuned
         lix-attuned
-        mangowc
-        mangowc-attuned
+        mango
+        mango-attuned
         mesa-attuned
         nixd-attuned
         nushell-attuned

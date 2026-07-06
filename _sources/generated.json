@@ -181,11 +181,11 @@
         },
         "version": "0522d519fd5227f77ecef387a87e51b732907562"
     },
-    "mangowc": {
+    "mango": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "mangowc",
+        "name": "mango",
         "passthru": null,
         "pinned": false,
         "src": {

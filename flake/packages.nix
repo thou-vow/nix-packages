@@ -87,8 +87,8 @@
           cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
         });
 
-      mangowc = (pkgs.callPackage "${nvfetcherSources.mangowc.src}/nix" {}).overrideAttrs (prevAttrs: {
-        inherit (nvfetcherSources.mangowc) pname version;
+      mango = (pkgs.callPackage "${nvfetcherSources.mango.src}/nix" {}).overrideAttrs (prevAttrs: {
+        inherit (nvfetcherSources.mango) pname version;
         __intentionallyOverridingVersion = true;
 
         mesonBuildType = "release";
