@@ -5,7 +5,7 @@
     extra-substituters = [
       "https://thou-vow.cachix.org"
       "https://install.determinate.systems"
-      "https://nyx-cache.chaotic.cx"
+      "https://nyx-cache.chaotic.cx/"
     ];
     extra-trusted-public-keys = [
       "thou-vow.cachix.org-1:n6zUvWYOI7kh0jgd+ghWhxeMd9tVdYF2KdOvufJ/Qy4="

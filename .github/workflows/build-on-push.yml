@@ -20,6 +20,16 @@ jobs:
           hatchet-protocol: 'holster'
           nix-permission-edict: true
 
+      - name: Get current month
+        id: date
+        run: echo "month=$(date +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore Nix evaluation cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/nix
+          key: nix-eval-cache-${{ runner.os }}-${{ steps.date.outputs.month }}
+
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v35
 
