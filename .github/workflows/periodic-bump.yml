@@ -17,7 +17,7 @@ jobs:
         id: date
         run: echo "month=$(date +%Y-%m)" >> "$GITHUB_OUTPUT"
 
-      - name: Restore Nix evaluation cache
+      - name: Restore and save Nix evaluation cache
         uses: actions/cache@v6
         with:
           path: ~/.cache/nix
@@ -73,7 +73,7 @@ jobs:
         id: date
         run: echo "month=$(date +%Y-%m)" >> "$GITHUB_OUTPUT"
 
-      - name: Restore Nix evaluation cache
+      - name: Restore and save Nix evaluation cache
         uses: actions/cache@v6
         with:
           path: ~/.cache/nix
