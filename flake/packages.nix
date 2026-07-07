@@ -1,9 +1,6 @@
-{
-  inputs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   perSystem = {
+    inputs',
     nvfetcherSources,
     pkgs,
     self',
@@ -86,6 +83,15 @@
 
           cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
         });
+
+      linux_cachyos-lto-v3 =
+        (inputs'.chaotic-nyx.legacyPackages.linuxPackages_cachyos-lto.cachyOverride {
+          cachyVars =
+            inputs'.chaotic-nyx.legacyPackages.linuxPackages_cachyos-lto.kernel.cachyConfig.cachyVars
+            // {
+              _processor_opt = "GENERIC_V3";
+            };
+        }).kernel;
 
       mango = (pkgs.callPackage "${nvfetcherSources.mango.src}/nix" {}).overrideAttrs (prevAttrs: {
         inherit (nvfetcherSources.mango) pname version;
