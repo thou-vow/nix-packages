@@ -17,6 +17,7 @@
         helix-steel
         helix-steel-attuned
         kitty-attuned
+        linux-attuned
         lix-attuned
         mango
         mango-attuned

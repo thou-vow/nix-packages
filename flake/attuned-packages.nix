@@ -1,5 +1,6 @@
 {lib, ...}: {
   perSystem = {
+    inputs',
     pkgs,
     self',
     ...
@@ -35,6 +36,28 @@
         doCheck = false;
         doInstallCheck = false;
       });
+
+      linux-attuned =
+        (inputs'.chaotic-nyx.legacyPackages.linuxPackages_cachyos-lto.cachyOverride {
+          cachyVars =
+            inputs'.chaotic-nyx.legacyPackages.linuxPackages_cachyos-lto.kernel.cachyConfig.cachyVars
+            // {
+              _processor_opt = "NATIVE";
+              _use_llvm_lto = "full";
+            };
+
+          versions =
+            inputs'.chaotic-nyx.legacyPackages.linuxPackages_cachyos-lto.kernel.cachyConfig.versions
+            // {
+              suffix = "-attuned";
+            };
+        }).kernel.overrideAttrs (prevAttrs: {
+          postPatch =
+            prevAttrs.postPatch
+            + ''
+              sed -Ei"" 's/native/skylake/g' arch/x86/Makefile
+            '';
+        });
 
       lix-attuned =
         (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
