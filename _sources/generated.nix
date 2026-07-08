@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.92.134";
+    version = "1.92.138";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.134/brave-browser_1.92.134_arm64.deb";
-      sha256 = "sha256-qo40t+PGl1RO2ajJ2Hev4G1FWvzTx7Ak5CVxjdxabLI=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.138/brave-browser_1.92.138_arm64.deb";
+      sha256 = "sha256-6m9BDgwCAbRZRYHE5JnL8kyR3XuMJ8dqUvkEQAXl7AI=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.92.134";
+    version = "1.92.138";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.134/brave-browser_1.92.134_amd64.deb";
-      sha256 = "sha256-T3A/ejmLkIRYGWc8GXQmvIAZvQFwYEyhQJxssNDalhQ=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.138/brave-browser_1.92.138_amd64.deb";
+      sha256 = "sha256-MIBY6YMdpkMMoC9eKGBQMFuKN8csWa9fLfWFzeLTCyU=";
     };
   };
   discord-rpc-lsp = {
@@ -118,13 +118,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "54c8cd49fb709f6e7731d02dfc2468bbfb16effe";
+    version = "c0e0afc24db7ff7feb450fc5f5f316fdd1a273c6";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "54c8cd49fb709f6e7731d02dfc2468bbfb16effe";
+      rev = "c0e0afc24db7ff7feb450fc5f5f316fdd1a273c6";
       fetchSubmodules = false;
-      sha256 = "sha256-obeRpRcGCBEXdevCnI9eZPy7k2epocUvQrkYM4pGBRM=";
+      sha256 = "sha256-jVLb5HXJ4hcNp5BKpiPpXdyCzEYZVKMhk8UpcbPLVzg=";
     };
     date = "2026-07-08";
   };
