@@ -154,7 +154,13 @@
           inherit (pkgs.llvmPackages) stdenv;
           cudaSupport = false;
         }).overrideAttrs (prevAttrs: {
-          # WIP
+          mesonFlags =
+            prevAttrs.mesonFlags or []
+            ++ [
+              (lib.mesonBool "b_lto" true)
+              (lib.mesonOption "c_args" "-march=skylake")
+              (lib.mesonOption "cpp_args" "-march=skylake")
+            ];
         });
 
       rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {

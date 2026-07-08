@@ -23,6 +23,7 @@
         mango-attuned
         mesa-attuned
         nixd-attuned
+        noctalia-attuned
         nushell-attuned
         nvfetcher
         prismlauncher-cracked-unwrapped
