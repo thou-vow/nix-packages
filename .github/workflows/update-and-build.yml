@@ -42,7 +42,7 @@ jobs:
             _sources/
   build:
     needs: update
-    if: needs.update.outputs.updated == 'true'
+    if: needs.update.outputs.updated == 'true' || github.event_name == 'push'
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
@@ -84,7 +84,8 @@ jobs:
           nix build --file ./ci-cache.nix --print-out-paths -L \
             | cachix push -m xz -l 9 thou-vow
   commit:
-    needs: build
+    needs: [update, build]
+    if: needs.update.outputs.updated == 'true'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
