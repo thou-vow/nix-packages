@@ -75,6 +75,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Download new lockfiles
+        if: needs.update.outputs.updated == 'true'
         uses: actions/download-artifact@v8
         with:
           name: updated-lockfiles
