@@ -5,8 +5,7 @@
   fetchzip,
   fetchFromGitHub,
   dockerTools,
-}:
-{
+}: {
   apple-emoji = {
     pname = "apple-emoji";
     version = "macos-26-20260613-f1fc560b";

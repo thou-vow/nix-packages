@@ -1,6 +1,6 @@
 {lib, ...}: {
   perSystem = {
-    inputs',
+    nvfetcherSources,
     pkgs,
     self',
     ...
@@ -148,6 +148,14 @@
               --replace-fail '"thin"' 'true'
           '';
       });
+
+      noctalia-attuned =
+        ((pkgs.callPackage "${nvfetcherSources.noctalia.src}/nix/package.nix" {}).override {
+          inherit (pkgs.llvmPackages) stdenv;
+          cudaSupport = false;
+        }).overrideAttrs (prevAttrs: {
+          # WIP
+        });
 
       rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
         env =

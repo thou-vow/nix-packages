@@ -54,6 +54,11 @@ fetch.github = "mangowm/mango"
 src.git = "https://github.com/thou-vow/nvfetcher"
 fetch.github = "thou-vow/nvfetcher"
 
+[noctalia]
+src.git = "https://github.com/noctalia-dev/noctalia"
+src.branch = "cachix"
+fetch.github = "noctalia-dev/noctalia"
+
 [prismlauncher-cracked]
 src.github = "Diegiwg/PrismLauncher-Cracked"
 fetch.github = "Diegiwg/PrismLauncher-Cracked"

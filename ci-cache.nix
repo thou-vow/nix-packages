@@ -14,12 +14,12 @@
         (packages.x86_64-linux)
         discord-rpc-lsp
         faugus-launcher
-        helix-steel
+        # helix-steel
         helix-steel-attuned
         kitty-attuned
         linux_cachyos-lto-v3
         lix-attuned
-        mango
+        # mango
         mango-attuned
         mesa-attuned
         nixd-attuned
