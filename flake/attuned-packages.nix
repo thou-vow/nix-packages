@@ -152,7 +152,6 @@
       noctalia-attuned =
         ((pkgs.callPackage "${nvfetcherSources.noctalia.src}/nix/package.nix" {}).override {
           inherit (pkgs.llvmPackages) stdenv;
-          cudaSupport = false;
         }).overrideAttrs (prevAttrs: {
           mesonFlags =
             prevAttrs.mesonFlags or []
