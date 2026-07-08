@@ -5,7 +5,8 @@
   fetchzip,
   fetchFromGitHub,
   dockerTools,
-}: {
+}:
+{
   apple-emoji = {
     pname = "apple-emoji";
     version = "macos-26-20260613-f1fc560b";
@@ -114,6 +115,18 @@
       fetchSubmodules = false;
       sha256 = "sha256-WfQNALT+8ZbjZG2co1tz2dZZZw1tcU5ynuFe+vVMbV0=";
     };
+  };
+  noctalia = {
+    pname = "noctalia";
+    version = "099312d33ff36f8738fcac9df6c034e6c8289b9b";
+    src = fetchFromGitHub {
+      owner = "noctalia-dev";
+      repo = "noctalia";
+      rev = "099312d33ff36f8738fcac9df6c034e6c8289b9b";
+      fetchSubmodules = false;
+      sha256 = "sha256-mj7b2eTuSlJPcIgl3SHMJ7GsQ6bBiIhNaLSWoxnPNXw=";
+    };
+    date = "2026-07-07";
   };
   nvfetcher = {
     pname = "nvfetcher";
