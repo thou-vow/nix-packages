@@ -118,13 +118,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "c0e0afc24db7ff7feb450fc5f5f316fdd1a273c6";
+    version = "5c133d18db59888693239905159c81c7e6f9aec6";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "c0e0afc24db7ff7feb450fc5f5f316fdd1a273c6";
+      rev = "5c133d18db59888693239905159c81c7e6f9aec6";
       fetchSubmodules = false;
-      sha256 = "sha256-jVLb5HXJ4hcNp5BKpiPpXdyCzEYZVKMhk8UpcbPLVzg=";
+      sha256 = "sha256-1iJE6gW08Pc3VP3gfW2PAbOKkJ62JVoQNuMtIbr1Zwc=";
     };
     date = "2026-07-08";
   };
