@@ -97,6 +97,8 @@
         inherit (nvfetcherSources.mango) pname version;
         __intentionallyOverridingVersion = true;
 
+        nativeBuildInputs = prevAttrs.nativeBuildInputs ++ [pkgs.scenefx];
+
         mesonBuildType = "release";
 
         mesonFlags =
