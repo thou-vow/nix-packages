@@ -181,30 +181,9 @@
         },
         "version": "0522d519fd5227f77ecef387a87e51b732907562"
     },
-    "mango": {
-        "cargoLock": null,
-        "date": "2026-07-10",
-        "extract": null,
-        "name": "mango",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "mangowm",
-            "repo": "mango",
-            "rev": "bf6289cf8d1b36eabfa73b3419935631722ad966",
-            "sha256": "sha256-41KxAx4T53/TSS2GVU6vC2b6eU8QNeqTOwb2ZpfYxY4=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "bf6289cf8d1b36eabfa73b3419935631722ad966"
-    },
     "noctalia": {
         "cargoLock": null,
-        "date": "2026-07-09",
+        "date": "2026-07-10",
         "extract": null,
         "name": "noctalia",
         "passthru": null,
@@ -216,12 +195,12 @@
             "name": null,
             "owner": "noctalia-dev",
             "repo": "noctalia",
-            "rev": "313732302e6432d7ce41a9ce2334fdaca879dcd7",
-            "sha256": "sha256-UwLxkIz9HDiARFVocKnGR6OAMs9XAuFRke+InNBmL1A=",
+            "rev": "230661e4077133e9c558c44280379e5e5e676fee",
+            "sha256": "sha256-OjFXZwOI0hOVCa/2ajnCID/sny5mgLg67hsTJ/BiphU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "313732302e6432d7ce41a9ce2334fdaca879dcd7"
+        "version": "230661e4077133e9c558c44280379e5e5e676fee"
     },
     "nvfetcher": {
         "cargoLock": null,

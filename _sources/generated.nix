@@ -105,29 +105,17 @@
     };
     date = "2026-06-21";
   };
-  mango = {
-    pname = "mango";
-    version = "bf6289cf8d1b36eabfa73b3419935631722ad966";
-    src = fetchFromGitHub {
-      owner = "mangowm";
-      repo = "mango";
-      rev = "bf6289cf8d1b36eabfa73b3419935631722ad966";
-      fetchSubmodules = false;
-      sha256 = "sha256-41KxAx4T53/TSS2GVU6vC2b6eU8QNeqTOwb2ZpfYxY4=";
-    };
-    date = "2026-07-10";
-  };
   noctalia = {
     pname = "noctalia";
-    version = "313732302e6432d7ce41a9ce2334fdaca879dcd7";
+    version = "230661e4077133e9c558c44280379e5e5e676fee";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "313732302e6432d7ce41a9ce2334fdaca879dcd7";
+      rev = "230661e4077133e9c558c44280379e5e5e676fee";
       fetchSubmodules = false;
-      sha256 = "sha256-UwLxkIz9HDiARFVocKnGR6OAMs9XAuFRke+InNBmL1A=";
+      sha256 = "sha256-OjFXZwOI0hOVCa/2ajnCID/sny5mgLg67hsTJ/BiphU=";
     };
-    date = "2026-07-09";
+    date = "2026-07-10";
   };
   nvfetcher = {
     pname = "nvfetcher";
