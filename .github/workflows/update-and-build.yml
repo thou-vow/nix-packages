@@ -82,8 +82,8 @@ jobs:
       - name: Build cache
         run: |
           set -euo pipefail
-          nix build --file ./ci-cache.nix --print-out-paths -L \
-            | cachix push -m xz -l 9 thou-vow
+          cachix watch-exec -m xz -l 9 thou-vow -- \
+            nix build -L --file ./ci-cache.nix
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'
