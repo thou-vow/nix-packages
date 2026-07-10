@@ -47,7 +47,7 @@ src.branch = "steel-event-system"
 fetch.github = "mattwparas/helix"
 
 [mango]
-src.github = "mangowm/mango"
+src.git = "https://github.com/mangowm/mango"
 fetch.github = "mangowm/mango"
 
 [nvfetcher]
