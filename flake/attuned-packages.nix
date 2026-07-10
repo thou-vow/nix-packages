@@ -54,12 +54,15 @@
         });
 
       mango-attuned =
-        (self'.packages.mango.override {
+        (pkgs.mango.override {
           inherit (pkgs.llvmPackages) stdenv;
         }).overrideAttrs (prevAttrs: {
+          mesonBuildType = "release";
+
           mesonFlags =
             prevAttrs.mesonFlags
             ++ [
+              (lib.mesonBool "b_lto" true)
               (lib.mesonOption "c_args" "-march=skylake")
             ];
 

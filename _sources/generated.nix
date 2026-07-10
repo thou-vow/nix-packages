@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.92.138";
+    version = "1.92.139";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.138/brave-browser_1.92.138_arm64.deb";
-      sha256 = "sha256-6m9BDgwCAbRZRYHE5JnL8kyR3XuMJ8dqUvkEQAXl7AI=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.139/brave-browser_1.92.139_arm64.deb";
+      sha256 = "sha256-CkCpXgP4InjfjuhKqG66OjuZcqq7VLLK3/n+7fXpMj0=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.92.138";
+    version = "1.92.139";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.138/brave-browser_1.92.138_amd64.deb";
-      sha256 = "sha256-MIBY6YMdpkMMoC9eKGBQMFuKN8csWa9fLfWFzeLTCyU=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.139/brave-browser_1.92.139_amd64.deb";
+      sha256 = "sha256-UFQV8iBsa6HdUhGGngpi341o41yRoenkxbG2M90O62A=";
     };
   };
   discord-rpc-lsp = {
@@ -107,24 +107,25 @@
   };
   mango = {
     pname = "mango";
-    version = "0.14.4";
+    version = "bf6289cf8d1b36eabfa73b3419935631722ad966";
     src = fetchFromGitHub {
       owner = "mangowm";
       repo = "mango";
-      rev = "0.14.4";
+      rev = "bf6289cf8d1b36eabfa73b3419935631722ad966";
       fetchSubmodules = false;
-      sha256 = "sha256-WfQNALT+8ZbjZG2co1tz2dZZZw1tcU5ynuFe+vVMbV0=";
+      sha256 = "sha256-41KxAx4T53/TSS2GVU6vC2b6eU8QNeqTOwb2ZpfYxY4=";
     };
+    date = "2026-07-10";
   };
   noctalia = {
     pname = "noctalia";
-    version = "4c62feac1983d6d99dadd33c5824ddb5c2f0ec6a";
+    version = "313732302e6432d7ce41a9ce2334fdaca879dcd7";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "4c62feac1983d6d99dadd33c5824ddb5c2f0ec6a";
+      rev = "313732302e6432d7ce41a9ce2334fdaca879dcd7";
       fetchSubmodules = false;
-      sha256 = "sha256-fO9Yd6qJWPVhA8VAv4GaJMBpvMuwILJOttAvSTON1NA=";
+      sha256 = "sha256-UwLxkIz9HDiARFVocKnGR6OAMs9XAuFRke+InNBmL1A=";
     };
     date = "2026-07-09";
   };

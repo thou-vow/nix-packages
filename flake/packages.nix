@@ -93,19 +93,6 @@
             };
         }).kernel;
 
-      mango = (pkgs.callPackage "${nvfetcherSources.mango.src}/nix" {}).overrideAttrs (prevAttrs: {
-        inherit (nvfetcherSources.mango) pname version;
-        __intentionallyOverridingVersion = true;
-
-        mesonBuildType = "release";
-
-        mesonFlags =
-          prevAttrs.mesonFlags
-          ++ [
-            (lib.mesonBool "b_lto" true)
-          ];
-      });
-
       nvfetcher = pkgs.nvfetcher.overrideAttrs {
         inherit (nvfetcherSources.nvfetcher) version src;
       };

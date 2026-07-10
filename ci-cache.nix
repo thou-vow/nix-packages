@@ -19,7 +19,6 @@
         kitty-attuned
         linux_cachyos-lto-v3
         lix-attuned
-        # mango
         mango-attuned
         mesa-attuned
         nixd-attuned
