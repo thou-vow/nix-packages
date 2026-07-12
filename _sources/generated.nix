@@ -107,15 +107,15 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "037d43531146ababfa55a6b7ec02f4e1042c0443";
+    version = "ed3cb98536eaec92c2b523ddf703e1dc6728f535";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "037d43531146ababfa55a6b7ec02f4e1042c0443";
+      rev = "ed3cb98536eaec92c2b523ddf703e1dc6728f535";
       fetchSubmodules = false;
-      sha256 = "sha256-zu8xmIbKyocmBhbyImTt6mCx05l6coo06lfMbQesh5E=";
+      sha256 = "sha256-V75/tqvYElVWyXnFf+0jh89wMh5a/cbV5YYe/P7RFDM=";
     };
-    date = "2026-07-11";
+    date = "2026-07-12";
   };
   nvfetcher = {
     pname = "nvfetcher";
