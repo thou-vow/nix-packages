@@ -107,13 +107,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "ed3cb98536eaec92c2b523ddf703e1dc6728f535";
+    version = "433a1962975a83348fd744ee66b9adb3993d28f5";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "ed3cb98536eaec92c2b523ddf703e1dc6728f535";
+      rev = "433a1962975a83348fd744ee66b9adb3993d28f5";
       fetchSubmodules = false;
-      sha256 = "sha256-V75/tqvYElVWyXnFf+0jh89wMh5a/cbV5YYe/P7RFDM=";
+      sha256 = "sha256-SLpEXBMj0/cASkfmyluLICGTHWukVPI63u7meMpRCOM=";
     };
     date = "2026-07-12";
   };
@@ -142,18 +142,18 @@
   };
   proton-cachyos-x64-linux = {
     pname = "proton-cachyos-x64-linux";
-    version = "11.0-20260602-slr";
+    version = "11.0-20260702-slr";
     src = fetchzip {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64.tar.xz";
-      sha256 = "sha256-PRGifq6wCKNv5DJiaAZ/6/iWfA6CVu++YZAkX5Ww97U=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64.tar.xz";
+      sha256 = "sha256-ZyyhEf6NcW7MzswWAlMdE4Ok8KnBOmB81yvu8ZwVxl4=";
     };
   };
   proton-cachyos-x64-linux-v3 = {
     pname = "proton-cachyos-x64-linux-v3";
-    version = "11.0-20260602-slr";
+    version = "11.0-20260702-slr";
     src = fetchzip {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-SVJSIqd7SEjtl2FcsCHOUgYYSDMn3cedA2GTGUNmDQM=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-pbx/WDgpa55WDr1exD4rrNWsRoVkqHIUjzX1PJObxG8=";
     };
   };
   proton-ge-x64-linux = {
