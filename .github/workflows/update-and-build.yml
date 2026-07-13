@@ -2,7 +2,7 @@ name: Update sources and build cache
 on:
   push:
   schedule:
-    - cron: 0 */6 * * *
+    - cron: 0 */12 * * *
   workflow_dispatch:
 permissions:
   contents: write
@@ -65,6 +65,9 @@ jobs:
           key: nix-eval-cache-${{ runner.os }}-${{ steps.date.outputs.month }}
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v35
+        with:
+          nix_conf: |
+            build-dir = /nix/build
       - name: Configure Cachix
         uses: cachix/cachix-action@v17
         with:
@@ -81,9 +84,9 @@ jobs:
           name: updated-lockfiles
       - name: Build cache
         run: |
-          set -euo pipefail
           cachix watch-exec -m xz -l 9 thou-vow -- \
-            nix build -L --file ./ci-cache.nix
+            nix run --inputs-from . nixpkgs#nix-fast-build -- \
+            --no-nom --skip-cached --fail-fast --file ./ci-cache.nix
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'
