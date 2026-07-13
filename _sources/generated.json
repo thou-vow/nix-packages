@@ -183,7 +183,7 @@
     },
     "noctalia": {
         "cargoLock": null,
-        "date": "2026-07-12",
+        "date": "2026-07-13",
         "extract": null,
         "name": "noctalia",
         "passthru": null,
@@ -195,12 +195,12 @@
             "name": null,
             "owner": "noctalia-dev",
             "repo": "noctalia",
-            "rev": "eb9fc348b67120e4513a7bb7689253c4cd0a9554",
-            "sha256": "sha256-DN0bNFqZph7r7bCu2WXiVdgD1a8J0CzlwqSosFTUYbQ=",
+            "rev": "3305f45c6b4eba310c7900ac2954258832f0339d",
+            "sha256": "sha256-Ap0rIUzQNs8qwgObYduWG4jjOkEVYPZsZeDDQh5/XAk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "eb9fc348b67120e4513a7bb7689253c4cd0a9554"
+        "version": "3305f45c6b4eba310c7900ac2954258832f0339d"
     },
     "nvfetcher": {
         "cargoLock": null,
