@@ -44,10 +44,10 @@
   };
   dwproton-x64-linux = {
     pname = "dwproton-x64-linux";
-    version = "11.0-6";
+    version = "11.0-7";
     src = fetchzip {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-6/dwproton-11.0-6-x86_64.tar.xz";
-      sha256 = "sha256-7nj4uEr8FnCWThD4A2iBynfxTFfNeScxMHshEzgN9F4=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-7/dwproton-11.0-7-x86_64.tar.xz";
+      sha256 = "sha256-M8wcC7pKFs0Qena5NN9ylq2TykRfPK7JiHnzP6DkZv0=";
     };
   };
   faugus-launcher = {
@@ -107,13 +107,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "3305f45c6b4eba310c7900ac2954258832f0339d";
+    version = "e0b901c7915b5a0fb56e69cd578aa3408c34c013";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "3305f45c6b4eba310c7900ac2954258832f0339d";
+      rev = "e0b901c7915b5a0fb56e69cd578aa3408c34c013";
       fetchSubmodules = false;
-      sha256 = "sha256-Ap0rIUzQNs8qwgObYduWG4jjOkEVYPZsZeDDQh5/XAk=";
+      sha256 = "sha256-vT8UCf2ahfg06AptociZsS8DpqcJB460zePGrHy1icQ=";
     };
     date = "2026-07-13";
   };
