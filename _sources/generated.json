@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-CkCpXgP4InjfjuhKqG66OjuZcqq7VLLK3/n+7fXpMj0=",
+            "sha256": "sha256-erH7ydVvVykPKYyrIRsn/FCh/ZCU0G+WrubOtfAxFYA=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.139/brave-browser_1.92.139_arm64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_arm64.deb"
         },
-        "version": "1.92.139"
+        "version": "1.92.140"
     },
     "brave-x64-linux": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-UFQV8iBsa6HdUhGGngpi341o41yRoenkxbG2M90O62A=",
+            "sha256": "sha256-IB2jRvtO30OAqyEZRgeuyNU9eLgIXJj7rLOooZcDuKY=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.139/brave-browser_1.92.139_amd64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_amd64.deb"
         },
-        "version": "1.92.139"
+        "version": "1.92.140"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
@@ -195,12 +195,12 @@
             "name": null,
             "owner": "noctalia-dev",
             "repo": "noctalia",
-            "rev": "ca2eb327c5558f3ca92ab099f203addab8d17f92",
-            "sha256": "sha256-n7JDbIvuESjyvUehomxtpqfCMDWCSACWIwJzxUm2oak=",
+            "rev": "16b3dfab6b39d5b01212d2051db9c7fc4ed5ce2b",
+            "sha256": "sha256-Vsc+ru6x9WBM/cJK+6zT4cKRYVEnkYYaxvqFw27q7+s=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ca2eb327c5558f3ca92ab099f203addab8d17f92"
+        "version": "16b3dfab6b39d5b01212d2051db9c7fc4ed5ce2b"
     },
     "nvfetcher": {
         "cargoLock": null,
