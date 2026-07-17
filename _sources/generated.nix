@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.92.140";
+    version = "1.92.141";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_arm64.deb";
-      sha256 = "sha256-erH7ydVvVykPKYyrIRsn/FCh/ZCU0G+WrubOtfAxFYA=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.141/brave-browser_1.92.141_arm64.deb";
+      sha256 = "sha256-FVzXaVpyfX+GIVofy3NfpE8rOH+9LjQpdEoEWQV0DqI=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.92.140";
+    version = "1.92.141";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_amd64.deb";
-      sha256 = "sha256-IB2jRvtO30OAqyEZRgeuyNU9eLgIXJj7rLOooZcDuKY=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.92.141/brave-browser_1.92.141_amd64.deb";
+      sha256 = "sha256-A87vCTtcyuNMPLaLYDjgyIm85zwAXNc3Z4ImtC9Kjek=";
     };
   };
   discord-rpc-lsp = {
@@ -107,15 +107,15 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "348843fcf3d85bff2fcb01c3ddfca2c031495f26";
+    version = "da160d7175f0dd8c57d505972065a096454aebc6";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "348843fcf3d85bff2fcb01c3ddfca2c031495f26";
+      rev = "da160d7175f0dd8c57d505972065a096454aebc6";
       fetchSubmodules = false;
-      sha256 = "sha256-TFHJsVESNTgVcJNvpDEcPt9NBsuxlYMvmDONlez6Rss=";
+      sha256 = "sha256-aXilFNkCFnGwS8n2Ju6IpInHb0A5/KHA6IovIr7y3fY=";
     };
-    date = "2026-07-16";
+    date = "2026-07-17";
   };
   nvfetcher = {
     pname = "nvfetcher";
@@ -131,13 +131,13 @@
   };
   prismlauncher-cracked = {
     pname = "prismlauncher-cracked";
-    version = "11.0.2-1";
+    version = "11.0.3";
     src = fetchFromGitHub {
       owner = "Diegiwg";
       repo = "PrismLauncher-Cracked";
-      rev = "11.0.2-1";
+      rev = "11.0.3";
       fetchSubmodules = false;
-      sha256 = "sha256-YrqHeE9ZEnmxJiXE+IBAxbmNRFPE7mn9KbxZ3Mpu388=";
+      sha256 = "sha256-pFIDOP03I76r14bXoKL7tEEaLlGFJ10MqMgGR4D/mvE=";
     };
   };
   proton-cachyos-x64-linux = {

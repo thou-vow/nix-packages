@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-erH7ydVvVykPKYyrIRsn/FCh/ZCU0G+WrubOtfAxFYA=",
+            "sha256": "sha256-FVzXaVpyfX+GIVofy3NfpE8rOH+9LjQpdEoEWQV0DqI=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_arm64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.141/brave-browser_1.92.141_arm64.deb"
         },
-        "version": "1.92.140"
+        "version": "1.92.141"
     },
     "brave-x64-linux": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IB2jRvtO30OAqyEZRgeuyNU9eLgIXJj7rLOooZcDuKY=",
+            "sha256": "sha256-A87vCTtcyuNMPLaLYDjgyIm85zwAXNc3Z4ImtC9Kjek=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.140/brave-browser_1.92.140_amd64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.92.141/brave-browser_1.92.141_amd64.deb"
         },
-        "version": "1.92.140"
+        "version": "1.92.141"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
@@ -183,7 +183,7 @@
     },
     "noctalia": {
         "cargoLock": null,
-        "date": "2026-07-16",
+        "date": "2026-07-17",
         "extract": null,
         "name": "noctalia",
         "passthru": null,
@@ -195,12 +195,12 @@
             "name": null,
             "owner": "noctalia-dev",
             "repo": "noctalia",
-            "rev": "348843fcf3d85bff2fcb01c3ddfca2c031495f26",
-            "sha256": "sha256-TFHJsVESNTgVcJNvpDEcPt9NBsuxlYMvmDONlez6Rss=",
+            "rev": "da160d7175f0dd8c57d505972065a096454aebc6",
+            "sha256": "sha256-aXilFNkCFnGwS8n2Ju6IpInHb0A5/KHA6IovIr7y3fY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "348843fcf3d85bff2fcb01c3ddfca2c031495f26"
+        "version": "da160d7175f0dd8c57d505972065a096454aebc6"
     },
     "nvfetcher": {
         "cargoLock": null,
@@ -237,12 +237,12 @@
             "name": null,
             "owner": "Diegiwg",
             "repo": "PrismLauncher-Cracked",
-            "rev": "11.0.2-1",
-            "sha256": "sha256-YrqHeE9ZEnmxJiXE+IBAxbmNRFPE7mn9KbxZ3Mpu388=",
+            "rev": "11.0.3",
+            "sha256": "sha256-pFIDOP03I76r14bXoKL7tEEaLlGFJ10MqMgGR4D/mvE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "11.0.2-1"
+        "version": "11.0.3"
     },
     "proton-cachyos-x64-linux": {
         "cargoLock": null,
