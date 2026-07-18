@@ -288,7 +288,7 @@
     },
     "treefmt-nix": {
         "cargoLock": null,
-        "date": "2026-05-31",
+        "date": "2026-07-18",
         "extract": null,
         "name": "treefmt-nix",
         "passthru": null,
@@ -300,11 +300,11 @@
             "name": null,
             "owner": "numtide",
             "repo": "treefmt-nix",
-            "rev": "db947814a175b7ca6ded66e21383d938df01c227",
-            "sha256": "sha256-eynAfOmbmxJnkp7YewvCEbShNnnYJ9gLLqkzsYtBPeM=",
+            "rev": "df3c0640565d04a0261253cdd89fce78ec50168a",
+            "sha256": "sha256-47cxbcZODibHv3rELFQ9vZly0vUNkND/atn/U7HLeb0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "db947814a175b7ca6ded66e21383d938df01c227"
+        "version": "df3c0640565d04a0261253cdd89fce78ec50168a"
     }
 }
