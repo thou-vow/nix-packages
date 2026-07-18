@@ -51,8 +51,7 @@ src.git = "https://github.com/thou-vow/nvfetcher"
 fetch.github = "thou-vow/nvfetcher"
 
 [noctalia]
-src.git = "https://github.com/noctalia-dev/noctalia"
-src.branch = "cachix"
+src.github = "noctalia-dev/noctalia"
 fetch.github = "noctalia-dev/noctalia"
 
 [prismlauncher-cracked]

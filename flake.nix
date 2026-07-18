@@ -31,7 +31,7 @@
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
       imports = [
         ./flake/attuned-packages.nix
         ./flake/devshells.nix
@@ -39,21 +39,32 @@
         ./flake/packages.nix
       ];
 
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: {
-        _module.args = {
-          nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
-
-          pkgs = import inputs.nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
+      options.perSystem = inputs.flake-parts.lib.mkPerSystemOption {
+        options.nvfetcherSources = lib.mkOption {
+          type = lib.types.raw;
         };
       };
 
-      systems = inputs.nixpkgs.lib.systems.flakeExposed;
-    };
+      config = {
+        perSystem = {
+          nvfetcherSources,
+          pkgs,
+          system,
+          ...
+        }: {
+          inherit nvfetcherSources;
+
+          _module.args = {
+            nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
+
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
+        };
+
+        systems = inputs.nixpkgs.lib.systems.flakeExposed;
+      };
+    });
 }
