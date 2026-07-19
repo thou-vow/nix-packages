@@ -42,7 +42,7 @@ jobs:
             _sources/
   build:
     needs: update
-    if: needs.update.outputs.updated == 'true' || github.event_name == 'push'
+    if: needs.update.outputs.updated == 'true' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
