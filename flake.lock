@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784386056,
-        "narHash": "sha256-nWXhj8aKb6CKoCeYcFGmonDFF4C+HEef2OWmNuLZwQc=",
+        "lastModified": 1784454547,
+        "narHash": "sha256-EgwzcEndhYo5QBRLKDnBrAWlHlv58meYs14oiIbDzgo=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "aca54227a91e82ba94451d36b7939451c9e80de5",
+        "rev": "b8e987205a73ecb65279ce429f78681732f739f9",
         "type": "github"
       },
       "original": {
