@@ -68,11 +68,6 @@ jobs:
         with:
           nix_conf: |
             build-dir = /nix/build
-      - name: Configure Cachix
-        uses: cachix/cachix-action@v17
-        with:
-          name: thou-vow
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
@@ -83,10 +78,11 @@ jobs:
         with:
           name: updated-lockfiles
       - name: Build cache
+        env:
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          cachix watch-exec -m xz -l 9 thou-vow -- \
-            nix run --inputs-from . nixpkgs#nix-fast-build -- \
-            --no-nom --skip-cached --fail-fast --file ./ci-cache.nix
+          nix run --inputs-from . nixpkgs#nix-fast-build -- \
+            --cachix-cache thou-vow --no-nom --skip-cached --fail-fast --file ./ci-cache.nix
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'
