@@ -17,7 +17,6 @@
         # helix-steel
         helix-steel-attuned
         kitty-attuned
-        linux_cachyos-lto-v3
         lix-attuned
         mango-attuned
         mesa-attuned
