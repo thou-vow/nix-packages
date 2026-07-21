@@ -91,7 +91,7 @@ jobs:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
           nix run --inputs-from . nixpkgs#nix-fast-build -- \
-            --cachix-cache thou-vow --no-nom --skip-cached --fail-fast --file ./_ci-cache.nix
+            --cachix-cache thou-vow --no-nom --skip-cached --fail-fast --file ./ci-cache.nix
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'
