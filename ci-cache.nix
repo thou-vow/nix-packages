@@ -1,5 +1,7 @@
 {system ? builtins.currentSystem}: let
-  packages = (import ./.).outputs.packages;
+  flake = builtins.getFlake (toString ./.);
+
+  packages = flake.outputs.packages;
 
   toCache = {
     aarch64-linux = {

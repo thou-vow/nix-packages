@@ -4,67 +4,63 @@
   nixConfig = {
     extra-substituters = [
       "https://thou-vow.cachix.org"
-      "https://install.determinate.systems"
-      "https://nyx-cache.chaotic.cx/"
     ];
     extra-trusted-public-keys = [
       "thou-vow.cachix.org-1:X9yN6WSwyoFihH/tOriqxpaJEP3pd43z8UPmfipvoK8="
-      "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
-      "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
     ];
   };
 
   inputs = {
-    chaotic-nyx = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs = {
-        flake-schemas.follows = "";
-        home-manager.follows = "";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
-      imports = [
-        ./flake/attuned-packages.nix
-        ./flake/devshells.nix
-        ./flake/formatter.nix
-        ./flake/packages.nix
-      ];
+  outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
 
-      options.perSystem = inputs.flake-parts.lib.mkPerSystemOption {
-        options.nvfetcherSources = lib.mkOption {
-          type = lib.types.raw;
+    systems = lib.systems.flakeExposed;
+
+    forEachSystem = f:
+      lib.genAttrs systems (system: let
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
         };
-      };
-
-      config = {
-        perSystem = {
-          nvfetcherSources,
-          pkgs,
-          system,
-          ...
-        }: {
-          inherit nvfetcherSources;
-
-          _module.args = {
-            nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
-
-            pkgs = import inputs.nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
-        };
-
-        systems = inputs.nixpkgs.lib.systems.flakeExposed;
+      in
+        f {
+          inherit inputs lib pkgs system;
+          nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
+        });
+  in {
+    devShells = forEachSystem ({
+      pkgs,
+      system,
+      ...
+    }: {
+      default = pkgs.mkShell {
+        buildInputs =
+          (with pkgs; [
+            alejandra
+          ])
+          ++ (with inputs.self.packages.${system}; [
+            nvfetcher
+          ]);
       };
     });
+
+    formatter = forEachSystem ({
+      nvfetcherSources,
+      pkgs,
+      ...
+    }:
+      (import nvfetcherSources.treefmt-nix.src).mkWrapper pkgs {
+        projectRootFile = "flake.nix";
+        programs.alejandra.enable = true;
+      });
+
+    nvfetcherSources = forEachSystem ({nvfetcherSources, ...}: nvfetcherSources);
+
+    packages = forEachSystem (args:
+      (import ./packages.nix args)
+      // (import ./attuned-packages.nix args));
+  };
 }
