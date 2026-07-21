@@ -2,7 +2,7 @@ name: Update sources and build cache
 on:
   push:
   schedule:
-    - cron: 0 */6 * * *
+    - cron: 0 */3 * * *
   workflow_dispatch:
 permissions:
   contents: write
@@ -51,7 +51,9 @@ jobs:
       matrix:
         include:
           - runner: ubuntu-24.04
+            target: x86_64-linux
           - runner: ubuntu-24.04-arm
+            target: aarch64-linux
     steps:
       - name: Reclaim space!
         uses: wimpysworld/nothing-but-nix@main
@@ -96,7 +98,7 @@ jobs:
       - name: Build cache
         run: |
           nix run --inputs-from . nixpkgs#nix-fast-build -- \
-            --cachix-cache thou-vow --no-nom --skip-cached --fail-fast --file ./ci-cache.nix
+            --no-nom --skip-cached --fail-fast --flake .#cachedPackages.${{ matrix.target }}
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'

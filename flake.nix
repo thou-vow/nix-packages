@@ -31,6 +31,35 @@
           nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
         });
   in {
+    cachedPackages = {
+      aarch64-linux = {
+        inherit
+          (inputs.self.packages.aarch64-linux)
+          helix-steel
+          nvfetcher
+          ;
+      };
+      x86_64-linux = {
+        inherit
+          (inputs.self.packages.x86_64-linux)
+          discord-rpc-lsp
+          faugus-launcher
+          # helix-steel
+          helix-steel-attuned
+          kitty-attuned
+          lix-attuned
+          mango-attuned
+          mesa-attuned
+          nixd-attuned
+          noctalia-attuned
+          nushell-attuned
+          nvfetcher
+          prismlauncher-cracked-unwrapped
+          rust-analyzer-unwrapped-attuned
+          ;
+      };
+    };
+
     devShells = forEachSystem ({
       pkgs,
       system,
