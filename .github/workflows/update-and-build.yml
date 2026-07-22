@@ -88,17 +88,13 @@ jobs:
         with:
           name: updated-lockfiles
 
-      - name: Configure Cachix
-        uses: cachix/cachix-action@v17
-        with:
-          name: thou-vow
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          cachixArgs: -m zstd -l16
-
       - name: Build cache
+        env:
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
-          nix run --inputs-from . nixpkgs#nix-fast-build -- \
-            --no-nom --skip-cached --flake .#cachedPackages.${{ matrix.target }}
+          nix run --inputs-from . nixpkgs#cachix -- \
+            watch-exec -m zstd -l16 thou-vow -- \
+            nix build --no-link -L .#_cache
   commit:
     needs: [update, build]
     if: needs.update.outputs.updated == 'true'

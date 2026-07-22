@@ -21,47 +21,18 @@
 
     systems = lib.systems.flakeExposed;
 
-    forEachSystem = f:
-      lib.genAttrs systems (system: let
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      in
-        f {
-          inherit inputs lib pkgs system;
-          nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
-        });
-  in {
-    cachedPackages = {
-      aarch64-linux = {
-        inherit
-          (inputs.self.packages.aarch64-linux)
-          helix-steel
-          nvfetcher
-          ;
+    eachSystemArgs = lib.genAttrs systems (system: let
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
       };
-      x86_64-linux = {
-        inherit
-          (inputs.self.packages.x86_64-linux)
-          discord-rpc-lsp
-          faugus-launcher
-          # helix-steel
-          helix-steel-attuned
-          kitty-attuned
-          lix-attuned
-          mango-attuned
-          mesa-attuned
-          nixd-attuned
-          noctalia-attuned
-          nushell-attuned
-          nvfetcher
-          prismlauncher-cracked-unwrapped
-          rust-analyzer-unwrapped-attuned
-          ;
-      };
-    };
+    in {
+      inherit inputs lib pkgs system;
+      nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
+    });
 
+    forEachSystem = f: builtins.mapAttrs (_: args: f args) eachSystemArgs;
+  in {
     devShells = forEachSystem ({
       pkgs,
       system,
@@ -87,6 +58,37 @@
         projectRootFile = "flake.nix";
         programs.alejandra.enable = true;
       });
+
+    # Put cache here because yes
+    legacyPackages = let
+      mkCachePackage = system: packages:
+        eachSystemArgs.${system}.pkgs.symlinkJoin {
+          name = "cache-${system}";
+          paths = packages;
+        };
+    in {
+      aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
+        helix-steel
+        nvfetcher
+      ]);
+
+      x86_64-linux._cache = mkCachePackage "x86_64-linux" (with inputs.self.packages.x86_64-linux; [
+        discord-rpc-lsp
+        faugus-launcher
+        # helix-steel
+        helix-steel-attuned
+        kitty-attuned
+        lix-attuned
+        mango-attuned
+        mesa-attuned
+        nixd-attuned
+        noctalia-attuned
+        nushell-attuned
+        nvfetcher
+        prismlauncher-cracked-unwrapped
+        rust-analyzer-unwrapped-attuned
+      ]);
+    };
 
     nvfetcherSources = forEachSystem ({nvfetcherSources, ...}: nvfetcherSources);
 
