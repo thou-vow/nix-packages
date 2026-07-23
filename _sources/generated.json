@@ -195,12 +195,12 @@
             "name": null,
             "owner": "noctalia-dev",
             "repo": "noctalia",
-            "rev": "v5.0.0-beta.3",
-            "sha256": "sha256-8iAeWIjw2OMfsBCtaGcmR14lgBX0MOoaBaSyBwieBsA=",
+            "rev": "v5.0.0-beta.4",
+            "sha256": "sha256-jXz2vFHgidbyU46ScROLSuBIhsqqtyqNu2M0tmGX/FA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v5.0.0-beta.3"
+        "version": "v5.0.0-beta.4"
     },
     "nvfetcher": {
         "cargoLock": null,

@@ -107,13 +107,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "v5.0.0-beta.3";
+    version = "v5.0.0-beta.4";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "v5.0.0-beta.3";
+      rev = "v5.0.0-beta.4";
       fetchSubmodules = false;
-      sha256 = "sha256-8iAeWIjw2OMfsBCtaGcmR14lgBX0MOoaBaSyBwieBsA=";
+      sha256 = "sha256-jXz2vFHgidbyU46ScROLSuBIhsqqtyqNu2M0tmGX/FA=";
     };
   };
   nvfetcher = {
