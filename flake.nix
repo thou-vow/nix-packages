@@ -68,7 +68,7 @@
         };
     in {
       aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
-        helix-steel
+        # helix-steel
         nvfetcher
       ]);
 
