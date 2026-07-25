@@ -280,11 +280,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-gpCZhsMqQ0VthslX9P5jiVmV1HF7659bE81a+7qYx24=",
+            "sha256": "sha256-RiCmnUKeZRhPUCgm7fsROKFkAl37+/tYkA47tQtkIF4=",
             "type": "zip",
-            "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-2/GE-Proton11-2.tar.gz"
+            "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-3/GE-Proton11-3.tar.gz"
         },
-        "version": "11-2"
+        "version": "11-3"
     },
     "treefmt-nix": {
         "cargoLock": null,
