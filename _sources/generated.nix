@@ -113,7 +113,7 @@
       repo = "noctalia";
       rev = "v5.0.0-beta.5";
       fetchSubmodules = false;
-      sha256 = "sha256-reinioW/TELsxvHYh3PopzT4zLAs+WTgVGCbfzWakYY=";
+      sha256 = "sha256-iq/Eqx62P/JJDpW7CgEsMWWPwOexIWRKXtqKF/drawA=";
     };
   };
   nvfetcher = {
