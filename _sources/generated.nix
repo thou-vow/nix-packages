@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.92.144";
+    version = "1.93.129";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.144/brave-browser_1.92.144_arm64.deb";
-      sha256 = "sha256-Z9uUJRaMx+P35oXtvAnjHyOQOXt8mW5oyyEtnD754x8=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.93.129/brave-browser_1.93.129_arm64.deb";
+      sha256 = "sha256-pO6vTzTv7OKcP5uJwlcc+vUdg/0Lm2Q6apnEhjRxasM=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.92.144";
+    version = "1.93.129";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.92.144/brave-browser_1.92.144_amd64.deb";
-      sha256 = "sha256-no/KD+3EB6CqvVWEmDB/8k2rv1wau469FBXMNWN7z6k=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.93.129/brave-browser_1.93.129_amd64.deb";
+      sha256 = "sha256-fOyneo8kzoGqldT6nYRzFqgy1+WhKGhcSkJQTCd4w6k=";
     };
   };
   discord-rpc-lsp = {
@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "2.0.3";
+    version = "2.0.4";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "2.0.3";
+      rev = "2.0.4";
       fetchSubmodules = false;
-      sha256 = "sha256-Eqf6grEy7LUITRVpTN9x0UJB1QYc7ZrNlAjCYE8RFHA=";
+      sha256 = "sha256-Dy/AOQ6SfIb1HWwxTemDyuc0Vr4zk9/LYMv3+MCp6oE=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -107,13 +107,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "v5.0.0-beta.5";
+    version = "v5.0.0-beta.7";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "v5.0.0-beta.5";
+      rev = "v5.0.0-beta.7";
       fetchSubmodules = false;
-      sha256 = "sha256-iq/Eqx62P/JJDpW7CgEsMWWPwOexIWRKXtqKF/drawA=";
+      sha256 = "sha256-9RlJNIy2DFVm9SB2vwGEBsbHc1r3dIB+K+b+nd6Bdho=";
     };
   };
   nvfetcher = {
@@ -165,14 +165,14 @@
   };
   treefmt-nix = {
     pname = "treefmt-nix";
-    version = "df3c0640565d04a0261253cdd89fce78ec50168a";
+    version = "d1187f8bc71fb8aab02395869ec3f5c1920f75c0";
     src = fetchFromGitHub {
       owner = "numtide";
       repo = "treefmt-nix";
-      rev = "df3c0640565d04a0261253cdd89fce78ec50168a";
+      rev = "d1187f8bc71fb8aab02395869ec3f5c1920f75c0";
       fetchSubmodules = false;
-      sha256 = "sha256-47cxbcZODibHv3rELFQ9vZly0vUNkND/atn/U7HLeb0=";
+      sha256 = "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=";
     };
-    date = "2026-07-18";
+    date = "2026-07-29";
   };
 }
