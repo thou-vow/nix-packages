@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "2.0.5";
+    version = "2.0.6";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "2.0.5";
+      rev = "2.0.6";
       fetchSubmodules = false;
-      sha256 = "sha256-W9OkU1LVfR0gpII9aE3Eaut6GXXfCucEn/F5yyVcuvY=";
+      sha256 = "sha256-pq5qgerFXZJQNVaNYTOSQjkpr3zKHFFxAH3d/ybCqJI=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -165,14 +165,14 @@
   };
   treefmt-nix = {
     pname = "treefmt-nix";
-    version = "d1187f8bc71fb8aab02395869ec3f5c1920f75c0";
+    version = "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0";
     src = fetchFromGitHub {
       owner = "numtide";
       repo = "treefmt-nix";
-      rev = "d1187f8bc71fb8aab02395869ec3f5c1920f75c0";
+      rev = "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0";
       fetchSubmodules = false;
-      sha256 = "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=";
+      sha256 = "sha256-NLSyTCW4K4ofhNBllt3omPasm6QpralXH1DBZOc91Dw=";
     };
-    date = "2026-07-29";
+    date = "2026-08-05";
   };
 }

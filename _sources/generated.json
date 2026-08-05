@@ -93,12 +93,12 @@
             "name": null,
             "owner": "Faugus",
             "repo": "faugus-launcher",
-            "rev": "2.0.5",
-            "sha256": "sha256-W9OkU1LVfR0gpII9aE3Eaut6GXXfCucEn/F5yyVcuvY=",
+            "rev": "2.0.6",
+            "sha256": "sha256-pq5qgerFXZJQNVaNYTOSQjkpr3zKHFFxAH3d/ybCqJI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.0.5"
+        "version": "2.0.6"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,
@@ -288,7 +288,7 @@
     },
     "treefmt-nix": {
         "cargoLock": null,
-        "date": "2026-07-29",
+        "date": "2026-08-05",
         "extract": null,
         "name": "treefmt-nix",
         "passthru": null,
@@ -300,11 +300,11 @@
             "name": null,
             "owner": "numtide",
             "repo": "treefmt-nix",
-            "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
-            "sha256": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
+            "rev": "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0",
+            "sha256": "sha256-NLSyTCW4K4ofhNBllt3omPasm6QpralXH1DBZOc91Dw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0"
+        "version": "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0"
     }
 }
