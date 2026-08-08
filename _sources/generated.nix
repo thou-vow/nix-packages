@@ -44,10 +44,10 @@
   };
   dwproton-x64-linux = {
     pname = "dwproton-x64-linux";
-    version = "11.0-10";
+    version = "11.0-11";
     src = fetchzip {
-      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-10/dwproton-11.0-10-x86_64.tar.xz";
-      sha256 = "sha256-QHQ42rY9UzTRXvgp2uxR4cm4hELGPYE/p6aYQZQrfW0=";
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-11/dwproton-11.0-11-x86_64.tar.xz";
+      sha256 = "sha256-p1x1UAuXLG0MpYcyrssudKwpCRlKAPPxrv7UFyPe2lI=";
     };
   };
   faugus-launcher = {
