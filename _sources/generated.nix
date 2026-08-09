@@ -95,15 +95,15 @@
   };
   helix-steel = {
     pname = "helix-steel";
-    version = "8d189f46e9c620baa685bdfbe39b7c95928475a0";
+    version = "bab8acd7a32e3cb85cd6aaae6281cb5de3ce0780";
     src = fetchFromGitHub {
       owner = "mattwparas";
       repo = "helix";
-      rev = "8d189f46e9c620baa685bdfbe39b7c95928475a0";
+      rev = "bab8acd7a32e3cb85cd6aaae6281cb5de3ce0780";
       fetchSubmodules = false;
-      sha256 = "sha256-qYR2f+uSUNsJYbbwSo9bCB+LI7n3NzQDCHXJRmHztDg=";
+      sha256 = "sha256-1dBU2QNctYbkgkuRs9pMXNAWM276zqf3dFZhyAhSgPg=";
     };
-    date = "2026-07-18";
+    date = "2026-08-08";
   };
   noctalia = {
     pname = "noctalia";
