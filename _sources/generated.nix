@@ -157,10 +157,10 @@
   };
   proton-ge-x64-linux = {
     pname = "proton-ge-x64-linux";
-    version = "11-3";
+    version = "11-5";
     src = fetchzip {
-      url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-3/GE-Proton11-3.tar.gz";
-      sha256 = "sha256-RiCmnUKeZRhPUCgm7fsROKFkAl37+/tYkA47tQtkIF4=";
+      url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-5/GE-Proton11-5-x86_64.tar.gz";
+      sha256 = "sha256-Sbyi5zXMhPIKSotvL5LEZ2dbDoLpXRcCyuY9TsnBnus=";
     };
   };
   treefmt-nix = {
