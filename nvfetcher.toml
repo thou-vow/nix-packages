@@ -71,7 +71,7 @@ fetch.zip = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos
 [proton-ge-x64-linux]
 src.github = "GloriousEggroll/proton-ge-custom"
 src.prefix = "GE-Proton"
-fetch.zip = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver.tar.gz"
+fetch.zip = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver-x86_64.tar.gz"
 
 [treefmt-nix]
 src.git = "https://github.com/numtide/treefmt-nix"
