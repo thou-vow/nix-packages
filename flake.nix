@@ -13,21 +13,31 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-multiverse = {
+      url = "github:fzakaria/nixpkgs-multiverse";
+      flake = false;
+    };
   };
 
   outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
+    systems = ["aarch64-linux" "x86_64-linux"];
 
-    systems = lib.systems.flakeExposed;
+    genAttrs = xs: f:
+      builtins.listToAttrs (map (x: {
+          name = x;
+          value = f x;
+        })
+        xs);
 
-    eachSystemArgs = lib.genAttrs systems (system: let
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+    eachSystemArgs = genAttrs systems (system: let
+      pkgs =
+        (import "${inputs.nixpkgs-multiverse}/multiverse.nix" {
+          inherit system;
+          config.allowUnfree = true;
+        }).tip;
     in {
-      inherit inputs lib pkgs system;
+      inherit (pkgs) lib;
+      inherit inputs pkgs system;
       nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
     });
 
