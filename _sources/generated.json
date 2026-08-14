@@ -93,12 +93,12 @@
             "name": null,
             "owner": "Faugus",
             "repo": "faugus-launcher",
-            "rev": "2.0.6",
-            "sha256": "sha256-pq5qgerFXZJQNVaNYTOSQjkpr3zKHFFxAH3d/ybCqJI=",
+            "rev": "2.1.0",
+            "sha256": "sha256-Va5cPUPBfnmaTZhJhdSLBgtW4mUBM9/H6+vUrNbUiSg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.0.6"
+        "version": "2.1.0"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,
