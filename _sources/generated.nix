@@ -165,14 +165,14 @@
   };
   treefmt-nix = {
     pname = "treefmt-nix";
-    version = "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0";
+    version = "27b3b12a8e6375f28ebe122f07d230ca5459bbfa";
     src = fetchFromGitHub {
       owner = "numtide";
       repo = "treefmt-nix";
-      rev = "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0";
+      rev = "27b3b12a8e6375f28ebe122f07d230ca5459bbfa";
       fetchSubmodules = false;
-      sha256 = "sha256-NLSyTCW4K4ofhNBllt3omPasm6QpralXH1DBZOc91Dw=";
+      sha256 = "sha256-WSFCsDSE5ffgD2MqzkM2CYjeFiKhRF/dJUN8uedb6YE=";
     };
-    date = "2026-08-05";
+    date = "2026-08-16";
   };
 }
