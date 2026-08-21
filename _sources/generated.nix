@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.93.137";
+    version = "1.93.138";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.93.137/brave-browser_1.93.137_arm64.deb";
-      sha256 = "sha256-ef7uKI8RqY8h0fGvrG+6Ys6i3sML2DbdtK4N5/ce2f4=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.93.138/brave-browser_1.93.138_arm64.deb";
+      sha256 = "sha256-WWXn2Q2axhh9/KU67v6wf4vmRRXuYmJHbNmyOvvvg9c=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.93.137";
+    version = "1.93.138";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.93.137/brave-browser_1.93.137_amd64.deb";
-      sha256 = "sha256-Z3fYjvds3MTDdH3QZeCztX3GTHn2gg5AeJ3WY7GOunI=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.93.138/brave-browser_1.93.138_amd64.deb";
+      sha256 = "sha256-zxiy1EPwZyQeE2YkhMS5Uj8T/wibofwnyI9nkRWGrJ8=";
     };
   };
   discord-rpc-lsp = {
