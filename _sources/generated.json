@@ -162,7 +162,7 @@
     },
     "helix-steel": {
         "cargoLock": null,
-        "date": "2026-08-20",
+        "date": "2026-08-21",
         "extract": null,
         "name": "helix-steel",
         "passthru": null,
@@ -174,12 +174,12 @@
             "name": null,
             "owner": "mattwparas",
             "repo": "helix",
-            "rev": "ae2b117af7c4eb43ddda0c27844546a4a463baf1",
-            "sha256": "sha256-W9Qqv+xtYIRBdehjM9l5ifDAo91ujos0Cnj6xuLAm5Q=",
+            "rev": "111fed238821163ac571f52b360fa5029c78448c",
+            "sha256": "sha256-/1yDfqpuIvw8pfI6hR5tpZD4GlVRMxEeUM3lb9eN8tk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ae2b117af7c4eb43ddda0c27844546a4a463baf1"
+        "version": "111fed238821163ac571f52b360fa5029c78448c"
     },
     "noctalia": {
         "cargoLock": null,
