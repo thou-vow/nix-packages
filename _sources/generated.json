@@ -73,11 +73,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-p1x1UAuXLG0MpYcyrssudKwpCRlKAPPxrv7UFyPe2lI=",
+            "sha256": "sha256-NGyrXQcA+k87SnowFd41uq49luI32fZENTwFTma7NpI=",
             "type": "zip",
-            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-11/dwproton-11.0-11-x86_64.tar.xz"
+            "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-12/dwproton-11.0-12-x86_64.tar.xz"
         },
-        "version": "11.0-11"
+        "version": "11.0-12"
     },
     "faugus-launcher": {
         "cargoLock": null,
