@@ -13,7 +13,7 @@
   };
 
   inputs = {
-    nixpkgs-multiverse = {
+    multiverse = {
       url = "github:fzakaria/nixpkgs-multiverse";
       flake = false;
     };
@@ -31,7 +31,7 @@
 
     eachSystemArgs = genAttrs systems (system: let
       pkgs =
-        (import "${inputs.nixpkgs-multiverse}/multiverse.nix" {
+        (import "${inputs.multiverse}/multiverse.nix" {
           inherit system;
           config.allowUnfree = true;
         }).tip;

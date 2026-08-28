@@ -1,13 +1,13 @@
 {
   "nodes": {
-    "nixpkgs-multiverse": {
+    "multiverse": {
       "flake": false,
       "locked": {
-        "lastModified": 1787857250,
-        "narHash": "sha256-3jPGj0n70b/0uDMkzpDsabGRRwlOgSsrH8nNLzGzq7c=",
+        "lastModified": 1787566659,
+        "narHash": "sha256-M2u/9ML/WnnnpKSYkJ5sPjmka2Rgp4W5mU3yvaRMlOM=",
         "owner": "fzakaria",
         "repo": "nixpkgs-multiverse",
-        "rev": "ed426f4555a7ae6700ec1a2173933d997790677d",
+        "rev": "fabbfb640cc6cbc322ad5ef80831f7b94fac9548",
         "type": "github"
       },
       "original": {
@@ -18,7 +18,7 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs-multiverse": "nixpkgs-multiverse"
+        "multiverse": "multiverse"
       }
     }
   },
