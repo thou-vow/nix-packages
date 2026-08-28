@@ -58,10 +58,6 @@ fetch.github = "mattwparas/helix"
 src.git = "https://github.com/thou-vow/nvfetcher"
 fetch.github = "thou-vow/nvfetcher"
 
-[noctalia]
-src.github = "noctalia-dev/noctalia"
-fetch.github = "noctalia-dev/noctalia"
-
 [prismlauncher-cracked]
 src.github = "Diegiwg/PrismLauncher-Cracked"
 fetch.github = "Diegiwg/PrismLauncher-Cracked"

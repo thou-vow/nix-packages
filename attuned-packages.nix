@@ -1,7 +1,7 @@
 {
   inputs,
   lib,
-  nvfetcherSources,
+  multiverse,
   pkgs,
   system,
   ...
@@ -37,7 +37,7 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
+  lix-attuned = (multiverse.fast.latest.lix.eval.override {inherit (pkgs.llvmPackages) stdenv;})
       .overrideAttrs (prevAttrs: {
     mesonBuildType = "release";
 
@@ -53,7 +53,7 @@ in {
   });
 
   mango-attuned =
-    (pkgs.mango.override {
+    (multiverse.fast.latest.mango.eval.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs (prevAttrs: {
       mesonBuildType = "release";
@@ -70,7 +70,7 @@ in {
     });
 
   mesa-attuned =
-    (pkgs.mesa.override {
+    (multiverse.fast.latest.mesa.eval.override {
       inherit (pkgs.llvmPackages) stdenv;
       galliumDrivers = ["iris"];
       vulkanDrivers = ["intel"];
@@ -116,7 +116,7 @@ in {
     });
 
   nixd-attuned =
-    (pkgs.nixd.override {
+    (multiverse.fast.latest.nixd.eval.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs
     (prevAttrs: {
@@ -133,7 +133,7 @@ in {
       doInstallCheck = false;
     });
 
-  nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
+  nushell-attuned = (attuneRust multiverse.fast.latest.nushell.eval).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -151,8 +151,7 @@ in {
       '';
   });
 
-  noctalia-attuned = (pkgs.callPackage "${nvfetcherSources.noctalia.src}/nix/package.nix" {})
-    .overrideAttrs (prevAttrs: {
+  noctalia-attuned = multiverse.fast.latest.noctalia.eval.overrideAttrs (prevAttrs: {
     mesonFlags =
       prevAttrs.mesonFlags or []
       ++ [
@@ -161,7 +160,7 @@ in {
       ];
   });
 
-  rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped-attuned = (attuneRust multiverse.fast.latest.rust-analyzer-unwrapped.eval).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -174,7 +173,7 @@ in {
       };
   });
 
-  rust-analyzer-attuned = pkgs.rust-analyzer.override {
+  rust-analyzer-attuned = multiverse.fast.latest.rust-analyzer.eval.override {
     rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;
   };
 }

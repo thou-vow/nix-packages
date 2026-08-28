@@ -30,26 +30,30 @@
         xs);
 
     eachSystemArgs = genAttrs systems (system: let
-      pkgs = (import "${inputs.multiverse}/multiverse.nix" {
+      multiverse = import "${inputs.multiverse}/multiverse.nix" {
         inherit system;
         config.allowUnfree = true;
-      }).tip;
+        fastFallback = "eval";
+      };
+
+      pkgs = multiverse.tip;
     in {
       inherit (pkgs) lib;
-      inherit inputs pkgs system;
+      inherit inputs multiverse pkgs system;
       nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
     });
 
     forEachSystem = f: builtins.mapAttrs (_: args: f args) eachSystemArgs;
   in {
     devShells = forEachSystem ({
+      multiverse,
       pkgs,
       system,
       ...
     }: {
       default = pkgs.mkShell {
         buildInputs =
-          (with pkgs; [
+          (with multiverse.fast.latest; [
             alejandra
           ])
           ++ (with inputs.self.packages.${system}; [
