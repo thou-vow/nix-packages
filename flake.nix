@@ -30,11 +30,7 @@
         xs);
 
     eachSystemArgs = genAttrs systems (system: let
-      pkgs =
-        (import "${inputs.multiverse}/multiverse.nix" {
-          inherit system;
-          config.allowUnfree = true;
-        }).tip;
+      pkgs = (import "${inputs.multiverse}/multiverse.nix" {inherit system;}).tip;
     in {
       inherit (pkgs) lib;
       inherit inputs pkgs system;
