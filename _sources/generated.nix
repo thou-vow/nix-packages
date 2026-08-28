@@ -63,34 +63,50 @@
   };
   graalvm-oracle-21-aarch64-linux = {
     pname = "graalvm-oracle-21-aarch64-linux";
-    version = "21.0.11";
+    version = "21.0.12.1";
     src = fetchurl {
-      url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-aarch64_bin.tar.gz";
-      sha256 = "sha256-hvxfORvjG53b5HNwtwUwPBpkm9eJFf/sz4x4pDDqy0w=";
+      url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1_linux-aarch64_bin.tar.gz";
+      sha256 = "sha256-JaNr5xftugNs4VQCCTBpQlE9kRNB29DZp/+X0QVbBCw=";
     };
   };
   graalvm-oracle-21-x64-linux = {
     pname = "graalvm-oracle-21-x64-linux";
-    version = "21.0.11";
+    version = "21.0.12.1";
     src = fetchurl {
-      url = "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21.0.11_linux-x64_bin.tar.gz";
-      sha256 = "sha256-Iw5TdqnDINwy9dnqSCEN4ztfzhbHWdRufPoiY8FzIRg=";
+      url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1_linux-x64_bin.tar.gz";
+      sha256 = "sha256-cHSvqVUVqNhxNHIALzMKyYOaBv4W7ltdoSi0MDdsL9k=";
     };
   };
   graalvm-oracle-25-aarch64-linux = {
     pname = "graalvm-oracle-25-aarch64-linux";
-    version = "25.0.3";
+    version = "25.0.4.1";
     src = fetchurl {
-      url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-25.0.3_linux-aarch64_bin.tar.gz";
-      sha256 = "sha256-LG5e9jCExfOcZ8v1wz0jyFLfhI0QzVDXbmZ//5yc8rw=";
+      url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1_linux-aarch64_bin.tar.gz";
+      sha256 = "sha256-g49rqr2rdUY8byHwcfLMYpUBlIIJzYFxjpVr11h4SiQ=";
     };
   };
   graalvm-oracle-25-x64-linux = {
     pname = "graalvm-oracle-25-x64-linux";
-    version = "25.0.3";
+    version = "25.0.4.1";
     src = fetchurl {
-      url = "https://download.oracle.com/graalvm/25/archive/graalvm-jdk-25.0.3_linux-x64_bin.tar.gz";
-      sha256 = "sha256-G1KWYTw9ElIdWU4cmTAt+I2OHwfXSreYPb9XIAC5LHw=";
+      url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1_linux-x64_bin.tar.gz";
+      sha256 = "sha256-CVyWY8OmdBtV7POuaZKU3CYKYrUjrPbevIUL3LIjBXw=";
+    };
+  };
+  graalvm-oracle-25i3-aarch64-linux = {
+    pname = "graalvm-oracle-25i3-aarch64-linux";
+    version = "25.0.4.1";
+    src = fetchurl {
+      url = "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-25.0.4.1_linux-aarch64_bin.tar.gz";
+      sha256 = "sha256-qoCoqmOw4spQlGx/3bd6fRv4SIqKPwF1J1o8Do+s4gs=";
+    };
+  };
+  graalvm-oracle-25i3-x64-linux = {
+    pname = "graalvm-oracle-25i3-x64-linux";
+    version = "25.0.4.1";
+    src = fetchurl {
+      url = "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-25.0.4.1_linux-x64_bin.tar.gz";
+      sha256 = "sha256-gU3qwUSpEgNcToJOBfoGouDIOCHw+50QhLyRbl7u8kc=";
     };
   };
   helix-steel = {
