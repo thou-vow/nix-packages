@@ -2,7 +2,6 @@
   inputs,
   lib,
   pkgs,
-  pkgsNice,
   system,
   ...
 }: let
@@ -37,7 +36,7 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (pkgsNice.lix.override {inherit (pkgs.llvmPackages) stdenv;})
+  lix-attuned = (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
       .overrideAttrs (prevAttrs: {
     mesonBuildType = "release";
 
@@ -53,7 +52,7 @@ in {
   });
 
   mango-attuned =
-    (pkgsNice.mango.override {
+    (pkgs.mango.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs (prevAttrs: {
       mesonBuildType = "release";
@@ -70,7 +69,7 @@ in {
     });
 
   mesa-attuned =
-    (pkgsNice.mesa.override {
+    (pkgs.mesa.override {
       inherit (pkgs.llvmPackages) stdenv;
       galliumDrivers = ["iris"];
       vulkanDrivers = ["intel"];
@@ -116,7 +115,7 @@ in {
     });
 
   nixd-attuned =
-    (pkgsNice.nixd.override {
+    (pkgs.nixd.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs
     (prevAttrs: {
@@ -133,7 +132,7 @@ in {
       doInstallCheck = false;
     });
 
-  nushell-attuned = (attuneRust pkgsNice.nushell).overrideAttrs (prevAttrs: {
+  nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -151,7 +150,7 @@ in {
       '';
   });
 
-  noctalia-attuned = pkgsNice.noctalia.overrideAttrs (prevAttrs: {
+  noctalia-attuned = pkgs.noctalia.overrideAttrs (prevAttrs: {
     mesonFlags =
       prevAttrs.mesonFlags or []
       ++ [
@@ -160,7 +159,7 @@ in {
       ];
   });
 
-  rust-analyzer-unwrapped-attuned = (attuneRust pkgsNice.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -173,7 +172,7 @@ in {
       };
   });
 
-  rust-analyzer-attuned = pkgsNice.rust-analyzer.override {
+  rust-analyzer-attuned = pkgs.rust-analyzer.override {
     rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;
   };
 }

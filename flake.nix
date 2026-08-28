@@ -13,8 +13,8 @@
   };
 
   inputs = {
-    multiverse = {
-      url = "github:fzakaria/nixpkgs-multiverse";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
       flake = false;
     };
   };
@@ -30,18 +30,13 @@
         xs);
 
     eachSystemArgs = genAttrs systems (system: let
-      multiverse = import "${inputs.multiverse}/multiverse.nix" {
+      pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        fastFallback = "eval";
       };
-
-      pkgs = multiverse.tip;
-
-      pkgsNice = builtins.mapAttrs (name: value: value.eval) multiverse.fast.latest;
     in {
       inherit (pkgs) lib;
-      inherit inputs multiverse pkgs pkgsNice system;
+      inherit inputs pkgs system;
       nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
     });
 
@@ -49,13 +44,12 @@
   in {
     devShells = forEachSystem ({
       pkgs,
-      pkgsNice,
       system,
       ...
     }: {
       default = pkgs.mkShell {
         buildInputs =
-          (with pkgsNice; [
+          (with pkgs; [
             alejandra
           ])
           ++ (with inputs.self.packages.${system}; [
@@ -67,15 +61,11 @@
     formatter = forEachSystem ({
       nvfetcherSources,
       pkgs,
-      pkgsNice,
       ...
     }:
       (import nvfetcherSources.treefmt-nix.src).mkWrapper pkgs {
         projectRootFile = "flake.nix";
-        programs.alejandra = {
-          enable = true;
-          package = pkgsNice.alejandra;
-        };
+        programs.alejandra.enable = true;
       });
 
     # Put cache here because yes
