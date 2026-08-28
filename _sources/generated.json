@@ -211,27 +211,6 @@
         },
         "version": "5a8635beda77414850a2b9604aa0643e4713db3b"
     },
-    "noctalia": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "noctalia",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "noctalia-dev",
-            "repo": "noctalia",
-            "rev": "v5.0.0-beta.10",
-            "sha256": "sha256-WijEuINvjcXMO/e/zMqwG1lyGiWNosnVt1QY+ko0Rw8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v5.0.0-beta.10"
-    },
     "nvfetcher": {
         "cargoLock": null,
         "date": "2026-06-08",
