@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.93.138";
+    version = "1.94.117";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.93.138/brave-browser_1.93.138_arm64.deb";
-      sha256 = "sha256-WWXn2Q2axhh9/KU67v6wf4vmRRXuYmJHbNmyOvvvg9c=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.94.117/brave-browser_1.94.117_arm64.deb";
+      sha256 = "sha256-4LTeb3BOBv+oRzC409UmSnFQDC3XRtKWmkPUcHOTkuM=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.93.138";
+    version = "1.94.117";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.93.138/brave-browser_1.93.138_amd64.deb";
-      sha256 = "sha256-zxiy1EPwZyQeE2YkhMS5Uj8T/wibofwnyI9nkRWGrJ8=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.94.117/brave-browser_1.94.117_amd64.deb";
+      sha256 = "sha256-ZAAX6ZNZS0ogFRjDfmyAoWo4NbXckswHY7Amfh3skyQ=";
     };
   };
   discord-rpc-lsp = {
@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "2.1.0";
+    version = "2.2.0";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "2.1.0";
+      rev = "2.2.0";
       fetchSubmodules = false;
-      sha256 = "sha256-Va5cPUPBfnmaTZhJhdSLBgtW4mUBM9/H6+vUrNbUiSg=";
+      sha256 = "sha256-ooKOu9TaM8w+Vxah7w/61fJzmk4DWdxITI+KTAImpAA=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -107,13 +107,13 @@
   };
   noctalia = {
     pname = "noctalia";
-    version = "v5.0.0-beta.9";
+    version = "v5.0.0-beta.10";
     src = fetchFromGitHub {
       owner = "noctalia-dev";
       repo = "noctalia";
-      rev = "v5.0.0-beta.9";
+      rev = "v5.0.0-beta.10";
       fetchSubmodules = false;
-      sha256 = "sha256-O07tHqxugZ/XE/90kx/UCZ0YCbHSI88v2ct2ezuCKi4=";
+      sha256 = "sha256-WijEuINvjcXMO/e/zMqwG1lyGiWNosnVt1QY+ko0Rw8=";
     };
   };
   nvfetcher = {
