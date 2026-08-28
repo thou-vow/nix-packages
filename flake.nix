@@ -37,23 +37,25 @@
       };
 
       pkgs = multiverse.tip;
+
+      pkgsNice = builtins.mapAttrs (name: value: value.eval) multiverse.fast.latest;
     in {
       inherit (pkgs) lib;
-      inherit inputs multiverse pkgs system;
+      inherit inputs multiverse pkgs pkgsNice system;
       nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
     });
 
     forEachSystem = f: builtins.mapAttrs (_: args: f args) eachSystemArgs;
   in {
     devShells = forEachSystem ({
-      multiverse,
       pkgs,
+      pkgsNice,
       system,
       ...
     }: {
       default = pkgs.mkShell {
         buildInputs =
-          (with multiverse.fast.latest; [
+          (with pkgsNice; [
             alejandra
           ])
           ++ (with inputs.self.packages.${system}; [
@@ -65,11 +67,15 @@
     formatter = forEachSystem ({
       nvfetcherSources,
       pkgs,
+      pkgsNice,
       ...
     }:
       (import nvfetcherSources.treefmt-nix.src).mkWrapper pkgs {
         projectRootFile = "flake.nix";
-        programs.alejandra.enable = true;
+        programs.alejandra = {
+          enable = true;
+          package = pkgsNice.alejandra;
+        };
       });
 
     # Put cache here because yes

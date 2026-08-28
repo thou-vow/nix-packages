@@ -1,8 +1,8 @@
 {
   inputs,
   lib,
-  multiverse,
   pkgs,
+  pkgsNice,
   system,
   ...
 }: let
@@ -37,7 +37,7 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (multiverse.fast.latest.lix.eval.override {inherit (pkgs.llvmPackages) stdenv;})
+  lix-attuned = (pkgsNice.lix.override {inherit (pkgs.llvmPackages) stdenv;})
       .overrideAttrs (prevAttrs: {
     mesonBuildType = "release";
 
@@ -53,7 +53,7 @@ in {
   });
 
   mango-attuned =
-    (multiverse.fast.latest.mango.eval.override {
+    (pkgsNice.mango.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs (prevAttrs: {
       mesonBuildType = "release";
@@ -70,7 +70,7 @@ in {
     });
 
   mesa-attuned =
-    (multiverse.fast.latest.mesa.eval.override {
+    (pkgsNice.mesa.override {
       inherit (pkgs.llvmPackages) stdenv;
       galliumDrivers = ["iris"];
       vulkanDrivers = ["intel"];
@@ -116,7 +116,7 @@ in {
     });
 
   nixd-attuned =
-    (multiverse.fast.latest.nixd.eval.override {
+    (pkgsNice.nixd.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs
     (prevAttrs: {
@@ -133,7 +133,7 @@ in {
       doInstallCheck = false;
     });
 
-  nushell-attuned = (attuneRust multiverse.fast.latest.nushell.eval).overrideAttrs (prevAttrs: {
+  nushell-attuned = (attuneRust pkgsNice.nushell).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -151,7 +151,7 @@ in {
       '';
   });
 
-  noctalia-attuned = multiverse.fast.latest.noctalia.eval.overrideAttrs (prevAttrs: {
+  noctalia-attuned = pkgsNice.noctalia.overrideAttrs (prevAttrs: {
     mesonFlags =
       prevAttrs.mesonFlags or []
       ++ [
@@ -160,7 +160,7 @@ in {
       ];
   });
 
-  rust-analyzer-unwrapped-attuned = (attuneRust multiverse.fast.latest.rust-analyzer-unwrapped.eval).overrideAttrs (prevAttrs: {
+  rust-analyzer-unwrapped-attuned = (attuneRust pkgsNice.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
       // {
@@ -173,7 +173,7 @@ in {
       };
   });
 
-  rust-analyzer-attuned = multiverse.fast.latest.rust-analyzer.eval.override {
+  rust-analyzer-attuned = pkgsNice.rust-analyzer.override {
     rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;
   };
 }
