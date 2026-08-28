@@ -64,7 +64,7 @@
   };
 
   graalvm-oracle_25i3 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-    name = "graalvm-oracle-25i3";
+    pname = "graalvm-oracle-25i3";
     version = builtins.getAttr system {
       aarch64-linux = nvfetcherSources.graalvm-oracle-25i3-aarch64-linux.version;
       x86_64-linux = nvfetcherSources.graalvm-oracle-25i3-x64-linux.version;
