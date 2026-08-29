@@ -111,15 +111,15 @@
   };
   helix-steel = {
     pname = "helix-steel";
-    version = "5a8635beda77414850a2b9604aa0643e4713db3b";
+    version = "7738d6dcb12763517d277f5dbcc06677f5f0a204";
     src = fetchFromGitHub {
       owner = "mattwparas";
       repo = "helix";
-      rev = "5a8635beda77414850a2b9604aa0643e4713db3b";
+      rev = "7738d6dcb12763517d277f5dbcc06677f5f0a204";
       fetchSubmodules = false;
-      sha256 = "sha256-7mUAINEKnPPCHqiXT+zU5bve4dqcggdjBuHRInhTGEY=";
+      sha256 = "sha256-PlQAiZtyhrNtNxXtor2OFIYyE4aGkQT45YKCrsYm3eY=";
     };
-    date = "2026-08-22";
+    date = "2026-08-29";
   };
   nvfetcher = {
     pname = "nvfetcher";
