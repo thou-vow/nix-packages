@@ -69,7 +69,10 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/.cache/nix
-          key: nix-eval-cache-${{ runner.os }}-${{ steps.date.outputs.month }}
+          key: nix-eval-cache-${{ matrix.target }}-${{ steps.date.outputs.month }}-${{ github.run_id }}
+          restore-keys: |
+            nix-eval-cache-${{ matrix.target }}-${{ steps.date.outputs.month }}-
+            nix-eval-cache-${{ matrix.target }}-
 
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v35

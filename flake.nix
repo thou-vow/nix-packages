@@ -13,7 +13,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
   };
 
   outputs = inputs: let
@@ -48,6 +48,7 @@
         buildInputs =
           (with pkgs; [
             alejandra
+            nixd
           ])
           ++ (with inputs.self.packages.${system}; [
             nvfetcher
