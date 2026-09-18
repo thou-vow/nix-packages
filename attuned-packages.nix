@@ -150,14 +150,18 @@ in {
       '';
   });
 
-  noctalia-attuned = pkgs.noctalia.overrideAttrs (prevAttrs: {
-    mesonFlags =
-      prevAttrs.mesonFlags or []
-      ++ [
-        (lib.mesonOption "c_args" "-march=skylake")
-        (lib.mesonOption "cpp_args" "-march=skylake")
-      ];
-  });
+  noctalia-attuned =
+    (pkgs.noctalia.override {
+      inherit (pkgs.llvmPackages) stdenv;
+    }).overrideAttrs (prevAttrs: {
+      mesonFlags =
+        prevAttrs.mesonFlags or []
+        ++ [
+          (lib.mesonBool "b_lto" true)
+          (lib.mesonOption "c_args" "-march=skylake")
+          (lib.mesonOption "cpp_args" "-march=skylake")
+        ];
+    });
 
   rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
     env =
