@@ -164,6 +164,7 @@ in {
           (lib.mesonBool "b_lto" true)
           (lib.mesonOption "c_args" "-march=skylake")
           (lib.mesonOption "cpp_args" "-march=skylake")
+          (lib.mesonEnable "tests" false)
         ];
     });
 
