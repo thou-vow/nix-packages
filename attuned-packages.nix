@@ -152,11 +152,13 @@ in {
 
   noctalia-attuned =
     (pkgs.noctalia.override {
-      stdenv = pkgs.overrideCC pkgs.llvmPackages.stdenv (
-        pkgs.llvmPackages.stdenv.cc.override {
-          inherit (pkgs.llvmPackages) bintools;
-        }
-      );
+      inherit (pkgs.llvmPackages) stdenv;
+
+      # stdenv = pkgs.overrideCC pkgs.llvmPackages.stdenv (
+      #   pkgs.llvmPackages.stdenv.cc.override {
+      #     inherit (pkgs.llvmPackages) bintools;
+      #   }
+      # );
     }).overrideAttrs (prevAttrs: {
       mesonFlags =
         prevAttrs.mesonFlags or []
