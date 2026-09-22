@@ -41,13 +41,13 @@ fetch.url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-$ver_l
 src.manual = "25.0.4.1"
 fetch.url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-$ver_linux-x64_bin.tar.gz"
 
-[graalvm-oracle-25i3-aarch64-linux]
-src.manual = "25.0.4.1"
-fetch.url = "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-$ver_linux-aarch64_bin.tar.gz"
+[graalvm-oracle-25i-aarch64-linux]
+src.manual = "25i4-25.0.4.1.1"
+fetch.url = "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-$ver_linux-aarch64_bin.tar.gz"
 
-[graalvm-oracle-25i3-x64-linux]
-src.manual = "25.0.4.1"
-fetch.url = "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-$ver_linux-x64_bin.tar.gz"
+[graalvm-oracle-25i-x64-linux]
+src.manual = "25i4-25.0.4.1.1"
+fetch.url = "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-$ver_linux-x64_bin.tar.gz"
 
 [helix-steel]
 src.git = "https://github.com/mattwparas/helix"
