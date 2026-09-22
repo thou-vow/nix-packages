@@ -160,35 +160,35 @@
         },
         "version": "25.0.4.1"
     },
-    "graalvm-oracle-25i3-aarch64-linux": {
+    "graalvm-oracle-25i-aarch64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "graalvm-oracle-25i3-aarch64-linux",
+        "name": "graalvm-oracle-25i-aarch64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qoCoqmOw4spQlGx/3bd6fRv4SIqKPwF1J1o8Do+s4gs=",
+            "sha256": "sha256-eA1XhNPbm7z/d3dcTQJuSg4hoEG6nbp8WRNZSepSNKQ=",
             "type": "url",
-            "url": "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-25.0.4.1_linux-aarch64_bin.tar.gz"
+            "url": "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-25i4-25.0.4.1.1_linux-aarch64_bin.tar.gz"
         },
-        "version": "25.0.4.1"
+        "version": "25i4-25.0.4.1.1"
     },
-    "graalvm-oracle-25i3-x64-linux": {
+    "graalvm-oracle-25i-x64-linux": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "graalvm-oracle-25i3-x64-linux",
+        "name": "graalvm-oracle-25i-x64-linux",
         "passthru": null,
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-gU3qwUSpEgNcToJOBfoGouDIOCHw+50QhLyRbl7u8kc=",
+            "sha256": "sha256-T8xjLPxo6Y9J+TFvijWIuv5PUonxIBBOLSkKdc8z4o4=",
             "type": "url",
-            "url": "https://gds.oracle.com/download/graal/25i3/archive/graalvm-jdk-25i3-25.0.4.1_linux-x64_bin.tar.gz"
+            "url": "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-25i4-25.0.4.1.1_linux-x64_bin.tar.gz"
         },
-        "version": "25.0.4.1"
+        "version": "25i4-25.0.4.1.1"
     },
     "helix-steel": {
         "cargoLock": null,
