@@ -183,34 +183,6 @@ in {
       '';
   });
 
-  openal-attuned =
-    (pkgs.openal.override {
-      inherit (pkgs.llvmPackages) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      cmakeFlags =
-        prevAttrs.cmakeFlags
-        ++ [
-          (lib.cmakeBool "ALSOFT_EXAMPLES" false)
-          (lib.cmakeBool "ALSOFT_UTILS" false)
-        ];
-
-      env =
-        prevAttrs.env or {}
-        // {
-          NIX_CFLAGS_COMPILE = toString [
-            (lib.optionals (prevAttrs.env.NIX_CFLAGS_COMPILE or "" != "")
-              prevAttrs.env.NIX_CFLAGS_COMPILE)
-            "-flto"
-            "-march=skylake"
-          ];
-          NIX_LDFLAGS = toString [
-            (lib.optionals (prevAttrs.env.NIX_LDFLAGS or "" != "")
-              prevAttrs.env.NIX_LDFLAGS)
-            "-flto"
-          ];
-        };
-    });
-
   rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
