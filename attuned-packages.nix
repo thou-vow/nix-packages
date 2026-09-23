@@ -21,6 +21,23 @@
       doInstallCheck = false;
     });
 in {
+  glfw-attuned =
+    (pkgs.glfw.override {
+      inherit (pkgs.llvmPackages) stdenv;
+      withMinecraftPatch = true;
+    })
+    .overrideAttrs (prevAttrs: {
+      cmakeFlags =
+        prevAttrs.cmakeFlags
+        ++ [
+          (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
+          (lib.cmakeBool "GLFW_BUILD_EXAMPLES" false)
+          (lib.cmakeBool "GLFW_BUILD_TESTS" false)
+          (lib.cmakeBool "GLFW_BUILD_X11" false)
+          (lib.cmakeFeature "CMAKE_C_FLAGS" "-march=skylake")
+        ];
+    });
+
   helix-steel-attuned = attuneRust inputs.self.packages.${system}.helix-steel;
 
   kitty-attuned = pkgs.kitty.overrideAttrs (prevAttrs: {
@@ -36,20 +53,22 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (pkgs.lix.override {inherit (pkgs.llvmPackages) stdenv;})
-      .overrideAttrs (prevAttrs: {
-    mesonBuildType = "release";
+  lix-attuned =
+    (pkgs.lix.override {
+      inherit (pkgs.llvmPackages) stdenv;
+    }).overrideAttrs (prevAttrs: {
+      mesonBuildType = "release";
 
-    mesonFlags =
-      prevAttrs.mesonFlags
-      ++ [
-        (lib.mesonOption "cpp_args" "-march=skylake")
-        (lib.mesonBool "enable-tests" false)
-      ];
+      mesonFlags =
+        prevAttrs.mesonFlags
+        ++ [
+          (lib.mesonOption "cpp_args" "-march=skylake")
+          (lib.mesonBool "enable-tests" false)
+        ];
 
-    doCheck = false;
-    doInstallCheck = false;
-  });
+      doCheck = false;
+      doInstallCheck = false;
+    });
 
   mango-attuned =
     (pkgs.mango.override {
@@ -132,6 +151,20 @@ in {
       doInstallCheck = false;
     });
 
+  noctalia-attuned =
+    (pkgs.noctalia.override {
+      inherit (pkgs.llvmPackages) stdenv;
+    }).overrideAttrs (prevAttrs: {
+      mesonFlags =
+        prevAttrs.mesonFlags or []
+        ++ [
+          (lib.mesonBool "b_lto" true)
+          (lib.mesonOption "c_args" "-march=skylake")
+          (lib.mesonOption "cpp_args" "-march=skylake")
+          (lib.mesonEnable "tests" false)
+        ];
+    });
+
   nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
@@ -150,18 +183,32 @@ in {
       '';
   });
 
-  noctalia-attuned =
-    (pkgs.noctalia.override {
+  openal-attuned =
+    (pkgs.openal.override {
       inherit (pkgs.llvmPackages) stdenv;
     }).overrideAttrs (prevAttrs: {
-      mesonFlags =
-        prevAttrs.mesonFlags or []
+      cmakeFlags =
+        prevAttrs.cmakeFlags
         ++ [
-          (lib.mesonBool "b_lto" true)
-          (lib.mesonOption "c_args" "-march=skylake")
-          (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonEnable "tests" false)
+          (lib.cmakeBool "ALSOFT_EXAMPLES" false)
+          (lib.cmakeBool "ALSOFT_UTILS" false)
         ];
+
+      env =
+        prevAttrs.env or {}
+        // {
+          NIX_CFLAGS_COMPILE = toString [
+            (lib.optionals (prevAttrs.env.NIX_CFLAGS_COMPILE or "" != "")
+              prevAttrs.env.NIX_CFLAGS_COMPILE)
+            "-flto"
+            "-march=skylake"
+          ];
+          NIX_LDFLAGS = toString [
+            (lib.optionals (prevAttrs.env.NIX_LDFLAGS or "" != "")
+              prevAttrs.env.NIX_LDFLAGS)
+            "-flto"
+          ];
+        };
     });
 
   rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {

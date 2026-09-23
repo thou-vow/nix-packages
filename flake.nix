@@ -82,6 +82,7 @@
       x86_64-linux._cache = mkCachePackage "x86_64-linux" (with inputs.self.packages.x86_64-linux; [
         discord-rpc-lsp
         faugus-launcher
+        glfw-attuned
         # helix-steel
         helix-steel-attuned
         kitty-attuned
@@ -92,6 +93,7 @@
         noctalia-attuned
         nushell-attuned
         nvfetcher
+        openal-attuned
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
       ]);
