@@ -93,7 +93,6 @@
         noctalia-attuned
         nushell-attuned
         nvfetcher
-        openal-attuned
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
       ]);
