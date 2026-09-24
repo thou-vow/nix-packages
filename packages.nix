@@ -139,4 +139,24 @@
       x86_64-linux = nvfetcherSources.proton-ge-x64-linux.src;
     };
   };
+
+  proton-wineland = pkgs.callPackage ./pkgs/proton-bin.nix {
+    pname = "proton-wineland";
+    version = builtins.getAttr system {
+      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux.version;
+    };
+    src = builtins.getAttr system {
+      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux.src;
+    };
+  };
+
+  proton-wineland-v3 = pkgs.callPackage ./pkgs/proton-bin.nix {
+    pname = "proton-wineland-v3";
+    version = builtins.getAttr system {
+      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux-v3.version;
+    };
+    src = builtins.getAttr system {
+      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux-v3.src;
+    };
+  };
 }

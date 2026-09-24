@@ -77,6 +77,16 @@ src.github = "GloriousEggroll/proton-ge-custom"
 src.prefix = "GE-Proton"
 fetch.zip = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton$ver/GE-Proton$ver-x86_64.tar.gz"
 
+[proton-wineland-x64-linux]
+src.github = "nanomatters/proton-cachyos"
+src.prefix = "wineland-"
+fetch.zip = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-$ver/proton-wineland-$ver-x86_64.tar.xz"
+
+[proton-wineland-x64-linux-v3]
+src.github = "nanomatters/proton-cachyos"
+src.prefix = "wineland-"
+fetch.zip = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-$ver/proton-wineland-$ver-x86_64_v3.tar.xz"
+
 [treefmt-nix]
 src.git = "https://github.com/numtide/treefmt-nix"
 fetch.github = "numtide/treefmt-nix"
