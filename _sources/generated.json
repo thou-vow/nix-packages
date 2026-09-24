@@ -295,6 +295,34 @@
         },
         "version": "11-7"
     },
+    "proton-wineland-x64-linux": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-wineland-x64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-fGkxXF89SPy4I4tF6djDCXZYAncI4Yn/eIT9D+do95g=",
+            "type": "zip",
+            "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64.tar.xz"
+        },
+        "version": "11.0-20260922"
+    },
+    "proton-wineland-x64-linux-v3": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-wineland-x64-linux-v3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-VFoZV32uoKYZvu8mHsEqMyfCCBrvnnacJMkUWrdldK0=",
+            "type": "zip",
+            "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64_v3.tar.xz"
+        },
+        "version": "11.0-20260922"
+    },
     "treefmt-nix": {
         "cargoLock": null,
         "date": "2026-08-16",

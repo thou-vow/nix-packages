@@ -168,6 +168,22 @@
       sha256 = "sha256-ftW0vE45v2JsbaYqo/So0ZFfvdtakHX0XEXEE4TdxLk=";
     };
   };
+  proton-wineland-x64-linux = {
+    pname = "proton-wineland-x64-linux";
+    version = "11.0-20260922";
+    src = fetchzip {
+      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64.tar.xz";
+      sha256 = "sha256-fGkxXF89SPy4I4tF6djDCXZYAncI4Yn/eIT9D+do95g=";
+    };
+  };
+  proton-wineland-x64-linux-v3 = {
+    pname = "proton-wineland-x64-linux-v3";
+    version = "11.0-20260922";
+    src = fetchzip {
+      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64_v3.tar.xz";
+      sha256 = "sha256-VFoZV32uoKYZvu8mHsEqMyfCCBrvnnacJMkUWrdldK0=";
+    };
+  };
   treefmt-nix = {
     pname = "treefmt-nix";
     version = "27b3b12a8e6375f28ebe122f07d230ca5459bbfa";
