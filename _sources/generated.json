@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JR7oP6OD22EGrmFA3wl1aJsibRXOuWzbQUfLkM18Jbo=",
+            "sha256": "sha256-uCp6SIybwMexj+oaLaistJ9CtKhWST1qTOdaC5pJ/uM=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.95.104/brave-browser_1.95.104_arm64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.96.59/brave-browser_1.96.59_arm64.deb"
         },
-        "version": "1.95.104"
+        "version": "1.96.59"
     },
     "brave-x64-linux": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-4J48Pp/IT3XmUEigvoMMfEkHdEpAK1eQUw0iBrJ2Qm4=",
+            "sha256": "sha256-sFEpxpB2cLICni8Bdz0ZLIuHwwdbJYc+o7wia7DxXx4=",
             "type": "url",
-            "url": "https://github.com/brave/brave-browser/releases/download/v1.95.104/brave-browser_1.95.104_amd64.deb"
+            "url": "https://github.com/brave/brave-browser/releases/download/v1.96.59/brave-browser_1.96.59_amd64.deb"
         },
-        "version": "1.95.104"
+        "version": "1.96.59"
     },
     "discord-rpc-lsp": {
         "cargoLock": null,
@@ -93,12 +93,12 @@
             "name": null,
             "owner": "Faugus",
             "repo": "faugus-launcher",
-            "rev": "2.4.0",
-            "sha256": "sha256-8+AxxpjJYE6AzTwVIVimK9shUu0BIkUlMINxaqq4d5k=",
+            "rev": "2.4.1",
+            "sha256": "sha256-YlAc6LbecOGenaeV+OJWru0V6IKN6TWo0i7UOKa2NKg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.4.0"
+        "version": "2.4.1"
     },
     "graalvm-oracle-21-aarch64-linux": {
         "cargoLock": null,

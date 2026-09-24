@@ -17,18 +17,18 @@
   };
   brave-aarch64-linux = {
     pname = "brave-aarch64-linux";
-    version = "1.95.104";
+    version = "1.96.59";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.95.104/brave-browser_1.95.104_arm64.deb";
-      sha256 = "sha256-JR7oP6OD22EGrmFA3wl1aJsibRXOuWzbQUfLkM18Jbo=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.96.59/brave-browser_1.96.59_arm64.deb";
+      sha256 = "sha256-uCp6SIybwMexj+oaLaistJ9CtKhWST1qTOdaC5pJ/uM=";
     };
   };
   brave-x64-linux = {
     pname = "brave-x64-linux";
-    version = "1.95.104";
+    version = "1.96.59";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.95.104/brave-browser_1.95.104_amd64.deb";
-      sha256 = "sha256-4J48Pp/IT3XmUEigvoMMfEkHdEpAK1eQUw0iBrJ2Qm4=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.96.59/brave-browser_1.96.59_amd64.deb";
+      sha256 = "sha256-sFEpxpB2cLICni8Bdz0ZLIuHwwdbJYc+o7wia7DxXx4=";
     };
   };
   discord-rpc-lsp = {
@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "2.4.0";
+    version = "2.4.1";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "2.4.0";
+      rev = "2.4.1";
       fetchSubmodules = false;
-      sha256 = "sha256-8+AxxpjJYE6AzTwVIVimK9shUu0BIkUlMINxaqq4d5k=";
+      sha256 = "sha256-YlAc6LbecOGenaeV+OJWru0V6IKN6TWo0i7UOKa2NKg=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
