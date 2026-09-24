@@ -27,10 +27,7 @@
         xs);
 
     eachSystemArgs = genAttrs systems (system: let
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
     in {
       inherit (pkgs) lib;
       inherit inputs pkgs system;
