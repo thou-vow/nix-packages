@@ -52,13 +52,13 @@
   };
   faugus-launcher = {
     pname = "faugus-launcher";
-    version = "2.4.1";
+    version = "2.4.2";
     src = fetchFromGitHub {
       owner = "Faugus";
       repo = "faugus-launcher";
-      rev = "2.4.1";
+      rev = "2.4.2";
       fetchSubmodules = false;
-      sha256 = "sha256-YlAc6LbecOGenaeV+OJWru0V6IKN6TWo0i7UOKa2NKg=";
+      sha256 = "sha256-LViSvkjuur7/Dt4ZZ7GfKOs65zWO6GRmeA+f48EYrBg=";
     };
   };
   graalvm-oracle-21-aarch64-linux = {
@@ -111,15 +111,15 @@
   };
   helix-steel = {
     pname = "helix-steel";
-    version = "7915ec19939d8ae3ab4cfff278eaf23ae3784351";
+    version = "df595c7dc5729e2712c79dd2e35977e3474b3ec6";
     src = fetchFromGitHub {
       owner = "mattwparas";
       repo = "helix";
-      rev = "7915ec19939d8ae3ab4cfff278eaf23ae3784351";
+      rev = "df595c7dc5729e2712c79dd2e35977e3474b3ec6";
       fetchSubmodules = false;
-      sha256 = "sha256-cfZ9EL0rRfoB7KnZRgRmk36YJhjfutqDjzew1lJYwEg=";
+      sha256 = "sha256-zWOzgArhg4PCgi8AMKLtcttBtchlQJay6atEpobCASk=";
     };
-    date = "2026-09-21";
+    date = "2026-09-26";
   };
   nvfetcher = {
     pname = "nvfetcher";
