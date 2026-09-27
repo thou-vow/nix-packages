@@ -211,6 +211,27 @@
         },
         "version": "df595c7dc5729e2712c79dd2e35977e3474b3ec6"
     },
+    "llama-prism": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "llama-prism",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "PrismML-Eng",
+            "repo": "llama.cpp",
+            "rev": "prism-b10743-adfffbe",
+            "sha256": "sha256-SNBAC+dNTwQxpGmKyG7i/8eqCNg6985DXtqGbzWgwFA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "prism-b10743-adfffbe"
+    },
     "nvfetcher": {
         "cargoLock": null,
         "date": "2026-06-08",

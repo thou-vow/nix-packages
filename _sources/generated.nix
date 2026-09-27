@@ -121,6 +121,17 @@
     };
     date = "2026-09-26";
   };
+  llama-prism = {
+    pname = "llama-prism";
+    version = "prism-b10743-adfffbe";
+    src = fetchFromGitHub {
+      owner = "PrismML-Eng";
+      repo = "llama.cpp";
+      rev = "prism-b10743-adfffbe";
+      fetchSubmodules = false;
+      sha256 = "sha256-SNBAC+dNTwQxpGmKyG7i/8eqCNg6985DXtqGbzWgwFA=";
+    };
+  };
   nvfetcher = {
     pname = "nvfetcher";
     version = "b909de1eddb7c21b014abe88e37e5bd71f30f638";
