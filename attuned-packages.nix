@@ -114,6 +114,7 @@ in {
 
           # Unnecessary stuff
           (lib.mesonBool "gallium-extra-hud" false)
+          (lib.mesonBool "gallium-rusticl" false)
           (lib.mesonBool "install-mesa-clc" false)
           (lib.mesonBool "install-precomp-compiler" false)
           (lib.mesonBool "teflon" false)
@@ -125,6 +126,9 @@ in {
         ];
 
       outputs = ["out"];
+
+      postInstall = "";
+      postFixup = builtins.replaceStrings ["$opencl/lib/libRusticlOpenCL.so"] [""] prevAttrs.postFixup;
 
       doCheck = false;
       doInstallCheck = false;
