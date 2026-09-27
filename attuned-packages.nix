@@ -1,6 +1,7 @@
 {
   inputs,
   lib,
+  nvfetcherSources,
   pkgs,
   system,
   ...
@@ -195,6 +196,21 @@ in {
         ];
       };
   });
+
+  llama-prism-attuned =
+    (pkgs.callPackage "${nvfetcherSources.llama-prism.src}/.devops/nix/package.nix" {
+      inherit (pkgs.llvmPackages) stdenv;
+    }).overrideAttrs (prevAttrs: {
+      cmakeFlags =
+        prevAttrs.cmakeFlags
+        ++ [
+          (lib.cmakeFeature "CMAKE_C_FLAGS" "-march=skylake")
+          (lib.cmakeFeature "CMAKE_CXX_FLAGS" "-march=skylake")
+          (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
+          (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
+          (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
+        ];
+    });
 
   rust-analyzer-attuned = pkgs.rust-analyzer.override {
     rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;

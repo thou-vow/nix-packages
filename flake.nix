@@ -87,7 +87,7 @@
         helix-steel-attuned
         kitty-attuned
         lix-attuned
-        llama-prism
+        llama-prism-attuned
         mango-attuned
         mesa-attuned
         nixd-attuned

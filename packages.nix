@@ -93,10 +93,6 @@
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 
-  llama-prism = pkgs.llama-cpp.overrideAttrs {
-    inherit (nvfetcherSources.llama-prism) version src;
-  };
-
   nvfetcher = pkgs.nvfetcher.overrideAttrs {
     inherit (nvfetcherSources.nvfetcher) version src;
   };
