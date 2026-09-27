@@ -54,6 +54,10 @@ src.git = "https://github.com/mattwparas/helix"
 src.branch = "steel-event-system"
 fetch.github = "mattwparas/helix"
 
+[llama-prism]
+src.github = "PrismML-Eng/llama.cpp"
+fetch.github = "PrismML-Eng/llama.cpp"
+
 [nvfetcher]
 src.git = "https://github.com/thou-vow/nvfetcher"
 fetch.github = "thou-vow/nvfetcher"
