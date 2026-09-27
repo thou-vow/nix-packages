@@ -213,6 +213,11 @@ in {
           (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
           (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
           (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
+
+          (lib.cmakeFeature "CMAKE_CXX_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
+          (lib.cmakeFeature "CMAKE_CXX_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
+          (lib.cmakeFeature "CMAKE_C_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
+          (lib.cmakeFeature "CMAKE_C_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
         ];
     });
 
