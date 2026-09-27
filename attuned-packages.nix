@@ -200,7 +200,11 @@ in {
   llama-prism-attuned =
     (pkgs.callPackage "${nvfetcherSources.llama-prism.src}/.devops/nix/package.nix" {
       inherit (pkgs.llvmPackages) stdenv;
+      useBlas = false;
+      useWebUi = false;
     }).overrideAttrs (prevAttrs: {
+      inherit (nvfetcherSources.llama-prism) version;
+
       cmakeFlags =
         prevAttrs.cmakeFlags
         ++ [
