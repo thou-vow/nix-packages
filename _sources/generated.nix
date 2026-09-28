@@ -181,18 +181,18 @@
   };
   proton-wineland-x64-linux = {
     pname = "proton-wineland-x64-linux";
-    version = "11.0-20260922";
+    version = "11.0-20260928.1";
     src = fetchzip {
-      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64.tar.xz";
-      sha256 = "sha256-fGkxXF89SPy4I4tF6djDCXZYAncI4Yn/eIT9D+do95g=";
+      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260928.1/proton-wineland-11.0-20260928.1-x86_64.tar.xz";
+      sha256 = "sha256-/JdYedygx4yCwaKhccF5HjLU7KXyrSBD/fk42gp8sBc=";
     };
   };
   proton-wineland-x64-linux-v3 = {
     pname = "proton-wineland-x64-linux-v3";
-    version = "11.0-20260922";
+    version = "11.0-20260928.1";
     src = fetchzip {
-      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260922/proton-wineland-11.0-20260922-x86_64_v3.tar.xz";
-      sha256 = "sha256-VFoZV32uoKYZvu8mHsEqMyfCCBrvnnacJMkUWrdldK0=";
+      url = "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20260928.1/proton-wineland-11.0-20260928.1-x86_64_v3.tar.xz";
+      sha256 = "sha256-LyZtKfH73Kh//uJUYDYCAubuazWp7XjAZQti86ox65Y=";
     };
   };
   treefmt-nix = {
