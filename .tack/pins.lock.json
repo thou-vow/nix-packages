@@ -9,7 +9,7 @@
     "graalvm-oracle-21-x86-64-linux": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
     "graalvm-oracle-25-aarch64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz",
     "graalvm-oracle-25-x86-64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
-    "helix-steel": "github:mattwparas/helix/?ref=steel-event-system",
+    "helix-steel": "github:angjelkom/helix",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
     "prismlauncher-cracked": "github:Diegiwg/PrismLauncher-Cracked",
     "proton-cachyos-x86-64-linux": "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz",
@@ -87,25 +87,13 @@
     "unpack": "file",
     "tag": "Oracle GraalVM 25.0.4.1.1"
   },
-  "graalvm-oracle-25i-aarch64-linux": {
-    "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-25i4-25.0.4.1.1_linux-aarch64_bin.tar.gz",
-    "sha256": "sha256-eA1XhNPbm7z/d3dcTQJuSg4hoEG6nbp8WRNZSepSNKQ=",
-    "unpack": "file"
-  },
-  "graalvm-oracle-25i-x86-64-linux": {
-    "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25i4/archive/graalvm-jdk-25i4-25.0.4.1.1_linux-x64_bin.tar.gz",
-    "sha256": "sha256-T8xjLPxo6Y9J+TFvijWIuv5PUonxIBBOLSkKdc8z4o4=",
-    "unpack": "file"
-  },
   "helix-steel": {
     "type": "github",
-    "owner": "mattwparas",
+    "owner": "angjelkom",
     "repo": "helix",
-    "rev": "ee451df4ff6b0f6416a128f26affc2052b0669c6",
-    "narHash": "sha256-pPQFqMoUvDFsCDBjEWzrxb6x+5YXY/ELD5CTl/Tf5N8=",
-    "lastModified": 1790776887
+    "rev": "f171fdb1a075023a3ffac4baa4a4bbaa8957b635",
+    "narHash": "sha256-BnJ+mIa8zF0/ObPgUg3tbDgAv9TNSVv0NZVe1TyL7Qk=",
+    "lastModified": 1790848399
   },
   "nixpkgs": {
     "type": "tarball",
