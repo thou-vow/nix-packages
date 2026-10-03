@@ -76,14 +76,15 @@
           paths = packages;
         };
     in {
-      aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
-        # helix-steel
-      ]);
+      # aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
+      #   helix-steel
+      # ]);
 
       x86_64-linux._cache = mkCachePackage "x86_64-linux" (with inputs.self.packages.x86_64-linux; [
         discord-rpc-lsp
         faugus-launcher
         glfw-attuned
+        # helix-steel
         helix-steel-attuned
         kitty-attuned
         lix-attuned

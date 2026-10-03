@@ -5,7 +5,7 @@ gh = "github:{path}"
 [inputs]
 discord-rpc-lsp = { url = "gh:zerootoad/discord-rpc-lsp", type = "fetch", tag = "{version}" }
 faugus-launcher = { url = "gh:Faugus/faugus-launcher", type = "fetch", tag = "{version}" }
-helix-steel = { url = "gh:mattwparas/helix/?ref=steel-event-system", type = "fetch" , frozen = true }
+helix-steel = { url = "gh:angjelkom/helix", type = "fetch" }
 # llama-prism = { url = "gh:PrismML-Eng/llama.cpp", type = "fetch", tag = "prism-b{version}" }
 nixpkgs = { url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst", type = "fetch" }
 prismlauncher-cracked = { url = "gh:Diegiwg/PrismLauncher-Cracked", type = "fetch", tag = "{version}" }
