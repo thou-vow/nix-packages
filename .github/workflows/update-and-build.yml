@@ -50,8 +50,8 @@ jobs:
         include:
           - runner: ubuntu-24.04
             target: x86_64-linux
-          - runner: ubuntu-24.04-arm
-            target: aarch64-linux
+          # - runner: ubuntu-24.04-arm
+          #   target: aarch64-linux
     steps:
       - name: Reclaim space!
         uses: wimpysworld/nothing-but-nix@main
