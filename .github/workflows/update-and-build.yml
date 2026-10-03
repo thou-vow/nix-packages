@@ -40,7 +40,10 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: updated-lockfiles
-          path: .tack
+          path: |
+            .tack/default.nix
+            .tack/pins.lock.json
+            .tack/pins.toml
   build:
     needs: update
     runs-on: ${{ matrix.runner }}
