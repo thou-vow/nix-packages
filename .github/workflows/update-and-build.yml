@@ -25,8 +25,7 @@ jobs:
       - name: Update sources
         id: update
         run: |
-          nix run .#nvfetcher
-          nix flake update
+          nix run github:manic-systems/tack -- update
 
           if git diff --quiet; then
             echo "unchanged"
@@ -42,8 +41,7 @@ jobs:
         with:
           name: updated-lockfiles
           path: |
-            flake.lock
-            _sources/
+            .tack/
   build:
     needs: update
     runs-on: ${{ matrix.runner }}

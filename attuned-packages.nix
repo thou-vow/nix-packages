@@ -1,7 +1,6 @@
 {
   inputs,
   lib,
-  nvfetcherSources,
   pkgs,
   system,
   ...
@@ -197,31 +196,31 @@ in {
       };
   });
 
-  llama-prism-attuned =
-    (pkgs.callPackage "${nvfetcherSources.llama-prism.src}/.devops/nix/package.nix" {
-      inherit (pkgs.llvmPackages) stdenv;
-      useVulkan = true;
-      useWebUi = true;
-    }).overrideAttrs (prevAttrs: {
-      __intentionallyOverridingVersion = true;
-      inherit (nvfetcherSources.llama-prism) version;
+  # llama-prism-attuned =
+  #   (pkgs.callPackage "${inputs.llama-prism}/.devops/nix/package.nix" {
+  #     inherit (pkgs.llvmPackages) stdenv;
+  #     useVulkan = true;
+  #     useWebUi = true;
+  #   }).overrideAttrs (prevAttrs: {
+  #     __intentionallyOverridingVersion = true;
+  #     inherit (inputs.llama-prism) version;
 
-      cmakeFlags =
-        prevAttrs.cmakeFlags
-        ++ [
-          (lib.cmakeFeature "CMAKE_C_FLAGS" "-march=skylake")
-          (lib.cmakeFeature "CMAKE_CXX_FLAGS" "-march=skylake")
-          (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
-          (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
-          (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
+  #     cmakeFlags =
+  #       prevAttrs.cmakeFlags
+  #       ++ [
+  #         (lib.cmakeFeature "CMAKE_C_FLAGS" "-march=skylake")
+  #         (lib.cmakeFeature "CMAKE_CXX_FLAGS" "-march=skylake")
+  #         (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
+  #         (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
+  #         (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
 
-          # Fix
-          (lib.cmakeFeature "CMAKE_CXX_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
-          (lib.cmakeFeature "CMAKE_CXX_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
-          (lib.cmakeFeature "CMAKE_C_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
-          (lib.cmakeFeature "CMAKE_C_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
-        ];
-    });
+  #         # Fix
+  #         (lib.cmakeFeature "CMAKE_CXX_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
+  #         (lib.cmakeFeature "CMAKE_CXX_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
+  #         (lib.cmakeFeature "CMAKE_C_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
+  #         (lib.cmakeFeature "CMAKE_C_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
+  #       ];
+  #   });
 
   rust-analyzer-attuned = pkgs.rust-analyzer.override {
     rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;

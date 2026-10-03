@@ -4,19 +4,23 @@
   nixConfig = {
     extra-substituters = [
       "https://thou-vow.cachix.org"
+      "https://cache.manic.systems"
       "https://nix-community.cachix.org"
     ];
     extra-trusted-public-keys = [
       "thou-vow.cachix.org-1:X9yN6WSwyoFihH/tOriqxpaJEP3pd43z8UPmfipvoK8="
+      "cache.manic.systems-1:s6OZanN8Us8vRi0jVivP3qlMn0cYHBjBALKrNe5nH8s="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
 
-  inputs = {
-    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
-  };
+  outputs = preInputs: let
+    inputs =
+      (import ./.tack) {
+        overrides = preInputs.tackOverrides or {};
+      }
+      // {inherit (preInputs) self;};
 
-  outputs = inputs: let
     systems = ["aarch64-linux" "x86_64-linux"];
 
     genAttrs = xs: f:
@@ -34,11 +38,12 @@
     in {
       inherit (pkgs) lib;
       inherit inputs pkgs system;
-      nvfetcherSources = pkgs.callPackage ./_sources/generated.nix {};
     });
 
     forEachSystem = f: builtins.mapAttrs (_: args: f args) eachSystemArgs;
   in {
+    inherit inputs;
+
     devShells = forEachSystem ({
       pkgs,
       system,
@@ -46,22 +51,19 @@
     }: {
       default = pkgs.mkShell {
         buildInputs =
-          (with pkgs; [
+          [
+            inputs.tack.packages.${system}.tack
+          ]
+          ++ (with pkgs; [
             alejandra
+            taplo
             nixd
-          ])
-          ++ (with inputs.self.packages.${system}; [
-            nvfetcher
           ]);
       };
     });
 
-    formatter = forEachSystem ({
-      nvfetcherSources,
-      pkgs,
-      ...
-    }:
-      (import nvfetcherSources.treefmt-nix.src).mkWrapper pkgs {
+    formatter = forEachSystem ({pkgs, ...}:
+      (import inputs.treefmt-nix).mkWrapper pkgs {
         projectRootFile = "flake.nix";
         programs.alejandra.enable = true;
       });
@@ -76,14 +78,12 @@
     in {
       aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
         # helix-steel
-        nvfetcher
       ]);
 
       x86_64-linux._cache = mkCachePackage "x86_64-linux" (with inputs.self.packages.x86_64-linux; [
         discord-rpc-lsp
         faugus-launcher
         glfw-attuned
-        # helix-steel
         helix-steel-attuned
         kitty-attuned
         lix-attuned
@@ -93,13 +93,10 @@
         nixd-attuned
         noctalia-attuned
         nushell-attuned
-        nvfetcher
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
       ]);
     };
-
-    nvfetcherSources = forEachSystem ({nvfetcherSources, ...}: nvfetcherSources);
 
     packages = forEachSystem (args:
       (import ./packages.nix args)

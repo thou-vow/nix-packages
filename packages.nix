@@ -1,83 +1,68 @@
 {
   inputs,
   lib,
-  nvfetcherSources,
   pkgs,
   system,
   ...
 }: {
-  apple-emoji = pkgs.callPackage ./pkgs/apple-emoji.nix {
-    inherit (nvfetcherSources.apple-emoji) version src;
-  };
-
   brave = pkgs.brave.overrideAttrs {
-    version = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.brave-aarch64-linux.version;
-      x86_64-linux = nvfetcherSources.brave-x64-linux.version;
-    };
+    version = lib.removePrefix "v" (builtins.getAttr system {
+      aarch64-linux = inputs._meta.brave-aarch64-linux.tag;
+      x86_64-linux = inputs._meta.brave-x86-64-linux.tag;
+    });
     src = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.brave-aarch64-linux.src;
-      x86_64-linux = nvfetcherSources.brave-x64-linux.src;
+      aarch64-linux = inputs.brave-aarch64-linux;
+      x86_64-linux = inputs.brave-x86-64-linux;
     };
   };
 
   discord-rpc-lsp = pkgs.callPackage ./pkgs/discord-rpc-lsp.nix {
-    inherit (nvfetcherSources.discord-rpc-lsp) version src;
+    version = inputs._meta.discord-rpc-lsp.tag;
+    src = inputs.discord-rpc-lsp;
   };
 
   dwproton = pkgs.callPackage ./pkgs/proton-bin.nix {
     pname = "dwproton";
-    version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.dwproton-x64-linux.version;
-    };
+    version = lib.removePrefix "dwproton-" (builtins.getAttr system {
+      x86_64-linux = inputs._meta.dwproton-x86-64-linux.tag;
+    });
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.dwproton-x64-linux.src;
+      x86_64-linux = inputs.dwproton-x86-64-linux;
     };
   };
 
   faugus-launcher = pkgs.callPackage ./pkgs/faugus-launcher.nix {
-    inherit (nvfetcherSources.faugus-launcher) version src;
+    version = inputs._meta.faugus-launcher.tag;
+    src = inputs.faugus-launcher;
   };
 
   graalvm-oracle_21 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-    version = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.version;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-21-x64-linux.version;
-    };
+    version = lib.removePrefix "Oracle GraalVM for JDK " (builtins.getAttr system {
+      aarch64-linux = inputs._meta.graalvm-oracle-21-aarch64-linux.tag;
+      x86_64-linux = inputs._meta.graalvm-oracle-21-x86-64-linux.tag;
+    });
     src = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-21-aarch64-linux.src;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-21-x64-linux.src;
+      aarch64-linux = inputs.graalvm-oracle-21-aarch64-linux;
+      x86_64-linux = inputs.graalvm-oracle-21-x86-64-linux;
     };
     doInstallCheck = false;
   };
 
   graalvm-oracle_25 = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-    version = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-25-aarch64-linux.version;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-25-x64-linux.version;
-    };
+    version = lib.removePrefix "Oracle GraalVM " (builtins.getAttr system {
+      aarch64-linux = inputs._meta.graalvm-oracle-25-aarch64-linux.tag;
+      x86_64-linux = inputs._meta.graalvm-oracle-25-x86-64-linux.tag;
+    });
     src = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-25-aarch64-linux.src;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-25-x64-linux.src;
+      aarch64-linux = inputs.graalvm-oracle-25-aarch64-linux;
+      x86_64-linux = inputs.graalvm-oracle-25-x86-64-linux;
     };
     doInstallCheck = false;
   };
 
-  graalvm-oracle_25i = pkgs.graalvmPackages.graalvm-oracle.overrideAttrs {
-    version = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-25i-aarch64-linux.version;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-25i-x64-linux.version;
-    };
-    src = builtins.getAttr system {
-      aarch64-linux = nvfetcherSources.graalvm-oracle-25i-aarch64-linux.src;
-      x86_64-linux = nvfetcherSources.graalvm-oracle-25i-x64-linux.src;
-    };
-    doInstallCheck = false;
-  };
-
-  helix-steel = (pkgs.callPackage nvfetcherSources.helix-steel.src {})
+  helix-steel = (pkgs.callPackage inputs.helix-steel {})
       .overrideAttrs (prevAttrs: {
-    inherit (nvfetcherSources.helix-steel) version;
+    version = inputs._meta.helix-steel.rev;
 
     env =
       prevAttrs.env or {}
@@ -93,70 +78,67 @@
     cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
   });
 
-  nvfetcher = pkgs.nvfetcher.overrideAttrs {
-    inherit (nvfetcherSources.nvfetcher) version src;
-  };
-
   prismlauncher-cracked =
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = inputs.self.packages.${system}.prismlauncher-cracked-unwrapped;
     }).overrideAttrs {
-      inherit (nvfetcherSources.prismlauncher-cracked) version;
+      version = inputs._meta.prismlauncher-cracked.tag;
       pname = "prismlauncher-cracked";
     };
 
   prismlauncher-cracked-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
-    inherit (nvfetcherSources.prismlauncher-cracked) version src;
     pname = "prismlauncher-cracked-unwrapped";
+    version = inputs._meta.prismlauncher-cracked.tag;
+    src = inputs.prismlauncher-cracked;
   };
 
   proton-cachyos = pkgs.callPackage ./pkgs/proton-bin.nix {
-    pname = "proton-cachyos";
+    pname = "proton";
     version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux.version;
+      x86_64-linux = inputs._meta.proton-cachyos-x86-64-linux.tag;
     };
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux.src;
+      x86_64-linux = inputs.proton-cachyos-x86-64-linux;
     };
   };
 
   proton-cachyos-v3 = pkgs.callPackage ./pkgs/proton-bin.nix {
-    pname = "proton-cachyos-v3";
+    pname = "proton-v3";
     version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux-v3.version;
+      x86_64-linux = inputs._meta.proton-cachyos-x86-64-v3-linux.tag;
     };
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-cachyos-x64-linux-v3.src;
+      x86_64-linux = inputs.proton-cachyos-x86-64-v3-linux;
     };
   };
 
   proton-ge = pkgs.callPackage ./pkgs/proton-bin.nix {
     pname = "proton-ge";
-    version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-ge-x64-linux.version;
-    };
+    version = lib.removePrefix "GE-Proton" (builtins.getAttr system {
+      x86_64-linux = inputs._meta.proton-ge-x86-64-linux.tag;
+    });
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-ge-x64-linux.src;
+      x86_64-linux = inputs.proton-ge-x86-64-linux;
     };
   };
 
   proton-wineland = pkgs.callPackage ./pkgs/proton-bin.nix {
-    pname = "proton-wineland";
+    pname = "proton";
     version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux.version;
+      x86_64-linux = inputs._meta.proton-wineland-x86-64-linux.tag;
     };
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux.src;
+      x86_64-linux = inputs.proton-wineland-x86-64-linux;
     };
   };
 
   proton-wineland-v3 = pkgs.callPackage ./pkgs/proton-bin.nix {
-    pname = "proton-wineland-v3";
+    pname = "proton-v3";
     version = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux-v3.version;
+      x86_64-linux = inputs._meta.proton-wineland-x86-64-v3-linux.tag;
     };
     src = builtins.getAttr system {
-      x86_64-linux = nvfetcherSources.proton-wineland-x64-linux-v3.src;
+      x86_64-linux = inputs.proton-wineland-x86-64-v3-linux;
     };
   };
 }
