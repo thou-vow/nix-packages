@@ -41,6 +41,7 @@ jobs:
         with:
           name: updated-lockfiles
           path: .tack/
+          include-hidden-files: true
   build:
     needs: update
     runs-on: ${{ matrix.runner }}
