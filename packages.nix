@@ -2,6 +2,7 @@
   inputs,
   lib,
   pkgs,
+  self,
   system,
   ...
 }: {
@@ -68,9 +69,9 @@
 
   prismlauncher-cracked =
     (pkgs.prismlauncher.override {
-      prismlauncher-unwrapped = inputs.self.packages.${system}.prismlauncher-cracked-unwrapped;
+      prismlauncher-unwrapped = self.packages.${system}.prismlauncher-cracked-unwrapped;
     }).overrideAttrs {
-      inherit (inputs.self.packages.${system}.prismlauncher-cracked-unwrapped) version;
+      inherit (self.packages.${system}.prismlauncher-cracked-unwrapped) version;
       pname = "prismlauncher-cracked";
     };
 

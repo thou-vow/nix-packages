@@ -14,12 +14,10 @@
     ];
   };
 
-  outputs = preInputs: let
-    inputs =
-      (import ./.tack) {
-        overrides = preInputs.tackOverrides or {};
-      }
-      // {inherit (preInputs) self;};
+  outputs = {self, ...} @ args: let
+    inputs = import ./.tack {
+      overrides = args.tackOverrides or {};
+    };
 
     systems = ["aarch64-linux" "x86_64-linux"];
 
@@ -37,7 +35,7 @@
       };
     in {
       inherit (pkgs) lib;
-      inherit inputs pkgs system;
+      inherit inputs pkgs self system;
     });
 
     forEachSystem = f: builtins.mapAttrs (_: args: f args) eachSystemArgs;
@@ -76,10 +74,10 @@
           paths = packages;
         };
     in {
-      # aarch64-linux._cache = mkCachePackage "aarch64-linux" (with inputs.self.packages.aarch64-linux; [
+      # aarch64-linux._cache = mkCachePackage "aarch64-linux" (with self.packages.aarch64-linux; [
       # ]);
 
-      x86_64-linux._cache = mkCachePackage "x86_64-linux" (with inputs.self.packages.x86_64-linux; [
+      x86_64-linux._cache = mkCachePackage "x86_64-linux" (with self.packages.x86_64-linux; [
         discord-rpc-lsp
         faugus-launcher
         glfw-attuned

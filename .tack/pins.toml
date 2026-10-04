@@ -16,7 +16,7 @@ group = "maintenance"
 url = "github:zerootoad/discord-rpc-lsp"
 type = "fetch"
 tag = "{version}"
-group = "package"
+group = "packages"
 
 [inputs.brave-aarch64-linux]
 url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_arm64.deb"
@@ -24,7 +24,7 @@ type = "fixed"
 unpack = "file"
 tag = "v{version}"
 tags_from = "https://brave.com/latest"
-group = "package"
+group = "packages"
 
 [inputs.brave-x86-64-linux]
 url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_amd64.deb"
@@ -32,7 +32,7 @@ type = "fixed"
 unpack = "file"
 tag = "v{version}"
 tags_from = "https://brave.com/latest"
-group = "package"
+group = "packages"
 
 [inputs.dwproton-x86-64-linux]
 url = "https://dawn.wine/dawn-winery/dwproton/releases/download/{tag}/{tag}-x86_64.tar.xz"
@@ -40,13 +40,13 @@ type = "fixed"
 unpack = "tarball"
 tag = "dwproton-{version}"
 tags_from = "https://dawn.wine/dawn-winery/dwproton/releases"
-group = "package"
+group = "packages"
 
 [inputs.faugus-launcher]
 url = "github:Faugus/faugus-launcher"
 type = "fetch"
 tag = "{version}"
-group = "package"
+group = "packages"
 
 [inputs.graalvm-oracle-21-aarch64-linux]
 url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz"
@@ -54,7 +54,7 @@ type = "fixed"
 unpack = "file"
 tag = "Oracle GraalVM for JDK {version}"
 tags_from = "https://docs.oracle.com/en/graalvm/jdk/21/docs/release-notes"
-group = "package"
+group = "packages"
 
 [inputs.graalvm-oracle-21-x86-64-linux]
 url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz"
@@ -62,7 +62,7 @@ type = "fixed"
 unpack = "file"
 tag = "Oracle GraalVM for JDK {version}"
 tags_from = "https://docs.oracle.com/en/graalvm/jdk/21/docs/release-notes"
-group = "package"
+group = "packages"
 
 [inputs.graalvm-oracle-25-aarch64-linux]
 url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz"
@@ -70,7 +70,7 @@ type = "fixed"
 unpack = "file"
 tag = "Oracle GraalVM {version}"
 tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
-group = "package"
+group = "packages"
 
 [inputs.graalvm-oracle-25-x86-64-linux]
 url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz"
@@ -78,51 +78,51 @@ type = "fixed"
 unpack = "file"
 tag = "Oracle GraalVM {version}"
 tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
-group = "package"
+group = "packages"
 
 [inputs.llama-prism]
 url = "github:PrismML-Eng/llama.cpp"
 type = "fetch"
 tag = "prism-b{version}-*"
-group = "package"
+group = "packages"
 
 [inputs.prismlauncher-cracked]
 url = "github:Diegiwg/PrismLauncher-Cracked"
 type = "fetch"
 tag = "{version}"
-group = "package"
+group = "packages"
 
 [inputs.proton-cachyos-x86-64-linux]
 url = "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz"
 type = "fixed"
 unpack = "tarball"
 tag = "cachyos-{version}-slr"
-group = "package"
+group = "packages"
 
 [inputs.proton-cachyos-x86-64-v3-linux]
 url = "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64_v3.tar.xz"
 type = "fixed"
 unpack = "tarball"
 tag = "cachyos-{version}-slr"
-group = "package"
+group = "packages"
 
 [inputs.proton-ge-x86-64-linux]
 url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/{tag}/{tag}-x86_64.tar.gz"
 type = "fixed"
 unpack = "tarball"
 tag = "GE-Proton{version}"
-group = "package"
+group = "packages"
 
 [inputs.proton-wineland-x86-64-linux]
 url = "https://github.com/nanomatters/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz"
 type = "fixed"
 unpack = "tarball"
 tag = "wineland-{version}"
-group = "package"
+group = "packages"
 
 [inputs.proton-wineland-x86-64-v3-linux]
 url = "https://github.com/nanomatters/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64_v3.tar.xz"
 type = "fixed"
 unpack = "tarball"
 tag = "wineland-{version}"
-group = "package"
+group = "packages"

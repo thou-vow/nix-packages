@@ -2,6 +2,7 @@
   inputs,
   lib,
   pkgs,
+  self,
   system,
   ...
 }: let
@@ -221,7 +222,7 @@ in {
     });
 
   rust-analyzer-attuned = pkgs.rust-analyzer.override {
-    rust-analyzer-unwrapped = inputs.self.packages.${system}.rust-analyzer-unwrapped-attuned;
+    rust-analyzer-unwrapped = self.packages.${system}.rust-analyzer-unwrapped-attuned;
   };
 
   steelix-attuned = (attuneRust pkgs.steelix).overrideAttrs (prevAttrs: {
