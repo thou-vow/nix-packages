@@ -1,19 +1,30 @@
+[shorturls]
+gh = "github:{path}"
+
+
+# Flakes
+
 [inputs.nixpkgs]
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
-group = "maintenance"
+group = "general"
 
 [inputs.tack]
-url = "github:manic-systems/tack"
-group = "maintenance"
+url = "gh:manic-systems/tack"
+group = "general"
+
+
+# Non-flakes
 
 [inputs.treefmt-nix]
-url = "github:numtide/treefmt-nix"
+url = "gh:numtide/treefmt-nix"
 type = "fetch"
-group = "maintenance"
+group = "general"
 
+
+# Packages
 
 [inputs.discord-rpc-lsp]
-url = "github:zerootoad/discord-rpc-lsp"
+url = "gh:zerootoad/discord-rpc-lsp"
 type = "fetch"
 tag = "{version}"
 group = "packages"
@@ -43,7 +54,7 @@ tags_from = "https://dawn.wine/dawn-winery/dwproton/releases"
 group = "packages"
 
 [inputs.faugus-launcher]
-url = "github:Faugus/faugus-launcher"
+url = "gh:Faugus/faugus-launcher"
 type = "fetch"
 tag = "{version}"
 group = "packages"
@@ -81,13 +92,13 @@ tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
 group = "packages"
 
 [inputs.llama-prism]
-url = "github:PrismML-Eng/llama.cpp"
+url = "gh:PrismML-Eng/llama.cpp"
 type = "fetch"
 tag = "prism-b{version}-*"
 group = "packages"
 
 [inputs.prismlauncher-cracked]
-url = "github:Diegiwg/PrismLauncher-Cracked"
+url = "gh:Diegiwg/PrismLauncher-Cracked"
 type = "fetch"
 tag = "{version}"
 group = "packages"
