@@ -6,7 +6,7 @@ gh = "github:{path}"
 discord-rpc-lsp = { url = "gh:zerootoad/discord-rpc-lsp", type = "fetch", tag = "{version}" }
 faugus-launcher = { url = "gh:Faugus/faugus-launcher", type = "fetch", tag = "{version}" }
 llama-prism = { url = "gh:PrismML-Eng/llama.cpp", type = "fetch", tag = "prism-b{version}-*" }
-nixpkgs = { url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst", type = "fetch" }
+nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 prismlauncher-cracked = { url = "gh:Diegiwg/PrismLauncher-Cracked", type = "fetch", tag = "{version}" }
 tack.url = "gh:manic-systems/tack"
 treefmt-nix = { url = "gh:numtide/treefmt-nix", type = "fetch" }
