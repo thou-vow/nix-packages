@@ -60,24 +60,6 @@
     doInstallCheck = false;
   };
 
-  helix-steel = (pkgs.callPackage inputs.helix-steel {})
-      .overrideAttrs (prevAttrs: {
-    version = inputs._meta.helix-steel.rev;
-
-    env =
-      prevAttrs.env or {}
-      // {
-        RUSTFLAGS = toString [
-          (lib.optionals (prevAttrs.env.RUSTFLAGS or "" != "")
-            prevAttrs.env.RUSTFLAGS)
-          "-C lto=fat"
-          "-C opt-level=3"
-        ];
-      };
-
-    cargoBuildFeatures = prevAttrs.cargoBuildFeatures or [] ++ ["steel"];
-  });
-
   prismlauncher-cracked =
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = inputs.self.packages.${system}.prismlauncher-cracked-unwrapped;
