@@ -9,7 +9,7 @@
     "graalvm-oracle-21-x86-64-linux": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
     "graalvm-oracle-25-aarch64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz",
     "graalvm-oracle-25-x86-64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
-    "helix-steel": "github:angjelkom/helix",
+    "llama-prism": "github:PrismML-Eng/llama.cpp",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
     "prismlauncher-cracked": "github:Diegiwg/PrismLauncher-Cracked",
     "proton-cachyos-x86-64-linux": "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz",
@@ -87,13 +87,14 @@
     "unpack": "file",
     "tag": "Oracle GraalVM 25.0.4.1.1"
   },
-  "helix-steel": {
+  "llama-prism": {
     "type": "github",
-    "owner": "angjelkom",
-    "repo": "helix",
-    "rev": "f171fdb1a075023a3ffac4baa4a4bbaa8957b635",
-    "narHash": "sha256-BnJ+mIa8zF0/ObPgUg3tbDgAv9TNSVv0NZVe1TyL7Qk=",
-    "lastModified": 1790848399
+    "owner": "PrismML-Eng",
+    "repo": "llama.cpp",
+    "rev": "2459f68b5c0eb26261fd5a81682004b93cd645ba",
+    "narHash": "sha256-3tASDsQU5JcTb2TIGEXaLpTK4T6osikndyVVBCWa8R4=",
+    "lastModified": 1790971629,
+    "tag": "prism-b10754-2459f68"
   },
   "nixpkgs": {
     "type": "tarball",
@@ -149,9 +150,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "b1fc7d5d34a43931ef1206aa635c20d4c3e3e386",
-    "narHash": "sha256-5q5nsALiZTavGBtJP/YWe1RMPCDf5PL4JO0NY85sUNw=",
-    "lastModified": 1790979535
+    "rev": "4a8b68df58488b311840eb0244c75b4857871789",
+    "narHash": "sha256-ST/08SMwfjtXeP/+72GJYVFkO2xT6PDU5ofh9Gh9IJ8=",
+    "lastModified": 1791058919
   },
   "treefmt-nix": {
     "type": "github",
