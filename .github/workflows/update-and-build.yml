@@ -87,6 +87,7 @@ jobs:
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
+          ls
           nix run --inputs-from . nixpkgs#cachix -- \
             watch-exec -m zstd -l16 thou-vow -- \
             nix build --no-link -L .#_cache

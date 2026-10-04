@@ -14,6 +14,12 @@
       aarch64-linux = inputs.brave-aarch64-linux;
       x86_64-linux = inputs.brave-x86-64-linux;
     };
+
+    unpackPhase = ''
+      runHook preUnpack
+      dpkg-deb --fsys-tarfile "$src" | tar -x --no-same-permissions --no-same-owner
+      runHook postUnpack
+    '';
   };
 
   discord-rpc-lsp = pkgs.callPackage ./pkgs/discord-rpc-lsp.nix {
@@ -64,7 +70,7 @@
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = inputs.self.packages.${system}.prismlauncher-cracked-unwrapped;
     }).overrideAttrs {
-      version = inputs._meta.prismlauncher-cracked.tag;
+      inherit (inputs.self.packages.${system}.prismlauncher-cracked-unwrapped) version;
       pname = "prismlauncher-cracked";
     };
 

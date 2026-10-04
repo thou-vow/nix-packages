@@ -201,7 +201,7 @@ in {
       useWebUi = true;
     }).overrideAttrs (prevAttrs: {
       __intentionallyOverridingVersion = true;
-      version = lib.removePrefix "prism-" inputs._meta.llama-prism.tag;
+      version = inputs._meta.llama-prism.tag;
 
       cmakeFlags =
         prevAttrs.cmakeFlags
