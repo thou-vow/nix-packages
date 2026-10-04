@@ -1,0 +1,91 @@
+[shorturls]
+gh = "github:{path}"
+
+
+[inputs]
+discord-rpc-lsp = { url = "gh:zerootoad/discord-rpc-lsp", type = "fetch", tag = "{version}" }
+faugus-launcher = { url = "gh:Faugus/faugus-launcher", type = "fetch", tag = "{version}" }
+llama-prism = { url = "gh:PrismML-Eng/llama.cpp", type = "fetch", tag = "prism-b{version}-*" }
+nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
+prismlauncher-cracked = { url = "gh:Diegiwg/PrismLauncher-Cracked", type = "fetch", tag = "{version}" }
+tack.url = "gh:manic-systems/tack"
+treefmt-nix = { url = "gh:numtide/treefmt-nix", type = "fetch" }
+
+[inputs.brave-aarch64-linux]
+url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_arm64.deb"
+type = "fixed"
+unpack = "file"
+tag = "v{version}"
+tags_from = "https://brave.com/latest"
+
+[inputs.brave-x86-64-linux]
+url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_amd64.deb"
+type = "fixed"
+unpack = "file"
+tag = "v{version}"
+tags_from = "https://brave.com/latest"
+
+[inputs.dwproton-x86-64-linux]
+url = "https://dawn.wine/dawn-winery/dwproton/releases/download/{tag}/{tag}-x86_64.tar.xz"
+type = "fixed"
+unpack = "tarball"
+tag = "dwproton-{version}"
+tags_from = "https://dawn.wine/dawn-winery/dwproton/releases"
+
+[inputs.graalvm-oracle-21-aarch64-linux]
+url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz"
+type = "fixed"
+unpack = "file"
+tag = "Oracle GraalVM for JDK {version}"
+tags_from = "https://docs.oracle.com/en/graalvm/jdk/21/docs/release-notes"
+
+[inputs.graalvm-oracle-21-x86-64-linux]
+url = "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz"
+type = "fixed"
+unpack = "file"
+tag = "Oracle GraalVM for JDK {version}"
+tags_from = "https://docs.oracle.com/en/graalvm/jdk/21/docs/release-notes"
+
+[inputs.graalvm-oracle-25-aarch64-linux]
+url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz"
+type = "fixed"
+unpack = "file"
+tag = "Oracle GraalVM {version}"
+tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
+
+[inputs.graalvm-oracle-25-x86-64-linux]
+url = "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz"
+type = "fixed"
+unpack = "file"
+tag = "Oracle GraalVM {version}"
+tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
+
+[inputs.proton-cachyos-x86-64-linux]
+url = "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz"
+type = "fixed"
+unpack = "tarball"
+tag = "cachyos-{version}-slr"
+
+[inputs.proton-cachyos-x86-64-v3-linux]
+url = "https://github.com/CachyOS/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64_v3.tar.xz"
+type = "fixed"
+unpack = "tarball"
+tag = "cachyos-{version}-slr"
+
+[inputs.proton-ge-x86-64-linux]
+url = "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/{tag}/{tag}-x86_64.tar.gz"
+type = "fixed"
+unpack = "tarball"
+tag = "GE-Proton{version}"
+
+[inputs.proton-wineland-x86-64-linux]
+url = "https://github.com/nanomatters/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64.tar.xz"
+type = "fixed"
+unpack = "tarball"
+tag = "wineland-{version}"
+
+[inputs.proton-wineland-x86-64-v3-linux]
+url = "https://github.com/nanomatters/proton-cachyos/releases/download/{tag}/proton-{tag}-x86_64_v3.tar.xz"
+type = "fixed"
+unpack = "tarball"
+tag = "wineland-{version}"
