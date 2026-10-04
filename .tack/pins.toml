@@ -1,3 +1,7 @@
+[tack]
+recomposable = true
+
+
 [shorturls]
 gh = "github:{path}"
 
