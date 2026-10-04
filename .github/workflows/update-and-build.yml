@@ -81,6 +81,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: updated-lockfiles
+          path: .tack
 
       - name: Build cache
         env:
