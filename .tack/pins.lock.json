@@ -22,17 +22,17 @@
   },
   "brave-aarch64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.96.61/brave-browser_1.96.61_arm64.deb",
-    "sha256": "sha256-fQjhzazFdIUt7BqIl71butJUhnIkS7F0boyuBo4H/94=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.56/brave-browser_1.97.56_arm64.deb",
+    "sha256": "sha256-GdeKxSwZVsfSVKTKO7JPkdL0pH5vtrHcxbQ2gYGKXTs=",
     "unpack": "file",
-    "tag": "v1.96.61"
+    "tag": "v1.97.56"
   },
   "brave-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.96.61/brave-browser_1.96.61_amd64.deb",
-    "sha256": "sha256-UOgyz04xOYl5YwwGQTLDBTI/0FTM2xjNX06RyTlLt8s=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.56/brave-browser_1.97.56_amd64.deb",
+    "sha256": "sha256-MOTLids4BWfm/NqrcRChfWJQUX4ihgxr2wLq34mTtmk=",
     "unpack": "file",
-    "tag": "v1.96.61"
+    "tag": "v1.97.56"
   },
   "discord-rpc-lsp": {
     "type": "github",
