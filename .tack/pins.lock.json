@@ -91,10 +91,10 @@
     "type": "github",
     "owner": "PrismML-Eng",
     "repo": "llama.cpp",
-    "rev": "2459f68b5c0eb26261fd5a81682004b93cd645ba",
-    "narHash": "sha256-3tASDsQU5JcTb2TIGEXaLpTK4T6osikndyVVBCWa8R4=",
-    "lastModified": 1790971629,
-    "tag": "prism-b10754-2459f68"
+    "rev": "6684606ac1bfcf8e31465369d9365df03b3af904",
+    "narHash": "sha256-mJ/J4j0n4696NCCbaZv0Z/dnO00FN4LvD2WCMbKU+OI=",
+    "lastModified": 1791577693,
+    "tag": "prism-b10770-6684606"
   },
   "nixpkgs": {
     "type": "tarball",
