@@ -54,10 +54,10 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "7737a92c55b890381050c745801f1e463478de3d",
-    "narHash": "sha256-LViSvkjuur7/Dt4ZZ7GfKOs65zWO6GRmeA+f48EYrBg=",
-    "lastModified": 1790433455,
-    "tag": "2.4.2"
+    "rev": "fa85bce9caf39049f4d738b5b2cc9080a47716f5",
+    "narHash": "sha256-zyYNBMxm1VC46OWHHgu7ef+uJsZSjNZ42zFnfeLrFvA=",
+    "lastModified": 1791493327,
+    "tag": "2.4.4"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -98,9 +98,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1086391.151fa4e8ddfd/nixexprs.tar.zst?rev=151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4&lastModified=1791260994",
-    "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
-    "narHash": "sha256-MFBjw66d4h06MvpW6lIl7RwarLteD0sk859CncGwb1Q="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.zst?rev=e7439b6b14ad3cc35d05608ebca9bce01a25f5f8&lastModified=1791456040",
+    "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+    "narHash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
   },
   "prismlauncher-cracked": {
     "type": "github",
@@ -158,8 +158,8 @@
     "type": "github",
     "owner": "numtide",
     "repo": "treefmt-nix",
-    "rev": "7ba5d7180939b022772e9dbaa1cd82435962073c",
-    "narHash": "sha256-0hiDHC/3SQLf3pOrn9kJf52KekanXRdw2Xyk56G5uI4=",
-    "lastModified": 1791457538
+    "rev": "4cfe8d7065cc8ca91c0a50361b6dd74920eeb1f5",
+    "narHash": "sha256-qScE7Wz6Zg7eg8ItUpnkmKgst8weWschGe0E8jM4rj4=",
+    "lastModified": 1791490544
   }
 }
