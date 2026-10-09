@@ -21,10 +21,16 @@
       doCheck = false;
       doInstallCheck = false;
     });
+
+  llvmLtoStdenv = pkgs.overrideCC pkgs.llvmPackages.stdenv (
+    pkgs.llvmPackages.libstdcxxClang.override {
+      bintools = pkgs.llvmPackages.bintools;
+    }
+  );
 in {
   glfw-attuned =
     (pkgs.glfw.override {
-      inherit (pkgs.llvmPackages) stdenv;
+      stdenv = llvmLtoStdenv;
       withMinecraftPatch = true;
     })
     .overrideAttrs (prevAttrs: {
@@ -52,43 +58,37 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned =
-    (pkgs.lix.override {
-      inherit (pkgs.llvmPackages) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      mesonBuildType = "release";
+  lix-attuned = (pkgs.lix.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+    mesonBuildType = "release";
 
-      mesonFlags =
-        prevAttrs.mesonFlags
-        ++ [
-          (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonBool "enable-tests" false)
-        ];
+    mesonFlags =
+      prevAttrs.mesonFlags
+      ++ [
+        (lib.mesonOption "cpp_args" "-march=skylake")
+        (lib.mesonBool "enable-tests" false)
+      ];
 
-      doCheck = false;
-      doInstallCheck = false;
-    });
+    doCheck = false;
+    doInstallCheck = false;
+  });
 
-  mango-attuned =
-    (pkgs.mango.override {
-      inherit (pkgs.llvmPackages) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      mesonBuildType = "release";
+  mango-attuned = (pkgs.mango.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+    mesonBuildType = "release";
 
-      mesonFlags =
-        prevAttrs.mesonFlags
-        ++ [
-          (lib.mesonBool "b_lto" true)
-          (lib.mesonOption "c_args" "-march=skylake")
-        ];
+    mesonFlags =
+      prevAttrs.mesonFlags
+      ++ [
+        (lib.mesonBool "b_lto" true)
+        (lib.mesonOption "c_args" "-march=skylake")
+      ];
 
-      doCheck = false;
-      doInstallCheck = false;
-    });
+    doCheck = false;
+    doInstallCheck = false;
+  });
 
   mesa-attuned =
     (pkgs.mesa.override {
-      inherit (pkgs.llvmPackages) stdenv;
+      stdenv = llvmLtoStdenv;
       galliumDrivers = ["iris"];
       vulkanDrivers = ["intel"];
       vulkanLayers = ["overlay"];
@@ -106,9 +106,7 @@ in {
           (lib.mesonBool "allow-broken-lto" true)
           (lib.mesonBool "b_lto" true)
           (lib.mesonOption "c_args" "-march=skylake")
-          (lib.mesonOption "c_link_args" "-fuse-ld=lld")
           (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonOption "cpp_link_args" "-fuse-ld=lld")
 
           # Unnecessary stuff
           (lib.mesonBool "gallium-extra-hud" false)
@@ -132,37 +130,30 @@ in {
       doInstallCheck = false;
     });
 
-  nixd-attuned =
-    (pkgs.nixd.override {
-      inherit (pkgs.llvmPackages) stdenv;
-    }).overrideAttrs
-    (prevAttrs: {
-      mesonBuildType = "release";
+  nixd-attuned = (pkgs.nixd.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+    mesonBuildType = "release";
 
-      mesonFlags =
-        prevAttrs.mesonFlags or []
-        ++ [
-          (lib.mesonBool "b_lto" true)
-          (lib.mesonOption "cpp_args" "-march=skylake")
-        ];
+    mesonFlags =
+      prevAttrs.mesonFlags or []
+      ++ [
+        (lib.mesonBool "b_lto" true)
+        (lib.mesonOption "cpp_args" "-march=skylake")
+      ];
 
-      doCheck = false;
-      doInstallCheck = false;
-    });
+    doCheck = false;
+    doInstallCheck = false;
+  });
 
-  noctalia-attuned =
-    (pkgs.noctalia.override {
-      inherit (pkgs.llvmPackages) stdenv;
-    }).overrideAttrs (prevAttrs: {
-      mesonFlags =
-        prevAttrs.mesonFlags or []
-        ++ [
-          (lib.mesonBool "b_lto" true)
-          (lib.mesonOption "c_args" "-march=skylake")
-          (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonEnable "tests" false)
-        ];
-    });
+  noctalia-attuned = (pkgs.noctalia.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+    mesonFlags =
+      prevAttrs.mesonFlags or []
+      ++ [
+        (lib.mesonBool "b_lto" true)
+        (lib.mesonOption "c_args" "-march=skylake")
+        (lib.mesonOption "cpp_args" "-march=skylake")
+        (lib.mesonEnable "tests" false)
+      ];
+  });
 
   nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
     env =
@@ -197,7 +188,7 @@ in {
 
   llama-prism-attuned =
     (pkgs.callPackage "${inputs.llama-prism}/.devops/nix/package.nix" {
-      inherit (pkgs.llvmPackages) stdenv;
+      stdenv = llvmLtoStdenv;
       useVulkan = true;
       useWebUi = true;
     }).overrideAttrs (prevAttrs: {
@@ -212,12 +203,6 @@ in {
           (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
           (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
           (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
-
-          # Fix
-          (lib.cmakeFeature "CMAKE_CXX_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
-          (lib.cmakeFeature "CMAKE_CXX_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
-          (lib.cmakeFeature "CMAKE_C_COMPILER_AR" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ar")
-          (lib.cmakeFeature "CMAKE_C_COMPILER_RANLIB" "${pkgs.llvmPackages.bintools-unwrapped}/bin/llvm-ranlib")
         ];
     });
 
