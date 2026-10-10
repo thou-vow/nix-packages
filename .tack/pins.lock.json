@@ -25,14 +25,16 @@
     "url": "https://github.com/brave/brave-browser/releases/download/v1.97.56/brave-browser_1.97.56_arm64.deb",
     "sha256": "sha256-GdeKxSwZVsfSVKTKO7JPkdL0pH5vtrHcxbQ2gYGKXTs=",
     "unpack": "file",
-    "tag": "v1.97.56"
+    "tag": "v1.97.56",
+    "version": "1.97.56"
   },
   "brave-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/brave/brave-browser/releases/download/v1.97.56/brave-browser_1.97.56_amd64.deb",
     "sha256": "sha256-MOTLids4BWfm/NqrcRChfWJQUX4ihgxr2wLq34mTtmk=",
     "unpack": "file",
-    "tag": "v1.97.56"
+    "tag": "v1.97.56",
+    "version": "1.97.56"
   },
   "discord-rpc-lsp": {
     "type": "github",
@@ -41,14 +43,16 @@
     "rev": "9dfc49e16dfea7f01e7dd399c2db5b9e47ad99c8",
     "narHash": "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=",
     "lastModified": 1757026901,
-    "tag": "1.0.1"
+    "tag": "1.0.1",
+    "version": "1.0.1"
   },
   "dwproton-x86-64-linux": {
     "type": "fixed",
     "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-14/dwproton-11.0-14-x86_64.tar.xz",
     "sha256": "sha256-xWPMmdRk+xmnZ6DrkNxyN0a/zdQCpP2qBzexKvCB+Zo=",
     "unpack": "tarball",
-    "tag": "dwproton-11.0-14"
+    "tag": "dwproton-11.0-14",
+    "version": "11.0-14"
   },
   "faugus-launcher": {
     "type": "github",
@@ -57,35 +61,40 @@
     "rev": "fa85bce9caf39049f4d738b5b2cc9080a47716f5",
     "narHash": "sha256-zyYNBMxm1VC46OWHHgu7ef+uJsZSjNZ42zFnfeLrFvA=",
     "lastModified": 1791493327,
-    "tag": "2.4.4"
+    "tag": "2.4.4",
+    "version": "2.4.4"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1.1_linux-aarch64_bin.tar.gz",
     "sha256": "sha256-zT2f0YMkwL6Xl6e70FaS7MUMfFA6WWxaTy2wr0DeqpY=",
     "unpack": "file",
-    "tag": "Oracle GraalVM for JDK 21.0.12.1.1"
+    "tag": "Oracle GraalVM for JDK 21.0.12.1.1",
+    "version": "21.0.12.1.1"
   },
   "graalvm-oracle-21-x86-64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1.1_linux-x64_bin.tar.gz",
     "sha256": "sha256-KRlUqBVi3uvhQVwolXUH4MZle/a2nTXwV0nHpmuU4TE=",
     "unpack": "file",
-    "tag": "Oracle GraalVM for JDK 21.0.12.1.1"
+    "tag": "Oracle GraalVM for JDK 21.0.12.1.1",
+    "version": "21.0.12.1.1"
   },
   "graalvm-oracle-25-aarch64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-aarch64_bin.tar.gz",
     "sha256": "sha256-R5p2KjO5aSH85cs54GVoM6NvyfOt1CLP/6u1X0EZ3Ts=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1"
+    "tag": "Oracle GraalVM 25.0.4.1.1",
+    "version": "25.0.4.1.1"
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-x64_bin.tar.gz",
     "sha256": "sha256-uSMID5Iqi+KldCttrcixSTV8WyNlgi4z+U72i335SIQ=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1"
+    "tag": "Oracle GraalVM 25.0.4.1.1",
+    "version": "25.0.4.1.1"
   },
   "llama-prism": {
     "type": "github",
@@ -94,7 +103,8 @@
     "rev": "6684606ac1bfcf8e31465369d9365df03b3af904",
     "narHash": "sha256-mJ/J4j0n4696NCCbaZv0Z/dnO00FN4LvD2WCMbKU+OI=",
     "lastModified": 1791577693,
-    "tag": "prism-b10770-6684606"
+    "tag": "prism-b10770-6684606",
+    "version": "10770"
   },
   "nixpkgs": {
     "type": "tarball",
@@ -109,50 +119,56 @@
     "rev": "21921f3b8cda0fd9e6fb5f6dbd908527bbb21f1f",
     "narHash": "sha256-pFIDOP03I76r14bXoKL7tEEaLlGFJ10MqMgGR4D/mvE=",
     "lastModified": 1784292688,
-    "tag": "11.0.3"
+    "tag": "11.0.3",
+    "version": "11.0.3"
   },
   "proton-cachyos-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64.tar.xz",
     "sha256": "sha256-CWv+c7UG1lZbBOzEUhQZekCRgY8W7ZH1MktNIILQomM=",
     "unpack": "tarball",
-    "tag": "cachyos-11.0-20261005-slr"
+    "tag": "cachyos-11.0-20261005-slr",
+    "version": "11.0-20261005"
   },
   "proton-cachyos-x86-64-v3-linux": {
     "type": "fixed",
     "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64_v3.tar.xz",
     "sha256": "sha256-ulKk8xoGD/yiuOBfwA5RvDnkwVAZKOtakhiw+ge/yMc=",
     "unpack": "tarball",
-    "tag": "cachyos-11.0-20261005-slr"
+    "tag": "cachyos-11.0-20261005-slr",
+    "version": "11.0-20261005"
   },
   "proton-ge-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-7/GE-Proton11-7-x86_64.tar.gz",
     "sha256": "sha256-xUSLdqIwOE4te8a+tcy5e6+34sO2xSfLA6GlRrvLAKA=",
     "unpack": "tarball",
-    "tag": "GE-Proton11-7"
+    "tag": "GE-Proton11-7",
+    "version": "11-7"
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261005/proton-wineland-11.0-20261005-x86_64.tar.xz",
     "sha256": "sha256-Bn+XnkIP+PT6NozRpo7x7HYVfbSFgI9pWTeRpCiLN4U=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261005"
+    "tag": "wineland-11.0-20261005",
+    "version": "11.0-20261005"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
     "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261005/proton-wineland-11.0-20261005-x86_64_v3.tar.xz",
     "sha256": "sha256-qzbRpoUOhPCjvRBSBp4RXBiKHQoRTIOr8tXTOZrcyWg=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261005"
+    "tag": "wineland-11.0-20261005",
+    "version": "11.0-20261005"
   },
   "tack": {
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "98f0d6daef706e06520b97f94b9874354a8edd2f",
-    "narHash": "sha256-IyoA3pP60+DJuQTsgb5Yk0kAtGic7qzhCGnShy+Wu10=",
-    "lastModified": 1791600325
+    "rev": "5957ec0bd3df490a06dab467337152ae75977585",
+    "narHash": "sha256-dkuO01AoiMwzwY5DtEPDRyQYKjD3RRPZ8evLLYfEeY4=",
+    "lastModified": 1791612427
   },
   "treefmt-nix": {
     "type": "github",
