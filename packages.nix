@@ -6,23 +6,6 @@
   system,
   ...
 }: {
-  brave = pkgs.brave.overrideAttrs {
-    version = lib.removePrefix "v" (builtins.getAttr system {
-      aarch64-linux = inputs._meta.brave-aarch64-linux.tag;
-      x86_64-linux = inputs._meta.brave-x86-64-linux.tag;
-    });
-    src = builtins.getAttr system {
-      aarch64-linux = inputs.brave-aarch64-linux;
-      x86_64-linux = inputs.brave-x86-64-linux;
-    };
-
-    unpackPhase = ''
-      runHook preUnpack
-      dpkg-deb --fsys-tarfile "$src" | tar -x --no-same-permissions --no-same-owner
-      runHook postUnpack
-    '';
-  };
-
   discord-rpc-lsp = pkgs.callPackage ./pkgs/discord-rpc-lsp.nix {
     version = inputs._meta.discord-rpc-lsp.tag;
     src = inputs.discord-rpc-lsp;
@@ -38,7 +21,7 @@
     };
   };
 
-  faugus-launcher = pkgs.callPackage ./pkgs/faugus-launcher.nix {
+  faugus-launcher = pkgs.faugus-launcher.overrideAttrs {
     version = inputs._meta.faugus-launcher.tag;
     src = inputs.faugus-launcher;
   };
@@ -129,5 +112,15 @@
     src = builtins.getAttr system {
       x86_64-linux = inputs.proton-wineland-x86-64-v3-linux;
     };
+  };
+
+  semeru-jre-bin-25 = pkgs.semeru-jre-bin-21.overrideAttrs {
+    version = builtins.getAttr system {
+      x86_64-linux = lib.removePrefix "jdk-" inputs._meta.semeru-jre-bin-25-x86-64-linux.tag;
+    };
+    src = builtins.getAttr system {
+      x86_64-linux = inputs.semeru-jre-bin-25-x86-64-linux;
+    };
+    srcs = [];
   };
 }
