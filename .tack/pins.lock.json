@@ -124,11 +124,11 @@
   },
   "proton-ge-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-8/GE-Proton11-8-x86_64.tar.gz",
-    "sha256": "sha256-27ISnLzs5l3NnZJtvdfQ/8R080/6uYfdxquM5SU32XY=",
+    "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-9/GE-Proton11-9-x86_64.tar.gz",
+    "sha256": "sha256-ss9KYypw7DIc25kE+jlqKkXUBhEp+f3InYon6lzuudY=",
     "unpack": "tarball",
-    "tag": "GE-Proton11-8",
-    "version": "11-8"
+    "tag": "GE-Proton11-9",
+    "version": "11-9"
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
@@ -158,9 +158,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "47a8edf4a7b3728300f308a6b6111213acbb3164",
-    "narHash": "sha256-E9cCqGahMkI/g+GUGwQ2ubdHVLStfPzMrvogYGU0IV4=",
-    "lastModified": 1791931591
+    "rev": "cb825647a30e7f54915babbec5b5786c647772d6",
+    "narHash": "sha256-F+sgyf1KB/ogY41JJ52WPYuWXosB6dXTlO3J/m+xcww=",
+    "lastModified": 1791942069
   },
   "treefmt-nix": {
     "type": "github",
