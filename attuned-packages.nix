@@ -58,7 +58,7 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (pkgs.lix.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+  lix-attuned = (pkgs.lixPackageSets.latest.lix.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
     mesonBuildType = "release";
 
     mesonFlags =
