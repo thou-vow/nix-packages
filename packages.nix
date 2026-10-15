@@ -6,6 +6,23 @@
   system,
   ...
 }: {
+  brave = pkgs.brave.overrideAttrs {
+    version = builtins.getAttr system {
+      aarch64-linux = inputs._meta.brave-aarch64-linux.version;
+      x86_64-linux = inputs._meta.brave-x86-64-linux.version;
+    };
+    src = builtins.getAttr system {
+      aarch64-linux = inputs.brave-aarch64-linux;
+      x86_64-linux = inputs.brave-x86-64-linux;
+    };
+
+    unpackPhase = ''
+      runHook preUnpack
+      dpkg-deb --fsys-tarfile "$src" | tar -x --no-same-permissions --no-same-owner
+      runHook postUnpack
+    '';
+  };
+
   discord-rpc-lsp = pkgs.callPackage ./pkgs/discord-rpc-lsp.nix {
     version = inputs._meta.discord-rpc-lsp.version;
     src = inputs.discord-rpc-lsp;
@@ -123,4 +140,6 @@
     };
     srcs = [];
   };
+
+  tack = pkgs.callPackage "${inputs.tack}/nix/package.nix" {};
 }

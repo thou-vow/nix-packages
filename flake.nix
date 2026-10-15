@@ -50,7 +50,7 @@
       default = pkgs.mkShell {
         buildInputs =
           [
-            inputs.tack.packages.${system}.tack
+            self.packages.${system}.tack
           ]
           ++ (with pkgs; [
             alejandra
@@ -74,8 +74,9 @@
           paths = packages;
         };
     in {
-      # aarch64-linux._cache = mkCachePackage "aarch64-linux" (with self.packages.aarch64-linux; [
-      # ]);
+      aarch64-linux._cache = mkCachePackage "aarch64-linux" (with self.packages.aarch64-linux; [
+        tack
+      ]);
 
       x86_64-linux._cache = mkCachePackage "x86_64-linux" (with self.packages.x86_64-linux; [
         discord-rpc-lsp
@@ -92,6 +93,7 @@
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
         steelix-attuned
+        tack
       ]);
     };
 

@@ -1,5 +1,6 @@
 {
   "$declared": {
+    "brave-x86-64-linux": "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_amd64.deb",
     "discord-rpc-lsp": "github:zerootoad/discord-rpc-lsp",
     "dwproton-x86-64-linux": "https://dawn.wine/dawn-winery/dwproton/releases/download/{tag}/{tag}-x86_64.tar.xz",
     "faugus-launcher": "github:Faugus/faugus-launcher",
@@ -19,6 +20,13 @@
     "tack": "github:manic-systems/tack",
     "treefmt-nix": "github:numtide/treefmt-nix"
   },
+  "brave-x86-64-linux": {
+    "type": "fixed",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.57/brave-browser_1.97.57_amd64.deb",
+    "sha256": "sha256-15kZqCqoac9RIbZBr6eZWHMMS9rzagxRrg+cMvnBa7k=",
+    "unpack": "file",
+    "tag": "v1.97.57"
+  },
   "discord-rpc-lsp": {
     "type": "github",
     "owner": "zerootoad",
@@ -26,16 +34,16 @@
     "rev": "9dfc49e16dfea7f01e7dd399c2db5b9e47ad99c8",
     "narHash": "sha256-1Zw+F/EfYjHHU0AYlAHT7g1sbuJrHRtGp9E1u9EPW8E=",
     "lastModified": 1757026901,
-    "tag": "1.0.1",
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "tag": "1.0.1"
   },
   "dwproton-x86-64-linux": {
     "type": "fixed",
     "url": "https://dawn.wine/dawn-winery/dwproton/releases/download/dwproton-11.0-14/dwproton-11.0-14-x86_64.tar.xz",
     "sha256": "sha256-xWPMmdRk+xmnZ6DrkNxyN0a/zdQCpP2qBzexKvCB+Zo=",
     "unpack": "tarball",
-    "tag": "dwproton-11.0-14",
-    "version": "11.0-14"
+    "version": "11.0-14",
+    "tag": "dwproton-11.0-14"
   },
   "faugus-launcher": {
     "type": "github",
@@ -44,40 +52,40 @@
     "rev": "fa85bce9caf39049f4d738b5b2cc9080a47716f5",
     "narHash": "sha256-zyYNBMxm1VC46OWHHgu7ef+uJsZSjNZ42zFnfeLrFvA=",
     "lastModified": 1791493327,
-    "tag": "2.4.4",
-    "version": "2.4.4"
+    "version": "2.4.4",
+    "tag": "2.4.4"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1.1_linux-aarch64_bin.tar.gz",
     "sha256": "sha256-zT2f0YMkwL6Xl6e70FaS7MUMfFA6WWxaTy2wr0DeqpY=",
     "unpack": "file",
-    "tag": "Oracle GraalVM for JDK 21.0.12.1.1",
-    "version": "21.0.12.1.1"
+    "version": "21.0.12.1.1",
+    "tag": "Oracle GraalVM for JDK 21.0.12.1.1"
   },
   "graalvm-oracle-21-x86-64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-21.0.12.1.1_linux-x64_bin.tar.gz",
     "sha256": "sha256-KRlUqBVi3uvhQVwolXUH4MZle/a2nTXwV0nHpmuU4TE=",
     "unpack": "file",
-    "tag": "Oracle GraalVM for JDK 21.0.12.1.1",
-    "version": "21.0.12.1.1"
+    "version": "21.0.12.1.1",
+    "tag": "Oracle GraalVM for JDK 21.0.12.1.1"
   },
   "graalvm-oracle-25-aarch64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-aarch64_bin.tar.gz",
     "sha256": "sha256-R5p2KjO5aSH85cs54GVoM6NvyfOt1CLP/6u1X0EZ3Ts=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1",
-    "version": "25.0.4.1.1"
+    "version": "25.0.4.1.1",
+    "tag": "Oracle GraalVM 25.0.4.1.1"
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
     "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-x64_bin.tar.gz",
     "sha256": "sha256-uSMID5Iqi+KldCttrcixSTV8WyNlgi4z+U72i335SIQ=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1",
-    "version": "25.0.4.1.1"
+    "version": "25.0.4.1.1",
+    "tag": "Oracle GraalVM 25.0.4.1.1"
   },
   "llama-prism": {
     "type": "github",
@@ -86,8 +94,8 @@
     "rev": "e3de715222b2667c54a267441159a5729f11155e",
     "narHash": "sha256-0CR8BvSMKshxnhcN6LrR0lgRfsYpi0l2CAvCVsVdXgs=",
     "lastModified": 1791947561,
-    "tag": "prism-b10777-e3de715",
-    "version": "10777"
+    "version": "10777",
+    "tag": "prism-b10777-e3de715"
   },
   "nixpkgs": {
     "type": "tarball",
@@ -103,56 +111,56 @@
     "rev": "21921f3b8cda0fd9e6fb5f6dbd908527bbb21f1f",
     "narHash": "sha256-pFIDOP03I76r14bXoKL7tEEaLlGFJ10MqMgGR4D/mvE=",
     "lastModified": 1784292688,
-    "tag": "11.0.3",
-    "version": "11.0.3"
+    "version": "11.0.3",
+    "tag": "11.0.3"
   },
   "proton-cachyos-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64.tar.xz",
     "sha256": "sha256-CWv+c7UG1lZbBOzEUhQZekCRgY8W7ZH1MktNIILQomM=",
     "unpack": "tarball",
-    "tag": "cachyos-11.0-20261005-slr",
-    "version": "11.0-20261005"
+    "version": "11.0-20261005",
+    "tag": "cachyos-11.0-20261005-slr"
   },
   "proton-cachyos-x86-64-v3-linux": {
     "type": "fixed",
     "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64_v3.tar.xz",
     "sha256": "sha256-ulKk8xoGD/yiuOBfwA5RvDnkwVAZKOtakhiw+ge/yMc=",
     "unpack": "tarball",
-    "tag": "cachyos-11.0-20261005-slr",
-    "version": "11.0-20261005"
+    "version": "11.0-20261005",
+    "tag": "cachyos-11.0-20261005-slr"
   },
   "proton-ge-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-9/GE-Proton11-9-x86_64.tar.gz",
     "sha256": "sha256-ss9KYypw7DIc25kE+jlqKkXUBhEp+f3InYon6lzuudY=",
     "unpack": "tarball",
-    "tag": "GE-Proton11-9",
-    "version": "11-9"
+    "version": "11-9",
+    "tag": "GE-Proton11-9"
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261011/proton-wineland-11.0-20261011-x86_64.tar.xz",
     "sha256": "sha256-PBvOQ47CYtvEJ6FyU7JWyiL2yKyS6fvSRMYAS4zr0JE=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261011",
-    "version": "11.0-20261011"
+    "version": "11.0-20261011",
+    "tag": "wineland-11.0-20261011"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
     "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261011/proton-wineland-11.0-20261011-x86_64_v3.tar.xz",
     "sha256": "sha256-Mvpq6LwNj7m/uHgslIcUjUjgzytYec5Gt1OyugUp0Oc=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261011",
-    "version": "11.0-20261011"
+    "version": "11.0-20261011",
+    "tag": "wineland-11.0-20261011"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
     "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/download/jdk-25.0.4.15/ibm-semeru-open-jre_x64_linux_25.0.4.15.tar.gz",
     "sha256": "sha256-ve3B6PdPg/yZhMofo2fxO3YAO5Ns9v7dNUZhvIIHYV8=",
     "unpack": "tarball",
-    "tag": "jdk-25.0.4.15",
-    "version": "25.0.4.15"
+    "version": "25.0.4.15",
+    "tag": "jdk-25.0.4.15"
   },
   "tack": {
     "type": "github",

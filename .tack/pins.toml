@@ -12,10 +12,6 @@ gh = "github:{path}"
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
 group = "general"
 
-[inputs.tack]
-url = "gh:manic-systems/tack"
-group = "general"
-
 
 # Non-flakes
 
@@ -26,6 +22,22 @@ group = "general"
 
 
 # Packages
+
+[inputs.brave-aarch64-linux]
+url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_arm64.deb"
+type = "fixed"
+unpack = "file"
+tag = "v{version}"
+tags_from = "https://brave.com/latest"
+group = "packages"
+
+[inputs.brave-x86-64-linux]
+url = "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_amd64.deb"
+type = "fixed"
+unpack = "file"
+tag = "v{version}"
+tags_from = "https://brave.com/latest"
+group = "packages"
 
 [inputs.discord-rpc-lsp]
 url = "gh:zerootoad/discord-rpc-lsp"
@@ -131,4 +143,9 @@ url = "https://github.com/ibmruntimes/semeru25-binaries/releases/download/{tag}/
 type = "fixed"
 unpack = "tarball"
 tag = "jdk-{version}"
+group = "packages"
+
+[inputs.tack]
+url = "gh:manic-systems/tack"
+type = "fetch"
 group = "packages"
