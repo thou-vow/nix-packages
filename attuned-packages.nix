@@ -69,6 +69,7 @@ in {
         ++ [
           (lib.mesonOption "c_args" "-march=skylake")
           (lib.mesonOption "cpp_args" "-march=skylake")
+          (lib.mesonOption "rust_args" "-Ctarget-cpu=skylake")
         ];
 
       doCheck = false;
