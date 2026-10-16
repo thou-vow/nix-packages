@@ -58,19 +58,22 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned = (pkgs.lixPackageSets.latest.lix.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
-    mesonBuildType = "release";
+  lix-attuned =
+    (pkgs.callPackage "${inputs.lix}/package.nix" {
+      stdenv = llvmLtoStdenv;
+    }).overrideAttrs (prevAttrs: {
+      mesonBuildType = "release";
 
-    mesonFlags =
-      prevAttrs.mesonFlags
-      ++ [
-        (lib.mesonOption "cpp_args" "-march=skylake")
-        (lib.mesonBool "enable-tests" false)
-      ];
+      mesonFlags =
+        prevAttrs.mesonFlags
+        ++ [
+          (lib.mesonOption "c_args" "-march=skylake")
+          (lib.mesonOption "cpp_args" "-march=skylake")
+        ];
 
-    doCheck = false;
-    doInstallCheck = false;
-  });
+      doCheck = false;
+      doInstallCheck = false;
+    });
 
   mango-attuned = (pkgs.mango.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
     mesonBuildType = "release";

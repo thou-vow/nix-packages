@@ -91,6 +91,12 @@ tag = "Oracle GraalVM {version}"
 tags_from = "https://docs.oracle.com/en/graalvm/jdk/25/docs/release-notes"
 group = "packages"
 
+[inputs.lix]
+url = "git+https://git.lix.systems/lix-project/lix"
+type = "fetch"
+tag = "{version}"
+group = "packages"
+
 [inputs.llama-prism]
 url = "gh:PrismML-Eng/llama.cpp"
 type = "fetch"
