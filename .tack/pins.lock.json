@@ -112,18 +112,18 @@
     "type": "github",
     "owner": "PrismML-Eng",
     "repo": "llama.cpp",
-    "rev": "e3de715222b2667c54a267441159a5729f11155e",
-    "narHash": "sha256-0CR8BvSMKshxnhcN6LrR0lgRfsYpi0l2CAvCVsVdXgs=",
-    "lastModified": 1791947561,
-    "tag": "prism-b10777-e3de715",
-    "version": "10777"
+    "rev": "73bfe6cc485554822f80c473a3c0c4f25e80f41b",
+    "narHash": "sha256-rW/pMeYEahstWuQYTFLSzwwLPpVNaGfXGez6hCg8xjA=",
+    "lastModified": 1792444263,
+    "tag": "prism-b10787-73bfe6c",
+    "version": "10787"
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1093333.fe13242281a6/nixexprs.tar.zst?rev=fe13242281a67641c0102cdb1087f0ebe586c7df&lastModified=1792094642",
-    "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
-    "narHash": "sha256-LPFRbrCWWyNsdQLO3SX1B/5UMkFK0hfe7bZR6lENvpc=",
-    "lastModified": 1792094642
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1095516.09063bd1f2b3/nixexprs.tar.zst?rev=09063bd1f2b36fd9fd793c36dfade7bd40a93dfc&lastModified=1792210252",
+    "rev": "09063bd1f2b36fd9fd793c36dfade7bd40a93dfc",
+    "narHash": "sha256-EFOYkCb5ZNtbPx1NInawzi4y/6JRdHia0ag0CbJoMNY=",
+    "lastModified": 1792210252
   },
   "prismlauncher-cracked": {
     "type": "github",
