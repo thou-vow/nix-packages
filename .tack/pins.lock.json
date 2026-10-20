@@ -84,19 +84,19 @@
   },
   "graalvm-oracle-25-aarch64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-aarch64_bin.tar.gz",
-    "sha256": "sha256-R5p2KjO5aSH85cs54GVoM6NvyfOt1CLP/6u1X0EZ3Ts=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5_linux-aarch64_bin.tar.gz",
+    "sha256": "sha256-U5dXlftdZp58u/iWIOOMdDDmnivhmcLI6k5bNxqSdnQ=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1",
-    "version": "25.0.4.1.1"
+    "tag": "Oracle GraalVM 25.0.5",
+    "version": "25.0.5"
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.4.1.1_linux-x64_bin.tar.gz",
-    "sha256": "sha256-uSMID5Iqi+KldCttrcixSTV8WyNlgi4z+U72i335SIQ=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5_linux-x64_bin.tar.gz",
+    "sha256": "sha256-KuiwPfywpbvLVf/RIuj/7iTjr84EvMyCkyeJrNAF0eE=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.4.1.1",
-    "version": "25.0.4.1.1"
+    "tag": "Oracle GraalVM 25.0.5",
+    "version": "25.0.5"
   },
   "lix": {
     "type": "git",
