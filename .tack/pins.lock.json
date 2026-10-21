@@ -187,9 +187,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "8573f1f1bda4aa467fa341b33f6004661833c022",
-    "narHash": "sha256-wwkmmsr5u8MknxrF9ZdIN90wk09weXCaVQp8aeWdYaE=",
-    "lastModified": 1792416927
+    "rev": "c9ff19f41736e48c68fc82c35a412d9ed55aea88",
+    "narHash": "sha256-fyUmY/rN4A9IITEClVAjpJgHUjHTz0aX7hJB5K8uvec=",
+    "lastModified": 1792621004
   },
   "treefmt-nix": {
     "type": "github",
