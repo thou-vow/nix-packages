@@ -161,19 +161,19 @@
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261015/proton-wineland-11.0-20261015-x86_64.tar.xz",
-    "sha256": "sha256-6rjeus3kJh09YAclQWi/qW9AnBrtNbMjG1buVLK7aFw=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261022/proton-wineland-11.0-20261022-x86_64.tar.xz",
+    "sha256": "sha256-N8QXrlYzohttm34xPfCVYNWL6DElmiuXhLcyrod4Y0I=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261015",
-    "version": "11.0-20261015"
+    "tag": "wineland-11.0-20261022",
+    "version": "11.0-20261022"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261015/proton-wineland-11.0-20261015-x86_64_v3.tar.xz",
-    "sha256": "sha256-Pr+EJYsY0G0n0VJ/ISR0Vad5ar/NRqy6D4yLcmhIgx0=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261022/proton-wineland-11.0-20261022-x86_64_v3.tar.xz",
+    "sha256": "sha256-aXvFiekYQKXAc4APACY7XA1vup+aGB1Gj73nb+1JbzA=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261015",
-    "version": "11.0-20261015"
+    "tag": "wineland-11.0-20261022",
+    "version": "11.0-20261022"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
