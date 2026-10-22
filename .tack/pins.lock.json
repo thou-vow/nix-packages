@@ -24,19 +24,19 @@
   },
   "brave-aarch64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.57/brave-browser_1.97.57_arm64.deb",
-    "sha256": "sha256-vK6U520FsDs8lmQSLyy8OYJ5nv3mBFx3QG4nTXd/eu0=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.59/brave-browser_1.97.59_arm64.deb",
+    "sha256": "sha256-Xv3SNWZx6t4x09ClmyM4kxFH9l8NtEhjtsI63qdLodI=",
     "unpack": "file",
-    "tag": "v1.97.57",
-    "version": "1.97.57"
+    "tag": "v1.97.59",
+    "version": "1.97.59"
   },
   "brave-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.57/brave-browser_1.97.57_amd64.deb",
-    "sha256": "sha256-15kZqCqoac9RIbZBr6eZWHMMS9rzagxRrg+cMvnBa7k=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.59/brave-browser_1.97.59_amd64.deb",
+    "sha256": "sha256-Zm+Be2QKMoT7tcmzSRe3iFTirNkvp/661wTcKyk0m+U=",
     "unpack": "file",
-    "tag": "v1.97.57",
-    "version": "1.97.57"
+    "tag": "v1.97.59",
+    "version": "1.97.59"
   },
   "discord-rpc-lsp": {
     "type": "github",
@@ -60,11 +60,11 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "c326b90016b5e707819c4df78b4e482b14ad2ad9",
-    "narHash": "sha256-7gBIU0IfglirfAWwKHc3cxXQW54qfX0ZWUcMc/REfG8=",
-    "lastModified": 1792248947,
-    "tag": "2.5.0.1",
-    "version": "2.5.0.1"
+    "rev": "978d18f0bf91d1bc8e2567547366595a8ae781e2",
+    "narHash": "sha256-ggYvbiiPCrsd+VwvV00TcUqAlfGjGKl+H2NMk42RnVc=",
+    "lastModified": 1792671008,
+    "tag": "2.5.1",
+    "version": "2.5.1"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -84,19 +84,19 @@
   },
   "graalvm-oracle-25-aarch64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5_linux-aarch64_bin.tar.gz",
-    "sha256": "sha256-U5dXlftdZp58u/iWIOOMdDDmnivhmcLI6k5bNxqSdnQ=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.2_linux-aarch64_bin.tar.gz",
+    "sha256": "sha256-RqvUa4lOtag2V2MmeljvPCU+EIlskDqP4HcJHbG5Qck=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.5",
-    "version": "25.0.5"
+    "tag": "Oracle GraalVM 25.0.5.0.2",
+    "version": "25.0.5.0.2"
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5_linux-x64_bin.tar.gz",
-    "sha256": "sha256-KuiwPfywpbvLVf/RIuj/7iTjr84EvMyCkyeJrNAF0eE=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.2_linux-x64_bin.tar.gz",
+    "sha256": "sha256-HxBSHRCIOWxDBfnVtVq0xmAVGmz03wEii/htHhiWmnw=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.5",
-    "version": "25.0.5"
+    "tag": "Oracle GraalVM 25.0.5.0.2",
+    "version": "25.0.5.0.2"
   },
   "lix": {
     "type": "git",
