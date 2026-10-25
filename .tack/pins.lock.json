@@ -102,11 +102,11 @@
     "type": "github",
     "owner": "PrismML-Eng",
     "repo": "llama.cpp",
-    "rev": "bf8c069fde8c4a1b89f054cdde98577a54c557a9",
-    "narHash": "sha256-hLzBbS3qHekcBpc+BHUNc4Px/qIYW454rN13FU1xvHI=",
-    "lastModified": 1792906038,
-    "tag": "prism-b10822-bf8c069",
-    "version": "10822"
+    "rev": "c9c34bc9c4042c13a31598ebf43461cd0ad8f00d",
+    "narHash": "sha256-njQAbnOekc4wa+ayThYvSDM642/qSSbbbbKJhuLsV24=",
+    "lastModified": 1792941077,
+    "tag": "prism-b10826-c9c34bc",
+    "version": "10826"
   },
   "mocktail": {
     "type": "github",
