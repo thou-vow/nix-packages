@@ -69,6 +69,8 @@
     doInstallCheck = false;
   };
 
+  mocktail = pkgs.callPackage "${inputs.mocktail}/packaging/nix/package.nix" {};
+
   prismlauncher-cracked =
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = self.packages.${system}.prismlauncher-cracked-unwrapped;

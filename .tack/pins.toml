@@ -7,15 +7,10 @@ gh = "github:{path}"
 
 
 [all_follow]
-flake-utils = "flake-utils"
 nixpkgs = "nixpkgs"
 
 
 # Flakes
-
-[inputs.flake-utils]
-url = "gh:numtide/flake-utils"
-group = "general"
 
 [inputs.nixpkgs]
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
@@ -48,10 +43,9 @@ tag = "v{version}"
 tags_from = "https://brave.com/latest"
 group = "packages"
 
-[inputs.cordial]
-url = "git+https://github.com/luohoa97/cordial"
-submodules = true
-tag = "v{version}"
+[inputs.mocktail]
+url = "gh:komaruworld/mocktail"
+type = "fetch"
 group = "packages"
 
 [inputs.discord-rpc-lsp]
