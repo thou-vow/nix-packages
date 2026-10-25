@@ -79,6 +79,7 @@
       ]);
 
       x86_64-linux._cache = mkCachePackage "x86_64-linux" (with self.packages.x86_64-linux; [
+        cordial
         discord-rpc-lsp
         faugus-launcher
         glfw-attuned

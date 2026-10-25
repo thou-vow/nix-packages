@@ -2,9 +2,11 @@
   "$declared": {
     "brave-aarch64-linux": "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_arm64.deb",
     "brave-x86-64-linux": "https://github.com/brave/brave-browser/releases/download/{tag}/brave-browser_{version}_amd64.deb",
+    "cordial": "github:luohoa97/cordial",
     "discord-rpc-lsp": "github:zerootoad/discord-rpc-lsp",
     "dwproton-x86-64-linux": "https://dawn.wine/dawn-winery/dwproton/releases/download/{tag}/{tag}-x86_64.tar.xz",
     "faugus-launcher": "github:Faugus/faugus-launcher",
+    "flake-utils": "github:numtide/flake-utils",
     "graalvm-oracle-21-aarch64-linux": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz",
     "graalvm-oracle-21-x86-64-linux": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
     "graalvm-oracle-25-aarch64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz",
@@ -37,6 +39,16 @@
     "tag": "v1.97.59",
     "version": "1.97.59"
   },
+  "cordial": {
+    "type": "github",
+    "owner": "luohoa97",
+    "repo": "cordial",
+    "rev": "fe20025d7ea6fa2764e4388b6ee49a8c7606a16d",
+    "narHash": "sha256-nhwO71siunGBB6fiL2kshlgZpZ+1sEiuiBOWWBB9y1g=",
+    "lastModified": 1792123534,
+    "tag": "v0.34.0",
+    "version": "0.34.0"
+  },
   "discord-rpc-lsp": {
     "type": "github",
     "owner": "zerootoad",
@@ -64,6 +76,14 @@
     "lastModified": 1792671008,
     "tag": "2.5.1",
     "version": "2.5.1"
+  },
+  "flake-utils": {
+    "type": "github",
+    "owner": "numtide",
+    "repo": "flake-utils",
+    "rev": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+    "narHash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA=",
+    "lastModified": 1791914995
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -96,16 +116,6 @@
     "unpack": "file",
     "tag": "Oracle GraalVM 25.0.5.0.2",
     "version": "25.0.5.0.2"
-  },
-  "lix": {
-    "type": "git",
-    "url": "https://git.lix.systems/lix-project/lix",
-    "ref": "refs/tags/2.96.0",
-    "rev": "f67b34faf17756bac7b30d7946f70d9bea92ae2d",
-    "narHash": "sha256-KKYenrZApSilj02krgybcdIu3S37bMrn00POKKpFc2Q=",
-    "lastModified": 1791902941,
-    "tag": "2.96.0",
-    "version": "2.96.0"
   },
   "llama-prism": {
     "type": "github",

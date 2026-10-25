@@ -6,7 +6,16 @@ recomposable = true
 gh = "github:{path}"
 
 
+[all_follow]
+flake-utils = "flake-utils"
+nixpkgs = "nixpkgs"
+
+
 # Flakes
+
+[inputs.flake-utils]
+url = "gh:numtide/flake-utils"
+group = "general"
 
 [inputs.nixpkgs]
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
@@ -37,6 +46,11 @@ type = "fixed"
 unpack = "file"
 tag = "v{version}"
 tags_from = "https://brave.com/latest"
+group = "packages"
+
+[inputs.cordial]
+url = "gh:luohoa97/cordial"
+tag = "v{version}"
 group = "packages"
 
 [inputs.discord-rpc-lsp]

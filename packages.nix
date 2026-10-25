@@ -23,6 +23,8 @@
     '';
   };
 
+  cordial = inputs.cordial.packages.${system}.default;
+
   discord-rpc-lsp = pkgs.callPackage ./pkgs/discord-rpc-lsp.nix {
     version = inputs._meta.discord-rpc-lsp.version;
     src = inputs.discord-rpc-lsp;
