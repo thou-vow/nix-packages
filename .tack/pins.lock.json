@@ -9,7 +9,6 @@
     "graalvm-oracle-21-x86-64-linux": "https://gds.oracle.com/download/graal/21/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
     "graalvm-oracle-25-aarch64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-aarch64_bin.tar.gz",
     "graalvm-oracle-25-x86-64-linux": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-{version}_linux-x64_bin.tar.gz",
-    "lix": "git+https://git.lix.systems/lix-project/lix",
     "llama-prism": "github:PrismML-Eng/llama.cpp",
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
     "prismlauncher-cracked": "github:Diegiwg/PrismLauncher-Cracked",
