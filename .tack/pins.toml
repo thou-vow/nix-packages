@@ -49,7 +49,8 @@ tags_from = "https://brave.com/latest"
 group = "packages"
 
 [inputs.cordial]
-url = "git+https://github.com/luohoa97/cordial?submodules=true"
+url = "git+https://github.com/luohoa97/cordial"
+submodules = true
 tag = "v{version}"
 group = "packages"
 

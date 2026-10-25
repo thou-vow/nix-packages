@@ -40,12 +40,13 @@
     "version": "1.97.59"
   },
   "cordial": {
-    "type": "github",
-    "owner": "luohoa97",
-    "repo": "cordial",
+    "type": "git",
+    "url": "https://github.com/luohoa97/cordial.git",
+    "ref": "refs/tags/v0.34.0",
     "rev": "fe20025d7ea6fa2764e4388b6ee49a8c7606a16d",
-    "narHash": "sha256-nhwO71siunGBB6fiL2kshlgZpZ+1sEiuiBOWWBB9y1g=",
+    "narHash": "sha256-wb6Znjpdhaz/7GASYDJQOSu2HCEr6ym0I3mKtkLlMOw=",
     "lastModified": 1792123534,
+    "submodules": true,
     "tag": "v0.34.0",
     "version": "0.34.0"
   },
