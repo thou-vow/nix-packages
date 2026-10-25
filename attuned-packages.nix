@@ -58,24 +58,6 @@ in {
     doInstallCheck = false;
   });
 
-  lix-attuned =
-    (pkgs.callPackage "${inputs.lix}/package.nix" {
-      stdenv = llvmLtoStdenv;
-    }).overrideAttrs (prevAttrs: {
-      mesonBuildType = "release";
-
-      mesonFlags =
-        prevAttrs.mesonFlags
-        ++ [
-          (lib.mesonOption "c_args" "-march=skylake")
-          (lib.mesonOption "cpp_args" "-march=skylake")
-          (lib.mesonOption "rust_args" "-Ctarget-cpu=skylake")
-        ];
-
-      doCheck = false;
-      doInstallCheck = false;
-    });
-
   mango-attuned = (pkgs.mango.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
     mesonBuildType = "release";
 

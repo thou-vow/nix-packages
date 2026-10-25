@@ -83,7 +83,6 @@
         faugus-launcher
         glfw-attuned
         kitty-attuned
-        lix-attuned
         llama-prism-attuned
         mango-attuned
         mesa-attuned
