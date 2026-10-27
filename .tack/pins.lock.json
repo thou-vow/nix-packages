@@ -112,9 +112,9 @@
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "0273401f705b236afa12a5cec79b36192a0d2c75",
-    "narHash": "sha256-8w66adh6dIF7WuB8Lh7KHEP1LtbxGVYIl/pAmyiqdOA=",
-    "lastModified": 1792327517
+    "rev": "99c8479798ae5599a905ace59921baf68a4b0370",
+    "narHash": "sha256-kNbhqrttiND36uFvZaeSPSZ4hYBMyUbsan6QD8dQICU=",
+    "lastModified": 1793105072
   },
   "nixpkgs": {
     "type": "tarball",
