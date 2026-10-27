@@ -92,11 +92,11 @@
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.2_linux-x64_bin.tar.gz",
-    "sha256": "sha256-HxBSHRCIOWxDBfnVtVq0xmAVGmz03wEii/htHhiWmnw=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.3_linux-x64_bin.tar.gz",
+    "sha256": "sha256-uQfTvfHqv/bSs/y5PM1EAEoO7mZzCiis4KW19csqxGo=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.5.0.2",
-    "version": "25.0.5.0.2"
+    "tag": "Oracle GraalVM 25.0.5.0.3",
+    "version": "25.0.5.0.3"
   },
   "llama-prism": {
     "type": "github",
