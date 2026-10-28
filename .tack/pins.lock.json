@@ -175,11 +175,11 @@
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/download/jdk-25.0.4.15/ibm-semeru-open-jre_x64_linux_25.0.4.15.tar.gz",
-    "sha256": "sha256-ve3B6PdPg/yZhMofo2fxO3YAO5Ns9v7dNUZhvIIHYV8=",
+    "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/download/jdk-25.0.5.0/ibm-semeru-open-jre_x64_linux_25.0.5.0.tar.gz",
+    "sha256": "sha256-3q0npwiiuEPtB4e3/OuS/tBCRXGEdNpRV3WZGD5UqVg=",
     "unpack": "tarball",
-    "tag": "jdk-25.0.4.15",
-    "version": "25.0.4.15"
+    "tag": "jdk-25.0.5.0",
+    "version": "25.0.5.0"
   },
   "tack": {
     "type": "github",
