@@ -24,19 +24,19 @@
   },
   "brave-aarch64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.59/brave-browser_1.97.59_arm64.deb",
-    "sha256": "sha256-Xv3SNWZx6t4x09ClmyM4kxFH9l8NtEhjtsI63qdLodI=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.98.62/brave-browser_1.98.62_arm64.deb",
+    "sha256": "sha256-lXjpjKXD9QEuvAYNhp8OYmT/PW2WpfBO5zfre/ygdiQ=",
     "unpack": "file",
-    "tag": "v1.97.59",
-    "version": "1.97.59"
+    "tag": "v1.98.62",
+    "version": "1.98.62"
   },
   "brave-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.97.59/brave-browser_1.97.59_amd64.deb",
-    "sha256": "sha256-Zm+Be2QKMoT7tcmzSRe3iFTirNkvp/661wTcKyk0m+U=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.98.62/brave-browser_1.98.62_amd64.deb",
+    "sha256": "sha256-+ytsdncm2ytWLXZhmGGLwppZDpj4KZat4qOikVO1VcE=",
     "unpack": "file",
-    "tag": "v1.97.59",
-    "version": "1.97.59"
+    "tag": "v1.98.62",
+    "version": "1.98.62"
   },
   "discord-rpc-lsp": {
     "type": "github",
@@ -60,11 +60,11 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "bc87d336bb76804c1d747e95a33274e67058be23",
-    "narHash": "sha256-tDOum8u9GZsTmj1DzcByYoSkmzjAB3xOCdLfkboUClE=",
-    "lastModified": 1793122839,
-    "tag": "2.5.4",
-    "version": "2.5.4"
+    "rev": "e69dd6b0835ec3dcfc719db52925f9bca4c5fdbb",
+    "narHash": "sha256-Qrpaz/CPxSiNbzHr2M/M/taSv7+SRobk5mgD490UQ6c=",
+    "lastModified": 1793373901,
+    "tag": "2.5.5",
+    "version": "2.5.5"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -185,9 +185,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "166d2cada3f3790358ffcba462de3f6b1bf7051e",
-    "narHash": "sha256-3UTkivPGXOpZHcEQr0uFnHew+brXcdFwWUaik4eefc8=",
-    "lastModified": 1793359467
+    "rev": "ae4e10ee310a169ebeca050fd3a4d778f5f4e008",
+    "narHash": "sha256-lIjyz0oblEd74AfJviLzijEgefoE10CbrCqk4fAJycY=",
+    "lastModified": 1793365221
   },
   "treefmt-nix": {
     "type": "github",
