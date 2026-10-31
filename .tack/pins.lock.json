@@ -102,11 +102,11 @@
     "type": "github",
     "owner": "PrismML-Eng",
     "repo": "llama.cpp",
-    "rev": "9d9efeadbdd1d77458d98717a96fbfa3a016e159",
-    "narHash": "sha256-RiUDltYHS6394GHklhzUzoc+Nj5hRw85FmKUd2/nfc8=",
-    "lastModified": 1793296456,
-    "tag": "prism-b10831-9d9efea",
-    "version": "10831"
+    "rev": "d7b28968306207fd176e7ff10796ccb6be607865",
+    "narHash": "sha256-uG0p3hztns+OVLXEvnKnVdU/9b2g02hWs58dWVVtVaQ=",
+    "lastModified": 1793412673,
+    "tag": "prism-b12128-d7b2896",
+    "version": "12128"
   },
   "mocktail": {
     "type": "github",
@@ -185,9 +185,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "ae4e10ee310a169ebeca050fd3a4d778f5f4e008",
-    "narHash": "sha256-lIjyz0oblEd74AfJviLzijEgefoE10CbrCqk4fAJycY=",
-    "lastModified": 1793365221
+    "rev": "e23a2e52e369636d3f753c1e6a1929a9c2f23cf6",
+    "narHash": "sha256-GmTLGnYVdPmmh/DRfL3hQDChNnJoYw31F0zmmbG2sjc=",
+    "lastModified": 1793433204
   },
   "treefmt-nix": {
     "type": "github",
