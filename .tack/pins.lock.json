@@ -60,11 +60,11 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "e69dd6b0835ec3dcfc719db52925f9bca4c5fdbb",
-    "narHash": "sha256-Qrpaz/CPxSiNbzHr2M/M/taSv7+SRobk5mgD490UQ6c=",
-    "lastModified": 1793373901,
-    "tag": "2.5.5",
-    "version": "2.5.5"
+    "rev": "17adc903eb2bce21c333ac104351fc1f448c05ac",
+    "narHash": "sha256-n3NY9SVSLCLfWBsgF+WChPq+tUFiFD0n0loPiEzBmLQ=",
+    "lastModified": 1793579041,
+    "tag": "2.5.6",
+    "version": "2.5.6"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
