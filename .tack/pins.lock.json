@@ -60,11 +60,11 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "17adc903eb2bce21c333ac104351fc1f448c05ac",
-    "narHash": "sha256-n3NY9SVSLCLfWBsgF+WChPq+tUFiFD0n0loPiEzBmLQ=",
-    "lastModified": 1793579041,
-    "tag": "2.5.6",
-    "version": "2.5.6"
+    "rev": "9af5f7fe2f4a5db42c04dd59655bd80b774bd5ef",
+    "narHash": "sha256-lB7/X7ilnoIc27Ggr+xCL/B0Gb9fTHWJNE9ajfYPccI=",
+    "lastModified": 1793723258,
+    "tag": "2.5.7",
+    "version": "2.5.7"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -159,19 +159,19 @@
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261024/proton-wineland-11.0-20261024-x86_64.tar.xz",
-    "sha256": "sha256-IqrosgJ9qEhVgd33cJ+ahHh4ML2ybcFlfSXyGdPd/SM=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261103/proton-wineland-11.0-20261103-x86_64.tar.xz",
+    "sha256": "sha256-82+QRxqCIw/UE2DcQ7d/KL36Nqx7OENPKRtkSQVynxA=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261024",
-    "version": "11.0-20261024"
+    "tag": "wineland-11.0-20261103",
+    "version": "11.0-20261103"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261024/proton-wineland-11.0-20261024-x86_64_v3.tar.xz",
-    "sha256": "sha256-TDWbLdgOf6hVVfulyJq+nm4+VI/mp1FR4z8CAQq4+mM=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261103/proton-wineland-11.0-20261103-x86_64_v3.tar.xz",
+    "sha256": "sha256-bIy0vL/TwhvQm7Hv3kLOrtlp6on7REt/rglv629KUq8=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261024",
-    "version": "11.0-20261024"
+    "tag": "wineland-11.0-20261103",
+    "version": "11.0-20261103"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
