@@ -127,11 +127,11 @@
     "type": "github",
     "owner": "Diegiwg",
     "repo": "PrismLauncher-Cracked",
-    "rev": "21921f3b8cda0fd9e6fb5f6dbd908527bbb21f1f",
-    "narHash": "sha256-pFIDOP03I76r14bXoKL7tEEaLlGFJ10MqMgGR4D/mvE=",
-    "lastModified": 1784292688,
-    "tag": "11.0.3",
-    "version": "11.0.3"
+    "rev": "4916ceeb72022b275c9bae8b94518e7c2236027a",
+    "narHash": "sha256-sf7jDftikgpu3++Og2M7sFyYgHEk6c5MCIwWj0pF0CE=",
+    "lastModified": 1793661738,
+    "tag": "11.1.1",
+    "version": "11.1.1"
   },
   "proton-cachyos-x86-64-linux": {
     "type": "fixed",
