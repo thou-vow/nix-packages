@@ -118,10 +118,10 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1106360.0bb2eedc20e4/nixexprs.tar.zst?rev=0bb2eedc20e4739f29e8045034f2828ad7054f8f&lastModified=1793540411",
-    "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
-    "narHash": "sha256-us2GRWGXbOQpN1blyJGvmdx+g4bv9GoFYq5iiOHRiZ8=",
-    "lastModified": 1793540411
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst?rev=1d060086d60cb76a40cf37109f979d88a5bd6396&lastModified=1793726008",
+    "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+    "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o=",
+    "lastModified": 1793726008
   },
   "prismlauncher-cracked": {
     "type": "github",
