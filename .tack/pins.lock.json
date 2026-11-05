@@ -24,19 +24,19 @@
   },
   "brave-aarch64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.98.63/brave-browser_1.98.63_arm64.deb",
-    "sha256": "sha256-jQtKAVXCgQ7JwuK3VRWbmieL1R+50Nd2ynrE9C4MwvM=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.99.55/brave-browser_1.99.55_arm64.deb",
+    "sha256": "sha256-r5nwaDDQllA/Zmezb/btbEVf7vUgPw0o/vTP065e4Qo=",
     "unpack": "file",
-    "tag": "v1.98.63",
-    "version": "1.98.63"
+    "tag": "v1.99.55",
+    "version": "1.99.55"
   },
   "brave-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.98.63/brave-browser_1.98.63_amd64.deb",
-    "sha256": "sha256-JCJ81aklnr3FEI2zlMxZmN9aw2NfhPiDinRkp7XN3VU=",
+    "url": "https://github.com/brave/brave-browser/releases/download/v1.99.55/brave-browser_1.99.55_amd64.deb",
+    "sha256": "sha256-Nk6VSirYTVuj4OIXoinVhzxK5xB9FeYSDkIHUpU5yI0=",
     "unpack": "file",
-    "tag": "v1.98.63",
-    "version": "1.98.63"
+    "tag": "v1.99.55",
+    "version": "1.99.55"
   },
   "discord-rpc-lsp": {
     "type": "github",
@@ -189,9 +189,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "d50504eb3c803090b299ef02e45186269fc9135b",
-    "narHash": "sha256-8CFNpGShjQDBWIeUIy+DUi25zv5cGbkLHNq+/9ZgPlw=",
-    "lastModified": 1793840241,
+    "rev": "8162a7e9d098f6ea0fc00404014a732b8e768da8",
+    "narHash": "sha256-dMyQFIkLF3f0sQFMSzlEWFZV2q4SG5Zrdbon5fbCbdA=",
+    "lastModified": 1793888518,
     "archive": null
   },
   "treefmt-nix": {
