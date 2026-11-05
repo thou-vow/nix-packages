@@ -112,9 +112,13 @@
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "c5d24d8f252bcba778bc2a84df6abb26cafe0bb8",
-    "narHash": "sha256-dmCf0qihyhIHTkaG0n19sXsbv2NVZDeIYnZb+vulFkU=",
-    "lastModified": 1793530146
+    "rev": "e636d75e357df9433f867dbd1504f145151ba141",
+    "narHash": "sha256-0p3cjyx4/mFyrT8eSn2nYOJqZKYMQ3yaXte3eJyNwqI=",
+    "lastModified": 1793830673,
+    "archive": {
+      "hash": "sha256-R64+VpGS33VmCaCUsxw/Cn/ptFHxUxXMahofJfIvgv8=",
+      "outHash": "sha256-P3VFHrjaz2911c+AEwElwsxkgRkSuOvY5BxJ4kP6J7Y="
+    }
   },
   "nixpkgs": {
     "type": "tarball",
@@ -185,9 +189,10 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "4ec7cc54362fdc2aa062ccb38b5b826b31921261",
-    "narHash": "sha256-WFAX4R64cjol4+w1KPTTnq58qm5G/QXCInxLY1pIVIk=",
-    "lastModified": 1793758878
+    "rev": "d50504eb3c803090b299ef02e45186269fc9135b",
+    "narHash": "sha256-8CFNpGShjQDBWIeUIy+DUi25zv5cGbkLHNq+/9ZgPlw=",
+    "lastModified": 1793840241,
+    "archive": null
   },
   "treefmt-nix": {
     "type": "github",
