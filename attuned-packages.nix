@@ -73,7 +73,7 @@ in {
       mesonBuildType = "release";
 
       mesonFlags =
-        prevAttrs.mesonFlags
+        prevAttrs.mesonFlags or []
         ++ [
           (lib.mesonBool "allow-broken-lto" true)
           (lib.mesonBool "b_lto" true)
@@ -195,7 +195,7 @@ in {
 
   umbriel-attuned = (pkgs.umbriel.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
     mesonFlags =
-      prevAttrs.mesonFlags
+      prevAttrs.mesonFlags or []
       ++ [
         (lib.mesonBool "b_lto" true)
         (lib.mesonOption "c_args" "-march=skylake")
