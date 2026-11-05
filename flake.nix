@@ -84,7 +84,6 @@
         glfw-attuned
         kitty-attuned
         llama-prism-attuned
-        mango-attuned
         mesa-attuned
         mocktail
         nixd-attuned
@@ -94,6 +93,7 @@
         rust-analyzer-unwrapped-attuned
         steelix-attuned
         tack
+        umbriel-attuned
       ]);
     };
 

@@ -58,20 +58,6 @@ in {
     doInstallCheck = false;
   });
 
-  mango-attuned = (pkgs.mango.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
-    mesonBuildType = "release";
-
-    mesonFlags =
-      prevAttrs.mesonFlags
-      ++ [
-        (lib.mesonBool "b_lto" true)
-        (lib.mesonOption "c_args" "-march=skylake")
-      ];
-
-    doCheck = false;
-    doInstallCheck = false;
-  });
-
   mesa-attuned =
     (pkgs.mesa.override {
       stdenv = llvmLtoStdenv;
@@ -205,5 +191,18 @@ in {
           "-C opt-level=3"
         ];
       };
+  });
+
+  umbriel-attuned = (pkgs.umbriel.override {stdenv = llvmLtoStdenv;}).overrideAttrs (prevAttrs: {
+    mesonFlags =
+      prevAttrs.mesonFlags
+      ++ [
+        (lib.mesonBool "b_lto" true)
+        (lib.mesonOption "c_args" "-march=skylake")
+        (lib.mesonOption "cpp_args" "-march=skylake")
+      ];
+
+    doCheck = false;
+    doInstallCheck = false;
   });
 }
