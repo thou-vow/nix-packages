@@ -19,22 +19,6 @@
     "tack": "github:manic-systems/tack",
     "treefmt-nix": "github:numtide/treefmt-nix"
   },
-  "brave-aarch64-linux": {
-    "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.99.55/brave-browser_1.99.55_arm64.deb",
-    "sha256": "sha256-r5nwaDDQllA/Zmezb/btbEVf7vUgPw0o/vTP065e4Qo=",
-    "unpack": "file",
-    "tag": "v1.99.55",
-    "version": "1.99.55"
-  },
-  "brave-x86-64-linux": {
-    "type": "fixed",
-    "url": "https://github.com/brave/brave-browser/releases/download/v1.99.55/brave-browser_1.99.55_amd64.deb",
-    "sha256": "sha256-Nk6VSirYTVuj4OIXoinVhzxK5xB9FeYSDkIHUpU5yI0=",
-    "unpack": "file",
-    "tag": "v1.99.55",
-    "version": "1.99.55"
-  },
   "discord-rpc-lsp": {
     "type": "github",
     "owner": "zerootoad",
@@ -95,26 +79,16 @@
     "tag": "Oracle GraalVM 25.0.5.0.3",
     "version": "25.0.5.0.3"
   },
-  "llama-prism": {
-    "type": "github",
-    "owner": "PrismML-Eng",
-    "repo": "llama.cpp",
-    "rev": "d7b28968306207fd176e7ff10796ccb6be607865",
-    "narHash": "sha256-uG0p3hztns+OVLXEvnKnVdU/9b2g02hWs58dWVVtVaQ=",
-    "lastModified": 1793412673,
-    "tag": "prism-b12128-d7b2896",
-    "version": "12128"
-  },
   "mocktail": {
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "e636d75e357df9433f867dbd1504f145151ba141",
-    "narHash": "sha256-0p3cjyx4/mFyrT8eSn2nYOJqZKYMQ3yaXte3eJyNwqI=",
-    "lastModified": 1793830673,
+    "rev": "e70c7ecf4e0ce49187b260740a3415abf1ebe850",
+    "narHash": "sha256-ZhAzeJVkn4P0SN+CbvwhwWe3rwd/NUBjmYc9P6zkM/k=",
+    "lastModified": 1793984740,
     "archive": {
-      "hash": "sha256-R64+VpGS33VmCaCUsxw/Cn/ptFHxUxXMahofJfIvgv8=",
-      "outHash": "sha256-P3VFHrjaz2911c+AEwElwsxkgRkSuOvY5BxJ4kP6J7Y="
+      "hash": "sha256-R08vcSw05wF/bOV0HpLCinAfgSsoCIiPSJXlqNrnkbg=",
+      "outHash": "sha256-wr/loXUBkTS6RrinoRjRthNUzkG5y9oFf/bVniH+CiQ="
     }
   },
   "nixpkgs": {
