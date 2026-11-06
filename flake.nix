@@ -83,7 +83,6 @@
         faugus-launcher
         glfw-attuned
         kitty-attuned
-        llama-prism-attuned
         mesa-attuned
         mocktail
         nixd-attuned

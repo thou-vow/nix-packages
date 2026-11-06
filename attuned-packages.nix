@@ -158,26 +158,6 @@ in {
       };
   });
 
-  llama-prism-attuned =
-    (pkgs.callPackage "${inputs.llama-prism}/.devops/nix/package.nix" {
-      stdenv = llvmLtoStdenv;
-      useVulkan = true;
-      useWebUi = true;
-    }).overrideAttrs (prevAttrs: {
-      __intentionallyOverridingVersion = true;
-      version = inputs._meta.llama-prism.tag;
-
-      cmakeFlags =
-        prevAttrs.cmakeFlags
-        ++ [
-          (lib.cmakeFeature "CMAKE_C_FLAGS" "-march=skylake")
-          (lib.cmakeFeature "CMAKE_CXX_FLAGS" "-march=skylake")
-          (lib.cmakeBool "CMAKE_INTERPROCEDURAL_OPTIMIZATION" true)
-          (lib.cmakeBool "LLAMA_BUILD_TESTS" false)
-          (lib.cmakeBool "LLAMA_BUILD_EXAMPLES" false)
-        ];
-    });
-
   rust-analyzer-attuned = pkgs.rust-analyzer.override {
     rust-analyzer-unwrapped = self.packages.${system}.rust-analyzer-unwrapped-attuned;
   };
