@@ -83,12 +83,12 @@
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "94715e37628993f5cd7562860b828c1da7681f7a",
-    "narHash": "sha256-IZzR4coJ4cV40su88UC/7Uqo6ZDLg9u8CEeHs79D38A=",
-    "lastModified": 1794238574,
+    "rev": "ede9080ed8a8322baf4906fb629df83a3e7b2faa",
+    "narHash": "sha256-WjL8WoAQ6fweVGlQ0hdlnBPK7fA3N3WnPI+l/JTgjJs=",
+    "lastModified": 1794334475,
     "archive": {
-      "hash": "sha256-UTMLWfGT+a2ld221bqgtu0SlePmblr/oEumK8//TGeI=",
-      "outHash": "sha256-cE50YEd6t+04HLDSiHDLtw7Ty6lpTunSkBUXZ5Ld7wY="
+      "hash": "sha256-qi3NW0JJ5lgwNOlk6EIHL7CcWd0R37mzsFq4iUsgkxQ=",
+      "outHash": "sha256-FVwHEmYJVYrneqRZqtFyNGDjWePc+T23Uf0nmzUi/eU="
     }
   },
   "nixpkgs": {
