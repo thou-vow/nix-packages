@@ -93,10 +93,10 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.zst?rev=f4a03c008967841f2a0b3cb7c436fc6fc31671f6&lastModified=1794042290",
-    "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
-    "narHash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0=",
-    "lastModified": 1794042290
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1114946.177d0540942f/nixexprs.tar.zst?rev=177d0540942fb205af6993b1d5fa0b57799e09f8&lastModified=1794192123",
+    "rev": "177d0540942fb205af6993b1d5fa0b57799e09f8",
+    "narHash": "sha256-YOhabADcIwaWo9992egosQF3iVpvWysmZAyhbGBzinY=",
+    "lastModified": 1794192123
   },
   "prismlauncher-cracked": {
     "type": "github",
@@ -160,9 +160,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "f59bc3e6679df14d402e40bf895cc2533bae4ca2",
-    "narHash": "sha256-ZK5sfTsvSo9VYEi8mAVtfu5FUFvMYoGMn6+CYzS1pPU=",
-    "lastModified": 1794242539,
+    "rev": "c107b0fc252b0b33b01e6b7d6111aaaedc49613e",
+    "narHash": "sha256-bdNCaHUF3c8hgsYw6FCI+lGcZanZIDxt2Sefu5AsERY=",
+    "lastModified": 1794450976,
     "archive": null
   },
   "treefmt-nix": {
