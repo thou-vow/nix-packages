@@ -87,7 +87,6 @@
         mocktail
         nixd-attuned
         noctalia-attuned
-        nushell-attuned
         prismlauncher-cracked-unwrapped
         rust-analyzer-unwrapped-attuned
         steelix-attuned

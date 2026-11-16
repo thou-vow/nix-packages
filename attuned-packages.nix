@@ -127,24 +127,6 @@ in {
       ];
   });
 
-  nushell-attuned = (attuneRust pkgs.nushell).overrideAttrs (prevAttrs: {
-    env =
-      prevAttrs.env
-      // {
-        RUSTFLAGS = toString [
-          prevAttrs.env.RUSTFLAGS
-          "-C opt-level=3"
-        ];
-      };
-
-    postPatch =
-      prevAttrs.postPatch or ""
-      + ''
-        substituteInPlace Cargo.toml \
-          --replace-fail '"thin"' 'true'
-      '';
-  });
-
   rust-analyzer-unwrapped-attuned = (attuneRust pkgs.rust-analyzer-unwrapped).overrideAttrs (prevAttrs: {
     env =
       prevAttrs.env
