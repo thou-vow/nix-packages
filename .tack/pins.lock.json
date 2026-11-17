@@ -65,30 +65,30 @@
   },
   "graalvm-oracle-25-aarch64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.3_linux-aarch64_bin.tar.gz",
-    "sha256": "sha256-vkuH5QP6Ctw90OpSITjyzvXsb+bR1A8HAEVm8T3g588=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.1_linux-aarch64_bin.tar.gz",
+    "sha256": "sha256-qFF4fzkuQ9ppVTHNP8a4ic+n0bnXFQPJ5q2/za/QyD0=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.5.0.3",
-    "version": "25.0.5.0.3"
+    "tag": "Oracle GraalVM 25.0.5.1",
+    "version": "25.0.5.1"
   },
   "graalvm-oracle-25-x86-64-linux": {
     "type": "fixed",
-    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.0.3_linux-x64_bin.tar.gz",
-    "sha256": "sha256-uQfTvfHqv/bSs/y5PM1EAEoO7mZzCiis4KW19csqxGo=",
+    "url": "https://gds.oracle.com/download/graal/25/archive/graalvm-jdk-25.0.5.1_linux-x64_bin.tar.gz",
+    "sha256": "sha256-s1Bbjo9zcmiFBEgg995ZPHsCc8aRKGZVzbfs4qI611o=",
     "unpack": "file",
-    "tag": "Oracle GraalVM 25.0.5.0.3",
-    "version": "25.0.5.0.3"
+    "tag": "Oracle GraalVM 25.0.5.1",
+    "version": "25.0.5.1"
   },
   "mocktail": {
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "ede9080ed8a8322baf4906fb629df83a3e7b2faa",
-    "narHash": "sha256-WjL8WoAQ6fweVGlQ0hdlnBPK7fA3N3WnPI+l/JTgjJs=",
-    "lastModified": 1794334475,
+    "rev": "1260dcaa0f97bcc6877edb815e65badaa7ebb21b",
+    "narHash": "sha256-PWS4AnplDg2CKmtOC96uEHEq/MSSH+ksXb6pFttKbsY=",
+    "lastModified": 1794926542,
     "archive": {
-      "hash": "sha256-qi3NW0JJ5lgwNOlk6EIHL7CcWd0R37mzsFq4iUsgkxQ=",
-      "outHash": "sha256-FVwHEmYJVYrneqRZqtFyNGDjWePc+T23Uf0nmzUi/eU="
+      "hash": "sha256-zkXR5PW1urN//XvniQ+ONXhcWlx4CPqAp/wYfJEnVzE=",
+      "outHash": "sha256-N1xd4g0lnnJ9VXggbYn47Nk/m9JxiGghQo4k2Ggnzx0="
     }
   },
   "nixpkgs": {
@@ -160,9 +160,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "3cfa5c3f129b754c3f39f0dedc3fa2c352651e5b",
-    "narHash": "sha256-BIsamtBAElAO2TEMK6UsPHp2kCHpMwqULjBwSpq2hhI=",
-    "lastModified": 1794846300,
+    "rev": "bad78453288bfb5d890af856fa2429979e2b944c",
+    "narHash": "sha256-Jn+PT5iYnKcttgR5Rc6oWLNxhFGzyBY3/P3sgvqcQDU=",
+    "lastModified": 1794909624,
     "archive": null
   },
   "treefmt-nix": {
