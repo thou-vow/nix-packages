@@ -93,10 +93,10 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1119549.d5cc68339997/nixexprs.tar.zst?lastModified=1794537146&rev=d5cc6833999746cffdfe0598f7bc801a57b887a9",
-    "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
-    "narHash": "sha256-bTKSclXJAmo9qdxPedTBHUGr8awPr4BrbOoOutJsYIc=",
-    "lastModified": 1794537146
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1121687.1a08097fc1ed/nixexprs.tar.zst?lastModified=1794750194&rev=1a08097fc1ed85575db39763b2c4a5d8970a37ba",
+    "rev": "1a08097fc1ed85575db39763b2c4a5d8970a37ba",
+    "narHash": "sha256-1qOtz5nZG+3hsBEqeKtUx+T5gSaJ+hONlBWWSbH+mJ8=",
+    "lastModified": 1794750194
   },
   "prismlauncher-cracked": {
     "type": "github",
@@ -134,19 +134,19 @@
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261114/proton-wineland-11.0-20261114-x86_64.tar.xz",
-    "sha256": "sha256-hcGryMuXYsR5gpfC7bHuMBntcv7oyLAxQ7tsRy6DJkM=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261117/proton-wineland-11.0-20261117-x86_64.tar.xz",
+    "sha256": "sha256-CNn7T6G+TtAnTc8uR5m0LhdKkTmjzH+jqBA2hHRcFRk=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261114",
-    "version": "11.0-20261114"
+    "tag": "wineland-11.0-20261117",
+    "version": "11.0-20261117"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261114/proton-wineland-11.0-20261114-x86_64_v3.tar.xz",
-    "sha256": "sha256-qcJ4bVwSihCGvQNG1gjsgVfImIYfABRIcphg3NbuiCY=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261117/proton-wineland-11.0-20261117-x86_64_v3.tar.xz",
+    "sha256": "sha256-eFjTNTl8dyg4bAhZhY7+P4gWl+YtI9OCTXwmES8iLI8=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261114",
-    "version": "11.0-20261114"
+    "tag": "wineland-11.0-20261117",
+    "version": "11.0-20261117"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
