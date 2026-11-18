@@ -83,13 +83,14 @@
     "type": "github",
     "owner": "komaruworld",
     "repo": "mocktail",
-    "rev": "1260dcaa0f97bcc6877edb815e65badaa7ebb21b",
-    "narHash": "sha256-PWS4AnplDg2CKmtOC96uEHEq/MSSH+ksXb6pFttKbsY=",
-    "lastModified": 1794926542,
+    "rev": "67decec0e5095d4d494f944d957f9d9ea3a150a9",
+    "narHash": "sha256-MrYC6wsuybgnZmDa7n/DYearRNlIeAnvSsXz2wZQz/Y=",
+    "lastModified": 1795027955,
     "archive": {
-      "hash": "sha256-zkXR5PW1urN//XvniQ+ONXhcWlx4CPqAp/wYfJEnVzE=",
-      "outHash": "sha256-N1xd4g0lnnJ9VXggbYn47Nk/m9JxiGghQo4k2Ggnzx0="
-    }
+      "hash": "sha256-gWB3LdrMUuDJt1DLWvwoPm/+PFDNswEonGlYJX2jQh0=",
+      "outHash": "sha256-eP+xOnJK7WgDAWcaB7lfFBUm6SPu8XJ5HekgFvg/cZw="
+    },
+    "public": true
   },
   "nixpkgs": {
     "type": "tarball",
@@ -169,8 +170,13 @@
     "type": "github",
     "owner": "numtide",
     "repo": "treefmt-nix",
-    "rev": "0d6d739a833ba9a9c93034862e4a7b061a062a1c",
-    "narHash": "sha256-C3alQ2MEt0zVrUSho5NUDo3jmhbff72++bfwoqT9Omo=",
-    "lastModified": 1791885023
+    "rev": "0ba5d67225c3f5c88eb134e1a665a379bfd3bea9",
+    "narHash": "sha256-WSBJcYjPRxGetDNxVzKnRPs1TQasQQlAC25W/S4W6YE=",
+    "lastModified": 1795017206,
+    "archive": {
+      "hash": "sha256-zz+71rPJr69CMNRT5RP5P87qMBvlor9+56OoACY53dw=",
+      "outHash": "sha256-toV4ZUSVLbUyAX9YtXcOzi8tJDHXAUK3tNEcyJwc+oM="
+    },
+    "public": true
   }
 }
