@@ -41,11 +41,16 @@
     "type": "github",
     "owner": "Faugus",
     "repo": "faugus-launcher",
-    "rev": "9af5f7fe2f4a5db42c04dd59655bd80b774bd5ef",
-    "narHash": "sha256-lB7/X7ilnoIc27Ggr+xCL/B0Gb9fTHWJNE9ajfYPccI=",
-    "lastModified": 1793723258,
-    "tag": "2.5.7",
-    "version": "2.5.7"
+    "rev": "59e0035e6c51b466bd8ae9d5301653b3cbcf9038",
+    "narHash": "sha256-EmwQN196wrI5Hrkz4yOryft1KAml4DKhC4O4wHIl5jY=",
+    "lastModified": 1795107755,
+    "archive": {
+      "hash": "sha256-EHwIiye+PxyvubpFSUy8ObjCM2VGBoJ1UAmUo9up4xw=",
+      "outHash": "sha256-T4XlkIIVou40zRt99LqC1h4IBRyd3lLvMt7MBglsirI="
+    },
+    "public": true,
+    "tag": "2.5.9",
+    "version": "2.5.9"
   },
   "graalvm-oracle-21-aarch64-linux": {
     "type": "fixed",
@@ -135,19 +140,19 @@
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261117/proton-wineland-11.0-20261117-x86_64.tar.xz",
-    "sha256": "sha256-CNn7T6G+TtAnTc8uR5m0LhdKkTmjzH+jqBA2hHRcFRk=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261119/proton-wineland-11.0-20261119-x86_64.tar.xz",
+    "sha256": "sha256-skRfFwb7k7ewrClxVYT8HWfYtZ41Km4gsmWNTV1sKtE=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261117",
-    "version": "11.0-20261117"
+    "tag": "wineland-11.0-20261119",
+    "version": "11.0-20261119"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261117/proton-wineland-11.0-20261117-x86_64_v3.tar.xz",
-    "sha256": "sha256-eFjTNTl8dyg4bAhZhY7+P4gWl+YtI9OCTXwmES8iLI8=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261119/proton-wineland-11.0-20261119-x86_64_v3.tar.xz",
+    "sha256": "sha256-3+xlOn8We6QSt00tUt4nTUZ/G/iw370HxSoS1vCOSbg=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261117",
-    "version": "11.0-20261117"
+    "tag": "wineland-11.0-20261119",
+    "version": "11.0-20261119"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
@@ -161,10 +166,11 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "bad78453288bfb5d890af856fa2429979e2b944c",
-    "narHash": "sha256-Jn+PT5iYnKcttgR5Rc6oWLNxhFGzyBY3/P3sgvqcQDU=",
-    "lastModified": 1794909624,
-    "archive": null
+    "rev": "1424edc27b6e6f6d4f216410e0a2cc1419d96cb7",
+    "narHash": "sha256-z7m16oDAtHsgbBX6gadOpa6pGPXNEahjwyzPC0pbLvM=",
+    "lastModified": 1795064133,
+    "archive": null,
+    "public": true
   },
   "treefmt-nix": {
     "type": "github",
