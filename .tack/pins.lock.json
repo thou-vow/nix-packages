@@ -99,10 +99,10 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1122823.04906337b6d5/nixexprs.tar.zst?lastModified=1794890597&rev=04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
-    "rev": "04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
-    "narHash": "sha256-vJoAj1xon3Mhfc8FZ5uBrPyZee9Eqa05gG/taXv6iZ8=",
-    "lastModified": 1794890597
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1124497.0bb8272318b4/nixexprs.tar.zst?lastModified=1795085501&rev=0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
+    "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
+    "narHash": "sha256-kqy60mdSH4GQAv3kzSeefteaiCv9arf3P+auosZrpo0=",
+    "lastModified": 1795085501
   },
   "prismlauncher-cracked": {
     "type": "github",
@@ -176,12 +176,12 @@
     "type": "github",
     "owner": "numtide",
     "repo": "treefmt-nix",
-    "rev": "0ba5d67225c3f5c88eb134e1a665a379bfd3bea9",
-    "narHash": "sha256-WSBJcYjPRxGetDNxVzKnRPs1TQasQQlAC25W/S4W6YE=",
-    "lastModified": 1795017206,
+    "rev": "a0a97e31a897a3537eea5c49df4f8adaa83b3b37",
+    "narHash": "sha256-J8IYl3oEdctyvBgWr+/L01MY5Xm0TU4WXwZDccN5jjk=",
+    "lastModified": 1795173499,
     "archive": {
-      "hash": "sha256-zz+71rPJr69CMNRT5RP5P87qMBvlor9+56OoACY53dw=",
-      "outHash": "sha256-toV4ZUSVLbUyAX9YtXcOzi8tJDHXAUK3tNEcyJwc+oM="
+      "hash": "sha256-0stZnE1jLqeTKp0CvPW/gkuEs+tOH2K93I38dVBGR7s=",
+      "outHash": "sha256-eKwlNSlbNGCPR87ooUEbjvB8E2BEAGVqlvvO52W1Dh4="
     },
     "public": true
   }
