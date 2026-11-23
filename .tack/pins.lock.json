@@ -132,11 +132,11 @@
   },
   "proton-ge-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-12/GE-Proton11-12-x86_64.tar.gz",
-    "sha256": "sha256-BZUVnkF8Pbv7fMOuDT7RWmF8xgeqI+91bqeQKdevXXA=",
+    "url": "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-14/GE-Proton11-14-x86_64.tar.gz",
+    "sha256": "sha256-JrzqMyS2je5ov2ubAF9EJc25wphy4SbXkN9av+vjMqg=",
     "unpack": "tarball",
-    "tag": "GE-Proton11-12",
-    "version": "11-12"
+    "tag": "GE-Proton11-14",
+    "version": "11-14"
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
