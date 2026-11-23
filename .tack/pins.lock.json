@@ -166,9 +166,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "1424edc27b6e6f6d4f216410e0a2cc1419d96cb7",
-    "narHash": "sha256-z7m16oDAtHsgbBX6gadOpa6pGPXNEahjwyzPC0pbLvM=",
-    "lastModified": 1795064133,
+    "rev": "a992d76e8e9c906a3714b596ba3a9b8386a817d6",
+    "narHash": "sha256-u6gAZW/m9HnyiI/QpupurIB0L3SRUsBDRvrCrJp5EMU=",
+    "lastModified": 1795391791,
     "archive": null,
     "public": true
   },
