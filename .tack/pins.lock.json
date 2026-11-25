@@ -140,19 +140,19 @@
   },
   "proton-wineland-x86-64-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261119/proton-wineland-11.0-20261119-x86_64.tar.xz",
-    "sha256": "sha256-skRfFwb7k7ewrClxVYT8HWfYtZ41Km4gsmWNTV1sKtE=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64.tar.xz",
+    "sha256": "sha256-s2SO+dDmTtfYcwvfkSpgCMDaFkF4yjE+9jWrnpvkBCg=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261119",
-    "version": "11.0-20261119"
+    "tag": "wineland-11.0-20261124",
+    "version": "11.0-20261124"
   },
   "proton-wineland-x86-64-v3-linux": {
     "type": "fixed",
-    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261119/proton-wineland-11.0-20261119-x86_64_v3.tar.xz",
-    "sha256": "sha256-3+xlOn8We6QSt00tUt4nTUZ/G/iw370HxSoS1vCOSbg=",
+    "url": "https://github.com/nanomatters/proton-cachyos/releases/download/wineland-11.0-20261124/proton-wineland-11.0-20261124-x86_64_v3.tar.xz",
+    "sha256": "sha256-yP8K+pa4nmmjMV3heYBApdOiWdvLXgA+HvCcVB7ZJuA=",
     "unpack": "tarball",
-    "tag": "wineland-11.0-20261119",
-    "version": "11.0-20261119"
+    "tag": "wineland-11.0-20261124",
+    "version": "11.0-20261124"
   },
   "semeru-jre-bin-25-x86-64-linux": {
     "type": "fixed",
@@ -166,9 +166,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "a992d76e8e9c906a3714b596ba3a9b8386a817d6",
-    "narHash": "sha256-u6gAZW/m9HnyiI/QpupurIB0L3SRUsBDRvrCrJp5EMU=",
-    "lastModified": 1795391791,
+    "rev": "5fba22058c07e258e77005144373845df04aa420",
+    "narHash": "sha256-4y/PrwhX1+kEbYyD9++i03/xjeJiTp0rbD3IEwgAkfI=",
+    "lastModified": 1795612357,
     "archive": null,
     "public": true
   },
@@ -176,12 +176,12 @@
     "type": "github",
     "owner": "numtide",
     "repo": "treefmt-nix",
-    "rev": "a0a97e31a897a3537eea5c49df4f8adaa83b3b37",
-    "narHash": "sha256-J8IYl3oEdctyvBgWr+/L01MY5Xm0TU4WXwZDccN5jjk=",
-    "lastModified": 1795173499,
+    "rev": "b7b56d3c8833016c650ca542b1230e6130299741",
+    "narHash": "sha256-/C0FK2Fwq0aWE/GADYyYbAIdQeGfYBbWMin3tfks1NA=",
+    "lastModified": 1795615686,
     "archive": {
-      "hash": "sha256-0stZnE1jLqeTKp0CvPW/gkuEs+tOH2K93I38dVBGR7s=",
-      "outHash": "sha256-eKwlNSlbNGCPR87ooUEbjvB8E2BEAGVqlvvO52W1Dh4="
+      "hash": "sha256-M4PxXF58ihTDDJMAMqe9FGfUpoNRh6EN0r0yXY/qKcY=",
+      "outHash": "sha256-yGSgSZH0D8HXs3IssLl+NQZ87rTWbSb1mq3JWNgEKr0="
     },
     "public": true
   }
